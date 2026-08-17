@@ -1,0 +1,6 @@
+tools/*
+.github/*
+wrangler.jsonc
+.assetsignore
+site.zip
+img/manifest.json
