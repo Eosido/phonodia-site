@@ -1,7 +1,7 @@
 name: Gefyra
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,13 +11,13 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
       - run: pip install lxml pillow
-      - name: Etoimasia
+      - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg rsync
+      - name: Gefyra
         run: |
-          rm -f /tmp/APPLIED
           cat > /tmp/bridge.py <<'PY'
           import re, os, json, subprocess, sys
           html = open('/tmp/folder.html', encoding='utf-8', errors='replace').read()
@@ -56,31 +56,31 @@ jobs:
           open('/tmp/APPLIED', 'w').write(str(ver))
           print('NOTE:', d.get('note', ''))
           PY
-      - name: Anamoni
-        run: |
-          for i in $(seq 1 9); do
-            if curl -fsSL -A "Mozilla/5.0" -o /tmp/folder.html "https://drive.google.com/embeddedfolderview?id=1NJOdm9VAaSxow-A54s3oA-OVP7ztgFCc#list"; then
-              if python3 /tmp/bridge.py; then echo "efarmostike"; break; fi
-            fi
-            echo "tipota neo ($i)"
-            sleep 30
-          done
-      - name: Xtisimo
-        run: |
-          if [ ! -f /tmp/APPLIED ]; then echo "tipota neo"; exit 0; fi
-          sudo apt-get update -qq && sudo apt-get install -y ffmpeg
-          mkdir -p src/clone
-          if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
-          FONODIA_ROOT="$PWD/src" python3 src/build/build.py
-          rsync -a src/site-build/ ./
-          rm -rf src/site-build
-          python3 src/build/localise.py
-          if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
-      - name: Katachorisi
-        run: |
-          if [ ! -f /tmp/APPLIED ]; then exit 0; fi
           git config user.name "Phonodia Site"
           git config user.email "contact@phonodia.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "Enimerosi apo gefyra"
-          git push
+          FOLDER="https://drive.google.com/embeddedfolderview?id=1NJOdm9VAaSxow-A54s3oA-OVP7ztgFCc#list"
+          END=$(( $(date +%s) + 3900 ))
+          while [ "$(date +%s)" -lt "$END" ]; do
+            rm -f /tmp/APPLIED
+            if curl -fsSL -A "Mozilla/5.0" -o /tmp/folder.html "$FOLDER"; then
+              python3 /tmp/bridge.py || true
+            else
+              echo "to Drive den apantise"
+            fi
+            if [ -f /tmp/APPLIED ]; then
+              echo "efarmozo ekdosi $(cat /tmp/APPLIED)"
+              mkdir -p src/clone
+              if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
+              FONODIA_ROOT="$PWD/src" python3 src/build/build.py
+              rsync -a src/site-build/ ./
+              rm -rf src/site-build
+              python3 src/build/localise.py
+              if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
+              git add -A
+              git diff --cached --quiet || git commit -m "Enimerosi apo gefyra"
+              git pull --rebase --autostash || true
+              git push || echo "to push apetyxe - tha xanaprospathiso"
+            fi
+            sleep 30
+          done
+          echo "telos parathyrou akroasis"
