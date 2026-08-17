@@ -561,8 +561,8 @@ harvest_events = {r['url']: r for r in load_json(CLONE + '/harvest-events.json')
 # της «Πνοής» του Ρεθύμνου) μέχρι να έρθει η κανονική. Ώρα: δεν δόθηκε ακόμη.
 NEW_EVENT_URL = SITE + '/js_events/πνοή-αρχάνες-2026/'
 NEW_EVENT = {'title': 'Πνοή', 'date': 'October 24, 2026',
-             'venue': 'Συνεδριακό Κέντρο «Δίας», Αρχάνες', 'meta': 'Διοργάνωση: Περιφέρεια Κρήτης',
-             'body': 'Χορωδιακή Συναυλία Φωνητικού Συνόλου ΦΩΝΩΔΙΑ «ΠΝΟΗ» || Συνεδριακό Κέντρο «Δίας», Αρχάνες || Διοργάνωση: Περιφέρεια Κρήτης',
+             'venue': 'Συνεδριακό Κέντρο «Δίας», Αρχάνες', 'meta': '8:30 pm || Διοργάνωση: Περιφέρεια Κρήτης',
+             'body': 'Χορωδιακή Συναυλία Φωνητικού Συνόλου ΦΩΝΩΔΙΑ «ΠΝΟΗ» || Ώρα έναρξης 20:30',
              'poster': 'https://phonodiavocalensemble.com/wp-content/uploads/2026/05/IMG_20260527_134003_888.jpg',
              'ticket': None, 'url': NEW_EVENT_URL}
 events.insert(0, NEW_EVENT)
@@ -1126,6 +1126,49 @@ def apply_local_images():
     print('apply_local_images: %d αρχεία, %d τοπικές εικόνες' % (n, len(man)))
 
 
+
+# ---------------------------------------------------------------- ορθογραφία
+# Λάθη που εντόπισε ο Ιωάννης Ιδομενέως στο ίδιο το WordPress. Τα διορθώνουμε εδώ,
+# ώστε τα αρχεία της συγκομιδής να μένουν αυτούσια και η κάθε αλλαγή να φαίνεται.
+TYPOS = [
+    ('Δημοτικο Ωδείο', 'Δημοτικό Ωδείο'),
+    ('Tόκιο', 'Τόκιο'),                      # λατινικό T -> ελληνικό Τ
+    ('της Φωνωδία ', 'της Φωνωδίας '),
+    ('κεράσιες', 'κερασιές'),
+    ('Φωνη \u2013', 'Φωνή \u2013'),           # όνομα προϊόντος: έλειπε ο τόνος
+]
+
+
+def fix_typos():
+    """Περνά τις διορθώσεις μόνο σε ορατό κείμενο — ποτέ σε διευθύνσεις ή αρχεία."""
+    import glob as _g
+    hits = files = 0
+    for path in _g.glob(OUT + '/**/index.html', recursive=True):
+        r = LH.parse(path).getroot()
+        n = 0
+        for el in r.iter():
+            if not isinstance(el.tag, str) or el.tag in ('script', 'style'):
+                continue
+            for attr in ('alt', 'title', 'content', 'data-pname'):
+                v = el.get(attr)
+                if v:
+                    for a_, b_ in TYPOS:
+                        if a_ in v:
+                            v = v.replace(a_, b_); el.set(attr, v); n += 1
+            for name in ('text', 'tail'):
+                v = getattr(el, name)
+                if v:
+                    for a_, b_ in TYPOS:
+                        if a_ in v:
+                            v = v.replace(a_, b_); setattr(el, name, v); n += 1
+        if n:
+            open(path, 'w', encoding='utf-8').write(
+                '<!DOCTYPE html>\n' + LH.tostring(r, encoding='unicode', method='html'))
+            files += 1; hits += n
+    print('fix_typos: %d διορθώσεις σε %d σελίδες' % (hits, files))
+
+
+
 if __name__ == '__main__':
     shutil.copy(SAVED + '/../site-build/assets/webfonts/fa-solid-900.woff2', OUT + '/assets/webfonts/fa-solid-900.woff2') if False else None
     build_css()
@@ -1149,6 +1192,7 @@ if __name__ == '__main__':
                         ignore=shutil.ignore_patterns('*.pyc', '__pycache__', '*.bak'))
     n = sum(len(f) for _, _, f in os.walk(OUT))
     print('files written:', n)
+    fix_typos()                   # ορθογραφικές διορθώσεις που ζήτησε ο Ιωάννης Ιδομενέως
     import translate_en           # εγκεκριμένες αγγλικές αποδόσεις (16 Αυγ 2026)
     translate_en.main()
     apply_local_images()           # οι φωτογραφίες ζουν πλέον μέσα στη σελίδα
