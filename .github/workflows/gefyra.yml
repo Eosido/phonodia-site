@@ -1,0 +1,55 @@
+name: Gefyra
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install lxml pillow
+      - name: Elenchos
+        run: |
+          rm -f /tmp/SKIP
+          curl -fsSL -o update.json "https://drive.usercontent.google.com/download?id=1ohvCQUlCcWMrCj_jsK0EuTQcnUScqP2U&export=download" || { echo "no file"; touch /tmp/SKIP; exit 0; }
+          python3 - <<'PY'
+          import json, os
+          try:
+              d = json.load(open('update.json', encoding='utf-8'))
+          except Exception as e:
+              print('akyro:', e); open('/tmp/SKIP','w').write('1'); raise SystemExit
+          ver = str(d.get('version', ''))
+          prev = open('.bridge-version').read().strip() if os.path.exists('.bridge-version') else ''
+          if not ver or ver == prev:
+              print('kamia allagi'); open('/tmp/SKIP','w').write('1'); raise SystemExit
+          for path, text in (d.get('files') or {}).items():
+              if not path.startswith('src/') or '..' in path:
+                  print('paraleipo', path); continue
+              os.makedirs(os.path.dirname(path), exist_ok=True)
+              open(path, 'w', encoding='utf-8').write(text)
+              print('grafo', path)
+          open('.bridge-version', 'w').write(ver)
+          PY
+          rm -f update.json
+      - name: Xtisimo
+        run: |
+          if [ -f /tmp/SKIP ]; then echo "tipota neo"; exit 0; fi
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+          mkdir -p src/clone
+          if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
+          FONODIA_ROOT="$PWD/src" python3 src/build/build.py
+          rsync -a src/site-build/ ./
+          rm -rf src/site-build
+          python3 src/build/localise.py
+          if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
+      - name: Katachorisi
+        run: |
+          if [ -f /tmp/SKIP ]; then exit 0; fi
+          git config user.name "Phonodia Site"
+          git config user.email "contact@phonodia.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Enimerosi apo gefyra"
+          git push
