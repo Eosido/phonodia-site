@@ -55,6 +55,7 @@ def apply_to(path, m, nm):
         raw = unicodedata.normalize('NFC', s)   # some names arrive with decomposed accents
         key = raw if raw in m else ' '.join(raw.split())
         out = m.get(key, raw)
+        out = out.replace(' - Φωνωδία', ' - Phonodia')
         # names always run afterwards too, because a translated phrase can still
         # carry a Greek name inside it ("Μυρτώ Κονιδάκη & Νίκη Παπαγγελή: Voice")
         for g, l in nm.items():
