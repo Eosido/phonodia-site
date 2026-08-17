@@ -1013,10 +1013,39 @@ def build_text_pages():
     blocks = [(s['heading'] if s['heading'] != 'NONE' else None, paras(s['text'])) for s in r['sections'] if s['text']]
     text_page('en/support-our-projects', 'Support our Projects', blocks, 'en', '../../sponsor-us/')
     # Όροι / Απόρρητο
+    # Στοιχεία επιχείρησης — από τη Βεβαίωση Δραστηριοτήτων της ΑΑΔΕ (26/05/2025)
+    # που έστειλε ο Ιωάννης Ιδομενέως. Τίποτα εδώ δεν είναι εικασία.
+    LEGAL_EL = ('Στοιχεία επιχείρησης', [
+        'Επωνυμία: ΚΕΝΤΡΟ ΦΩΝΗΤΙΚΗΣ ΤΕΧΝΗΣ ΚΡΗΤΗΣ Α.Μ.Κ.Ε. — Διακριτικός τίτλος: ΦΩΝΩΔΙΑ',
+        'Νομική μορφή: Αστική Μη Κερδοσκοπική Εταιρεία. Καταστατικό επικυρωμένο από το '
+        'Πρωτοδικείο Ηρακλείου, αριθμός 1, 29 Ιανουαρίου 2025.',
+        'Έδρα: Ιερολοχιτών 3, 71305 Ηράκλειο Κρήτης',
+        'ΑΦΜ: 996445420 — ΔΟΥ Ηρακλείου',
+        'Ηλεκτρονικό ταχυδρομείο: contact@phonodia.com',
+        # ΦΠΑ: ΑΦΑΙΡΕΘΗΚΕ 17 Αυγ 2026. Η βεβαίωση ΑΑΔΕ (26/05/2025) έγραφε «απαλλασσόμενων
+        # μικρών επιχειρήσεων», όμως ο Ιωάννης Ιδομενέως διευκρίνισε ότι τα έσοδα από
+        # εισιτήρια ξεπερνούν το όριο. Καμία αναφορά σε ΦΠΑ μέχρι να απαντήσει ο λογιστής.
+        'Για καταγγελίες μπορείτε να απευθυνθείτε στη Γενική Γραμματεία Εμπορίου '
+        '(kataggelies.mindev.gov.gr, γραμμή καταναλωτή 1520) ή στον Συνήγορο του Καταναλωτή '
+        '(synigoroskatanaloti.gr).',
+    ])
+    LEGAL_EN = ('Company details', [
+        'Name: CRETAN CENTER OF VOCAL ARTS (Non-Profit Organization) — Trading as: PHONODIA',
+        'Legal form: Urban Non-Profit Company. Articles of association certified by the '
+        'Court of First Instance of Herakleion, no. 1, 29 January 2025.',
+        'Registered address: Ieroloxiton 3, 71305 Herakleion, Crete, Greece',
+        'Tax ID (ΑΦΜ): 996445420 — Tax Office of Herakleion',
+        'Email: contact@phonodia.com',
+        'Complaints may be addressed to the General Secretariat of Commerce '
+        '(kataggelies.mindev.gov.gr, consumer line 1520) or to the Greek Consumer Ombudsman '
+        '(synigoroskatanaloti.gr).',
+    ])
     for src, loc, ttl, lang, alt in [('/όροι-χρήσης/', 'όροι-χρήσης', 'Όροι Χρήσης', 'el', '../en/terms-of-use/'), ('/en/terms-of-use/', 'en/terms-of-use', 'Terms of Use', 'en', '../../όροι-χρήσης/'),
                                      ('/πολιτική-απορρήτου/', 'πολιτική-απορρήτου', 'Πολιτική Απορρήτου', 'el', '../en/privacy-policy/'), ('/en/5015-2/', 'en/privacy-policy', 'Privacy Policy', 'en', '../../πολιτική-απορρήτου/')]:
         r = pages[U + src]
         blocks = [(s['heading'] if s['heading'] not in ('NONE', None) and 'Κέντρο Φωνητικής' not in s['heading'] else None, paras(s['text'])) for s in r['sections'] if s['text'] and 'Η Φωνωδία λειτουργεί' not in (s['text'] or '')[:30] and 'Phonodia (Fónodia) operates' not in (s['text'] or '')[:40]]
+        if 'όροι' in loc or 'terms' in loc:
+            blocks.append(LEGAL_EL if lang == 'el' else LEGAL_EN)
         text_page(loc, ttl, blocks, lang, alt)
 
 # ====================================================================== 9. PRODUCTS / E-SHOP
@@ -1026,7 +1055,9 @@ def build_products():
     for p in prods:
         route('/product/%s/' % p['slug'], 'product/%s' % p['slug'])
         route('/en/product/%s/' % p['slug'], 'en/product/%s' % p['slug'])
-    route('/cart/', 'cart'); route('/en/cart/', 'en/cart'); route('/en/checkout/', 'en/cart')
+    route('/cart/', 'cart'); route('/en/cart/', 'en/cart')
+    route('/παραγγελία/', 'παραγγελία'); route('/en/order/', 'en/order')
+    route('/checkout/', 'παραγγελία'); route('/en/checkout/', 'en/order')
 
     def build_for(lang, shop_dirs, cart_dir):
         t = shop.T[lang]
@@ -1038,10 +1069,16 @@ def build_products():
             write_page(d, p['name'] + ' - Φωνωδία', html_, lang,
                        bodyclass='single single-product woocommerce woocommerce-page',
                        heading_html=heading_area(p['name'], t['shop']))
-        # cart
+        # καλάθι + σελίδα παραγγελίας (το ταμείο μένει πια μέσα στη σελίδα μας)
+        order_dir = 'en/order' if lang == 'en' else 'παραγγελία'
+        shop_url = SITE + ('/en/products/' if lang == 'en' else '/προϊόντα/')
         write_page(cart_dir, t['cart'] + ' - Φωνωδία',
-                   shop.cart_page(lang, local_href(cart_dir, SITE + ('/en/products/' if lang == 'en' else '/προϊόντα/'))),
+                   shop.cart_page(lang, local_href(cart_dir, shop_url),
+                                  local_href(cart_dir, SITE + ('/en/order/' if lang == 'en' else '/παραγγελία/'))),
                    lang, bodyclass='woocommerce woocommerce-cart', heading_html=heading_area(t['cart']))
+        write_page(order_dir, t['order'] + ' - Φωνωδία',
+                   shop.order_page(lang, local_href(order_dir, shop_url)),
+                   lang, bodyclass='woocommerce', heading_html=heading_area(t['order']))
         # listing pages
         for dirname, intro in shop_dirs:
             hrefs = {p['slug']: local_href(dirname, SITE + ('/en/product/' if lang == 'en' else '/product/') + p['slug'] + '/') for p in prods}
@@ -1136,6 +1173,9 @@ TYPOS = [
     ('της Φωνωδία ', 'της Φωνωδίας '),
     ('κεράσιες', 'κερασιές'),
     ('Φωνη \u2013', 'Φωνή \u2013'),           # όνομα προϊόντος: έλειπε ο τόνος
+    ('Ο ιστότοπος phonodia.com', 'Ο ιστότοπος phonodiavocalensemble.com'),
+    ('ΑΦΜ EL996445420', 'ΑΦΜ 996445420'),    # το EL είναι μορφή VIES· η ΑΜΚΕ είναι σε απαλλαγή
+    ('ΑΦΜ: EL996445420', 'ΑΦΜ: 996445420'),
 ]
 
 
@@ -1195,6 +1235,8 @@ if __name__ == '__main__':
     fix_typos()                   # ορθογραφικές διορθώσεις που ζήτησε ο Ιωάννης Ιδομενέως
     import translate_en           # εγκεκριμένες αγγλικές αποδόσεις (16 Αυγ 2026)
     translate_en.main()
+    import translate_fr           # γαλλικά: καθρέφτης των εγκεκριμένων αγγλικών (17 Αυγ 2026)
+    translate_fr.main()
     apply_local_images()           # οι φωτογραφίες ζουν πλέον μέσα στη σελίδα
 
 

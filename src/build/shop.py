@@ -46,7 +46,16 @@ T = {
                note='Η πληρωμή ολοκληρώνεται με ασφάλεια μέσω Viva — κάρτες, Apple Pay, Google Pay και IRIS.',
                ship='Η παραγωγή γίνεται κατά παραγγελία και η αποστολή γίνεται από τη Needleworks.',
                zoom='Πατήστε τη φωτογραφία για μεγέθυνση',
-               cartline='Το καλάθι σας'),
+               cartline='Το καλάθι σας',
+               order='Στοιχεία παραγγελίας', o_name='Ονοματεπώνυμο', o_email='Email',
+               o_phone='Τηλέφωνο', o_addr='Διεύθυνση παράδοσης', o_city='Πόλη',
+               o_zip='Ταχυδρομικός κώδικας', o_notes='Σημείωση (προαιρετικά)',
+               o_send='Αποστολή παραγγελίας', o_req='Συμπληρώστε τα υποχρεωτικά πεδία.',
+               o_empty='Το καλάθι σας είναι άδειο. Επιλέξτε πρώτα ένα προϊόν.',
+               o_ok='Η παραγγελία ετοιμάστηκε. Ανοίγει το πρόγραμμα email σας για να την στείλετε.',
+               o_intro='Συμπληρώστε τα στοιχεία σας. Θα λάβετε απάντηση με τον τρόπο πληρωμής '
+                       'και τον χρόνο παράδοσης. Δεν χρεώνεστε τίποτα σε αυτό το βήμα.',
+               o_cart='Η παραγγελία σας'),
     'en': dict(shop='Shop', cart='Cart', size='Size', color='Colour',
                qty='Quantity', add='Add to basket', added='Added to your basket',
                choose='Choose a size and a colour', empty='Your basket is currently empty.',
@@ -55,7 +64,16 @@ T = {
                note='Payment is completed securely through Viva — cards, Apple Pay, Google Pay and IRIS.',
                ship='Items are produced on demand and shipped by Needleworks.',
                zoom='Click the photo to enlarge',
-               cartline='Your basket'),
+               cartline='Your basket',
+               order='Order details', o_name='Full name', o_email='Email',
+               o_phone='Phone', o_addr='Delivery address', o_city='City',
+               o_zip='Postcode', o_notes='Note (optional)',
+               o_send='Send order', o_req='Please fill in the required fields.',
+               o_empty='Your basket is empty. Please choose a product first.',
+               o_ok='Your order is ready. Your email program is opening so you can send it.',
+               o_intro='Fill in your details. You will receive a reply with the payment method '
+                       'and the delivery time. Nothing is charged at this step.',
+               o_cart='Your order'),
 }
 
 def money(minor, unit=2):
@@ -162,16 +180,56 @@ def product_page(p, lang, cart_href, shop_href):
                    esc(t['note']), esc(t['ship']), shop_href, t['back'], cart_href, t['cart'])
 
 
-def cart_page(lang, shop_href):
+def cart_page(lang, shop_href, order_href):
     t = T[lang]
     return '''<div class="lc_content_full lc_swp_boxed lc_basic_content_padding woocommerce cart_page"
  data-empty="%s" data-total="%s" data-remove="%s" data-checkout="%s" data-wc="%s">
 <div id="cart_body"></div>
 <p class="shop_note">%s<br>%s</p>
 <p class="prod_back"><a href="%s">%s</a></p></div>''' % (
-        esc(t['empty']), esc(t['total']), esc(t['remove']), esc(t['checkout']), WC_CHECKOUT,
+        esc(t['empty']), esc(t['total']), esc(t['remove']), esc(t['checkout']), esc(order_href),
         esc(t['note']), esc(t['ship']), shop_href, t['back'])
 
+
+
+# Παραλήπτες της παραγγελίας. Ο Ιωάννης Ιδομενέως και η Needleworks που ετοιμάζει
+# την αποστολή. Όσο δεν υπάρχει υπηρεσία αποστολής email, η φόρμα ανοίγει το
+# πρόγραμμα αλληλογραφίας του πελάτη με το μήνυμα έτοιμο.
+ORDER_TO = 'contact@phonodia.com'
+ORDER_CC = 'info@needleworks.gr'
+ORDER_ENDPOINT = ''          # όταν στηθεί υπηρεσία, μπαίνει εδώ η διεύθυνσή της
+
+
+def order_page(lang, shop_href):
+    t = T[lang]
+    f = lambda i, lab, typ, req: (
+        '<p class="of_row"><label for="%s">%s%s</label>'
+        '<input id="%s" type="%s"%s></p>' % (i, esc(lab), ' *' if req else '', i, typ,
+                                             ' required' if req else ''))
+    fields = (f('of_name', t['o_name'], 'text', True) +
+              f('of_email', t['o_email'], 'email', True) +
+              f('of_phone', t['o_phone'], 'tel', True) +
+              f('of_addr', t['o_addr'], 'text', True) +
+              f('of_city', t['o_city'], 'text', True) +
+              f('of_zip', t['o_zip'], 'text', True) +
+              '<p class="of_row"><label for="of_notes">%s</label>'
+              '<textarea id="of_notes" rows="3"></textarea></p>' % esc(t['o_notes']))
+    return '''<div class="lc_content_full lc_swp_boxed lc_basic_content_padding order_page"
+ data-to="%s" data-cc="%s" data-endpoint="%s" data-empty="%s" data-req="%s" data-ok="%s"
+ data-total="%s" data-subject="%s">
+<p class="shop_intro">%s</p>
+<h3 class="of_h">%s</h3>
+<div id="order_cart"></div>
+<h3 class="of_h">%s</h3>
+<form class="order_form" id="order_form" novalidate>%s
+<button type="submit" id="of_send" class="lc_button lc_button_fill">%s</button>
+<p class="add_msg" id="of_msg"></p></form>
+<p class="shop_note">%s<br>%s</p>
+<p class="prod_back"><a href="%s">%s</a></p></div>''' % (
+        ORDER_TO, ORDER_CC, ORDER_ENDPOINT, esc(t['o_empty']), esc(t['o_req']), esc(t['o_ok']),
+        esc(t['total']), esc('Νέα παραγγελία' if lang == 'el' else 'New order'),
+        esc(t['o_intro']), esc(t['o_cart']), esc(t['order']), fields, esc(t['o_send']),
+        esc(t['note']), esc(t['ship']), shop_href, t['back'])
 
 CSS = r'''
 /* ---------------- e-shop ---------------- */
@@ -219,6 +277,15 @@ button.opt i{width:20px;height:20px;border-radius:50%;display:inline-block;borde
 .prod_back{margin-top:30px;font-size:14px}
 .prod_back a{color:#8a8a94;border-bottom:1px solid #d8d5d0}
 .prod_back a:hover{color:#ff9568}
+.of_h{font-size:20px;margin:34px 0 6px;color:#181b31}
+.order_form{max-width:560px}
+.of_row{margin:0 0 14px}
+.of_row label{display:block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#8a8a94;margin-bottom:6px}
+.of_row input,.of_row textarea{width:100%;font:inherit;font-size:15px;padding:11px 13px;border:1px solid #d8d5d0;border-radius:2px;background:#fff;color:#181b31}
+.of_row input:focus,.of_row textarea:focus{outline:none;border-color:#ff9568}
+.of_row input.bad,.of_row textarea.bad{border-color:#d9534f;background:#fff7f7}
+#of_send{display:inline-block;cursor:pointer;font:inherit;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;padding:14px 34px;border:1px solid #ff9568;background:#ff9568;color:#fff;border-radius:2px}
+#of_send:hover{background:#181b31;border-color:#181b31}
 table.cart_table{width:100%;border-collapse:collapse;margin:20px 0 26px}
 table.cart_table th{text-align:left;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8a8a94;font-weight:400;padding:0 0 12px;border-bottom:1px solid #e6e3de}
 table.cart_table td{padding:18px 0;border-bottom:1px solid #f0ede8;vertical-align:middle}
@@ -291,6 +358,65 @@ JS = r'''
       msg.textContent=btnA.getAttribute('data-added')||msg.getAttribute('data-added')||'';
       msg.textContent=pp.getAttribute('data-added')||'✓';
       msg.textContent='✓ '+(document.body.lang==='en'?'Added to your basket':'Προστέθηκε στο καλάθι');
+    };
+  }
+
+  // ---- order page
+  var op=document.querySelector('.order_page');
+  if(op){
+    var oc=op.querySelector('#order_cart'), c=read(), total=0;
+    if(!c.length){ oc.innerHTML='<p class="cart_empty">'+op.dataset.empty+'</p>'; }
+    else{
+      var rows='';
+      c.forEach(function(it){
+        var sum=it.price*it.q; total+=sum;
+        var v=[it.size,it.color].filter(Boolean).join(' \u00b7 ');
+        rows+='<tr><td class="ct_img"><img src="'+it.img+'" alt=""></td>'+
+          '<td><span class="ct_name">'+it.name+'</span><span class="ct_var">'+v+'</span></td>'+
+          '<td class="ct_price">'+money(it.price)+' \u00d7 '+it.q+'</td>'+
+          '<td class="ct_sum">'+money(sum)+'</td></tr>';
+      });
+      oc.innerHTML='<table class="cart_table"><tbody>'+rows+'</tbody></table>'+
+        '<div class="cart_total"><span>'+op.dataset.total+'</span><b>'+money(total)+'</b></div>';
+    }
+    var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
+    form.onsubmit=function(e){
+      e.preventDefault();
+      var cart=read();
+      if(!cart.length){ omsg.textContent=op.dataset.empty; return; }
+      var ids=['of_name','of_email','of_phone','of_addr','of_city','of_zip'], vals={}, ok=true;
+      ids.forEach(function(id){
+        var el=op.querySelector('#'+id), v=(el.value||'').trim();
+        if(!v){ el.classList.add('bad'); ok=false; } else { el.classList.remove('bad'); }
+        vals[id]=v;
+      });
+      if(!ok){ omsg.textContent=op.dataset.req; return; }
+      vals.of_notes=(op.querySelector('#of_notes').value||'').trim();
+      var lines=[], tot=0;
+      cart.forEach(function(it){
+        var sum=it.price*it.q; tot+=sum;
+        lines.push('- '+it.name+' | '+[it.size,it.color].filter(Boolean).join(' / ')+
+                   ' | x'+it.q+' | '+money(sum));
+      });
+      var body=[op.dataset.subject,'',lines.join('\n'),'',
+        op.dataset.total+': '+money(tot),'',
+        '---','',
+        vals.of_name,vals.of_email,vals.of_phone,
+        vals.of_addr+', '+vals.of_city+' '+vals.of_zip,
+        vals.of_notes?('','',vals.of_notes):''].join('\n');
+      var ep=op.dataset.endpoint;
+      if(ep){
+        var fd=new FormData();
+        fd.append('subject',op.dataset.subject); fd.append('message',body);
+        fd.append('email',vals.of_email); fd.append('name',vals.of_name);
+        fetch(ep,{method:'POST',body:fd}).then(function(){ omsg.textContent=op.dataset.ok; });
+        return;
+      }
+      var href='mailto:'+op.dataset.to+'?cc='+op.dataset.cc+
+               '&subject='+encodeURIComponent(op.dataset.subject)+
+               '&body='+encodeURIComponent(body);
+      omsg.textContent=op.dataset.ok;
+      window.location.href=href;
     };
   }
 

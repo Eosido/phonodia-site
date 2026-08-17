@@ -1942,6 +1942,15 @@ button.opt i{width:20px;height:20px;border-radius:50%;display:inline-block;borde
 .prod_back{margin-top:30px;font-size:14px}
 .prod_back a{color:#8a8a94;border-bottom:1px solid #d8d5d0}
 .prod_back a:hover{color:#ff9568}
+.of_h{font-size:20px;margin:34px 0 6px;color:#181b31}
+.order_form{max-width:560px}
+.of_row{margin:0 0 14px}
+.of_row label{display:block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#8a8a94;margin-bottom:6px}
+.of_row input,.of_row textarea{width:100%;font:inherit;font-size:15px;padding:11px 13px;border:1px solid #d8d5d0;border-radius:2px;background:#fff;color:#181b31}
+.of_row input:focus,.of_row textarea:focus{outline:none;border-color:#ff9568}
+.of_row input.bad,.of_row textarea.bad{border-color:#d9534f;background:#fff7f7}
+#of_send{display:inline-block;cursor:pointer;font:inherit;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;padding:14px 34px;border:1px solid #ff9568;background:#ff9568;color:#fff;border-radius:2px}
+#of_send:hover{background:#181b31;border-color:#181b31}
 table.cart_table{width:100%;border-collapse:collapse;margin:20px 0 26px}
 table.cart_table th{text-align:left;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8a8a94;font-weight:400;padding:0 0 12px;border-bottom:1px solid #e6e3de}
 table.cart_table td{padding:18px 0;border-bottom:1px solid #f0ede8;vertical-align:middle}
