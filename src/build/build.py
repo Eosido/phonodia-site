@@ -118,6 +118,8 @@ html{background:#f9f9f9}
 #heading_area .heading_content_container{position:relative;z-index:1}
 #heading_area.white_on_black h1,#heading_area.white_on_black h2{color:#fff}
 #lc_swp_content .page_text_white,#lc_swp_content .page_text_white p,#lc_swp_content .page_text_white strong{color:#fff}
+/* επικοινωνία: το email να διαβάζεται πάνω στη φωτογραφία */
+.has_canvas_image .contact_address_entry,.has_canvas_image .contact_address_data,.has_canvas_image .before_contact_entry{color:#fff!important;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9)}
 .lc_button a{color:inherit}
 .eventlist_day,.eventlist_month,.event_list_title,.event_buy_btn.lc_js_link{color:#181b31}
 .event_list_entry.event_venue,.event_list_entry.event_time{overflow:visible;line-height:1.4;height:auto}
@@ -250,8 +252,11 @@ header#lc_page_header.sticky_enabled .cust_page_logo{display:none!important}
 
 
 def drop_wp_assets(css):
-    """Καθαρίζει το φύλλο στυλ από αρχεία που ζητούσε ακόμα το WordPress."""
+    """Βγάζει από το φύλλο στυλ ό,τι ζητούσε ακόμα αρχεία από το WordPress.
+    Είναι γραμματοσειρές εικονιδίων και εικονίδια παλαιών προσθέτων που καμία
+    σελίδα μας δεν χρησιμοποιεί — έτσι η σελίδα μένει καθαρή και ανεξάρτητη."""
     before = css.count('phonodiavocalensemble.com/wp-content')
+    # 1) ολόκληρα τα @font-face που δείχνουν στο WordPress
     out, i = [], 0
     for m in re.finditer(r'@font-face\s*\{[^}]*\}', css):
         if 'phonodiavocalensemble.com/wp-content' in m.group(0):
@@ -259,9 +264,11 @@ def drop_wp_assets(css):
             i = m.end()
     out.append(css[i:])
     css = ''.join(out)
+    # 2) όσες μεμονωμένες url(...) απέμειναν
     css = re.sub(r'url\(\s*[\'"]?https://phonodiavocalensemble\.com/wp-content[^)]*\)',
                  'none', css)
-    print('drop_wp_assets: %d -> %d' % (before, css.count('phonodiavocalensemble.com/wp-content')))
+    print('drop_wp_assets: %d αναφορές WordPress -> %d'
+          % (before, css.count('phonodiavocalensemble.com/wp-content')))
     return css
 
 # ====================================================================== JS
@@ -350,6 +357,13 @@ for hd in (HEADER_HOME, HEADER_INNER):
             a.text = SHOP_LABEL
             lang_li.addprevious(li)
 
+# 17 Αυγ 2026: το Blog κρύβεται από το μενού (οι σελίδες παραμένουν έτοιμες)
+HIDE_MENU = {'Blog'}
+for hd in (HEADER_HOME, HEADER_INNER):
+    for li in hd.xpath('.//ul[contains(@class,"menu")]/li'):
+        if (li.xpath('normalize-space(./a)') or '') in HIDE_MENU:
+            li.getparent().remove(li)
+
 # EN menu translation table: EL label -> (EN label, EN href)
 EN_MENU = {
     'Το Σύνολο': ('The Ensemble', SITE + '/en/about-the-ensemble/'),
@@ -357,7 +371,7 @@ EN_MENU = {
     'Βιογραφικό': ('Biography', SITE + '/en/about-the-ensemble/'),
     'Είπαν για εμάς': ('Testimonials', SITE + '/en/testimonials/'),
     'Εμφανίσεις': ('Performances', SITE + '/en/performances/'),
-    'Μέλη': ('Our Team', SITE + '/en/members/'),
+    'Μέλη': ('Members', SITE + '/en/members/'),
     'Blog': ('Blog', SITE + '/en/blog/'),
     'Media': ('Media', '#'),
     'Φωτογραφικό Υλικό': ('Photos', SITE + '/en/photos/'),
@@ -386,6 +400,8 @@ def localise(el, from_dir, lang, alt_url=None):
                 a.set('href', alt_url or rel(from_dir, 'en'))
                 a.set('title', 'English')
             a.set('data-langswitch', '1')
+    for a in el.xpath('.//a[contains(@class,"cart-contents")]'):
+        a.set('href', SITE + ('/en/cart/' if lang == 'en' else '/cart/'))
     for a in el.xpath('.//a[@href]'):
         if a.get('data-langswitch'):
             del a.attrib['data-langswitch']
@@ -411,6 +427,9 @@ def localise(el, from_dir, lang, alt_url=None):
         a.set('href', local_href(from_dir, h))
     for d in el.xpath('.//*[@data-href]'):
         d.set('data-href', local_href(from_dir, d.get('data-href')))
+    if lang == 'en':
+        for a in el.xpath('.//a[contains(@class,"logo")]|.//*[contains(@id,"logo")]//a'):
+            a.set('href', rel(from_dir, 'en'))
     if lang == 'en':
         for p in el.xpath('.//p|.//div|.//span|.//h2|.//a'):
             if p.text and p.text.strip() in FOOTER_EN:
@@ -537,6 +556,26 @@ members = load_json(CLONE + '/data-members.json')
 pages = {r['url']: r for r in load_json(CLONE + '/harvest-pages.json')}
 tes_el = load_json(CLONE + '/testimonials-el.json')
 harvest_events = {r['url']: r for r in load_json(CLONE + '/harvest-events.json')}
+
+# 17 Αυγ 2026 — νέα συναυλία που έδωσε ο Ιωάννης Ιδομενέως. Αφίσα ΠΡΟΣΩΡΙΝΗ (η αφίσα
+# της «Πνοής» του Ρεθύμνου) μέχρι να έρθει η κανονική. Ώρα: δεν δόθηκε ακόμη.
+NEW_EVENT_URL = SITE + '/js_events/πνοή-αρχάνες-2026/'
+NEW_EVENT = {'title': 'Πνοή', 'date': 'October 24, 2026',
+             'venue': 'Συνεδριακό Κέντρο «Δίας», Αρχάνες', 'meta': 'Διοργάνωση: Περιφέρεια Κρήτης',
+             'body': 'Χορωδιακή Συναυλία Φωνητικού Συνόλου ΦΩΝΩΔΙΑ «ΠΝΟΗ» || Συνεδριακό Κέντρο «Δίας», Αρχάνες || Διοργάνωση: Περιφέρεια Κρήτης',
+             'poster': 'https://phonodiavocalensemble.com/wp-content/uploads/2026/05/IMG_20260527_134003_888.jpg',
+             'ticket': None, 'url': NEW_EVENT_URL}
+events.insert(0, NEW_EVENT)
+harvest_events[NEW_EVENT_URL] = {'url': NEW_EVENT_URL, 'type': 'event', 'title': 'Πνοή', 'links': []}
+route('/js_events/πνοή-αρχάνες-2026/', 'js_events/πνοή-αρχάνες-2026')
+
+# κάθε σελίδα συναυλίας αποκτά αγγλικό δίδυμο (en/js_events/...) ώστε από το αγγλικό
+# μενού να μένουμε σε αγγλικό περιβάλλον
+for _u, _r in harvest_events.items():
+    if _r['type'] == 'event':
+        _p = up.unquote(_u).replace(SITE, '').strip('/')
+        EN_XLATE[_p] = 'en/' + _p
+        route('/en/' + _p + '/', 'en/' + _p)
 el_artists = []
 for f in ('harvest-artists-1.json', 'harvest-artists-2.json', 'harvest-artists-3.json'):
     el_artists += load_json(CLONE + '/' + f)
@@ -626,6 +665,7 @@ def build_home_en():
         ('Διαβάστε περισσότερα', 'Read more'),
         (SITE + '/el/events/', SITE + '/en/performances/'),
         (SITE + '/about/', SITE + '/en/a-few-words-about-the-ensemble/'),
+        (SITE + '/el/about/', SITE + '/en/a-few-words-about-the-ensemble/'),
     ]
     for a, b in repl:
         h = h.replace(a, b)
@@ -644,7 +684,7 @@ def build_home_en():
         if el.text and re.sub(r'\s+', ' ', el.text).strip().startswith('Η Φωνωδία λειτουργεί'):
             el.text = FOOTER_EN[list(FOOTER_EN)[0]]
     h = (frag.text or '') + ''.join(tostr(ch) for ch in frag)
-    h = relink(h, 'en')
+    h = relink(h, 'en', EN_XLATE)
     write_page('en', 'Phonodia Vocal Ensemble', h, 'en', home=True, bodyclass='page page-template-template-visual-composer', alt_url='../')
 
 # ====================================================================== 2. MEMBERS
@@ -694,7 +734,7 @@ def build_members():
             el.text = txt_map[el.text.strip()]
     h = (c.text or '') + ''.join(tostr(ch) for ch in c if isinstance(ch.tag, str))
     h = relink(h, 'en/members')
-    write_page('en/members', 'Our Team - Φωνωδία', h, 'en', bodyclass='page', alt_url='../../μέλη/')
+    write_page('en/members', 'Members - Φωνωδία', h, 'en', bodyclass='page', alt_url='../../μέλη/')
 
 # ====================================================================== 3. ARTIST SINGLE PAGES
 def build_artists():
@@ -713,7 +753,7 @@ def build_artists():
         img = '<div class="artist_single_img"><img src="%s" alt="%s"></div>' % (esc(photo), esc(r['title'])) if photo else ''
         content = '<div class="lc_content_full lc_swp_boxed lc_basic_content_padding page_text"><div class="artist_bio_wrap">%s%s</div></div>' % (img, body_html)
         back = SITE + ('/en/members/' if lang == 'en' else '/μέλη/')
-        content += '<div class="lc_swp_boxed" style="padding-bottom:60px"><div class="lc_button"><a href="%s">%s</a></div></div>' % (local_href(p, back), 'Our Team' if lang == 'en' else 'Μέλη')
+        content += '<div class="lc_swp_boxed" style="padding-bottom:60px"><div class="lc_button"><a href="%s">%s</a></div></div>' % (local_href(p, back), 'Members' if lang == 'en' else 'Μέλη')
         write_page(p, r['title'] + ' - Φωνωδία', content, lang, bodyclass='single single-js_artist', heading_html=heading_area(r['title'], role or None))
     for r in el_artists:
         if r['title'].strip() in ('Σιμος',): continue
@@ -740,10 +780,10 @@ def build_events():
     tpl = prep(inner_doc.get_element_by_id('lc_swp_content'))
     ev_by_title = {}
     for u, r in harvest_events.items():
-        if r['type'] == 'event': ev_by_title[r['title']] = (u, r)
+        if r['type'] == 'event' and u != NEW_EVENT_URL: ev_by_title[r['title']] = (u, r)
     listing = []
     for e in events:
-        u, r = ev_by_title[e['title']]
+        u, r = (e['url'], harvest_events[e['url']]) if e.get('url') else ev_by_title[e['title']]
         p = up.unquote(u).replace(SITE, '').strip('/')
         c = copy.deepcopy(tpl)
         # date/time/venue/location entries
@@ -775,9 +815,7 @@ def build_events():
         btnwrap = scp.xpath('./div[contains(@class,"lc_event_entry")]')[0]
         for ch in list(btnwrap): btnwrap.remove(ch)
         links = [l for l in (r.get('links') or []) if not any(x in l for x in ('twitter.com/intent', 'facebook.com/sharer', 'pinterest.com/pin', 'youtube.com/embed', 'instagram.com/phonodia', 'youtube.com/channel'))]
-        if e.get('ticket'):
-            b = etree.SubElement(btnwrap, 'div'); b.set('class', 'lc_button'); a = etree.SubElement(b, 'a'); a.set('href', e['ticket']); a.set('target', '_blank')
-            a.text = 'Facebook Event' if 'fb.me' in e['ticket'] or 'facebook' in e['ticket'] else 'Εισιτήρια'
+        # 17 Αυγ 2026: κανένα κουμπί «Εισιτήρια» — οι συναυλίες έχουν τελειώσει
         for l in links:
             if l == e.get('ticket'): continue
             if 'facebook.com/photo' in l or 'fb.me' in l or 'facebook.com/events' in l:
@@ -807,9 +845,9 @@ def build_events():
         for ch in list(er): er.remove(ch)
         if e.get('poster'):
             img = etree.SubElement(er, 'img'); img.set('src', e['poster']); img.set('alt', e['title']); img.set('loading', 'lazy'); img.set('class', 'attachment-large size-large wp-post-image'); img.set('itemprop', 'image')
-        h = (c.text or '') + ''.join(tostr(ch) for ch in c if isinstance(ch.tag, str))
-        h = relink(h, p)
-        write_page(p, e['title'] + ' - Φωνωδία', h, 'el', bodyclass='single single-js_events', heading_html=heading_area(e['title']))
+        h0 = (c.text or '') + ''.join(tostr(ch) for ch in c if isinstance(ch.tag, str))
+        write_page(p, e['title'] + ' - Φωνωδία', relink(h0, p), 'el', bodyclass='single single-js_events', heading_html=heading_area(e['title']), alt_url='../../en/' + p + '/')
+        write_page('en/' + p, e['title'] + ' - Φωνωδία', relink(h0, 'en/' + p, EN_XLATE), 'en', bodyclass='single single-js_events', heading_html=heading_area(e['title']), alt_url='../../../' + p + '/')
         listing.append((e, u, loc, pin, time_txt))
     # events archive (EL + EN) – theme's events_list markup
     def archive(local_dir, lang):
@@ -822,14 +860,12 @@ def build_events():
             # use original size (300 variant may not exist for all) → use poster itself
             thumb = e.get('poster') or ''
             buy = ''
-            if e.get('ticket'):
-                buy = '<div class="event_buy_btn lc_js_link" data-href="%s" data-target="_blank">%s</div>' % (esc(e['ticket']), 'Εισιτηρια εδω' if lang == 'el' else 'Tickets here')
             items += '''<li class="single_event_list clearfix"><a href="%s">
 <div class="event_list_entry event_date"><div class="text_center event_list_date_container"><div class="eventlist_day">%s</div><div class="eventlist_month">%s</div><div class="eventlist_year">%d</div></div></div>
 <div class="event_list_entry event_title_img clearfix">%s<div class="evnt_list_title_loc"><div class="event_list_title">%s</div><div class="event_list_location"> %s </div></div></div>
 <div class="event_list_entry event_venue"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> %s</div>
 <div class="event_list_entry event_time"><i class="far fa-clock" aria-hidden="true"></i> %s</div>
-<div class="event_list_entry event_buy">%s</div></a></li>''' % (local_href(local_dir, u), day, mon, d[0],
+<div class="event_list_entry event_buy">%s</div></a></li>''' % (local_href(local_dir, u, EN_XLATE if lang == 'en' else None), day, mon, d[0],
                 ('<div class="event_img"><img src="%s" alt="%s"></div>' % (esc(thumb), esc(e['title']))) if thumb else '',
                 esc(e['title']), esc(e['venue'] or ''), esc(pin), esc(time_txt), buy)
         content = '<div class="lc_content_full lc_swp_boxed"><ul class="events_list">%s</ul></div>' % items
@@ -906,6 +942,9 @@ def build_gallery():
                    heading_html=heading_area(ten, 'Concert'), alt_url=rel(pen, p))
 
 # ====================================================================== 7. CONTACT
+CONSENT_EL = 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου για την επικοινωνία μας.'
+CONSENT_EN = 'I agree that my details may be used for our communication.'
+
 def build_contact():
     doc = parse(SAVED + '/contact.htm')
     c = prep(doc.get_element_by_id('lc_swp_content'))
@@ -916,13 +955,14 @@ def build_contact():
     CANV = SITE + '/wp-content/uploads/2025/05/IMG_3091-AM-scaled.jpg'
     # EL — ο τίτλος που ζήτησε ο Ιωάννης (διαφορά #11)
     el_ = h.replace('Ελάτε σε επικοινωνία', 'Επικοινωνήστε μαζί μας')
+    el_ = el_.replace('Συμφωνείτε στην επεξεργασία των προσωπικών σας δεδομένων', CONSENT_EL)
     write_page('contact-2', 'Επικοινωνία - Φωνωδία', relink(el_, 'contact-2'), 'el', bodyclass='page page-template-template-visual-composer-header', heading_html=heading_of(doc), alt_url='../en/contact/', canvas_img=CANV)
     # EN — οι αποδόσεις είναι αυτολεξεί από τη ζωντανή αγγλική σελίδα /en/contact/
     en = h
     for a, b in [('Ελάτε σε επικοινωνία', 'Feel free to contact us'),
                  ('Ακολουθήστε μας στα social ή στείλτε μας email.', 'Follow us on social media or send us an email'),
                  ('Στείλτε μας ένα μήνυμα', 'Send us a message'),
-                 ('Συμφωνείτε στην επεξεργασία των προσωπικών σας δεδομένων', 'I consent to the processing of my personal data'),
+                 ('Συμφωνείτε στην επεξεργασία των προσωπικών σας δεδομένων', CONSENT_EN),
                  # η διεύθυνση στη γραφή που χρησιμοποιεί ήδη το υποσέλιδο της ίδιας της σελίδας
                  ('Ιερολοχιτών 3, 71305, Ηράκλειο Κρήτης', 'Ieroloxiton 3, 71305, Herakleion, Crete'),
                  ('Νέο μήνυμα από την ιστοσελίδα', 'New message from the website'),
@@ -952,7 +992,7 @@ def build_text_pages():
     def about(local_dir, title, cap, ps, lang, alt):
         content = '<div class="lc_content_full lc_swp_boxed lc_basic_content_padding page_text"><div class="about_two"><div class="about_left"><h3>%s</h3><img src="%s" alt="%s"></div><div class="about_right">%s</div></div></div>' % (esc(cap), esc(tree), esc(cap), ''.join('<p>%s</p>' % esc(x) for x in ps))
         write_page(local_dir, title, content, lang, bodyclass='page', heading_html=heading_area(title), alt_url=alt)
-    about('about', 'Λίγα λόγια για το σύνολο', 'Το δέντρο της ΦΩΝΩΔΙΑΣ', paras(sec(U + '/about/', 'Λίγα λόγια για το σύνολο'))[1:], 'el', '../en/a-few-words-about-the-ensemble/')
+    about('about', 'Λίγα λόγια για το σύνολο', 'Το δένδρο της ΦΩΝΩΔΙΑΣ', [x.replace('δέντρο', 'δένδρο').replace('δέντρα', 'δένδρα') for x in paras(sec(U + '/about/', 'Λίγα λόγια για το σύνολο'))[1:]], 'el', '../en/a-few-words-about-the-ensemble/')
     about('en/a-few-words-about-the-ensemble', 'A few words about the ensemble', 'The Tree of PHONODIA', paras(sec(U + '/en/a-few-words-about-the-ensemble/', 'The Tree of PHONODIA')), 'en', '../../about/')
     # Βιογραφικό — φωτογραφία φόντου + λευκά γράμματα, όπως στο πραγματικό DOM
     CANV_BIO = U + '/wp-content/uploads/2025/06/ΦΩΝΩΔΙΑ-e1750335264323.jpg'

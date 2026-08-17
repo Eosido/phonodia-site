@@ -1769,6 +1769,8 @@ html{background:#f9f9f9}
 #heading_area .heading_content_container{position:relative;z-index:1}
 #heading_area.white_on_black h1,#heading_area.white_on_black h2{color:#fff}
 #lc_swp_content .page_text_white,#lc_swp_content .page_text_white p,#lc_swp_content .page_text_white strong{color:#fff}
+/* επικοινωνία: το email να διαβάζεται πάνω στη φωτογραφία */
+.has_canvas_image .contact_address_entry,.has_canvas_image .contact_address_data,.has_canvas_image .before_contact_entry{color:#fff!important;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.85),0 0 2px rgba(0,0,0,.9)}
 .lc_button a{color:inherit}
 .eventlist_day,.eventlist_month,.event_list_title,.event_buy_btn.lc_js_link{color:#181b31}
 .event_list_entry.event_venue,.event_list_entry.event_time{overflow:visible;line-height:1.4;height:auto}
