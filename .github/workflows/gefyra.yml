@@ -1,37 +1,38 @@
 name: Gefyra
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: gefyra
+  cancel-in-progress: false
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - run: pip install lxml pillow
-      - name: Elenchos
+      - name: Etoimasia
         run: |
-          rm -f /tmp/SKIP
-          curl -fsSL -A "Mozilla/5.0" -o /tmp/folder.html "https://drive.google.com/embeddedfolderview?id=1NJOdm9VAaSxow-A54s3oA-OVP7ztgFCc#list" || { echo "no folder"; touch /tmp/SKIP; exit 0; }
-          python3 - <<'PY'
-          import re, os, json, subprocess
+          rm -f /tmp/APPLIED
+          cat > /tmp/bridge.py <<'PY'
+          import re, os, json, subprocess, sys
           html = open('/tmp/folder.html', encoding='utf-8', errors='replace').read()
           ent = re.findall(r'id="entry-([\w-]+)".*?flip-entry-title">([^<]+)<', html, re.S)
-          print('entries:', [n for _, n in ent])
           best = None
           for fid, name in ent:
               m = re.fullmatch(r'update-(\d+)\.json', name.strip())
               if m and (best is None or int(m.group(1)) > best[0]):
                   best = (int(m.group(1)), fid)
           if not best:
-              print('den vrethike update-N.json'); open('/tmp/SKIP','w').write('1'); raise SystemExit
+              sys.exit(9)
           ver, fid = best
           prev = open('.bridge-version').read().strip() if os.path.exists('.bridge-version') else ''
-          print('newest', ver, 'prev', prev)
           if str(ver) == prev:
-              print('kamia allagi'); open('/tmp/SKIP','w').write('1'); raise SystemExit
+              sys.exit(9)
           subprocess.run(['curl','-fsSL','-A','Mozilla/5.0','-o','/tmp/update.json',
                           'https://drive.usercontent.google.com/download?id=%s&export=download' % fid], check=True)
           d = json.load(open('/tmp/update.json', encoding='utf-8'))
@@ -47,16 +48,26 @@ jobs:
               t = open(path, encoding='utf-8').read()
               for old, new in pairs:
                   if t.count(old) != 1:
-                      raise SystemExit('lathos patch sto %s (%d)' % (path, t.count(old)))
+                      sys.exit('lathos patch sto %s (%d)' % (path, t.count(old)))
                   t = t.replace(old, new)
               open(path, 'w', encoding='utf-8').write(t)
               print('epidiorthosi', path)
           open('.bridge-version', 'w').write(str(ver))
+          open('/tmp/APPLIED', 'w').write(str(ver))
           print('NOTE:', d.get('note', ''))
           PY
+      - name: Anamoni
+        run: |
+          for i in $(seq 1 9); do
+            if curl -fsSL -A "Mozilla/5.0" -o /tmp/folder.html "https://drive.google.com/embeddedfolderview?id=1NJOdm9VAaSxow-A54s3oA-OVP7ztgFCc#list"; then
+              if python3 /tmp/bridge.py; then echo "efarmostike"; break; fi
+            fi
+            echo "tipota neo ($i)"
+            sleep 30
+          done
       - name: Xtisimo
         run: |
-          if [ -f /tmp/SKIP ]; then echo "tipota neo"; exit 0; fi
+          if [ ! -f /tmp/APPLIED ]; then echo "tipota neo"; exit 0; fi
           sudo apt-get update -qq && sudo apt-get install -y ffmpeg
           mkdir -p src/clone
           if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
@@ -67,7 +78,7 @@ jobs:
           if [ -f img/manifest.json ]; then cp img/manifest.json src/clone/img-manifest.json; fi
       - name: Katachorisi
         run: |
-          if [ -f /tmp/SKIP ]; then exit 0; fi
+          if [ ! -f /tmp/APPLIED ]; then exit 0; fi
           git config user.name "Phonodia Site"
           git config user.email "contact@phonodia.com"
           git add -A
