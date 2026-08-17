@@ -1,0 +1,35 @@
+name: Ξεπακετάρισμα ιστοσελίδας
+
+on:
+  push:
+    paths:
+      - 'site.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Anoigma
+        run: |
+          if [ ! -f site.zip ]; then
+            echo "Δεν υπάρχει site.zip"
+            exit 0
+          fi
+          mkdir -p _out
+          unzip -q -o site.zip -d _out
+          rsync -a --exclude '.git' --exclude '.github' _out/ ./
+          rm -rf _out site.zip
+
+      - name: Katachorisi
+        run: |
+          git config user.name "Phonodia Site"
+          git config user.email "contact@phonodia.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Enimerosi istoselidas"
+          git push
