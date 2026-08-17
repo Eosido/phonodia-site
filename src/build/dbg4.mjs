@@ -1,0 +1,15 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const pg = await b.newPage({ viewport:{width:1366,height:900} });
+const errs=[]; pg.on('pageerror',e=>errs.push(String(e)));
+await pg.route('**', r => r.request().url().startsWith('file:')?r.continue():r.abort());
+await pg.goto('file:///home/claude/fonodia/site-build/index.html');
+await pg.click('.swp_after_video_btn');
+await pg.waitForTimeout(300);
+console.log('modal open:', await pg.evaluate(()=>{const m=document.getElementById('swp_video_modal'); return m? m.className+' '+m.querySelector('iframe').src : 'none'}));
+await pg.click('#swp_video_modal .close'); await pg.hover('nav.classic_menu li.menu-item-has-children');
+await pg.waitForTimeout(200);
+console.log('submenu display:', await pg.evaluate(()=>getComputedStyle(document.querySelector('nav.classic_menu li.menu-item-has-children > ul.sub-menu')).display));
+console.log('h1 font:', await pg.evaluate(()=>getComputedStyle(document.querySelector('#hero h1')).fontFamily));
+console.log(errs);
+await b.close();

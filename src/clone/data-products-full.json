@@ -1,0 +1,449 @@
+[
+  {
+    "id": 6538,
+    "name": "Φωνη – Kids",
+    "permalink": "https://phonodiavocalensemble.com/product/%cf%86%cf%89%ce%bd%ce%b7-kids/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": null,
+    "short_description": null,
+    "categories": [],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/white.png"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "BLACK",
+          "TURQUOISE",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 3,
+    "error": null
+  },
+  {
+    "id": 6525,
+    "name": "Φωνη – Hoodie – Unisex",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-hoodie/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "",
+    "short_description": "",
+    "categories": [
+      "Gents",
+      "Ladies"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/Untitled-1.png"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "BURGUNDY"
+        ]
+      }
+    ],
+    "variations_count": 1,
+    "error": null
+  },
+  {
+    "id": 6016,
+    "name": "Φωνη – Ladies",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-%cf%86%cf%89%ce%bd%ce%b7-woman/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "",
+    "short_description": "",
+    "categories": [],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_white.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "BLACK",
+          "LIGHT BLUE",
+          "PISTACHIO",
+          "RED",
+          "ROYAL",
+          "SKY",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 8,
+    "error": null
+  },
+  {
+    "id": 5880,
+    "name": "Φωνη &#8211; Gents",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-%cf%86%cf%89%ce%bd%ce%b7-men/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": null,
+    "short_description": null,
+    "categories": [
+      "Gents",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_white_EMPROS.png"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "CAROLINE BLUE",
+          "DAISY",
+          "FOREST GREEN",
+          "HELICONA",
+          "IRIS",
+          "JADE",
+          "LIGHT BLUE",
+          "MAROON",
+          "NAVY",
+          "PURPLE",
+          "ROYAL",
+          "SAPPHIRE",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 14,
+    "error": null
+  },
+  {
+    "id": 5415,
+    "name": "Phonodia in Tokyo – Kids",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-in-tokyo-kids/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "<p data-start=\"115\" data-end=\"339\">Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το <strong data-start=\"208\" data-end=\"229\">PHONODIA in Tokyo</strong> είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδία στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κεράσιες και τη μαγεία του Τόκιο.</p> <p data-start=\"341\" data-end=\"604\">Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κεράσιας, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.</p> <p data-start=\"606\" data-end=\"755\">Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.</p> <p data-start=\"757\" data-end=\"776\"><strong data-start=\"757\" data-end=\"776\">Χαρακτηριστικά:</strong></p> <ul> <li data-start=\"779\" data-end=\"794\">Unisex γραμμή</li> <li data-start=\"797\" data-end=\"811\">100% βαμβάκι</li> <li data-start=\"830\" data-end=\"855\">Εκτύπωση υψηλής αντοχής</li> <li data-start=\"858\" data-end=\"887\">Άνετη και μοντέρνα εφαρμογή</li> </ul> <p data-start=\"889\" data-end=\"1004\">Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.</p>",
+    "short_description": null,
+    "categories": [
+      "Kids",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/KIDS_TOKYO2_white-1.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "BLACK",
+          "TURQUOISE",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 3,
+    "error": null
+  },
+  {
+    "id": 5389,
+    "name": "The Great Journey in Tokyo – Ladies",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-the-great-journey-in-tokyo-woman/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "<p data-start=\"168\" data-end=\"385\">Ένα statement t-shirt εμπνευσμένο από την ιαπωνική κουλτούρα, τη δύναμη της φύσης και την ποίηση του ταξιδιού. Το <strong data-start=\"282\" data-end=\"335\">PHONODIA – The Great Journey in Tokyo (July 2025)</strong> είναι το αναμνηστικό merch του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025.</p> <p data-start=\"387\" data-end=\"788\">Στο μπροστινό μέρος δεσπόζει μια καλλιτεχνική απεικόνιση δέντρου κερασιάς (sakura) σε έντονο κόκκινο και μαύρο, σύμβολο αναγέννησης, ομορφιά και εφήμερης στιγμής. Στο πίσω μέρος, ο χαρακτηριστικός κόκκινος κύκλος εμπνευσμένος από τον ιαπωνικό ήλιο πλαισιώνει το λουλούδι της κερασιάς, μαζί με τυπογραφία σε αγγλικά, ιαπωνικά και ελληνικά, δημιουργώντας ένα ισχυρό οπτικό και συναισθηματικό αποτύπωμα.</p> <p data-start=\"790\" data-end=\"920\">Η φράση<br data-start=\"797\" data-end=\"800\" /><em data-start=\"800\" data-end=\"844\">«άνθη κερασιάς κρατώ και σου λέω σ' αγαπώ»</em><br data-start=\"844\" data-end=\"847\" />προσθέτει ποιητική διάσταση και κάνει το t-shirt μοναδικό και συλλεκτικό.</p> <p data-start=\"757\" data-end=\"776\"><strong data-start=\"757\" data-end=\"776\">Χαρακτηριστικά:</strong></p> <ul> <li data-start=\"779\" data-end=\"794\">Unisex γραμμή</li> <li data-start=\"797\" data-end=\"811\">100% βαμβάκι</li> <li data-start=\"830\" data-end=\"855\">Εκτύπωση υψηλής αντοχής</li> <li data-start=\"858\" data-end=\"887\">Άνετη και μοντέρνα εφαρμογή</li> </ul> <p data-start=\"922\" data-end=\"1075\">Κατασκευασμένο από ποιοτικό βαμβάκι, προσφέρει άνετη εφαρμογή και αντοχή στον χρόνο — ιδανικό για καθημερινό street style αλλά και ξεχωριστές εμφανίσεις</p>",
+    "short_description": null,
+    "categories": [
+      "Ladies",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_white.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "BLACK",
+          "LIGHT BLUE",
+          "PISTACHIO",
+          "RED",
+          "ROYAL",
+          "SKY",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 8,
+    "error": null
+  },
+  {
+    "id": 5359,
+    "name": "Phonodia in Tokyo – Ladies",
+    "permalink": "https://phonodiavocalensemble.com/product/phonodia-in-tokyo-woman/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "<p data-start=\"115\" data-end=\"339\">Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το <strong data-start=\"208\" data-end=\"229\">PHONODIA in Tokyo</strong> είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κερασιές και τη μαγεία του Τόκιο.</p> <p data-start=\"341\" data-end=\"604\">Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κερασιάς, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.</p> <p data-start=\"606\" data-end=\"755\">Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.</p> <p data-start=\"757\" data-end=\"776\"><strong data-start=\"757\" data-end=\"776\">Χαρακτηριστικά:</strong></p> <ul> <li data-start=\"779\" data-end=\"794\">Unisex γραμμή</li> <li data-start=\"797\" data-end=\"811\">100% βαμβάκι</li> <li data-start=\"830\" data-end=\"855\">Εκτύπωση υψηλής αντοχής</li> <li data-start=\"858\" data-end=\"887\">Άνετη και μοντέρνα εφαρμογή</li> </ul> <p data-start=\"889\" data-end=\"1004\">Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.</p>",
+    "short_description": null,
+    "categories": [
+      "Ladies",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_white.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "BLACK",
+          "LIGHT BLUE",
+          "PISTACHIO",
+          "RED",
+          "ROYAL",
+          "SKY",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 8,
+    "error": null
+  },
+  {
+    "id": 5313,
+    "name": "The Great Journey in Tokyo &#8211; Gents",
+    "permalink": "https://phonodiavocalensemble.com/product/tokyo-i-men-2/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "<p data-start=\"168\" data-end=\"385\">Ένα statement t-shirt εμπνευσμένο από την ιαπωνική κουλτούρα, τη δύναμη της φύσης και την ποίηση του ταξιδιού. Το <strong data-start=\"282\" data-end=\"335\">PHONODIA – The Great Journey in Tokyo (July 2025)</strong> είναι το αναμνηστικό merch του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025.</p> <p data-start=\"387\" data-end=\"788\">Στο μπροστινό μέρος δεσπόζει μια καλλιτεχνική απεικόνιση δέντρου κερασιάς (sakura) σε έντονο κόκκινο και μαύρο, σύμβολο αναγέννησης, ομορφιάς και εφήμερης στιγμής. Στο πίσω μέρος, ο χαρακτηριστικός κόκκινος κύκλος εμπνευσμένος από τον ιαπωνικό ήλιο πλαισιώνει το λουλούδι της κερασιάς, μαζί με τυπογραφία σε αγγλικά, ιαπωνικά και ελληνικά, δημιουργώντας ένα ισχυρό οπτικό και συναισθηματικό αποτύπωμα.</p> <p data-start=\"790\" data-end=\"920\">Η φράση<br data-start=\"797\" data-end=\"800\" /><em data-start=\"800\" data-end=\"844\">«άνθη κερασιάς κρατώ και σου λέω σ' αγαπώ»</em><br data-start=\"844\" data-end=\"847\" />προσθέτει ποιητική διάσταση και κάνει το t-shirt μοναδικό και συλλεκτικό.</p> <p data-start=\"757\" data-end=\"776\"><strong data-start=\"757\" data-end=\"776\">Χαρακτηριστικά:</strong></p> <ul> <li data-start=\"779\" data-end=\"794\">Unisex γραμμή</li> <li data-start=\"797\" data-end=\"811\">100% βαμβάκι</li> <li data-start=\"830\" data-end=\"855\">Εκτύπωση υψηλής αντοχής</li> <li data-start=\"858\" data-end=\"887\">Άνετη και μοντέρνα εφαρμογή</li> </ul> <p data-start=\"922\" data-end=\"1075\">Κατασκευασμένο από ποιοτικό βαμβάκι, προσφέρει άνετη εφαρμογή και αντοχή στον χρόνο — ιδανικό για καθημερινό street style αλλά και ξεχωριστές εμφανίσεις</p>",
+    "short_description": "",
+    "categories": [
+      "Gents",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_white.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "CAROLINE BLUE",
+          "CHERRY RED",
+          "DAISY",
+          "FOREST GREEN",
+          "HELICONA",
+          "IRIS",
+          "JADE",
+          "LIGHT BLUE",
+          "MAROON",
+          "NAVY",
+          "PURPLE",
+          "ROYAL",
+          "SAPPHIRE",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 15,
+    "error": null
+  },
+  {
+    "id": 5292,
+    "name": "Phonodia in Tokyo – Gents",
+    "permalink": "https://phonodiavocalensemble.com/product/tokyo-i-men/",
+    "price": "1500",
+    "currency_minor_unit": 2,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\">15,00&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&euro;</span></span>",
+    "type": "variable",
+    "description": "<p data-start=\"115\" data-end=\"339\">Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το <strong data-start=\"208\" data-end=\"229\">PHONODIA in Tokyo</strong> είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδία στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κερασιές και τη μαγεία του Tόκιο.</p> <p data-start=\"341\" data-end=\"604\">Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κερασιάς, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.</p> <p data-start=\"606\" data-end=\"755\">Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.</p> <p data-start=\"757\" data-end=\"776\"><strong data-start=\"757\" data-end=\"776\">Χαρακτηριστικά:</strong></p> <ul> <li data-start=\"779\" data-end=\"794\">Unisex γραμμή</li> <li data-start=\"797\" data-end=\"811\">100% βαμβάκι</li> <li data-start=\"830\" data-end=\"855\">Εκτύπωση υψηλής αντοχής</li> <li data-start=\"858\" data-end=\"887\">Άνετη και μοντέρνα εφαρμογή</li> </ul> <p data-start=\"889\" data-end=\"1004\">Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.</p>",
+    "short_description": null,
+    "categories": [
+      "Gents",
+      "T-Shirts"
+    ],
+    "images": [
+      "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_white.webp"
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "taxonomy": "pa_size",
+        "terms": [
+          "2XL",
+          "3XL",
+          "4XL",
+          "5XL",
+          "L",
+          "M",
+          "S",
+          "XL"
+        ]
+      },
+      {
+        "name": "Color",
+        "taxonomy": "pa_color",
+        "terms": [
+          "AZALEA",
+          "BLACK",
+          "CAROLINE BLUE",
+          "DAISY",
+          "FOREST GREEN",
+          "HELICONA",
+          "IRIS",
+          "JADE",
+          "LIGHT BLUE",
+          "MAROON",
+          "NAVY",
+          "PURPLE",
+          "ROYAL",
+          "SAPPHIRE",
+          "WHITE"
+        ]
+      }
+    ],
+    "variations_count": 15,
+    "error": null
+  }
+]

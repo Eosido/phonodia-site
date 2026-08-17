@@ -4,7 +4,10 @@
 .github/**
 tools
 tools/**
+src
+src/**
 wrangler.jsonc
 .assetsignore
 *.zip
 img/manifest.json
+.bridge-version

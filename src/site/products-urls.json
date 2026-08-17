@@ -1,0 +1,29 @@
+{
+  "post_type": "product",
+  "rest_base": "product",
+  "rest_reachable": true,
+  "source": "https://phonodiavocalensemble.com/product-sitemap.xml",
+  "count": 9,
+  "urls": [
+    "https://phonodiavocalensemble.com/product/phonodia-hoodie/",
+    "https://phonodiavocalensemble.com/product/phonodia-in-tokyo-kids/",
+    "https://phonodiavocalensemble.com/product/phonodia-in-tokyo-woman/",
+    "https://phonodiavocalensemble.com/product/tokyo-i-men/",
+    "https://phonodiavocalensemble.com/product/tokyo-i-men-2/",
+    "https://phonodiavocalensemble.com/product/phonodia-the-great-journey-in-tokyo-woman/",
+    "https://phonodiavocalensemble.com/product/phonodia-φωνη-men/",
+    "https://phonodiavocalensemble.com/product/φωνη-kids/",
+    "https://phonodiavocalensemble.com/product/phonodia-φωνη-woman/"
+  ],
+  "ids_observed_in_page_html": {
+    "5415": "Phonodia in Tokyo – Kids",
+    "5292": "Phonodia in Tokyo - Gents",
+    "5359": "Phonodia in Tokyo – Ladies",
+    "6525": "Φωνη – Hoodie – Unisex",
+    "5313": "The Great Journey in Tokyo – Gents",
+    "5389": "The Great Journey in Tokyo – Ladies",
+    "5880": "Φωνη – Gents",
+    "6016": "Φωνη – Ladies",
+    "6538": "Φωνη – Kids"
+  }
+}

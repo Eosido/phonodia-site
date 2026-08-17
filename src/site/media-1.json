@@ -1,0 +1,63 @@
+{
+  "source": "https://phonodiavocalensemble.com/wp-json/wp/v2/media",
+  "coverage": "INCOMPLETE — 5 items captured out of an unknown, certainly much larger total.",
+  "why_incomplete": "Query strings (per_page, page, _fields) are stripped in transit, so the collection cannot be paginated and the default response was truncated by the fetch layer after 5 objects. The total count could not be read because X-WP-Total response headers are not exposed by WebFetch.",
+  "captured_count": 5,
+  "media": [
+    {
+      "id": 6561,
+      "slug": "tt-webp",
+      "title": "tt.webp",
+      "alt_text": "",
+      "width": 1086,
+      "height": 1448,
+      "source_url": "https://phonodiavocalensemble.com/wp-content/uploads/2026/04/tt.webp",
+      "post": null
+    },
+    {
+      "id": 6554,
+      "slug": "a-webp",
+      "title": "a.webp",
+      "alt_text": "",
+      "width": 1218,
+      "height": 2048,
+      "source_url": "https://phonodiavocalensemble.com/wp-content/uploads/2026/06/a.webp",
+      "post": null
+    },
+    {
+      "id": 6544,
+      "slug": "blk",
+      "title": "blk",
+      "alt_text": "",
+      "width": 1706,
+      "height": 1280,
+      "source_url": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/blk.png",
+      "post": 6538
+    },
+    {
+      "id": 6543,
+      "slug": "blk-webp",
+      "title": "blk.webp",
+      "alt_text": "",
+      "width": 1706,
+      "height": 1280,
+      "source_url": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/blk.webp",
+      "post": null
+    },
+    {
+      "id": 6542,
+      "slug": "trq",
+      "title": "trq",
+      "alt_text": "",
+      "width": 1706,
+      "height": 1280,
+      "source_url": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/trq.png",
+      "post": 6538
+    }
+  ],
+  "additional_media_ids_referenced_but_not_fetched": {
+    "note": "Referenced by ID inside page 2940's content.rendered; their source_urls were not retrievable without query-string access.",
+    "ids": [4000, 4098, 4048, 4021, 4004, 3997, 3993]
+  },
+  "image_urls_recovered_by_other_means": "See image-inventory.md — every image URL observed in rendered page HTML and in captured content.rendered, with the page it sits on."
+}

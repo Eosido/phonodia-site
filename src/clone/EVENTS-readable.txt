@@ -1,0 +1,216 @@
+============================================================
+EVENT | /js_events/6198/
+  title: Choralspace – Berlin loves you
+  date: June 27, 2026
+  venue: Kammermusiksaal - Berlin
+  meta: 9:30 pm
+  body: Η ΦΩΝΩΔΙΑ Ταξιδεύει Στο Βερολίνο 🛫🎶 Με επίσημη πρόσκληση από την CHORALSPACE, θα συμμετάσχουμε στο Berlin Loves You Festival 2026. 🫶🏼 Για εμάς αυτό το ταξίδι είναι κάτι περισσότερο από μια ακόμη εμφάνιση. Είναι η ευκαιρία να ακουστεί ο ελληνικός λόγος, η δική μας φωνή, σε μια από τις σημαντικότερες μουσικές πρωτεύουσες του κόσμου.
+  links: ['https://www.eventbrite.com/e/berlin-loves-you-tickets-1984063472255']
+  images: ['2026/06/a-178x300.jpg', '2026/06/a-609x1024.jpg']
+============================================================
+EVENT | /js_events/πνοή/
+  title: Πνοή
+  date: June 21, 2026
+  venue: Κέντρο Βυζαντινών Τεχνών Ρεθύμνου
+  meta: 7:00 pm || Καλλιτεχνική Διεύθυνση Ιωάννης Ιδομενέως
+  body: Ερχόμαστε στο Ρέθυμνο! Δίνουμε "Πνοή" στην Παγκόσμια Ημέρα Μουσικής και σας προσκαλούμε στη Συναυλία μας, όπου η ανθρώπινη φωνή γίνεται φορέας μνήμης, έκφρασης και σύνδεσης. || Χορωδιακή Συναυλία Φωνητικού Συνόλου ΦΩΝΩΔΙΑ "ΠΝΟΗ" || Τα έσοδα από τα εισιτήρια, θα στηρίξουν την αποστολή μας στο Διεθνές Φεστιβάλ Χορωδιών Berlin ❤️ you Festival που διοργανώνει η Choral Space στο Βερολίνο! || Για περισσότερες πληροφορίες: +306932855194 & ioannis.idomeneos@gmail.com
+  links: []
+  images: ['2026/05/IMG_20260527_134003_888-240x300.jpg', '2026/05/IMG_20260527_134003_888-819x1024.jpg']
+============================================================
+EVENT | /js_events/amor/
+  title: AMOR
+  date: December 20, 2025
+  venue: ΕΛ.ΜΕ.ΠΑ | Αμφιθέατρο «Μάρκος Καραναστάσης»
+  meta: 8:30 pm || Α' ΜΕΡΟΣ | 20:30 Σολιστική Συναυλία Πιάνο: Ιωάννης Ιδομενέως || Β' ΜΕΡΟΣ | 21:30 Χορωδιακή Συναυλία του Φωνητικού Συνόλου ΦΩΝΩΔΙΑ || Καλλιτεχνική Διεύθυνση: Ιωάννης Ιδομενέως
+  body: Το Φωνητικό Σύνολο ΦΩΝΩΔΙΑ σας προσκαλεί στη Χριστουγεννιάτικη συναυλία «Amor». || Παράσταση με Σολιστικά & Χορωδιακά έργα, αφιερωμένη στην Αγάπη για τη Φωνητική Τέχνη. || Ελάτε να υποδεχτούμε μαζί το πνεύμα των Χριστουγέννων, με μια βραδιά αφιερωμένη στη μουσική της αγάπης.
+  links: ['https://www.ticketservices.gr/event/amor-elmepa-phonodia/', 'https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ']
+  images: ['2026/04/595610822_122169007340798330_4546733945438725632_n-240x300.jpg', '2026/04/595610822_122169007340798330_4546733945438725632_n-819x1024.jpg']
+============================================================
+EVENT | /js_events/στο-θέατρο/
+  title: Στο θέατρο
+  date: May 3, 2025
+  venue: ΕΛ.ΜΕ.ΠΑ. Αμφιθέατρο «Μάρκος Καραναστάσης»
+  meta: 6:00 pm || Α' Μέρος | 18:00 || Β' Μέρος | 20:00 || Ώρα προσέλευσης: Για το Ρεσιτάλ (Α' Μέρος), μπορείτε να προσέλθετε από τις 17:30, ενώ για τη Σολιστική Συναυλία (Β' Μέρος), η προσέλευση ξεκινά από τις 19:30
+  body: Σάββατο, 3 Μαΐου ! Ε Λ Α Τ Ε! 5ος Σταθμός Το Φωνητικό Σύνολο ΦΩΝΩΔΙΑ σας προσκαλεί σε μια ξεχωριστή μουσική παράσταση αφιερωμένη στη Φωνητική Τέχνη. Σάββατο 3 Μαΐου 2025, στο Αμφιθέατρο του Ελληνικού Μεσογειακού Πανεπιστημίου (ΕΛΜΕΠΑ), «Μάρκος Καραναστάσης». Α' Μέρος | 18:00 Ρεσιτάλ Τραγουδιού Μυρτώ Κονιδάκη & Νίκη Παπαγγελή: Τραγούδι Λίλυ Δάκα: Πιάνο Β' Μέρος | 20:00 Σολιστική Συναυλία του Φωνητικού Συνόλου ΦΩΝΩΔΙΑ Στο πιάνο συνοδεύει ο Ιωάννης Ιδομενέως, καλλιτεχνικός διευθυντής και μαέστρος τ
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ']
+  images: ['2025/04/POSTER-1-212x300.jpg', '2025/04/POSTER-1-724x1024.jpg']
+============================================================
+EVENT | /js_events/το-μεγάλο-ταξίδι/
+  title: Το Μεγάλο Ταξίδι
+  date: June 4, 2025
+  venue: Πολιτιστικό & Συνεδριακό Κέντρο Ηρακλείου, Αίθουσα Α. & Μ. Καλοκαιρινού
+  meta: 9:00 pm || Τετάρτη 4 Ιουνίου 2025 || Ώρα: 21:00
+  body: Λίγο πριν την αποστολή μας στο Τόκιο, παρουσιάζουμε τη μεγάλη μας συναυλία στην αίθουσα "Ανδρέας και Μαρία Καλοκαιρινού". || Το φωνητικό σύνολο ΦΩΝΩΔΙΑ σας προσκαλεί σε ένα μοναδικό μουσικό ταξίδι μέσα από την τέχνη της χορωδιακής μουσικής.
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ']
+  images: ['2025/05/πσκη-ΜΕ-ΛΟΓΟΤΥΠΟ-212x300.png', '2025/05/πσκη-ΜΕ-ΛΟΓΟΤΥΠΟ.png', '2025/05/πσκη-ΜΕ-ΛΟΓΟΤΥΠΟ-724x1024.png']
+============================================================
+EVENT | /js_events/requiem-w-a-mozart-σίμος-παπάνας/
+  title: Requiem W.A.Mozart/Σίμος Παπάνας
+  date: March 20, 2026 - March 21, 2026
+  venue: Πολιτιστικό & Συνεδριακό Κέντρο Ηρακλείου, Αίθουσα Α. & Μ. Καλοκαιρινού
+  meta: 9:00 pm || Μουσική διεύθυνση: Μύρων Μιχαηλίδης || Κρατική Ορχήστρα Θεσσαλονίκης || Διεύθυνση χορωδίας: Ιωάννης Ιδομενέως, Μάνος Παναγιωτάκης
+  body: Εν όψει της στοχαστικής ατμόσφαιρας του Θείου Πάθους, το εμβληματικό Ρέκβιεμ του Βόλφγκανγκ Αμαντέους Μότσαρτ, το ημιτελές αριστούργημα που παραμένει ένα από τα πλέον συγκλονιστικά έργα της δυτικής μουσικής παράδοσης, συνομιλεί με το Ρέκβιεμ του Σίμου Παπάνα, ένα έργο σύγχρονο και ιδιαίτερα προσωπικό, που πραγματεύεται με σεβασμό το παραδοσιακό λατινικό κείμενο της Ακολουθίας της Καθολικής Εκκλησίας για να το εκφέρει με έναν μουσικό λόγο οικείο και κατανοητό στον σύγχρονο ακροατή. Καταξιωμένοι σ
+  links: ['https://www.youtube.com/embed/watch?v=cs8fm5i_od0?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2026/04/maxresdefault-300x169.jpg', '2026/04/maxresdefault-1024x576.jpg']
+============================================================
+EVENT | /js_events/27ο-διεθνές-χορωδιακό-φεστιβάλ-λάρισας/
+  title: 27ο Χορωδιακό Φεστιβάλ Λάρισας
+  date: October 4, 2025 - October 5, 2025 || 4 & 5 Οκτωβρίου 2025
+  venue: Δημοτικο Ωδείο Λάρισας, Αίθουσα Συναυλιών
+  meta: Ώρα προσέλευσης 20:00 || Ημέρα εμφάνισης Φωνητικού Συνόλου «ΦΩΝΩΔΙΑ»: Σάββατο 4 Οκτωβρίου 2025 || Είσοδος ελεύθερη
+  body: 27ο Διεθνές Χορωδιακό Φεστιβάλ Λάρισας «Παναγιώτης Παπαθανασίου» || Με μεγάλη χαρά σας ανακοινώνουμε τη συμμετοχή μας στο 27ο Διεθνές Χορωδιακό Φεστιβάλ Λάρισας «Παναγιώτης Παπαθανασίου». Η εμφάνισή μας θα πραγματοποιηθεί το Σάββατο 4 Οκτωβρίου, υπό την Καλλιτεχνική Διεύθυνση του Μαέστρου μας Ιωάννης Ιδομενέως. || Πρόκειται για έναν από τους σημαντικότερους χορωδιακούς θεσμούς της χώρας, που ξεκίνησε το 1985 και εδώ και σχεδόν τέσσερις δεκαετίες αποτελεί σημείο αναφοράς για τη χορωδιακή τέχνη, φ
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ']
+  images: ['2026/04/555818465_122157608498798330_2380299846041585835_n-1-209x300.jpg', '2026/04/555818465_122157608498798330_2380299846041585835_n-1-715x1024.jpg']
+============================================================
+EVENT | /js_events/ελληνόγραμμα/
+  title: Ελληνόγραμμα
+  date: May 24, 2026
+  venue: Πολιτιστικό & Συνεδριακό Κέντρο Ηρακλείου
+  meta: 7:00 pm || Καλλιτεχνική Διεύθυνση: Ιωάννης Ιδομενέως
+  body: Το Φωνητικό Σύνολο ΦΩΝΩΔΙΑ σας προσκαλεί στη Σολιστική Συναυλία «Ελληνόγραμμα»! Κυριακή 24 Μαΐου 2026 Πολιτιστικό Συνεδριακό Κέντρο Ηρακλείου, Αίθουσα Συναυλιών Ώρα: 19:00 || 45 Φωνωδοί τραγουδούν σολιστικά τον ελληνικό λόγο, μέσα από ένα μουσικό ταξίδι αφιερωμένο στον πλούτο και τη δημιουργικότητα της φωνητικής Τέχνης. || Το πρόγραμμα περιλαμβάνει σολιστικές ερμηνείες, ντουέτα και τρίο, καθώς και πρωτότυπες συνθέσεις των ίδιων των μελών του Συνόλου. || Η παράσταση διεξάγεται με την υποστήριξη τ
+  links: ['https://www.ticketservices.gr/event/cccc-ellinogramma-solistiki-synaulia-tou-fonitikou-synolou-fonodia/']
+  images: ['2026/05/684673022_2730270167348727_332751884441796770_n-240x300.jpg', '2026/05/684673022_2730270167348727_332751884441796770_n-819x1024.jpg']
+============================================================
+EVENT | /js_events/4186/
+  title: Τέχνη και Ευεξία
+  date: April 27, 2025
+  venue: Ατλαντίδος 11, Ηράκλειο Κρήτης
+  meta: 10:00 am || Φωνωδία
+  body: 🎶🌸Η ΦΩΝΩΔΙΑ σας καλεί στην ημερίδα της: «Τέχνη & Ευεξία | Μία μέρα γεμάτη δημιουργία, έκφραση και αρμονία»🌸🎶 || 🗓️ 27 Απριλίου 2025 || Το φωνητικό σύνολο ΦΩΝΩΔΙΑ διοργανώνει μια ξεχωριστή ημερίδα αφιερωμένη στην έκφραση, τη δημιουργικότητα και την εξερεύνηση της φωνής και του σώματος. Μέσα από ομιλίες, βιωματικά σεμινάρια και καλλιτεχνικές δράσεις, ανακαλύπτουμε νέους τρόπους βαθύτερης σύνδεσης με τον εαυτό μας και τους άλλους. Παράλληλα, στο 🎁 bazaar 🎁 της ημερίδας θα διατεθούν μοναδικά αντικεί
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ']
+  images: ['2025/04/486393805_2374534399588974_4078060238028146575_n-212x300.jpg', '2025/04/486393805_2374534399588974_4078060238028146575_n-724x1024.jpg']
+============================================================
+EVENT | /js_events/το-μεγάλο-ταξίδι-συνεχίζεται/
+  title: Το Μεγάλο Ταξίδι συνεχίζεται!
+  date: June 14, 2025
+  venue: Χανιά, Μεγάλο Αρσενάλι | Κ.Α.Μ.
+  meta: 8:00 pm || Στο πιάνο και στη Διεύθυνση ο Ιωάννης Ιδομενέως || Με την αρωγή του Δήμου Χανίων
+  body: «Το Μεγάλο Ταξίδι» συνεχίζει την πορεία του! Το φωνητικό σύνολο ΦΩΝΩΔΙΑ σας προσκαλεί σε ένα μοναδικό μουσικό ταξίδι μέσα από την τέχνη της χορωδιακής μουσικής. || Η πρώτη μας στάση στο Ηράκλειο ήταν κάτι παραπάνω από μια συναυλία – ήταν μια μεγάλη αγκαλιά για όλους μας! || Μετά από μια τόσο δυνατή εμπειρία, παίρνουμε μαζί μας αυτό το συναίσθημα και σας προσκαλούμε σε μια νέα συναυλία που φέρει μαζί της την ευγνωμοσύνη, τη συγκίνηση και την ενέργεια που μοιραστήκαμε! || Η μουσική ενώνει, κι εμεί
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://fb.me/e/3iAdOVkec']
+  images: ['2025/06/ΑΦΙΣΑ-ΧΑΝΙΑ-ΦΩΝΩΔΙΑ-212x300.jpg', '2025/06/Untitled-design-10.png', '2025/06/ΑΦΙΣΑ-ΧΑΝΙΑ-ΦΩΝΩΔΙΑ-724x1024.jpg', '2025/06/ΑΦΙΣΑ-ΧΑΝΙΑ-ΦΩΝΩΔΙΑ.jpg']
+============================================================
+EVENT | /js_events/7th-tokyo-international-choir-competition/
+  title: Tokyo International Choir Competition
+  date: July 25, 2025
+  venue: Dai-ichi Seimei Hall, Tokyo
+  meta: None
+  body: Με ενθουσιασμό ανακοινώνουμε ότι η ΦΩΝΩΔΙΑ έχει προκριθεί στον τελικό ενός από τους σπουδαιότερους χορωδιακούς διαγωνισμούς παγκοσμίως, τον 7o Διεθνή Χορωδιακό Διαγωνισμό "Tokyo International Choir Competition", που θα διεξαχθεί στην Ιαπωνία τον Ιούλιο του 2025! || Φέτος, η Ελλάδα έχει εμάς ως μοναδικό της εκπρόσωπο! || Με τη στήριξή σου, θα καταφέρουμε να τραγουδήσουμε σε μια παγκόσμια μουσική σκηνή, ανάμεσα σε κορυφαία φωνητικά σύνολα από όλο τον κόσμο!
+  links: ['https://www.ticctokyo.icot.or.jp/7thchoir/en/phonodia']
+  images: ['2025/04/468881460_18208568977292405_4187168405344606068_n-240x300.jpg', '2025/04/468881460_18208568977292405_4187168405344606068_n-819x1024.jpg']
+============================================================
+VIDEO | /js_videos/oscar-peterson-hymn-to-freedom/
+  title: Oscar Peterson : Hymn to freedom
+  date: Τρίτη 2 Μαΐου 2017
+  venue: Αίθουσα Πειραματικού Θεάτρου Πολιτιστικού Κέντρου Ηρακλείου
+  meta: διεύθυνση : Ιωάννης Ιδομενέως || conductor : Ioannis Idomeneos || πιάνο : Νίκος Κοκκίνης || piano : Nikos Kokkinis || χορωδιακή προσαρμογή: Γιώργος Καλούτσης || arrangement: Giorgos Kaloutsis || Ηχογράφηση: Κώστας Ραπτάκης || Μαγνητοσκόπηση: Νίκος Βασιλάκης
+  body: 
+  links: ['https://www.youtube.com/embed/WnXh6m0Qoio?si=2bQ9mCxUVO8w9bmQ?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: []
+============================================================
+VIDEO | /js_videos/θάλασσα-δέντρα-και-βουνά-καρπάθου-μι/
+  title: Θάλασσα, δέντρα και βουνά (Καρπάθου) & Μια Σμυρνιά στο Παραθύρι (Αιγαίου)
+  date: 11 Μαΐου 2018
+  venue: Old Assembly Hall – Nizhny Novgorod
+  meta: Γιάννη Κωνσταντινίδη || α) Θάλασσα, δέντρα και βουνά (Καρπάθου) από τα "8 Δωδεκανησιακά τραγούδια" || β) Μια Σμυρνιά στο Παραθύρι (Αιγαίου) από τα "8 Μικρασιάτικα τραγούδια"
+  body: 
+  links: ['https://www.youtube.com/embed/mxqNh2ixudY?si=GRa3XuFzolyeT71S?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/07/mqdefault-2-300x169.jpg']
+============================================================
+VIDEO | /js_videos/4047/
+  title: Μάνος Χατζιδάκις "Αν κανείς σας ω θεατές μας" & "Πάροδος" από τους Όρνιθες του Αριστοφάνη.
+  date: 12 Μαΐου
+  venue: Great Hall of Nizhny Novgorod State Conservatory M I Glinka
+  meta: XVI International festival Young Voices – 2018
+  body: 
+  links: ['https://www.youtube.com/embed/RwIwtb5QduI?si=V1WNo434f7tOqkhC?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/07/7d8KsbZRzWo-300x200.jpg']
+============================================================
+VIDEO | /js_videos/sure-on-this-shining-night-morten-lauridsen-james-agee/
+  title: Sure on this shining night – Morten Lauridsen/James Agee
+  date: 11 Μαΐου 2018
+  venue: Old Assembly Hall – Nizhny Novgorod
+  meta: XVI International choral festival «Young Voices – 2018»
+  body: 
+  links: ['https://www.youtube.com/embed/watch?v=6CI7qBaI668?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/07/mqdefault-300x169.jpg']
+============================================================
+VIDEO | /js_videos/test-video/
+  title: Pärt Uusberg: Muusika
+  date: 10 Μαΐου 2019
+  venue: Ηράκλειο / Heraklion Ιερός Καθεδρικός Ναός Άγιου Τίτου
+  meta: Χορωδία Νέων Δήμου Ηρακλείου Youth Choir - Municipality of Heraklion || διεύθυνση: Ιωάννης Ιδομενέως conductor: Ioannis Idomeneos || Φωρογραφία: Graham Hodgetts || Βιντεοσκόπηση: Νίκος Βασιλάκης || Επεξεργασία ηχογράφησης: Θέμης Ζαφειρόπουλος LOCATION SOUND
+  body: Pärt Uusberg: Muusika ποίηση / poet: Juhan Liiv
+  links: ['https://www.youtube.com/embed/_tee4D38nz8?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/05/Agios_Titos_Choir_2019-37-300x200.jpg']
+============================================================
+VIDEO | /js_videos/αναφορά-στον-μάνο-χατζιδάκι-επιλογές/
+  title: Αναφορά στον Μάνο Χατζιδάκι (επιλογές)
+  date: 15 Απριλίου 2018
+  venue: Αίθουσα Πειραματικού Θεάτρου, Πολιτιστικό Κέντρο Ηρακλείου
+  meta: Παιδική & Νεανική Χορωδία δήμου Ηρακλείου || Διεύθυνση: Ιωάννης Ιδομενέως || Πιάνο: Νίκος Κοκκίνης
+  body: Αναφορά στον Μάνο Χατζιδάκι (επιλογές) 15 Απριλίου 2018 Αίθουσα Πειραματικού Θεάτρου Πολιτιστικό Κέντρο Ηρακλείου Παιδική & Νεανική Χορωδία δήμου Ηρακλείου Διεύθυνση: Ιωάννης Ιδομενέως Πιάνο: Νίκος Κοκκίνης Τον Απρίλιο του 2018 είχαμε προσκαλέσει, ως τότε Παιδική & Νεανική Χορωδία του δήμου Ηρακλείου, τον σκηνοθέτη, στενό συνεργάτη και φίλο του Μάνου Χατζιδάκι Δημήτρη Βερνίκο. Μας πρόβαλε ανέκδοτο υλικό από την ηχογράφηση του έργου Σκοτεινή Μητέρα και μας μίλησε για τον Μάνο Χατζιδάκι μέσα από τ
+  links: ['https://www.youtube.com/embed/Hnkb_F32png?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/05/20180415_Heraklion_Arts_Centre-33-1-300x200.jpg']
+============================================================
+VIDEO | /js_videos/a-little-jazz-mass-bob-chilcott/
+  title: A Little Jazz Mass – Bob Chilcott
+  date: 17.12.2019
+  venue: Basilica of Saint Marco (Heraklion)
+  meta: Piano: Nikos Kokkinis || Conductor: Ioannis Idomeneos
+  body: PHONODIA Vocal Ensemble || Piano: Nikos Kokkinis || Conductor: Ioannis Idomeneos || 17.12.2019, Basilica of Saint Marco (Heraklion) || 17 Δεκεμβρίου 2019 || Βασιλική του Αγίου Μάρκου || Φωνητικό σύνολο "Φωνωδία" || Jazz Mass του Bob Chilcott || Πιάνο: Νίκος Κοκκίνης || Διεύθυνση: Ιωάννης Ιδομενέως || Τραγούδησαν: || Soprani 1: Ελένη Καραγκάνη, Νίκη Παπαγγελή, Εύη Ασπροποταμίτη, Γεωργία Βασιλαράκη, Νίκη Θρουμπάρη, Κατερίνα Στεφανάκη. || Soprani 2: Εύα Αγγελάκη, Σοφία Τσάλα, Αναστασία Μελιγκουνάκη
+  links: ['https://www.youtube.com/embed/y02yy4gwyWA?autoplay=0&enablejsapi=1&wmode=transparent&rel=0&showinfo=0']
+  images: ['2020/04/Heraklion_Choir_2019_Christmas-54-300x200.jpg']
+============================================================
+ALBUM | /js_photo_albums/η-συνέλευση-των-ζώων/
+  title: Η συνέλευση των ζώων
+  date: None
+  venue: Κέντρο Φωνητικής Τέχνης Κρήτης, Ιερολοχιτών 3, 71305, Ελλάδα
+  meta: None
+  body: 
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://phonodiavocalensemble.com/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%cf%84%ce%bf-%cf%83%cf%8d%ce%bd%ce%bf%ce%bb%ce%bf/', 'https://phonodiavocalensemble.com/about/', 'https://phonodiavocalensemble.com/cf-83-cf-85-cf-83-cf-84-ce-b1-cf-84-ce-b9-ce-ba-ce-ad-cf-82-ce-b5-cf-80-ce-b9-cf-83-cf-84-ce-bf-ce-bb-ce-ad-cf-82/']
+  images: ['2025/05/270746021_1338943499900266_1769204994445011124_n-300x200.jpg', '2025/05/270746021_1338943499900266_1769204994445011124_n-768x512.jpg', '2025/05/270746021_1338943499900266_1769204994445011124_n.jpg']
+============================================================
+ALBUM | /js_photo_albums/οι-σπόροι-της-σμύρνης/
+  title: Οι σπόροι της Σμύρνης
+  date: None
+  venue: None
+  meta: None
+  body: 
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://phonodiavocalensemble.com/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%cf%84%ce%bf-%cf%83%cf%8d%ce%bd%ce%bf%ce%bb%ce%bf/', 'https://phonodiavocalensemble.com/about/', 'https://phonodiavocalensemble.com/cf-83-cf-85-cf-83-cf-84-ce-b1-cf-84-ce-b9-ce-ba-ce-ad-cf-82-ce-b5-cf-80-ce-b9-cf-83-cf-84-ce-bf-ce-bb-ce-ad-cf-82/']
+  images: ['2025/05/IMG_0500δ-300x155.jpg', '2025/05/IMG_0500δ-768x396.jpg', '2025/05/IMG_0525-768x512.jpg']
+============================================================
+ALBUM | /js_photo_albums/λιλιπούπολη/
+  title: Λιλιπούπολη
+  date: None
+  venue: None
+  meta: None
+  body: 
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://phonodiavocalensemble.com/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%cf%84%ce%bf-%cf%83%cf%8d%ce%bd%ce%bf%ce%bb%ce%bf/', 'https://phonodiavocalensemble.com/about/', 'https://phonodiavocalensemble.com/cf-83-cf-85-cf-83-cf-84-ce-b1-cf-84-ce-b9-ce-ba-ce-ad-cf-82-ce-b5-cf-80-ce-b9-cf-83-cf-84-ce-bf-ce-bb-ce-ad-cf-82/']
+  images: ['2025/05/81693049_825010451293576_1527516139708481536_o-300x200.jpg', '2025/05/81693049_825010451293576_1527516139708481536_o-768x512.jpg', '2025/05/81693049_825010451293576_1527516139708481536_o.jpg', '2025/05/80492544_825009994626955_2481874249589981184_o-768x512.jpg', '2025/05/80492544_825009994626955_2481874249589981184_o.jpg']
+============================================================
+ALBUM | /js_photo_albums/άγιος-τίτος/
+  title: Άγιος Τίτος
+  date: None
+  venue: None
+  meta: None
+  body: 
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://phonodiavocalensemble.com/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%cf%84%ce%bf-%cf%83%cf%8d%ce%bd%ce%bf%ce%bb%ce%bf/', 'https://phonodiavocalensemble.com/about/', 'https://phonodiavocalensemble.com/cf-83-cf-85-cf-83-cf-84-ce-b1-cf-84-ce-b9-ce-ba-ce-ad-cf-82-ce-b5-cf-80-ce-b9-cf-83-cf-84-ce-bf-ce-bb-ce-ad-cf-82/']
+  images: ['2025/05/Agios_Titos_Choir_2024-61-300x200.jpg', '2025/05/Agios_Titos_Choir_2024-61-768x512.jpg', '2025/05/Agios_Titos_Choir_2024-50-768x512.jpg', '2025/05/Agios_Titos_Choir_2024-49-768x512.jpg', '2025/05/Agios_Titos_Choir_2024-37-768x512.jpg']
+============================================================
+ALBUM | /js_photo_albums/η-νέα-γη/
+  title: Η νέα γη
+  date: None
+  venue: None
+  meta: None
+  body: 
+  links: ['https://www.instagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==', 'https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ', 'https://phonodiavocalensemble.com/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%cf%84%ce%bf-%cf%83%cf%8d%ce%bd%ce%bf%ce%bb%ce%bf/', 'https://phonodiavocalensemble.com/about/', 'https://phonodiavocalensemble.com/cf-83-cf-85-cf-83-cf-84-ce-b1-cf-84-ce-b9-ce-ba-ce-ad-cf-82-ce-b5-cf-80-ce-b9-cf-83-cf-84-ce-bf-ce-bb-ce-ad-cf-82/']
+  images: ['2025/05/IMG_0290-3-300x200.jpg', '2025/05/IMG_0290-3-768x512.jpg', '2025/05/IMG_0289-3-768x512.jpg', '2025/05/IMG_0297-3-768x512.jpg', '2025/05/IMG_1017-3-2-768x512.jpg', '2025/05/IMG_0435-3-scaled.jpg', '2025/05/IMG_0299-3-768x512.jpg']
+============================================================
+ALBUM | /js_albums/woman/
+  title: Dummy Album Format
+  date: November 4, 2016
+  venue: None
+  meta: Acoustic || Producer: Allen Ritter || Number of discs: 1 || Label: RCA || Artist: Rhye
+  body: Nightride is the second studio album released by American singer Tinashe, released on November 4, 2016. The first single from the album, "Company" was released on September 16, 2016. The album also includes the promotional singles "Ride of Your Life" and "Party Favors". Unlike the single version of "Party Favors", the album version doesn't feature rapper Young Thug. The album is the first part of a double album to be completed with Joyride in 2017. || In 2007, Tinashe joined girl group The Stunn
+  links: ['http://www.amazon.com', 'http://itunes.apple.com', 'https://www.youtube.com/embed/hA0UlbCqHck?autoplay=0&enablejsapi=1&wmode=transparent']
+  images: []

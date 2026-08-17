@@ -1,0 +1,122 @@
+<div id=lc_swp_wrapper>
+<header id=lc_page_header .header_classic_menu_left cust_page_menu_style>
+<div .header_inner lc_wide_menu lc_swp_full>
+<div id=logo .classic_menu_left>
+<a .global_logo src=https://phonodiavocalensemble.com/>
+<img src=es/%CE%A6%CF%89%CE%BD%CF%89%CE%B4%CE%AF%CE%B1-mavro_WqbE.png>
+<a .cust_page_logo src=https://phonodiavocalensemble.com/>
+<img src=es/%CE%A6%CF%89%CE%BD%CF%89%CE%B4%CE%AF%CE%B1-aspro_WqbE.png>
+<div .classic_header_icons>
+<div .classic_header_icon lc_social_icon>
+<div .classic_header_icon lc_social_icon>
+<div .classic_header_icon lc_social_icon>
+<div .classic_header_icon swp_cart_icon>
+<nav .classic_menu classic_menu_left>
+<img src=K7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==>
+<div .header_inner lc_mobile_menu lc_swp_full>
+<div id=mobile_logo .lc_logo_centered>
+<img src=es/%CE%A6%CF%89%CE%BD%CF%89%CE%B4%CE%AF%CE%B1-mavro_WqbE.png>
+<div .hmb_menu hmb_mobile>
+<div .mobile_menu_icon creative_header_icon lc_icon_creative_cart>
+<a .cart-contents mobile_menu_icon src=https://phonodiavocalensemble.com/en/cart/>
+<div .mobile_menu_icon creative_header_icon swp_show_mobile_socials>
+<div .mobile_menu_icon creative_header_icon lc_social_icon mobile_social_icon>
+<a .mobile_menu_icon src=https://www.facebook.com/profile.php?id=61573949900707>
+<div .mobile_menu_icon creative_header_icon lc_social_icon mobile_social_icon>
+<a .mobile_menu_icon src=tagram.com/phonodia_vocal_ensemble?igsh=MWJrczAzOWQ0dHY5dA==>
+<div .mobile_menu_icon creative_header_icon lc_social_icon mobile_social_icon>
+<a .mobile_menu_icon src=https://www.youtube.com/channel/UCEKFE5EBTg78MRV2zHX7fZQ>
+<nav .mobile_navigation>
+<img src=K7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==>
+<div id=lc_swp_content>
+<div id=hero .vc_row wpb_row vc_row-fluid vc_custom_1746203155227 vc_row-has-fill vc_row-no-padding vc_r>
+<div .wpb_column vc_column_container vc_col-sm-12>
+<div .wpb_wrapper>
+<div .wpb_raw_code wpb_raw_html wpb_content_element>
+<div .wpb_wrapper>
+<div .wpb_text_column wpb_content_element wpb_animate_when_almost_visible wpb_fadeIn fadeIn hero>
+<div .wpb_wrapper>
+<h1>
+<div .swp_video_btn_scd >
+<div id=G_Zlht0m1Oo .video_play_btn_scd>
+<video src=E%A3%CF%8D%CE%BD%CE%BF%CE%BB%CE%BF_files/bannerlite_WqbE.mp4>
+<div .vc_row-full-width vc_clearfix>
+<div .vc_row wpb_row vc_row-fluid events vc_custom_1745961097122 vc_row-has-fill vc_row-o-conten>
+<div .wpb_column vc_column_container vc_col-sm-12>
+<div .wpb_wrapper>
+<div .vc_row wpb_row vc_inner vc_row-fluid vc_row-o-content-middle vc_row-flex>
+<div .wpb_column vc_column_container vc_col-sm-6>
+<div .wpb_wrapper>
+<div .wpb_text_column wpb_content_element>
+<div .wpb_wrapper>
+<h2>
+<div .wpb_column vc_column_container vc_col-sm-6>
+<div .wpb_wrapper>
+<div id=2940 .vc_grid-container vc_clearfix wpb_content_element vc_masonry_grid vc_custom_1745587471613>
+<div .vc_grid vc_row vc_grid-gutter-30px vc_pageable-wrapper vc_hook_hover>
+<img .vc_gitem-zone-img src=E%A3%CF%8D%CE%BD%CE%BF%CE%BB%CE%BF_files/a-609x1024_WqbE.jpg>
+<div .vc_gitem_row vc_row vc_gitem-row-position-middle>
+<h3>
+<img .vc_gitem-zone-img src=%CE%BB%CE%BF_files/IMG_20260527_134003_888-819x1024_WqbE.jpg>
+<div .vc_gitem_row vc_row vc_gitem-row-position-middle>
+<h3>
+<img .vc_gitem-zone-img src=73022_2730270167348727_332751884441796770_n-819x102_WqbE.jpg>
+<div .vc_gitem_row vc_row vc_gitem-row-position-middle>
+<h3>
+<div .vc_row wpb_row vc_row-fluid vc_custom_1745437792156 lc_swp_boxed force_boxed_width vc_row->
+<div .wpb_column vc_column_container vc_col-sm-12>
+<div .wpb_wrapper>
+<div .vc_row wpb_row vc_inner vc_row-fluid vc_row-o-content-middle vc_row-flex>
+<div .wpb_column vc_column_container vc_col-sm-6>
+<div .wpb_wrapper>
+<div .wpb_text_column wpb_content_element>
+<div .wpb_wrapper>
+<h3>
+<div .wpb_text_column wpb_content_element>
+<div .wpb_wrapper>
+<div .wpb_column vc_column_container vc_col-sm-6>
+<div .wpb_wrapper>
+<div .wpb_single_image wpb_content_element vc_align_right wpb_content_element>
+<img .vc_single_image-img  src=BF_files/20171218_Christmas_Concert_Bach-64-600x600_WqbE.jpg>
+<div .vc_row wpb_row vc_row-fluid white_on_black vc_row-o-content-middle vc_row-flex>
+<div .wpb_column vc_column_container vc_col-sm-12>
+<div .wpb_wrapper>
+<div id=2940 .vc_grid-container vc_clearfix wpb_content_element vc_media_grid>
+<div .vc_grid vc_row vc_pageable-wrapper vc_hook_hover>
+<img .vc_gitem-zone-img src=iles/18339304_1619643371402969_513409862_o-1024x679_WqbE.jpg>
+<img .vc_gitem-zone-img src=%CE%BD%CE%BF%CE%BB%CE%BF_files/7d8KsbZRzWo-1024x683_WqbE.jpg>
+<img .vc_gitem-zone-img src=F_files/20171218_Christmas_Concert_Bach-85-1024x683_WqbE.jpg>
+<img .vc_gitem-zone-img src=F_files/20171218_Christmas_Concert_Bach-68-1024x683_WqbE.jpg>
+<img .vc_gitem-zone-img src=F_files/20171218_Christmas_Concert_Bach-61-1024x683_WqbE.jpg>
+<img .vc_gitem-zone-img src=F_files/20171218_Christmas_Concert_Bach-57-683x1024_WqbE.jpg>
+<div id=footer_sidebars>
+<div id=footer_sidebars_inner .clearfix lc_swp_full>
+<div id=footer_sidebar1 .lc_footer_sidebar black_on_white>
+<div id=block-9 .widget widget_block>
+<h2 .wp-block-heading>
+<div id=nav_menu-3 .widget widget_nav_menu>
+<div .menu-footer-col1-el-container>
+<div id=footer_sidebar2 .lc_footer_sidebar black_on_white>
+<div id=block-23 .widget widget_block widget_text>
+<div id=block-17 .widget widget_block widget_text>
+<div id=footer_sidebar3 .lc_footer_sidebar black_on_white>
+<div id=block-25 .widget widget_block>
+<img .wp-image-5049 src=E%BF_files/e0b4cdc54800b9d7abcb9c012990662978eb39d4_WqbE.png>
+<img .wp-image-5048 src=E%BF_files/d51f7a234af740dcf1ad7dc9619e18c065a31cf7_WqbE.png>
+<img .wp-image-5045 src=E%BF_files/274751750325e062f8530373699503fbbfa16b58_WqbE.png>
+<img .wp-image-5047 src=E%BF_files/c7b56c359755790e7604b830a8a7390d172dc900_WqbE.png>
+<img .wp-image-5046 src=files/IRIS-online-payments-logo-4283025463-1024x420_WqbE.jpg>
+<div id=block-26 .widget widget_block widget_text>
+<div id=block-13 .widget widget_block widget_text>
+<a id=4819 src=https://phonodiavocalensemble.com/en/contact/>
+<a id=5020 src=https://phonodiavocalensemble.com/en/terms-of-use/>
+<a id=5015 src=https://phonodiavocalensemble.com/en/5015-2/>
+<div id=footer_sidebar4 .lc_footer_sidebar black_on_white>
+<div id=block-8 .widget widget_block widget_media_image>
+<img .wp-image-4119 src=%CF%89%CE%BD%CF%89%CE%B4%CE%AF%CE%B1-mavro-1024x391_WqbE.png>
+<div id=block-18 .widget widget_block widget_text>
+<div id=block-16 .widget widget_block widget_text>
+<div .lc_swp_overlay footer_widget_overlay>
+<div id=lightboxOverlay .lightboxOverlay>
+<div id=lightbox .lightbox>
+<img .lb-image src=R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==>

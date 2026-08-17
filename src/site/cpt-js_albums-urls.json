@@ -1,0 +1,10 @@
+{
+  "post_type": "js_albums",
+  "rest_reachable": false,
+  "source": "https://phonodiavocalensemble.com/js_albums-sitemap.xml",
+  "count": 1,
+  "note": "Fifth theme custom post type, not named in the original brief. Discovered via the sitemap index.",
+  "urls": [
+    "https://phonodiavocalensemble.com/js_albums/woman/"
+  ]
+}

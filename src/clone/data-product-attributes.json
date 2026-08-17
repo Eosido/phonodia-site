@@ -1,0 +1,12 @@
+[
+  {
+    "id": 2,
+    "name": "Color",
+    "taxonomy": "pa_color"
+  },
+  {
+    "id": 3,
+    "name": "Size",
+    "taxonomy": "pa_size"
+  }
+]

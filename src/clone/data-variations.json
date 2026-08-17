@@ -1,0 +1,96 @@
+{
+ "_πηγή": "WooCommerce Store API, /wp-json/wc/store/v1/products?type=variation&parent=<id> — 16 Αυγ 2026. Χρώμα -> εικόνα παραλλαγής, αυτολεξεί.",
+ "5880": {
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_azalea_EMPROS.png",
+  "CAROLINE BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_carolina_blue_EMPROS.png",
+  "DAISY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_daisy_EMPROS.png",
+  "FOREST GREEN": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_forest_green_EMPROS.png",
+  "HELICONA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_heliconia_EMPROS.png",
+  "IRIS": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_iris_EMPROS.png",
+  "JADE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_jade_EMPROS.png",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_light_blue_EMPROS.png",
+  "MAROON": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_maroon_EMPROS.png",
+  "NAVY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_navy_EMPROS.png",
+  "PURPLE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_purple_EMPROS.png",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_royal_EMPROS.png",
+  "SAPPHIRE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_sapphire_EMPROS.png",
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/FONI_MEN_white_EMPROS.png"
+ },
+ "6016": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_white.webp",
+  "SKY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_sky.webp",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_royal.webp",
+  "RED": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_red.webp",
+  "PISTACHIO": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_pistachio.webp",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_light_blue.webp",
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_black.webp",
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_azalea.webp"
+ },
+ "6538": {
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/blk.webp",
+  "TURQUOISE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/trq.webp",
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/white.webp"
+ },
+ "6525": {
+  "BURGUNDY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/Untitled-1.webp"
+ },
+ "5415": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/KIDS_TOKYO2_white-1.png",
+  "TURQUOISE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/KIDS_TOKYO2_turquoise-1.png",
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/KIDS_TOKYO2_black.webp"
+ },
+ "5389": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_white.png",
+  "SKY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_sky.png",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_royal.png",
+  "RED": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_red.png",
+  "PISTACHIO": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_pistachio.png",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_light_blue.png",
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_black.png",
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO1_azalia.png"
+ },
+ "5359": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_white.webp",
+  "SKY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_sky.webp",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_royal.webp",
+  "RED": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_red.webp",
+  "PISTACHIO": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_pistachio.webp",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_light_blue.webp",
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_black.webp",
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/GYN_TOKYO2_azalea.webp"
+ },
+ "5313": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_white.png",
+  "SAPPHIRE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_sapphire.png",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_royal.png",
+  "PURPLE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_purple.png",
+  "NAVY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_navy.png",
+  "MAROON": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_maroon.png",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_light_blue.png",
+  "JADE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_jade.png",
+  "IRIS": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_iris.png",
+  "HELICONA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_heliconia.png",
+  "FOREST GREEN": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_forest_green.png",
+  "DAISY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_daisy.png",
+  "CHERRY RED": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_cherry_red.png",
+  "CAROLINE BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_carolina_blue.png",
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO1_MEN_azalea.png"
+ },
+ "5292": {
+  "WHITE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_white.png",
+  "SAPPHIRE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_sapphire.png",
+  "ROYAL": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_royal.png",
+  "PURPLE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_purple.png",
+  "NAVY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_navy.png",
+  "MAROON": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_maroon.png",
+  "LIGHT BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_light_blue.png",
+  "JADE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_jade.png",
+  "IRIS": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_iris.png",
+  "HELICONA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_heliconia.png",
+  "FOREST GREEN": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_forest_green.png",
+  "DAISY": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_daisy.png",
+  "CAROLINE BLUE": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_carolina_blue.png",
+  "BLACK": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_black.png",
+  "AZALEA": "https://phonodiavocalensemble.com/wp-content/uploads/2026/07/TOKYO2_MEN_azalea.png"
+ }
+}

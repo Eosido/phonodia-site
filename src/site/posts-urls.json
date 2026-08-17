@@ -1,0 +1,12 @@
+{
+  "post_type": "post",
+  "rest_base": "posts",
+  "source": "https://phonodiavocalensemble.com/post-sitemap.xml",
+  "count": 3,
+  "note": "One entry is the blog archive page itself; the other two are the actual posts.",
+  "urls": [
+    "https://phonodiavocalensemble.com/blog/",
+    "https://phonodiavocalensemble.com/στο-θέατρο-ρεσιτάλ-και-σολιστική-συ/",
+    "https://phonodiavocalensemble.com/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/"
+  ]
+}

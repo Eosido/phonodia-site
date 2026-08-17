@@ -1,0 +1,21 @@
+{
+  "source": "https://phonodiavocalensemble.com/wp-sitemap.xml",
+  "note": "AIOSEO sitemap index. Retrieved verbatim via WebFetch. Reveals FIVE theme custom post types (js_artist, js_videos, js_photo_albums, js_albums, js_events) plus their taxonomies.",
+  "sitemaps": [
+    "https://phonodiavocalensemble.com/post-sitemap.xml",
+    "https://phonodiavocalensemble.com/page-sitemap.xml",
+    "https://phonodiavocalensemble.com/product-sitemap.xml",
+    "https://phonodiavocalensemble.com/js_artist-sitemap.xml",
+    "https://phonodiavocalensemble.com/js_videos-sitemap.xml",
+    "https://phonodiavocalensemble.com/js_photo_albums-sitemap.xml",
+    "https://phonodiavocalensemble.com/js_albums-sitemap.xml",
+    "https://phonodiavocalensemble.com/js_events-sitemap.xml",
+    "https://phonodiavocalensemble.com/category-sitemap.xml",
+    "https://phonodiavocalensemble.com/language-sitemap.xml",
+    "https://phonodiavocalensemble.com/product_cat-sitemap.xml",
+    "https://phonodiavocalensemble.com/video_category-sitemap.xml",
+    "https://phonodiavocalensemble.com/photo_album_category-sitemap.xml",
+    "https://phonodiavocalensemble.com/album_category-sitemap.xml",
+    "https://phonodiavocalensemble.com/artist_category-sitemap.xml"
+  ]
+}

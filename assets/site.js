@@ -57,7 +57,9 @@
       if(group==='colors'){ var lbl=pp.querySelector('#color_pick');
         if(lbl) lbl.textContent=btn.getAttribute('data-v');
         var vi=btn.getAttribute('data-img'), im=pp.querySelector('#prod_main_img');
-        if(vi&&im){ im.src=vi; pp.dataset.pimg=vi; } }
+        if(vi&&im){ im.src=vi; pp.dataset.pimg=vi; }
+        var vf=btn.getAttribute('data-full'), zl=pp.querySelector('#prod_zoom');
+        if(vf&&zl){ zl.setAttribute('href',vf); } }
       check(); }
     pp.querySelectorAll('#sizes .opt').forEach(function(b){ b.onclick=function(){pick('sizes',b);}; });
     pp.querySelectorAll('#colors .opt').forEach(function(b){ b.onclick=function(){pick('colors',b);}; });

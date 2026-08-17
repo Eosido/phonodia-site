@@ -1,0 +1,66 @@
+{
+  "question": "Are the theme custom post types reachable over the public WP REST API?",
+  "answer": "NO. Definitively not. All are absent from /wp-json/wp/v2/types and all return HTTP 404.",
+  "method": "Direct GET on each /wp-json/wp/v2/<type> route, plus cross-check against the full /wp-json/wp/v2/types map saved in types.json.",
+  "results": [
+    {
+      "type": "js_events",
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/js_events",
+      "reachable": false,
+      "http_status": 404,
+      "exact_response": "There was an error while fetching: The page returned a 404 client error",
+      "present_in_types_json": false,
+      "rest_base": null
+    },
+    {
+      "type": "js_artist",
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/js_artist",
+      "reachable": false,
+      "http_status": 404,
+      "exact_response": "There was an error while fetching: The page returned a 404 client error",
+      "present_in_types_json": false,
+      "rest_base": null
+    },
+    {
+      "type": "js_videos",
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/js_videos",
+      "reachable": false,
+      "http_status": 404,
+      "exact_response": "There was an error while fetching: The page returned a 404 client error",
+      "present_in_types_json": false,
+      "rest_base": null
+    },
+    {
+      "type": "js_photo_albums",
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/js_photo_albums",
+      "reachable": false,
+      "http_status": 404,
+      "exact_response": "There was an error while fetching: The page returned a 404 client error",
+      "present_in_types_json": false,
+      "rest_base": null
+    },
+    {
+      "type": "js_albums",
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/js_albums",
+      "reachable": false,
+      "http_status": 404,
+      "exact_response": "There was an error while fetching: The page returned a 404 client error",
+      "present_in_types_json": false,
+      "rest_base": null,
+      "note": "Not in the original brief. Discovered from the sitemap index — this is a FIFTH theme custom post type."
+    }
+  ],
+  "conclusion": "None of the js_* custom post types are registered with show_in_rest. They are invisible to the REST API. The only public machine-readable route to this content is the AIOSEO XML sitemaps (js_*-sitemap.xml) and the rendered HTML pages.",
+  "auth_required_endpoints": [
+    {
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/menu-items",
+      "http_status": 401,
+      "exact_response": "There was an error while fetching: The page returned a 401 client error"
+    },
+    {
+      "url": "https://phonodiavocalensemble.com/wp-json/wp/v2/settings",
+      "http_status": 401,
+      "exact_response": "There was an error while fetching: The page returned a 401 client error"
+    }
+  ]
+}

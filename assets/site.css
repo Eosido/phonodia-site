@@ -1912,6 +1912,11 @@ header#lc_page_header.sticky_enabled .cust_page_logo{display:none!important}
 .prod_images{background:#f4f2ef;border-radius:4px;position:sticky;top:110px}
 .prod_images img{width:100%;height:auto;display:block;padding:24px;max-height:70vh;object-fit:contain}
 .opt_pick{color:#181b31;font-weight:600;letter-spacing:.6px}
+.prod_images a#prod_zoom{display:block;cursor:zoom-in}
+.zoom_hint{display:block;text-align:center;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#8a8a94;padding:0 0 14px}
+.prod_top_back{margin:0 0 14px;font-size:13px;letter-spacing:1.2px;text-transform:uppercase}
+.prod_top_back a{color:#8a8a94}
+.prod_top_back a:hover{color:#ff9568}
 .prod_desc{margin-top:34px;padding-top:26px;border-top:1px solid #eae7e2}
 .prod_summary h1.product_title{font-size:32px;margin:0 0 8px;color:#181b31}
 .prod_summary .price{color:#ff9568;font-size:24px;font-weight:600;margin:0 0 18px}

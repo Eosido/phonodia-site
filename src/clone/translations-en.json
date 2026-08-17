@@ -1,0 +1,2474 @@
+[
+ {
+  "file": "en/a-few-words-about-the-ensemble/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/a-few-words-about-the-ensemble/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/a-few-words-about-the-ensemble/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/a-few-words-about-the-ensemble/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/about-the-ensemble/index.html",
+  "greek": "We have collaborated with prominent orchestras, composers, and conductors, including Miltos Logiadis, Nikos Platyrachos, Nikos Christodoulou, Dimitris Maragopoulos, Giorgos Kouroupos, and Nikos Kyπουργός.",
+  "english": "We have collaborated with prominent orchestras, composers, and conductors, including Miltos Logiadis, Nikos Platyrachos, Nikos Christodoulou, Dimitris Maragopoulos, Giorgos Kouroupos, and Nikos Kypourgos.",
+  "note": "Δεν είναι μετάφραση αλλά διόρθωση: το επώνυμο είχε μείνει μισό στα ελληνικά («Kyπουργός»). Μόνη αλλαγή: Kyπουργός → Kypourgos."
+ },
+ {
+  "file": "en/about-the-ensemble/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/about-the-ensemble/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/about-the-ensemble/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/about-the-ensemble/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Το Φωνητικό Σύνολο ΦΩΝΩΔΙΑ ετοιμάζεται να σας υποδεχτεί σε μια ξεχωριστή μουσική βραδιά! Με ένα πρόγραμμα που περιλαμβάνει ρεσιτάλ…",
+  "english": "The PHONODIA Vocal Ensemble is preparing to welcome you to a special musical evening! With a programme that includes a recital…",
+  "note": "Απόσπασμα άρθρου· κρατήθηκαν τα αποσιωπητικά του πρωτοτύπου."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Είμαστε στην ευχάριστη θέση να σας ανακοινώσουμε επίσημα την συμμετοχή μας στον 7ο Διεθνή Διαγωνισμό Χορωδιών που θα…",
+  "english": "We are delighted to announce officially our participation in the 7th International Choir Competition, which will…",
+  "note": "Απόσπασμα άρθρου· κρατήθηκαν τα αποσιωπητικά του πρωτοτύπου."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/blog/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Είμαστε στην ευχάριστη θέση να σας ανακοινώσουμε επίσημα την συμμετοχή μας στον 7ο Διεθνή Διαγωνισμό Χορωδιών που θα πραγματοποιηθεί τον Ιούλιο του 2025 στο Τόκιο!",
+  "english": "We are delighted to announce officially our participation in the 7th International Choir Competition, which will take place in Tokyo in July 2025!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Θα τραγουδήσουμε ανάμεσα σε κορυφαία φωνητικά σύνολα από όλον τον κόσμο!",
+  "english": "We shall be singing among leading vocal ensembles from all over the world!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Αν επιθυμείτε να στηρίξετε το ταξίδι μας, δείτε εδώ τους διαθέσιμους τρόπους στήριξης ή επικοινωνήστε μαζί μας!",
+  "english": "If you would like to support our journey, see the available ways of helping here, or get in touch with us!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Μείνετε συντονισμένοι για τα καλύτερα, που έρχονται σύντομα!",
+  "english": "Stay tuned for the best, which is coming soon!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/blog/η-φωνωδια-ταξιδεύει-στην-ιαπωνία/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Το Φωνητικό Σύνολο ΦΩΝΩΔΙΑ ετοιμάζεται να σας υποδεχτεί σε μια ξεχωριστή μουσική βραδιά!",
+  "english": "The PHONODIA Vocal Ensemble is preparing to welcome you to a special musical evening!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Με ένα πρόγραμμα που περιλαμβάνει ρεσιτάλ και σολιστικά έργα, σας προσκαλούμε σε μια εμπειρία γεμάτη συναίσθημα!",
+  "english": "With a programme of recital and solo works, we invite you to an experience full of feeling!",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Η συναυλία μας θα πραγματοποιηθεί το Σάββατο 3 Μαΐου 2025",
+  "english": "Our concert will take place on Saturday 3 May 2025",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "στο Αμφιθέατρο του Ελληνικού Μεσογειακού Πανεπιστημίου (",
+  "english": "at the Amphitheatre of the Hellenic Mediterranean University (",
+  "note": "Το κείμενο κόβεται εδώ γιατί ακολουθεί το <strong>ΕΛ.ΜΕ.ΠΑ</strong>· κρατήθηκε το αδιάσπαστο διάστημα."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Α’ Μέρος | 18:00",
+  "english": "Part I | 18:00",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Ρεσιτάλ Τραγουδιού",
+  "english": "Song Recital",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Μυρτώ Κονιδάκη & Νίκη Παπαγγελή: Τραγούδι",
+  "english": "Μυρτώ Κονιδάκη & Νίκη Παπαγγελή: Voice",
+  "note": "Μεταφράστηκε μόνο ο ρόλος· τα ονόματα έμειναν ελληνικά κατά τον κανόνα. Εναλλακτικά, αν θέλει λατινικά: «Myrto Konidaki & Niki Papangeli: Voice» — έτσι είναι ήδη γραμμένα τα ονόματα των συνδέσμων (js_artist/myrto-konidaki, niki-papangeli). ΠΡΟΣΟΧΗ: στον κώδικα HTML το «&» είναι γραμμένο «&amp;» — η αντικατάσταση να γίνει σε επίπεδο DOM, όχι σε ωμό κείμενο."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Λίλυ Δάκα: Πιάνο",
+  "english": "Λίλυ Δάκα: Piano",
+  "note": "Μεταφράστηκε μόνο ο ρόλος. Εναλλακτικά με λατινικά: «Lily Daka: Piano»."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Β’ Μέρος | 20:00",
+  "english": "Part II | 20:00",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Σολιστική Συναυλία του Φωνητικού Συνόλου ΦΩΝΩΔΙΑ",
+  "english": "Solo Concert by the PHONODIA Vocal Ensemble",
+  "note": "Ίδια διατύπωση με τον αγγλικό τίτλο του άρθρου («… Recital and Solo Concert by the PHONODIA Vocal Ensemble»)."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Στο πιάνο συνοδεύει ο Ιωάννης Ιδομενέως, καλλιτεχνικός διευθυντής και μαέστρος του Φωνητικού Συνόλου ΦΩΝΩΔΙΑ.",
+  "english": "At the piano, Ioannis Idomeneos, artistic director and conductor of the PHONODIA Vocal Ensemble.",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Η εκδήλωση αναδείχθηκε και στηρίχθηκε επικοινωνιακά από τον",
+  "english": "The event was promoted and supported in the media by",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "χορηγό επικοινωνίας μας, τον ειδησεογραφικό ιστότοπο neakriti.gr",
+  "english": "our media sponsor, the news website neakriti.gr",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": ", στον οποίο δημοσιεύτηκε σχετικό άρθρο για τη συναυλία μας.",
+  "english": ", which published an article about our concert.",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Για περισσότερες πληροφορίες, διαβάστε το σχετικό άρθρο",
+  "english": "For more information, read the related article",
+  "note": ""
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "εδώ",
+  "english": "here",
+  "note": "Κείμενο συνδέσμου και ταυτόχρονα title του <a>."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/blog/στο-θέατρο/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/cart/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/cart/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/cart/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/cart/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/contact/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/contact/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/contact/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/contact/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Πνοή",
+  "english": "Breath",
+  "note": "Τίτλος συναυλίας. Μεταφράστηκε κατ' αναλογία με τα λευκώματα φωτογραφιών, που στις αγγλικές σελίδες είναι ήδη μεταφρασμένα («The New Earth», «The Seeds of Smyrna»). Αν ο Ιωάννης θέλει τον τίτλο ως όνομα έργου, εναλλακτικά «Pnoi»."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Ελληνόγραμμα",
+  "english": "Ellinogramma",
+  "note": "ΑΜΦΙΒΟΛΙΑ: σύνθετη, επινοημένη λέξη. Δόθηκε μεταγραφή για να μη χαθεί το λογοπαίγνιο. Εναλλακτικά «Written in Greek» ή «Greek Letters». Θέλει την κρίση του Ιωάννη Ιδομενέως."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/4522/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/4522/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/4522/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/4522/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/aimilia-karveli/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/aimilia-karveli/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/aimilia-karveli/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/aimilia-karveli/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/alkmini-gkogolaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/alkmini-gkogolaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/alkmini-gkogolaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/alkmini-gkogolaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/amalia-orfanou-giannari/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/amalia-orfanou-giannari/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/amalia-orfanou-giannari/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/amalia-orfanou-giannari/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/angeliki-minerou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/angeliki-minerou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/angeliki-minerou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/angeliki-minerou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/argyro-stamataki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/argyro-stamataki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/argyro-stamataki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/argyro-stamataki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/ariadni-froudaraki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/ariadni-froudaraki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/ariadni-froudaraki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/ariadni-froudaraki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/charis-agouraki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/charis-agouraki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/charis-agouraki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/charis-agouraki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/christine-pitsikaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/christine-pitsikaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/christine-pitsikaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/christine-pitsikaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/danai-oikonomidi/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/danai-oikonomidi/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/danai-oikonomidi/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/danai-oikonomidi/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/eleni-gkogkou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/eleni-gkogkou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/eleni-gkogkou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/eleni-gkogkou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/eleni-psaraki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/eleni-psaraki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/eleni-psaraki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/eleni-psaraki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/elina-sifaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/elina-sifaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/elina-sifaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/elina-sifaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/elvira-kalogeratou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/elvira-kalogeratou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/elvira-kalogeratou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/elvira-kalogeratou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/evangelia-kozoroni/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/evangelia-kozoroni/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/evangelia-kozoroni/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/evangelia-kozoroni/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/filippos-sfyrakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/filippos-sfyrakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/filippos-sfyrakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/filippos-sfyrakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/foteini-idomenos/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/foteini-idomenos/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/foteini-idomenos/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/foteini-idomenos/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/giannis-somaras/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/giannis-somaras/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/giannis-somaras/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/giannis-somaras/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/giwrgos-xnarakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/giwrgos-xnarakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/giwrgos-xnarakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/giwrgos-xnarakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/gogo-xenaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/gogo-xenaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/gogo-xenaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/gogo-xenaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/ioannis-epanomeritakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/ioannis-epanomeritakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/ioannis-epanomeritakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/ioannis-epanomeritakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/iro-daskalaki-2/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/iro-daskalaki-2/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/iro-daskalaki-2/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/iro-daskalaki-2/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kallia-savaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/kallia-savaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kallia-savaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/kallia-savaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kallia-stivaktaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/kallia-stivaktaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kallia-stivaktaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/kallia-stivaktaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/katerina-paigniotaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/katerina-paigniotaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/katerina-paigniotaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/katerina-paigniotaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/katerina-stefanaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/katerina-stefanaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/katerina-stefanaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/katerina-stefanaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kostantina-katharaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/kostantina-katharaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/kostantina-katharaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/kostantina-katharaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/maria-kantzaridou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/maria-kantzaridou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/maria-kantzaridou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/maria-kantzaridou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/marilena-veneri/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/marilena-veneri/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/marilena-veneri/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/marilena-veneri/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/marina-idomeneos/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/marina-idomeneos/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/marina-idomeneos/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/marina-idomeneos/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/melina-damatopoulou-xalkiadaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/melina-damatopoulou-xalkiadaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/melina-damatopoulou-xalkiadaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/melina-damatopoulou-xalkiadaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/milena-linardou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/milena-linardou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/milena-linardou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/milena-linardou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrsini-tsikandylaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/myrsini-tsikandylaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrsini-tsikandylaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/myrsini-tsikandylaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrto-konidaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/myrto-konidaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrto-konidaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/myrto-konidaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrto-koutoulaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/myrto-koutoulaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/myrto-koutoulaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/myrto-koutoulaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/niki-papangeli/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/niki-papangeli/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/niki-papangeli/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/niki-papangeli/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/nikitas-maurakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/nikitas-maurakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/nikitas-maurakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/nikitas-maurakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/odysseas-galanakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/odysseas-galanakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/odysseas-galanakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/odysseas-galanakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/sifis-kaukalas/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/sifis-kaukalas/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/sifis-kaukalas/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/sifis-kaukalas/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/spyros-perdikakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/spyros-perdikakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/spyros-perdikakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/spyros-perdikakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/stavros-kiagias/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/stavros-kiagias/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/stavros-kiagias/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/stavros-kiagias/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/suzanna-kopidaki/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/suzanna-kopidaki/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/suzanna-kopidaki/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/suzanna-kopidaki/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/syllia-vertoudou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/syllia-vertoudou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/syllia-vertoudou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/syllia-vertoudou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/tatiani-zakolikou/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/tatiani-zakolikou/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/tatiani-zakolikou/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/tatiani-zakolikou/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/valerios-grammatikakis/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_artist/valerios-grammatikakis/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_artist/valerios-grammatikakis/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_artist/valerios-grammatikakis/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/άγιος-τίτος/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_photo_albums/άγιος-τίτος/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/άγιος-τίτος/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_photo_albums/άγιος-τίτος/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/άγιος-τίτος/index.html",
+  "greek": "Άγιος Τίτος",
+  "english": "Agios Titos",
+  "note": "alt μικρογραφίας. Χρησιμοποιήθηκε ο αγγλικός τίτλος που ήδη εμφανίζεται στη σελίδα en/photos."
+ },
+ {
+  "file": "en/js_photo_albums/η-νέα-γη/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_photo_albums/η-νέα-γη/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/η-νέα-γη/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_photo_albums/η-νέα-γη/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/η-νέα-γη/index.html",
+  "greek": "Η νέα γη",
+  "english": "The New Earth",
+  "note": "alt μικρογραφίας. Χρησιμοποιήθηκε ο αγγλικός τίτλος που ήδη εμφανίζεται στη σελίδα en/photos."
+ },
+ {
+  "file": "en/js_photo_albums/η-συνέλευση-των-ζώων/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_photo_albums/η-συνέλευση-των-ζώων/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/η-συνέλευση-των-ζώων/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_photo_albums/η-συνέλευση-των-ζώων/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/η-συνέλευση-των-ζώων/index.html",
+  "greek": "Η συνέλευση των ζώων",
+  "english": "The Assembly of the Animals",
+  "note": "alt μικρογραφίας. Χρησιμοποιήθηκε ο αγγλικός τίτλος που ήδη εμφανίζεται στη σελίδα en/photos."
+ },
+ {
+  "file": "en/js_photo_albums/λιλιπούπολη/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_photo_albums/λιλιπούπολη/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/λιλιπούπολη/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_photo_albums/λιλιπούπολη/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/λιλιπούπολη/index.html",
+  "greek": "Λιλιπούπολη",
+  "english": "Lilipoupoli",
+  "note": "alt μικρογραφίας. Χρησιμοποιήθηκε ο αγγλικός τίτλος που ήδη εμφανίζεται στη σελίδα en/photos."
+ },
+ {
+  "file": "en/js_photo_albums/οι-σπόροι-της-σμύρνης/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/js_photo_albums/οι-σπόροι-της-σμύρνης/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/οι-σπόροι-της-σμύρνης/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/js_photo_albums/οι-σπόροι-της-σμύρνης/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/js_photo_albums/οι-σπόροι-της-σμύρνης/index.html",
+  "greek": "Οι σπόροι της Σμύρνης",
+  "english": "The Seeds of Smyrna",
+  "note": "alt μικρογραφίας. Χρησιμοποιήθηκε ο αγγλικός τίτλος που ήδη εμφανίζεται στη σελίδα en/photos."
+ },
+ {
+  "file": "en/members/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/members/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/members/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/members/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Πνοή",
+  "english": "Breath",
+  "note": "Τίτλος συναυλίας. Μεταφράστηκε κατ' αναλογία με τα λευκώματα φωτογραφιών, που στις αγγλικές σελίδες είναι ήδη μεταφρασμένα («The New Earth», «The Seeds of Smyrna»). Αν ο Ιωάννης θέλει τον τίτλο ως όνομα έργου, εναλλακτικά «Pnoi»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Κέντρο Βυζαντινών Τεχνών Ρεθύμνου",
+  "english": "Rethymno Centre of Byzantine Arts",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Ελληνόγραμμα",
+  "english": "Ellinogramma",
+  "note": "ΑΜΦΙΒΟΛΙΑ: σύνθετη, επινοημένη λέξη. Δόθηκε μεταγραφή για να μη χαθεί το λογοπαίγνιο. Εναλλακτικά «Written in Greek» ή «Greek Letters». Θέλει την κρίση του Ιωάννη Ιδομενέως."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Πολιτιστικό & Συνεδριακό Κέντρο Ηρακλείου",
+  "english": "Herakleion Cultural & Conference Centre",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). ΠΡΟΣΟΧΗ: στον κώδικα HTML το «&» είναι γραμμένο «&amp;» — η αντικατάσταση να γίνει σε επίπεδο DOM, όχι σε ωμό κείμενο."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Πολιτιστικό & Συνεδριακό Κέντρο Ηρακλείου, Αίθουσα Α. & Μ. Καλοκαιρινού",
+  "english": "Herakleion Cultural & Conference Centre, A. & M. Kalokerinos Hall",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Το «Καλοκαιρινού» μεταγράφηκε επειδή είναι μέρος της επίσημης ονομασίας της αίθουσας. ΠΡΟΣΟΧΗ: στον κώδικα HTML το «&» είναι γραμμένο «&amp;» — η αντικατάσταση να γίνει σε επίπεδο DOM, όχι σε ωμό κείμενο."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Αίθουσα Α. & Μ. Καλοκαιρινού",
+  "english": "A. & M. Kalokerinos Hall",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). ΠΡΟΣΟΧΗ: στον κώδικα HTML το «&» είναι γραμμένο «&amp;» — η αντικατάσταση να γίνει σε επίπεδο DOM, όχι σε ωμό κείμενο."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "ΕΛ.ΜΕ.ΠΑ | Αμφιθέατρο «Μάρκος Καραναστάσης»",
+  "english": "ΕΛ.ΜΕ.ΠΑ | «Markos Karanastasis» Amphitheatre",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Το ακρωνύμιο κρατήθηκε όπως το γράφει ήδη η αγγλική σελίδα· αν προτιμά, μπορεί να γίνει «Hellenic Mediterranean University (ΕΛ.ΜΕ.ΠΑ)»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Αμφιθέατρο «Μάρκος Καραναστάσης»",
+  "english": "«Markos Karanastasis» Amphitheatre",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "27ο Χορωδιακό Φεστιβάλ Λάρισας",
+  "english": "27th Larissa Choral Festival",
+  "note": ""
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Δημοτικο Ωδείο Λάρισας, Αίθουσα Συναυλιών",
+  "english": "Larissa Municipal Conservatoire, Concert Hall",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Στο πρωτότυπο λείπει ο τόνος: «Δημοτικο»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Αίθουσα Συναυλιών",
+  "english": "Concert Hall",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Το Μεγάλο Ταξίδι συνεχίζεται!",
+  "english": "The Great Journey continues!",
+  "note": "Το «The Great Journey» χρησιμοποιείται ήδη στο κατάστημα (PHONODIA – The Great Journey in Tokyo)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Χανιά, Μεγάλο Αρσενάλι | Κ.Α.Μ.",
+  "english": "Chania, Grand Arsenal | K.A.M.",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Το «Κ.Α.Μ.» αφέθηκε ως ακρωνύμιο (Κέντρο Αρχιτεκτονικής Μεσογείου)· αν θέλει, μπορεί να γραφτεί ολόκληρο «Centre of Mediterranean Architecture»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Μεγάλο Αρσενάλι | Κ.Α.Μ.",
+  "english": "Grand Arsenal | K.A.M.",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Ίδια παρατήρηση για το «Κ.Α.Μ.»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Το Μεγάλο Ταξίδι",
+  "english": "The Great Journey",
+  "note": "Ίδια απόδοση με το προϊόν «PHONODIA – The Great Journey in Tokyo»."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Στο θέατρο",
+  "english": "At the Theatre",
+  "note": "Ίδια απόδοση με τον αγγλικό τίτλο του άρθρου του ιστολογίου."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "ΕΛ.ΜΕ.ΠΑ. Αμφιθέατρο «Μάρκος Καραναστάσης»",
+  "english": "ΕΛ.ΜΕ.ΠΑ. «Markos Karanastasis» Amphitheatre",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»). Ίδια παρατήρηση για το ακρωνύμιο."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Τέχνη και Ευεξία",
+  "english": "Art and Wellbeing",
+  "note": ""
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Ατλαντίδος 11, Ηράκλειο Κρήτης",
+  "english": "11 Atlantidos Street, Herakleion, Crete",
+  "note": "Ονομασία χώρου. Αποδόθηκε ολόκληρη στα αγγλικά (τα κτίρια/ιδρύματα δεν θεωρήθηκαν «ονόματα προσώπων»)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Ηράκλειο Κρήτης",
+  "english": "Herakleion, Crete",
+  "note": ""
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/performances/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/photos/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/photos/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/photos/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/photos/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/privacy-policy/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/privacy-policy/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/privacy-policy/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/privacy-policy/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-hoodie/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-hoodie/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-hoodie/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-hoodie/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το",
+  "english": "A T-shirt that brings together Japanese aesthetics, a poetic mood and contemporary design. The",
+  "note": "Η παράγραφος κόβεται εδώ γιατί ακολουθεί το όνομα του προϊόντος σε <strong>· η αγγλική πρόταση συνεχίζεται με το «is …» του επόμενου κομματιού."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδία στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κεράσιες και τη μαγεία του Τόκιο.",
+  "english": "is the collector's keepsake of PHONODIA's great journey to the Tokyo International Choir Competition in July 2025, inspired by the cherry blossom and the magic of Tokyo.",
+  "note": "Στο πρωτότυπο: «της Φωνωδία» (αντί «της Φωνωδίας») και «κεράσιες» (αντί «κερασιές») — αξίζει διόρθωση και στα ελληνικά."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κεράσιας, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.",
+  "english": "On the front, a discreet graphic at the chest with Japanese characters and sakura; on the back, striking artwork of cherry blossom, with typography in Latin, Japanese and Greek characters, breathing emotion and artistic identity.",
+  "note": "Στο πρωτότυπο «άνθη κεράσιας» αντί «κερασιάς»."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.",
+  "english": "Made from high-quality cotton, it offers a comfortable fit and a soft handle, ideal for everyday wear as well as for special occasions.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Χαρακτηριστικά:",
+  "english": "Features:",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Unisex γραμμή",
+  "english": "Unisex cut",
+  "note": "Εναλλακτικά «Unisex line»."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "100% βαμβάκι",
+  "english": "100% cotton",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Εκτύπωση υψηλής αντοχής",
+  "english": "Hard-wearing print",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Άνετη και μοντέρνα εφαρμογή",
+  "english": "A comfortable, modern fit",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.",
+  "english": "Ideal for anyone who loves music, poetry, travel and minimal street style with an artistic character.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-kids/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το",
+  "english": "A T-shirt that brings together Japanese aesthetics, a poetic mood and contemporary design. The",
+  "note": "Η παράγραφος κόβεται εδώ γιατί ακολουθεί το όνομα του προϊόντος σε <strong>· η αγγλική πρόταση συνεχίζεται με το «is …» του επόμενου κομματιού."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κερασιές και τη μαγεία του Τόκιο.",
+  "english": "is the collector's keepsake of PHONODIA's great journey to the Tokyo International Choir Competition in July 2025, inspired by the cherry blossom and the magic of Tokyo.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κερασιάς, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.",
+  "english": "On the front, a discreet graphic at the chest with Japanese characters and sakura; on the back, striking artwork of cherry blossom, with typography in Latin, Japanese and Greek characters, breathing emotion and artistic identity.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.",
+  "english": "Made from high-quality cotton, it offers a comfortable fit and a soft handle, ideal for everyday wear as well as for special occasions.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Χαρακτηριστικά:",
+  "english": "Features:",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Unisex γραμμή",
+  "english": "Unisex cut",
+  "note": "Εναλλακτικά «Unisex line»."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "100% βαμβάκι",
+  "english": "100% cotton",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Εκτύπωση υψηλής αντοχής",
+  "english": "Hard-wearing print",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Άνετη και μοντέρνα εφαρμογή",
+  "english": "A comfortable, modern fit",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.",
+  "english": "Ideal for anyone who loves music, poetry, travel and minimal street style with an artistic character.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-in-tokyo-woman/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Ένα statement t-shirt εμπνευσμένο από την ιαπωνική κουλτούρα, τη δύναμη της φύσης και την ποίηση του ταξιδιού. Το",
+  "english": "A statement T-shirt inspired by Japanese culture, the power of nature and the poetry of travel. The",
+  "note": "Κόβεται εδώ γιατί ακολουθεί το όνομα του προϊόντος σε <strong>."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "είναι το αναμνηστικό merch του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025.",
+  "english": "is the commemorative merch of PHONODIA's great journey to the Tokyo International Choir Competition in July 2025.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Στο μπροστινό μέρος δεσπόζει μια καλλιτεχνική απεικόνιση δέντρου κερασιάς (sakura) σε έντονο κόκκινο και μαύρο, σύμβολο αναγέννησης, ομορφιά και εφήμερης στιγμής. Στο πίσω μέρος, ο χαρακτηριστικός κόκκινος κύκλος εμπνευσμένος από τον ιαπωνικό ήλιο πλαισιώνει το λουλούδι της κερασιάς, μαζί με τυπογραφία σε αγγλικά, ιαπωνικά και ελληνικά, δημιουργώντας ένα ισχυρό οπτικό και συναισθηματικό αποτύπωμα.",
+  "english": "The front is dominated by an artistic rendering of a cherry tree (sakura) in vivid red and black, a symbol of rebirth, of beauty and of the fleeting moment. On the back, the distinctive red circle inspired by the Japanese sun frames the cherry blossom, together with typography in English, Japanese and Greek, creating a powerful visual and emotional imprint.",
+  "note": "Στο πρωτότυπο «σύμβολο αναγέννησης, ομορφιά και εφήμερης στιγμής» — λείπει η γενική («ομορφιάς»)."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Η φράση",
+  "english": "The phrase",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "«άνθη κερασιάς κρατώ και σου λέω σ' αγαπώ»",
+  "english": "«I hold cherry blossoms and I tell you I love you»",
+  "note": "Είναι η φράση που τυπώνεται στο ρούχο. Αν θέλει να φαίνεται το πρωτότυπο, μπορεί να μείνει στα ελληνικά με την αγγλική απόδοση σε παρένθεση."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "προσθέτει ποιητική διάσταση και κάνει το t-shirt μοναδικό και συλλεκτικό.",
+  "english": "adds a poetic dimension and makes the T-shirt unique and collectable.",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Χαρακτηριστικά:",
+  "english": "Features:",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Unisex γραμμή",
+  "english": "Unisex cut",
+  "note": "Εναλλακτικά «Unisex line»."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "100% βαμβάκι",
+  "english": "100% cotton",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Εκτύπωση υψηλής αντοχής",
+  "english": "Hard-wearing print",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Άνετη και μοντέρνα εφαρμογή",
+  "english": "A comfortable, modern fit",
+  "note": ""
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Κατασκευασμένο από ποιοτικό βαμβάκι, προσφέρει άνετη εφαρμογή και αντοχή στον χρόνο — ιδανικό για καθημερινό street style αλλά και ξεχωριστές εμφανίσεις",
+  "english": "Made from quality cotton, it offers a comfortable fit that lasts — ideal for everyday street style as well as for special occasions",
+  "note": "Το πρωτότυπο δεν κλείνει με τελεία· κρατήθηκε ως έχει."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-the-great-journey-in-tokyo-woman/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-men/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-men/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-men/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-men/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-woman/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-woman/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-woman/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/phonodia-φωνη-woman/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Ένα statement t-shirt εμπνευσμένο από την ιαπωνική κουλτούρα, τη δύναμη της φύσης και την ποίηση του ταξιδιού. Το",
+  "english": "A statement T-shirt inspired by Japanese culture, the power of nature and the poetry of travel. The",
+  "note": "Κόβεται εδώ γιατί ακολουθεί το όνομα του προϊόντος σε <strong>."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "είναι το αναμνηστικό merch του μεγάλου ταξιδιού της Φωνωδίας στο Tokyo International Choir Competition τον Ιούλιο του 2025.",
+  "english": "is the commemorative merch of PHONODIA's great journey to the Tokyo International Choir Competition in July 2025.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Στο μπροστινό μέρος δεσπόζει μια καλλιτεχνική απεικόνιση δέντρου κερασιάς (sakura) σε έντονο κόκκινο και μαύρο, σύμβολο αναγέννησης, ομορφιάς και εφήμερης στιγμής. Στο πίσω μέρος, ο χαρακτηριστικός κόκκινος κύκλος εμπνευσμένος από τον ιαπωνικό ήλιο πλαισιώνει το λουλούδι της κερασιάς, μαζί με τυπογραφία σε αγγλικά, ιαπωνικά και ελληνικά, δημιουργώντας ένα ισχυρό οπτικό και συναισθηματικό αποτύπωμα.",
+  "english": "The front is dominated by an artistic rendering of a cherry tree (sakura) in vivid red and black, a symbol of rebirth, of beauty and of the fleeting moment. On the back, the distinctive red circle inspired by the Japanese sun frames the cherry blossom, together with typography in English, Japanese and Greek, creating a powerful visual and emotional imprint.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Η φράση",
+  "english": "The phrase",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "«άνθη κερασιάς κρατώ και σου λέω σ' αγαπώ»",
+  "english": "«I hold cherry blossoms and I tell you I love you»",
+  "note": "Είναι η φράση που τυπώνεται στο ρούχο. Αν θέλει να φαίνεται το πρωτότυπο, μπορεί να μείνει στα ελληνικά με την αγγλική απόδοση σε παρένθεση."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "προσθέτει ποιητική διάσταση και κάνει το t-shirt μοναδικό και συλλεκτικό.",
+  "english": "adds a poetic dimension and makes the T-shirt unique and collectable.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Χαρακτηριστικά:",
+  "english": "Features:",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Unisex γραμμή",
+  "english": "Unisex cut",
+  "note": "Εναλλακτικά «Unisex line»."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "100% βαμβάκι",
+  "english": "100% cotton",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Εκτύπωση υψηλής αντοχής",
+  "english": "Hard-wearing print",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Άνετη και μοντέρνα εφαρμογή",
+  "english": "A comfortable, modern fit",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Κατασκευασμένο από ποιοτικό βαμβάκι, προσφέρει άνετη εφαρμογή και αντοχή στον χρόνο — ιδανικό για καθημερινό street style αλλά και ξεχωριστές εμφανίσεις",
+  "english": "Made from quality cotton, it offers a comfortable fit that lasts — ideal for everyday street style as well as for special occasions",
+  "note": "Το πρωτότυπο δεν κλείνει με τελεία· κρατήθηκε ως έχει."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/tokyo-i-men-2/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Ένα t-shirt που συνδυάζει την ιαπωνική αισθητική με ποιητική διάθεση και σύγχρονο design. Το",
+  "english": "A T-shirt that brings together Japanese aesthetics, a poetic mood and contemporary design. The",
+  "note": "Η παράγραφος κόβεται εδώ γιατί ακολουθεί το όνομα του προϊόντος σε <strong>· η αγγλική πρόταση συνεχίζεται με το «is …» του επόμενου κομματιού."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "είναι το συλλεκτικό αναμνηστικό του μεγάλου ταξιδιού της Φωνωδία στο Tokyo International Choir Competition τον Ιούλιο του 2025, εμπνευσμένου από τις ανθισμένες κερασιές και τη μαγεία του Tόκιο.",
+  "english": "is the collector's keepsake of PHONODIA's great journey to the Tokyo International Choir Competition in July 2025, inspired by the cherry blossom and the magic of Tokyo.",
+  "note": "Στο πρωτότυπο: «της Φωνωδία» και «Tόκιο» με λατινικό T."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Στο μπροστινό μέρος, διακριτικό γραφικό στο στήθος με ιαπωνικούς χαρακτήρες και sakura, ενώ στο πίσω μέρος κυριαρχεί εντυπωσιακό artwork με άνθη κερασιάς, τυπογραφία σε λατινικά, ιαπωνικά και ελληνικά στοιχεία, που αποπνέουν συναίσθημα και καλλιτεχνική ταυτότητα.",
+  "english": "On the front, a discreet graphic at the chest with Japanese characters and sakura; on the back, striking artwork of cherry blossom, with typography in Latin, Japanese and Greek characters, breathing emotion and artistic identity.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Κατασκευασμένο από υψηλής ποιότητας βαμβάκι, προσφέρει άνετη εφαρμογή και απαλότητα, ιδανικό για καθημερινή χρήση αλλά και για ξεχωριστές εμφανίσεις.",
+  "english": "Made from high-quality cotton, it offers a comfortable fit and a soft handle, ideal for everyday wear as well as for special occasions.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Χαρακτηριστικά:",
+  "english": "Features:",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Unisex γραμμή",
+  "english": "Unisex cut",
+  "note": "Εναλλακτικά «Unisex line»."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "100% βαμβάκι",
+  "english": "100% cotton",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Εκτύπωση υψηλής αντοχής",
+  "english": "Hard-wearing print",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Άνετη και μοντέρνα εφαρμογή",
+  "english": "A comfortable, modern fit",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Ιδανικό για όσους αγαπούν τη μουσική, την ποίηση, τα ταξίδια και το minimal street style με καλλιτεχνικό χαρακτήρα.",
+  "english": "Ideal for anyone who loves music, poetry, travel and minimal street style with an artistic character.",
+  "note": ""
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/tokyo-i-men/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/φωνη-kids/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/product/φωνη-kids/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/product/φωνη-kids/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/product/φωνη-kids/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/products/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/products/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/products/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/products/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/store/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/store/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/store/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/store/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/support-our-projects/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/support-our-projects/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/support-our-projects/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/support-our-projects/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/terms-of-use/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/terms-of-use/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/terms-of-use/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/terms-of-use/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/testimonials/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/testimonials/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/testimonials/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/testimonials/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/videos/index.html",
+  "greek": "Η\n Φωνωδία λειτουργεί υπό το Κέντρο Φωνητικής Τέχνης Κρήτης στο Ηράκλειο \nτης Κρήτης – μιας Αστικής Μη-Κερδοσκοπικής Εταιρίας που στόχο έχει την \nανάδειξη της μουσικής τέχνης στο νησί, μέσα από τη φωνητική και το \nχορωδιακό τραγούδι.",
+  "english": "PHONODIA operates under the Cretan Center of Vocal Arts in Herakleion, Crete – an Urban Non-Profit Organization whose aim is to advance the art of music on the island through vocal and choral singing.",
+  "note": "Υποσέλιδο, στήλη 1. Δεν είναι μέρος του δίγλωσσου ζεύγους — υπάρχει μόνο στα ελληνικά. Το μενού λέγεται «menu-footer-col1-el», δηλαδή οι αγγλικές σελίδες τραβούν το ΕΛΛΗΝΙΚΟ υποσέλιδο· καλό είναι να φτιαχτεί αγγλικό μενού στο build.py. Το «Urban Non-Profit Organization» κρατήθηκε όπως ήδη γράφεται στο αγγλικό υποσέλιδο."
+ },
+ {
+  "file": "en/videos/index.html",
+  "greek": "Copyright © 2025 Κέντρο Φωνητικής Τέχνης Κρήτης.",
+  "english": "Copyright © 2025 Cretan Center of Vocal Arts.",
+  "note": "Υποσέλιδο, αλλά χωρίς αγγλικό δίδυμο — γι' αυτό μεταφράζεται. Αν ο Ιωάννης θέλει να μείνει η νομική επωνυμία στα ελληνικά παντού, αγνοήστε τη γραμμή."
+ },
+ {
+  "file": "en/videos/index.html",
+  "greek": "Φωνωδία",
+  "english": "PHONODIA",
+  "note": "alt του λογοτύπου. Η ίδια λέξη είναι και κατάληξη του <title> («… - Φωνωδία») σε 67 αγγλικές σελίδες. ΠΡΟΣΟΧΗ: η αντικατάσταση να γίνει ΜΟΝΟ σε κείμενο/alt/title, ΠΟΤΕ μέσα σε src/srcset (υπάρχουν εικόνες «…/Φωνωδία-mavro.png» που θα σπάσουν)."
+ },
+ {
+  "file": "en/videos/index.html",
+  "greek": "Ελληνικά",
+  "english": "Greek",
+  "note": "Ετικέτα του διακόπτη γλώσσας (title του <a> και alt της σημαίας). Η διεθνής πρακτική είναι να μένει «Ελληνικά» στη μητρική της μορφή· αν το προτιμά ο Ιωάννης, αγνοήστε τη γραμμή."
+ }
+]
