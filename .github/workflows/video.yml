@@ -1,0 +1,32 @@
+name: Video
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - run: |
+          curl -fsSL -o orig.mp4 "https://phonodiavocalensemble.com/wp-content/uploads/2026/04/bannerlite.mp4"
+          echo "protypo: $(( $(stat -c%s orig.mp4) / 1024 / 1024 )) MB"
+          ok=""
+          for crf in 20 22 24 26 29; do
+            ffmpeg -y -loglevel error -i orig.mp4 -vf "scale='min(1920,iw)':-2" \
+              -c:v libx264 -crf $crf -preset slow -pix_fmt yuv420p -an \
+              -movflags +faststart out.mp4
+            sz=$(stat -c%s out.mp4)
+            echo "crf=$crf -> $(( sz / 1024 / 1024 )) MB"
+            if [ "$sz" -lt 23000000 ]; then ok="yes"; break; fi
+          done
+          if [ -z "$ok" ]; then echo "den chorese"; exit 1; fi
+          mv out.mp4 img/260e92f0d533.mp4
+          rm -f orig.mp4
+      - run: |
+          git config user.name "Phonodia Site"
+          git config user.email "contact@phonodia.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Video kalyteri poiotita"
+          git push
