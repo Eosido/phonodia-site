@@ -244,8 +244,25 @@ header#lc_page_header.sticky_enabled .cust_page_logo{display:none!important}
  .single_event_list .event_list_entry{float:none;display:block;height:auto;width:100%!important;margin-bottom:8px}}
 '''
     css += '\n' + shop.CSS
+    css = drop_wp_assets(css)
     open(OUT + '/assets/site.css', 'w', encoding='utf-8').write(css)
     print('css bytes', len(css))
+
+
+def drop_wp_assets(css):
+    """Καθαρίζει το φύλλο στυλ από αρχεία που ζητούσε ακόμα το WordPress."""
+    before = css.count('phonodiavocalensemble.com/wp-content')
+    out, i = [], 0
+    for m in re.finditer(r'@font-face\s*\{[^}]*\}', css):
+        if 'phonodiavocalensemble.com/wp-content' in m.group(0):
+            out.append(css[i:m.start()])
+            i = m.end()
+    out.append(css[i:])
+    css = ''.join(out)
+    css = re.sub(r'url\(\s*[\'"]?https://phonodiavocalensemble\.com/wp-content[^)]*\)',
+                 'none', css)
+    print('drop_wp_assets: %d -> %d' % (before, css.count('phonodiavocalensemble.com/wp-content')))
+    return css
 
 # ====================================================================== JS
 JS = r'''
