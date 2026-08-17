@@ -1,35 +1,30 @@
-name: Ξεπακετάρισμα ιστοσελίδας
-
+name: Xepaketarisma
 on:
   push:
     paths:
-      - 'site.zip'
+      - '**.zip'
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   unzip:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Anoigma
         run: |
-          if [ ! -f site.zip ]; then
-            echo "Δεν υπάρχει site.zip"
-            exit 0
-          fi
+          shopt -s nullglob
+          zips=(*.zip)
+          if [ ${#zips[@]} -eq 0 ]; then echo "kamia zip"; exit 0; fi
           mkdir -p _out
-          unzip -q -o site.zip -d _out
+          for z in "${zips[@]}"; do echo "-> $z"; unzip -q -o "$z" -d _out; done
           rsync -a --exclude '.git' --exclude '.github' _out/ ./
-          rm -rf _out site.zip
-
+          rm -rf _out
+          for z in "${zips[@]}"; do rm -f "$z"; done
       - name: Katachorisi
         run: |
           git config user.name "Phonodia Site"
           git config user.email "contact@phonodia.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Enimerosi istoselidas"
+          git diff --cached --quiet || git commit -m "Enimerosi"
           git push
