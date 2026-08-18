@@ -1978,3 +1978,12 @@ a.checkout_btn:hover{background:#181b31}
 @media (max-width:900px){.prod_wrap{grid-template-columns:1fr;gap:28px}}
 @media (max-width:600px){table.cart_table td.ct_img{width:66px}table.cart_table td.ct_img img{width:56px;height:56px}
  .prod_summary h1.product_title{font-size:24px}}
+
+/* --- διακόπτης γλώσσας: τρεις σημαίες (απόφαση Ιωάννη Ιδομενέως, 18 Αυγ 2026) --- */
+li.lc_langs{display:flex!important;align-items:center;gap:11px}
+li.lc_langs a{display:block!important;line-height:0;padding:0!important;opacity:.5;
+  transition:opacity .2s ease;border:0!important}
+li.lc_langs a:hover{opacity:1}
+li.lc_langs a.on{opacity:1;box-shadow:0 0 0 2px #ff9568;border-radius:1px}
+svg.lc_flag{display:block;width:25px;height:16px;border-radius:1px}
+@media (max-width:1024px){li.lc_langs{gap:14px}svg.lc_flag{width:28px;height:18px}}

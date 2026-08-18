@@ -208,30 +208,88 @@ def apply_to(path, m):
     return hits
 
 
-def add_switch(lang_dir, label, target):
-    """Προσθέτει έναν σύνδεσμο γλώσσας δίπλα στον υπάρχοντα διακόπτη."""
-    pat = OUT + ('/**/index.html' if not lang_dir else '/' + lang_dir + '/**/index.html')
-    for path in glob.glob(pat, recursive=True):
+FLAG_SVG = {
+    'el': ('<svg viewBox="0 0 27 18" class="lc_flag"><rect width="27" height="18" fill="#0d5eaf"/>'
+           '<g fill="#fff"><rect y="2" width="27" height="2"/><rect y="6" width="27" height="2"/>'
+           '<rect y="10" width="27" height="2"/><rect y="14" width="27" height="2"/></g>'
+           '<rect width="10" height="10" fill="#0d5eaf"/>'
+           '<g fill="#fff"><rect x="4" width="2" height="10"/><rect y="4" width="10" height="2"/></g></svg>'),
+    'en': ('<svg viewBox="0 0 27 18" class="lc_flag"><rect width="27" height="18" fill="#012169"/>'
+           '<path d="M0,0 27,18 M27,0 0,18" stroke="#fff" stroke-width="3.6"/>'
+           '<path d="M0,0 27,18 M27,0 0,18" stroke="#C8102E" stroke-width="2.2"/>'
+           '<path d="M13.5,0 V18 M0,9 H27" stroke="#fff" stroke-width="6"/>'
+           '<path d="M13.5,0 V18 M0,9 H27" stroke="#C8102E" stroke-width="3.6"/></svg>'),
+    'fr': ('<svg viewBox="0 0 27 18" class="lc_flag"><rect width="9" height="18" fill="#002395"/>'
+           '<rect x="9" width="9" height="18" fill="#fff"/>'
+           '<rect x="18" width="9" height="18" fill="#ED2939"/></svg>'),
+}
+
+FLAG_CSS = """
+/* --- διακόπτης γλώσσας: τρεις σημαίες (απόφαση Ιωάννη Ιδομενέως, 18 Αυγ 2026) --- */
+li.lc_langs{display:flex!important;align-items:center;gap:11px}
+li.lc_langs a{display:block!important;line-height:0;padding:0!important;opacity:.5;
+  transition:opacity .2s ease;border:0!important}
+li.lc_langs a:hover{opacity:1}
+li.lc_langs a.on{opacity:1;box-shadow:0 0 0 2px #ff9568;border-radius:1px}
+svg.lc_flag{display:block;width:25px;height:16px;border-radius:1px}
+@media (max-width:1024px){li.lc_langs{gap:14px}svg.lc_flag{width:28px;height:18px}}
+"""
+
+
+def _targets(rel_path, el_href):
+    """Πού πάει η κάθε γλώσσα από τη σελίδα rel_path (π.χ. 'en/testimonials/index.html')."""
+    parts = rel_path.split('/')
+    depth = len(parts) - 1
+    up = '../' * depth
+    if parts[0] == 'en':
+        base = '/'.join(parts[1:])
+        return {'el': el_href, 'en': None, 'fr': up + 'fr/' + base}
+    if parts[0] == 'fr':
+        base = '/'.join(parts[1:])
+        return {'el': el_href, 'en': up + 'en/' + base, 'fr': None}
+    # ελληνική σελίδα: το el_href δείχνει ήδη στην αγγλική
+    fr = re.sub(r'(^|/)en/', r'\1fr/', el_href) if el_href else None
+    return {'el': None, 'en': el_href, 'fr': fr}
+
+
+def lang_switcher():
+    """Αντικαθιστά τον διακόπτη γλώσσας με τρεις σημαίες, σε κάθε σελίδα."""
+    names = {'el': 'Ελληνικά', 'en': 'English', 'fr': 'Français'}
+    order = ('el', 'en', 'fr')
+    done = 0
+    for path in glob.glob(OUT + '/**/index.html', recursive=True):
         rel = os.path.relpath(path, OUT)
-        if lang_dir == '' and (rel.startswith('en/') or rel.startswith('fr/')):
-            continue
-        depth = rel.count('/')
-        href = '../' * depth + target
+        cur = 'en' if rel.startswith('en/') else ('fr' if rel.startswith('fr/') else 'el')
         r = LH.parse(path).getroot()
         changed = False
         for ul in r.xpath('//ul[contains(@class,"menu")]'):
-            if ul.xpath('./li[contains(@class,"lang-extra")]'):
-                continue
             items = ul.xpath('./li[contains(@class,"lang-item")]')
             if not items:
                 continue
-            li = LH.fragment_fromstring(
-                '<li class="menu-item lang-extra"><a href="%s">%s</a></li>' % (href, label))
-            items[-1].addnext(li)
+            el_href = None
+            for a in items[0].xpath('.//a[@href]'):
+                el_href = a.get('href'); break
+            tg = _targets(rel, el_href)
+            html = '<li class="menu-item lc_langs">'
+            for lg in order:
+                href = '#' if lg == cur else (tg.get(lg) or '#')
+                html += '<a href="%s" title="%s" hreflang="%s"%s>%s</a>' % (
+                    href, names[lg], lg, ' class="on"' if lg == cur else '', FLAG_SVG[lg])
+            html += '</li>'
+            items[0].addprevious(LH.fragment_fromstring(html))
+            for li in items:
+                li.getparent().remove(li)
+            for li in ul.xpath('./li[contains(@class,"lang-extra")]'):
+                li.getparent().remove(li)
             changed = True
         if changed:
             open(path, 'w', encoding='utf-8').write(
                 '<!DOCTYPE html>\n' + LH.tostring(r, encoding='unicode', method='html'))
+            done += 1
+    css = OUT + '/assets/site.css'
+    if os.path.exists(css) and 'li.lc_langs' not in open(css, encoding='utf-8').read():
+        open(css, 'a', encoding='utf-8').write(FLAG_CSS)
+    print('lang_switcher: τρεις σημαίες σε %d σελίδες' % done)
 
 
 def main():
@@ -254,10 +312,7 @@ def main():
             files += 1; total += n
     print('translate_fr: %d αντικαταστάσεις σε %d σελίδες (%d αποδόσεις)'
           % (total, files, len(set(m.values()))))
-    # ο σύνδεσμος «Français» στα ελληνικά και στα αγγλικά, «English» στα γαλλικά
-    add_switch('', 'Français', 'fr/index.html')
-    add_switch('en', 'Français', 'fr/index.html')
-    add_switch('fr', 'English', 'en/index.html')
+    lang_switcher()      # τρεις σημαίες παντού
 
 
 if __name__ == '__main__':
