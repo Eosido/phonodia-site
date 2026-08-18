@@ -557,13 +557,20 @@ pages = {r['url']: r for r in load_json(CLONE + '/harvest-pages.json')}
 tes_el = load_json(CLONE + '/testimonials-el.json')
 harvest_events = {r['url']: r for r in load_json(CLONE + '/harvest-events.json')}
 
-# 17 Αυγ 2026 — νέα συναυλία που έδωσε ο Ιωάννης Ιδομενέως. Αφίσα ΠΡΟΣΩΡΙΝΗ (η αφίσα
-# της «Πνοής» του Ρεθύμνου) μέχρι να έρθει η κανονική. Ώρα: δεν δόθηκε ακόμη.
+# 17 Αυγ 2026 — νέα συναυλία που έδωσε ο Ιωάννης Ιδομενέως.
+# 18 Αυγ 2026 — μπήκε η κανονική αφίσα των Αρχανών, εγκεκριμένη από τον Ιωάννη Ιδομενέως.
+AFISA_ARXANES = '/img/afisa-pnoi-arxanes-2026.webp'
+AFISA_SHA1 = '9e96f2546dc60edb6da69ac3ff8d7c276965fc41'
+# τα τέσσερα κομμάτια της αφίσας, όπως ανέβηκαν στον φάκελο της γέφυρας στο Drive
+AFISA_DRIVE = (('1jLAoGzWCq1EvBUUa-X2vu4pkj7xiCf8a', 'ad6fc09a5d1c'),
+               ('1v7Mo_osSatVQSVHIRDZOQrseo4qy-r3Z', '3cc07e0762c7'),
+               ('1LyO0LCpZDlRHkGwi-PpARctlLYHbSMVC', 'a13cab0b6124'),
+               ('1qYFwCKqftjmmB9wdZDWFrda5F-q-rupT', 'e258a4016ee2'))
 NEW_EVENT_URL = SITE + '/js_events/πνοή-αρχάνες-2026/'
 NEW_EVENT = {'title': 'Πνοή', 'date': 'October 24, 2026',
              'venue': 'Συνεδριακό Κέντρο «Δίας», Αρχάνες', 'meta': '8:30 pm || Διοργάνωση: Περιφέρεια Κρήτης',
              'body': 'Χορωδιακή Συναυλία Φωνητικού Συνόλου ΦΩΝΩΔΙΑ «ΠΝΟΗ» || Ώρα έναρξης 20:30',
-             'poster': 'https://phonodiavocalensemble.com/wp-content/uploads/2026/05/IMG_20260527_134003_888.jpg',
+             'poster': AFISA_ARXANES,
              'ticket': None, 'url': NEW_EVENT_URL}
 events.insert(0, NEW_EVENT)
 harvest_events[NEW_EVENT_URL] = {'url': NEW_EVENT_URL, 'type': 'event', 'title': 'Πνοή', 'links': []}
@@ -1132,6 +1139,69 @@ def build_blog():
                    alt_url=rel(d, 'en/blog' if lang == 'el' else 'blog'))
 
 # ====================================================================== RUN
+def afisa_from_drive():
+    """Κατεβάζει τα κομμάτια της αφίσας και τα ξανακολλάει σε εικόνα.
+
+    Κάθε κομμάτι έχει το δικό του αποτύπωμα, ώστε αν κάτι φτάσει αλλοιωμένο να ξέρουμε
+    ποιο ακριβώς φταίει και να μη γράψουμε ποτέ χαλασμένη εικόνα.
+    """
+    import base64, hashlib, subprocess
+    chunks = []
+    for n, (fid, want) in enumerate(AFISA_DRIVE, 1):
+        url = 'https://drive.usercontent.google.com/download?id=%s&export=download' % fid
+        out = '/tmp/afisa-%d.b64' % n
+        try:
+            subprocess.run(['curl', '-fsSL', '-A', 'Mozilla/5.0', '-o', out, url],
+                           check=True, timeout=120)
+        except Exception as e:
+            print('afisa: το κομμάτι %d δεν κατέβηκε (%s)' % (n, e))
+            return None
+        txt = ''.join(open(out, encoding='utf-8', errors='replace').read().split())
+        got = hashlib.sha1(txt.encode()).hexdigest()[:12]
+        if got != want:
+            print('afisa: το κομμάτι %d ήρθε αλλοιωμένο (%s αντί %s, %d χαρακτήρες)'
+                  % (n, got, want, len(txt)))
+            return None
+        chunks.append(txt)
+    try:
+        data = base64.b64decode(''.join(chunks))
+    except Exception as e:
+        print('afisa: τα κομμάτια δεν έδεσαν (%s)' % e)
+        return None
+    if hashlib.sha1(data).hexdigest() != AFISA_SHA1:
+        print('afisa: η τελική εικόνα δεν ταιριάζει με το αποτύπωμα')
+        return None
+    print('afisa: κατέβηκε ολόκληρη από το Drive, %d bytes' % len(data))
+    return data
+
+
+def emit_afisa():
+    """Η αφίσα των Αρχανών.
+
+    Η γέφυρα γράφει μόνο κείμενο, οπότε η εικόνα ταξιδεύει μία και μόνη φορά: σε
+    κομμάτια από τον φάκελο της γέφυρας στο Drive. Μόλις φτάσει, μένει μέσα στο
+    αποθετήριο και δεν ξαναχρειάζεται δίκτυο.
+    """
+    import hashlib
+    repo = os.path.dirname(ROOT.rstrip('/'))
+    keep = CLONE + AFISA_ARXANES[AFISA_ARXANES.rindex('/'):]
+
+    def good(path):
+        if not os.path.exists(path):
+            return None
+        b = open(path, 'rb').read()
+        return b if hashlib.sha1(b).hexdigest() == AFISA_SHA1 else None
+
+    data = good(keep) or good(repo + AFISA_ARXANES) or afisa_from_drive()
+    if data is None:
+        print('emit_afisa: η αφίσα λείπει — η σελίδα χτίζεται χωρίς αυτήν')
+        return
+    open(keep, 'wb').write(data)
+    os.makedirs(OUT + '/img', exist_ok=True)
+    open(OUT + AFISA_ARXANES, 'wb').write(data)
+    print('emit_afisa: %d bytes -> %s' % (len(data), AFISA_ARXANES))
+
+
 def apply_local_images():
     """Δείχνει κάθε φωτογραφία στο τοπικό /img/... αντί στο WordPress.
     Ο χάρτης φτιάχτηκε από το tools/localise.py που έτρεξε στο GitHub (17 Αυγ 2026)."""
@@ -1237,6 +1307,7 @@ if __name__ == '__main__':
     translate_en.main()
     import translate_fr           # γαλλικά: καθρέφτης των εγκεκριμένων αγγλικών (17 Αυγ 2026)
     translate_fr.main()
+    emit_afisa()                   # η αφίσα των Αρχανών, 18 Αυγ 2026
     apply_local_images()           # οι φωτογραφίες ζουν πλέον μέσα στη σελίδα
 
 
