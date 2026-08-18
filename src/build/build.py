@@ -555,7 +555,8 @@ albums = load_json(CLONE + '/data-albums.json')
 members = load_json(CLONE + '/data-members.json')
 pages = {r['url']: r for r in load_json(CLONE + '/harvest-pages.json')}
 tes_el = load_json(CLONE + '/testimonials-el.json')
-harvest_events = {r['url']: r for r in load_json(CLONE + '/harvest-events.json')}
+harvest_events = {r['url']: r for r in load_json(CLONE + '/harvest-events.json')
+                 if (r.get('title') or '').strip() != 'Dummy Album Format'}
 
 # 17 Αυγ 2026 — νέα συναυλία που έδωσε ο Ιωάννης Ιδομενέως.
 # 18 Αυγ 2026 — μπήκε η κανονική αφίσα των Αρχανών, εγκεκριμένη από τον Ιωάννη Ιδομενέως.
@@ -583,9 +584,14 @@ for _u, _r in harvest_events.items():
         _p = up.unquote(_u).replace(SITE, '').strip('/')
         EN_XLATE[_p] = 'en/' + _p
         route('/en/' + _p + '/', 'en/' + _p)
+# Άδειες καρτέλες που είχαν μείνει στο WordPress από παλιά. Ο Ιωάννης Ιδομενέως
+# ζήτησε να μη φτάσουν ποτέ στη νέα σελίδα (18 Αυγ 2026).
+SKOUPIDIA = {'Σιμος', 'Σίμος', 'Dummy Album Format'}
+
 el_artists = []
 for f in ('harvest-artists-1.json', 'harvest-artists-2.json', 'harvest-artists-3.json'):
-    el_artists += load_json(CLONE + '/' + f)
+    el_artists += [r for r in load_json(CLONE + '/' + f)
+                   if (r.get('title') or '').strip() not in SKOUPIDIA]
 en_artists = load_json(CLONE + '/harvest-artists-en.json')
 products = load_json(ROOT + '/site/products.json')['products']
 
