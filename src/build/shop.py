@@ -196,7 +196,7 @@ def cart_page(lang, shop_href, order_href):
 # την αποστολή. Όσο δεν υπάρχει υπηρεσία αποστολής email, η φόρμα ανοίγει το
 # πρόγραμμα αλληλογραφίας του πελάτη με το μήνυμα έτοιμο.
 ORDER_TO = 'contact@phonodia.com'
-ORDER_CC = 'info@needleworks.gr'
+ORDER_CC = 'office@needleworks.gr'   # το ζήτησε ο Μιχάλης, 19 Αυγ 2026 (δουλεύει και το info)
 ORDER_ENDPOINT = ''          # όταν στηθεί υπηρεσία, μπαίνει εδώ η διεύθυνσή της
 
 
