@@ -48,7 +48,10 @@ def fetch_b64():
 def fp(s):
     return hashlib.sha1(' '.join(s.split()).encode('utf-8')).hexdigest()[:12]
 
-TEXT_ATTRS = ('alt', 'title', 'placeholder', 'aria-label', 'value', 'content', 'data-pname')
+TEXT_ATTRS = ('alt', 'title', 'placeholder', 'aria-label', 'value', 'content', 'data-pname',
+              # τα λεκτικά του καταστήματος ταξιδεύουν μέσα σε data-* και τα διαβάζει η JavaScript
+              'data-empty', 'data-req', 'data-ok', 'data-total', 'data-remove', 'data-checkout',
+              'data-items', 'data-shiph', 'data-grand', 'data-ask', 'data-big', 'data-ww')
 
 # Ονόματα γλωσσών: κάθε γλώσσα λέγεται στη δική της γραφή.
 LANG_LABEL = {'el': 'Ελληνικά', 'en': 'English', 'fr': 'Français'}
@@ -56,6 +59,30 @@ LANG_LABEL = {'el': 'Ελληνικά', 'en': 'English', 'fr': 'Français'}
 # Λεκτικά του καταστήματος και του μενού. Δεν υπάρχουν στη συγκομιδή, γιατί τα
 # γράψαμε εμείς — άρα τα αποδίδω εδώ, ρητά και ελέγξιμα.
 UI = {
+    # κατάστημα — τρόπος παράδοσης (19 Αυγ 2026)
+    'Delivery method': 'Mode de livraison',
+    'Where it is going': 'Destination',
+    'Greece': 'Grèce',
+    'Europe': 'Europe',
+    'Rest of the world': 'Reste du monde',
+    'To a BOX NOW locker': 'Dans un casier BOX NOW',
+    'Collect it whenever you like, from the locker that suits you.':
+        'Retirez-le quand vous voulez, dans le casier qui vous arrange.',
+    'To my address': 'À mon adresse',
+    'Courier delivery, on working days and hours.':
+        'Livraison par coursier, aux jours et heures ouvrables.',
+    'Which locker suits you?': 'Quel casier vous arrange ?',
+    'Find your locker': 'Trouvez votre casier',
+    'Shipping': 'Frais de port',
+    'For orders above 15 items please write to us and we will arrange it together.':
+        'Pour les commandes de plus de 15 articles, écrivez-nous et nous organiserons cela ensemble.',
+    'For destinations outside Europe please write to us and we will tell you the exact cost.':
+        'Pour les destinations hors d\'Europe, écrivez-nous et nous vous indiquerons le coût exact.',
+    'on request': 'sur demande',
+    'Grand total': 'Total à payer',
+    'Items': 'Articles',
+    'Garments are printed to order within 10 to 15 days and travel from Needleworks in Herakleion.':
+        'Les vêtements sont imprimés à la commande sous 10 à 15 jours et partent de Needleworks à Héraklion.',
     # μενού
     'The Ensemble': "L'Ensemble",
     'A few words about the ensemble': "Quelques mots sur l'ensemble",

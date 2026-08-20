@@ -44,7 +44,7 @@ T = {
                total='Σύνολο', checkout='Ολοκλήρωση παραγγελίας', remove='Αφαίρεση',
                back='Συνέχεια αγορών', product='Προϊόν', price='Τιμή', view='Επιλογή',
                note='Η πληρωμή ολοκληρώνεται με ασφάλεια μέσω Viva — κάρτες, Apple Pay, Google Pay και IRIS.',
-               ship='Η παραγωγή γίνεται κατά παραγγελία και η αποστολή γίνεται από τη Needleworks.',
+               ship='Τα ρούχα τυπώνονται κατά παραγγελία, σε 10 με 15 ημέρες, και ταξιδεύουν από τη Needleworks στο Ηράκλειο.',
                zoom='Πατήστε τη φωτογραφία για μεγέθυνση',
                cartline='Το καλάθι σας',
                order='Στοιχεία παραγγελίας', o_name='Ονοματεπώνυμο', o_email='Email',
@@ -62,7 +62,7 @@ T = {
                total='Total', checkout='Proceed to checkout', remove='Remove',
                back='Continue shopping', product='Product', price='Price', view='Select options',
                note='Payment is completed securely through Viva — cards, Apple Pay, Google Pay and IRIS.',
-               ship='Items are produced on demand and shipped by Needleworks.',
+               ship='Garments are printed to order within 10 to 15 days and travel from Needleworks in Herakleion.',
                zoom='Click the photo to enlarge',
                cartline='Your basket',
                order='Order details', o_name='Full name', o_email='Email',
@@ -75,6 +75,48 @@ T = {
                        'and the delivery time. Nothing is charged at this step.',
                o_cart='Your order'),
 }
+
+
+# Μεταφορικά — οι αριθμοί που έδωσε ο Μιχάλης της Needleworks (19 Αυγ 2026).
+# [μέχρι πόσα τεμάχια, κόστος σε λεπτά]. Ίδια τιμή για θυρίδα και για πόρτα:
+# ο πελάτης διαλέγει τι τον βολεύει, όχι τι κοστίζει.
+SHIP = {'gr': [[5, 400], [15, 900]], 'eu': [[5, 1500], [15, 2500]]}
+SHIP_MAX = 15
+LOCKER_FINDER = 'https://boxnow.gr/locker-finder'
+
+T['el'].update(
+    d_h='Τρόπος παράδοσης',
+    d_zone='Πού θα σταλεί',
+    z_gr='Ελλάδα', z_eu='Ευρώπη', z_ww='Υπόλοιπος κόσμος',
+    d_box='Σε θυρίδα BOX NOW',
+    d_box_hint='Το παίρνετε όποια ώρα θέλετε, από τη θυρίδα που σας βολεύει.',
+    d_door='Στη διεύθυνσή μου',
+    d_door_hint='Παράδοση με courier, εργάσιμες ημέρες και ώρες.',
+    d_locker='Ποια θυρίδα σας βολεύει;',
+    d_locker_find='Βρείτε τη θυρίδα σας',
+    s_h='Μεταφορικά',
+    s_big='Για παραγγελίες πάνω από 15 τεμάχια γράψτε μας, και τα κανονίζουμε μαζί.',
+    s_ww='Για αποστολές εκτός Ευρώπης γράψτε μας, και σας λέμε το ακριβές κόστος.',
+    s_ask='κατόπιν επικοινωνίας',
+    s_grand='Τελικό σύνολο',
+    s_items='Προϊόντα')
+
+T['en'].update(
+    d_h='Delivery method',
+    d_zone='Where it is going',
+    z_gr='Greece', z_eu='Europe', z_ww='Rest of the world',
+    d_box='To a BOX NOW locker',
+    d_box_hint='Collect it whenever you like, from the locker that suits you.',
+    d_door='To my address',
+    d_door_hint='Courier delivery, on working days and hours.',
+    d_locker='Which locker suits you?',
+    d_locker_find='Find your locker',
+    s_h='Shipping',
+    s_big='For orders above 15 items please write to us and we will arrange it together.',
+    s_ww='For destinations outside Europe please write to us and we will tell you the exact cost.',
+    s_ask='on request',
+    s_grand='Grand total',
+    s_items='Items')
 
 def money(minor, unit=2):
     return ('{:,.%df}' % unit).format(int(minor) / (10 ** unit)).replace(',', ' ').replace('.', ',') + ' €'
@@ -201,35 +243,68 @@ ORDER_ENDPOINT = ''          # όταν στηθεί υπηρεσία, μπαί�
 
 
 def order_page(lang, shop_href):
+    """Η σελίδα παραγγελίας.
+
+    Ο πελάτης λέει πού πάει το δέμα, διαλέγει θυρίδα ή πόρτα, και βλέπει αμέσως τα
+    μεταφορικά και το τελικό σύνολο. Οι τιμές είναι ίδιες και στους δύο τρόπους —
+    έτσι διαλέγει με βάση το τι τον βολεύει.
+    """
+    import json
     t = T[lang]
-    f = lambda i, lab, typ, req: (
-        '<p class="of_row"><label for="%s">%s%s</label>'
-        '<input id="%s" type="%s"%s></p>' % (i, esc(lab), ' *' if req else '', i, typ,
-                                             ' required' if req else ''))
-    fields = (f('of_name', t['o_name'], 'text', True) +
-              f('of_email', t['o_email'], 'email', True) +
-              f('of_phone', t['o_phone'], 'tel', True) +
-              f('of_addr', t['o_addr'], 'text', True) +
-              f('of_city', t['o_city'], 'text', True) +
-              f('of_zip', t['o_zip'], 'text', True) +
-              '<p class="of_row"><label for="of_notes">%s</label>'
-              '<textarea id="of_notes" rows="3"></textarea></p>' % esc(t['o_notes']))
-    return '''<div class="lc_content_full lc_swp_boxed lc_basic_content_padding order_page"
- data-to="%s" data-cc="%s" data-endpoint="%s" data-empty="%s" data-req="%s" data-ok="%s"
- data-total="%s" data-subject="%s">
-<p class="shop_intro">%s</p>
-<h3 class="of_h">%s</h3>
-<div id="order_cart"></div>
-<h3 class="of_h">%s</h3>
-<form class="order_form" id="order_form" novalidate>%s
-<button type="submit" id="of_send" class="lc_button lc_button_fill">%s</button>
-<p class="add_msg" id="of_msg"></p></form>
-<p class="shop_note">%s<br>%s</p>
-<p class="prod_back"><a href="%s">%s</a></p></div>''' % (
+
+    def f(i, lab, typ, req=True):
+        return ('<p class="of_row"><label for="%s">%s%s</label>'
+                '<input id="%s" type="%s"%s></p>'
+                % (i, esc(lab), ' *' if req else '', i, typ, ' required' if req else ''))
+
+    who = f('of_name', t['o_name'], 'text') + f('of_email', t['o_email'], 'email') + \
+        f('of_phone', t['o_phone'], 'tel')
+    addr = f('of_addr', t['o_addr'], 'text') + f('of_city', t['o_city'], 'text') + \
+        f('of_zip', t['o_zip'], 'text')
+    locker = (f('of_locker', t['d_locker'], 'text') +
+              '<p class="of_help"><a href="%s" target="_blank" rel="noopener">%s</a></p>'
+              % (LOCKER_FINDER, esc(t['d_locker_find'])))
+
+    def radio(val, lab, hint, first=False):
+        return ('<label class="dl_m"><input type="radio" name="dl" value="%s"%s>'
+                '<span><b>%s</b><i>%s</i></span></label>'
+                % (val, ' checked' if first else '', esc(lab), esc(hint)))
+
+    zones = ''.join('<option value="%s">%s</option>' % (k, esc(t[v]))
+                    for k, v in (('gr', 'z_gr'), ('eu', 'z_eu'), ('ww', 'z_ww')))
+
+    body = ('<h3 class="of_h">%s</h3>' % esc(t['order']) + who +
+            '<h3 class="of_h">%s</h3>' % esc(t['d_h']) +
+            '<p class="of_row"><label for="of_zone">%s</label>'
+            '<select id="of_zone">%s</select></p>' % (esc(t['d_zone']), zones) +
+            '<div class="dl_methods" id="dl_methods">%s%s</div>'
+            % (radio('box', t['d_box'], t['d_box_hint'], True),
+               radio('door', t['d_door'], t['d_door_hint'])) +
+            '<div id="dl_locker">%s</div>' % locker +
+            '<div id="dl_addr">%s</div>' % addr +
+            '<div class="ship_box" id="ship_box"></div>' +
+            '<p class="of_row"><label for="of_notes">%s</label>'
+            '<textarea id="of_notes" rows="3"></textarea></p>' % esc(t['o_notes']))
+
+    return ('<div class="lc_content_full lc_swp_boxed lc_basic_content_padding order_page"'
+            ' data-to="%s" data-cc="%s" data-endpoint="%s" data-empty="%s" data-req="%s"'
+            ' data-ok="%s" data-total="%s" data-subject="%s" data-ship=\'%s\' data-max="%d"'
+            ' data-big="%s" data-ww="%s" data-ask="%s" data-grand="%s" data-items="%s"'
+            ' data-shiph="%s">'
+            '<p class="shop_intro">%s</p>'
+            '<h3 class="of_h">%s</h3><div id="order_cart"></div>'
+            '<form class="order_form" id="order_form" novalidate>%s'
+            '<button type="submit" id="of_send" class="lc_button lc_button_fill">%s</button>'
+            '<p class="add_msg" id="of_msg"></p></form>'
+            '<p class="shop_note">%s<br>%s</p>'
+            '<p class="prod_back"><a href="%s">%s</a></p></div>') % (
         ORDER_TO, ORDER_CC, ORDER_ENDPOINT, esc(t['o_empty']), esc(t['o_req']), esc(t['o_ok']),
         esc(t['total']), esc('Νέα παραγγελία' if lang == 'el' else 'New order'),
-        esc(t['o_intro']), esc(t['o_cart']), esc(t['order']), fields, esc(t['o_send']),
+        json.dumps(SHIP), SHIP_MAX, esc(t['s_big']), esc(t['s_ww']), esc(t['s_ask']),
+        esc(t['s_grand']), esc(t['s_items']), esc(t['s_h']),
+        esc(t['o_intro']), esc(t['o_cart']), body, esc(t['o_send']),
         esc(t['note']), esc(t['ship']), shop_href, t['back'])
+
 
 CSS = r'''
 /* ---------------- e-shop ---------------- */
@@ -278,6 +353,25 @@ button.opt i{width:20px;height:20px;border-radius:50%;display:inline-block;borde
 .prod_back a{color:#8a8a94;border-bottom:1px solid #d8d5d0}
 .prod_back a:hover{color:#ff9568}
 .of_h{font-size:20px;margin:34px 0 6px;color:#181b31}
+.of_row select{width:100%;font:inherit;font-size:15px;padding:11px 13px;border:1px solid #d8d5d0;border-radius:2px;background:#fff;color:#181b31}
+.of_row select:focus{outline:none;border-color:#ff9568}
+.of_help{margin:-6px 0 16px;font-size:13px}
+.of_help a{color:#8a8a94;border-bottom:1px solid #d8d5d0}
+.of_help a:hover{color:#ff9568}
+.dl_methods{display:grid;gap:10px;margin:0 0 18px;max-width:560px}
+.dl_methods.hide{display:none}
+label.dl_m{display:flex;align-items:flex-start;gap:12px;border:1px solid #d8d5d0;border-radius:3px;padding:13px 15px;cursor:pointer;background:#fff}
+label.dl_m:hover{border-color:#181b31}
+label.dl_m:has(input:checked){border-color:#ff9568;background:#fff7f3}
+label.dl_m input{margin:3px 0 0;accent-color:#ff9568}
+label.dl_m b{display:block;font-weight:600;color:#181b31;font-size:15px}
+label.dl_m i{display:block;font-style:normal;font-size:13px;color:#8a8a94;margin-top:3px}
+#dl_locker.hide,#dl_addr.hide{display:none}
+.ship_box{max-width:560px;margin:0 0 20px;padding:15px 17px;background:#f7f5f2;border-radius:3px;font-size:15px}
+.ship_line{display:flex;justify-content:space-between;gap:18px;padding:3px 0}
+.ship_line.grand{border-top:1px solid #e2ded8;margin-top:9px;padding-top:11px;font-size:19px}
+.ship_line.grand b{color:#ff9568;font-size:22px}
+.ship_warn{margin:8px 0 0;font-size:13px;line-height:1.6;color:#8a6a4a}
 .order_form{max-width:560px}
 .of_row{margin:0 0 14px}
 .of_row label{display:block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#8a8a94;margin-bottom:6px}
@@ -364,46 +458,99 @@ JS = r'''
   // ---- order page
   var op=document.querySelector('.order_page');
   if(op){
-    var oc=op.querySelector('#order_cart'), c=read(), total=0;
-    if(!c.length){ oc.innerHTML='<p class="cart_empty">'+op.dataset.empty+'</p>'; }
-    else{
+    var SHIP=JSON.parse(op.dataset.ship), MAXQ=parseInt(op.dataset.max,10);
+    var oc=op.querySelector('#order_cart');
+    var zone=op.querySelector('#of_zone'), meths=op.querySelector('#dl_methods');
+    var boxWrap=op.querySelector('#dl_locker'), addrWrap=op.querySelector('#dl_addr');
+    var shipBox=op.querySelector('#ship_box');
+    var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
+
+    function itemsTotal(){ var t=0; read().forEach(function(it){ t+=it.price*it.q; }); return t; }
+    function itemsCount(){ var n=0; read().forEach(function(it){ n+=it.q; }); return n; }
+    function method(){ var r=op.querySelector('input[name=dl]:checked'); return r?r.value:'door'; }
+
+    // Πόσο κοστίζει η αποστολή· null σημαίνει «θα το πούμε μαζί».
+    function shipCost(){
+      var z=zone.value, n=itemsCount(), tiers=SHIP[z];
+      if(!tiers||!n) return null;
+      for(var i=0;i<tiers.length;i++){ if(n<=tiers[i][0]) return tiers[i][1]; }
+      return null;
+    }
+
+    function renderCart(){
+      var c=read();
+      if(!c.length){ oc.innerHTML='<p class="cart_empty">'+op.dataset.empty+'</p>'; return; }
       var rows='';
       c.forEach(function(it){
-        var sum=it.price*it.q; total+=sum;
-        var v=[it.size,it.color].filter(Boolean).join(' \u00b7 ');
+        var v=[it.size,it.color].filter(Boolean).join(' · ');
         rows+='<tr><td class="ct_img"><img src="'+it.img+'" alt=""></td>'+
           '<td><span class="ct_name">'+it.name+'</span><span class="ct_var">'+v+'</span></td>'+
-          '<td class="ct_price">'+money(it.price)+' \u00d7 '+it.q+'</td>'+
-          '<td class="ct_sum">'+money(sum)+'</td></tr>';
+          '<td class="ct_price">'+money(it.price)+' × '+it.q+'</td>'+
+          '<td class="ct_sum">'+money(it.price*it.q)+'</td></tr>';
       });
-      oc.innerHTML='<table class="cart_table"><tbody>'+rows+'</tbody></table>'+
-        '<div class="cart_total"><span>'+op.dataset.total+'</span><b>'+money(total)+'</b></div>';
+      oc.innerHTML='<table class="cart_table"><tbody>'+rows+'</tbody></table>';
     }
-    var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
+
+    function sync(){
+      var gr=zone.value==='gr';
+      // Οι θυρίδες BOX NOW υπάρχουν μόνο στην Ελλάδα. Έξω, μόνο στην πόρτα.
+      meths.classList.toggle('hide',!gr);
+      if(!gr){ op.querySelector('input[name=dl][value=door]').checked=true; }
+      var box=gr&&method()==='box';
+      boxWrap.classList.toggle('hide',!box);
+      addrWrap.classList.toggle('hide',box);
+
+      var items=itemsTotal(), sc=shipCost(), n=itemsCount();
+      var html='<div class="ship_line"><span>'+op.dataset.items+'</span><span>'+money(items)+'</span></div>';
+      html+='<div class="ship_line"><span>'+op.dataset.shiph+'</span><span>'+
+            (sc===null?op.dataset.ask:money(sc))+'</span></div>';
+      html+='<div class="ship_line grand"><span>'+op.dataset.grand+'</span><b>'+
+            (sc===null?money(items)+' + '+op.dataset.ask:money(items+sc))+'</b></div>';
+      if(sc===null&&n){ html+='<p class="ship_warn">'+
+        (zone.value==='ww'?op.dataset.ww:op.dataset.big)+'</p>'; }
+      shipBox.innerHTML=html;
+    }
+
+    renderCart(); sync();
+    zone.onchange=sync;
+    op.querySelectorAll('input[name=dl]').forEach(function(r){ r.onchange=sync; });
+
     form.onsubmit=function(e){
       e.preventDefault();
       var cart=read();
       if(!cart.length){ omsg.textContent=op.dataset.empty; return; }
-      var ids=['of_name','of_email','of_phone','of_addr','of_city','of_zip'], vals={}, ok=true;
-      ids.forEach(function(id){
-        var el=op.querySelector('#'+id), v=(el.value||'').trim();
-        if(!v){ el.classList.add('bad'); ok=false; } else { el.classList.remove('bad'); }
-        vals[id]=v;
+      var need=['of_name','of_email','of_phone'];
+      var box=zone.value==='gr'&&method()==='box';
+      if(box){ need.push('of_locker'); } else { need=need.concat(['of_addr','of_city','of_zip']); }
+      var vals={}, ok=true;
+      ['of_name','of_email','of_phone','of_addr','of_city','of_zip','of_locker'].forEach(function(id){
+        var el=op.querySelector('#'+id); if(!el) return;
+        var v=(el.value||'').trim(); vals[id]=v;
+        var must=need.indexOf(id)>=0;
+        if(must&&!v){ el.classList.add('bad'); ok=false; } else { el.classList.remove('bad'); }
       });
       if(!ok){ omsg.textContent=op.dataset.req; return; }
       vals.of_notes=(op.querySelector('#of_notes').value||'').trim();
+
       var lines=[], tot=0;
       cart.forEach(function(it){
         var sum=it.price*it.q; tot+=sum;
         lines.push('- '+it.name+' | '+[it.size,it.color].filter(Boolean).join(' / ')+
                    ' | x'+it.q+' | '+money(sum));
       });
+      var sc=shipCost();
+      var zt=zone.options[zone.selectedIndex].text;
+      var how=box?(op.querySelector('label.dl_m b').textContent+': '+vals.of_locker)
+                 :(vals.of_addr+', '+vals.of_city+' '+vals.of_zip);
       var body=[op.dataset.subject,'',lines.join('\n'),'',
-        op.dataset.total+': '+money(tot),'',
+        op.dataset.items+': '+money(tot),
+        op.dataset.shiph+': '+(sc===null?op.dataset.ask:money(sc)),
+        op.dataset.grand+': '+(sc===null?money(tot)+' + '+op.dataset.ask:money(tot+sc)),'',
         '---','',
-        vals.of_name,vals.of_email,vals.of_phone,
-        vals.of_addr+', '+vals.of_city+' '+vals.of_zip,
-        vals.of_notes?('','',vals.of_notes):''].join('\n');
+        vals.of_name,vals.of_email,vals.of_phone,'',
+        zt,how,
+        vals.of_notes?('\n'+vals.of_notes):''].join('\n');
+
       var ep=op.dataset.endpoint;
       if(ep){
         var fd=new FormData();

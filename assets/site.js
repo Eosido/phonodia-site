@@ -87,46 +87,99 @@
   // ---- order page
   var op=document.querySelector('.order_page');
   if(op){
-    var oc=op.querySelector('#order_cart'), c=read(), total=0;
-    if(!c.length){ oc.innerHTML='<p class="cart_empty">'+op.dataset.empty+'</p>'; }
-    else{
+    var SHIP=JSON.parse(op.dataset.ship), MAXQ=parseInt(op.dataset.max,10);
+    var oc=op.querySelector('#order_cart');
+    var zone=op.querySelector('#of_zone'), meths=op.querySelector('#dl_methods');
+    var boxWrap=op.querySelector('#dl_locker'), addrWrap=op.querySelector('#dl_addr');
+    var shipBox=op.querySelector('#ship_box');
+    var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
+
+    function itemsTotal(){ var t=0; read().forEach(function(it){ t+=it.price*it.q; }); return t; }
+    function itemsCount(){ var n=0; read().forEach(function(it){ n+=it.q; }); return n; }
+    function method(){ var r=op.querySelector('input[name=dl]:checked'); return r?r.value:'door'; }
+
+    // Πόσο κοστίζει η αποστολή· null σημαίνει «θα το πούμε μαζί».
+    function shipCost(){
+      var z=zone.value, n=itemsCount(), tiers=SHIP[z];
+      if(!tiers||!n) return null;
+      for(var i=0;i<tiers.length;i++){ if(n<=tiers[i][0]) return tiers[i][1]; }
+      return null;
+    }
+
+    function renderCart(){
+      var c=read();
+      if(!c.length){ oc.innerHTML='<p class="cart_empty">'+op.dataset.empty+'</p>'; return; }
       var rows='';
       c.forEach(function(it){
-        var sum=it.price*it.q; total+=sum;
-        var v=[it.size,it.color].filter(Boolean).join(' \u00b7 ');
+        var v=[it.size,it.color].filter(Boolean).join(' · ');
         rows+='<tr><td class="ct_img"><img src="'+it.img+'" alt=""></td>'+
           '<td><span class="ct_name">'+it.name+'</span><span class="ct_var">'+v+'</span></td>'+
-          '<td class="ct_price">'+money(it.price)+' \u00d7 '+it.q+'</td>'+
-          '<td class="ct_sum">'+money(sum)+'</td></tr>';
+          '<td class="ct_price">'+money(it.price)+' × '+it.q+'</td>'+
+          '<td class="ct_sum">'+money(it.price*it.q)+'</td></tr>';
       });
-      oc.innerHTML='<table class="cart_table"><tbody>'+rows+'</tbody></table>'+
-        '<div class="cart_total"><span>'+op.dataset.total+'</span><b>'+money(total)+'</b></div>';
+      oc.innerHTML='<table class="cart_table"><tbody>'+rows+'</tbody></table>';
     }
-    var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
+
+    function sync(){
+      var gr=zone.value==='gr';
+      // Οι θυρίδες BOX NOW υπάρχουν μόνο στην Ελλάδα. Έξω, μόνο στην πόρτα.
+      meths.classList.toggle('hide',!gr);
+      if(!gr){ op.querySelector('input[name=dl][value=door]').checked=true; }
+      var box=gr&&method()==='box';
+      boxWrap.classList.toggle('hide',!box);
+      addrWrap.classList.toggle('hide',box);
+
+      var items=itemsTotal(), sc=shipCost(), n=itemsCount();
+      var html='<div class="ship_line"><span>'+op.dataset.items+'</span><span>'+money(items)+'</span></div>';
+      html+='<div class="ship_line"><span>'+op.dataset.shiph+'</span><span>'+
+            (sc===null?op.dataset.ask:money(sc))+'</span></div>';
+      html+='<div class="ship_line grand"><span>'+op.dataset.grand+'</span><b>'+
+            (sc===null?money(items)+' + '+op.dataset.ask:money(items+sc))+'</b></div>';
+      if(sc===null&&n){ html+='<p class="ship_warn">'+
+        (zone.value==='ww'?op.dataset.ww:op.dataset.big)+'</p>'; }
+      shipBox.innerHTML=html;
+    }
+
+    renderCart(); sync();
+    zone.onchange=sync;
+    op.querySelectorAll('input[name=dl]').forEach(function(r){ r.onchange=sync; });
+
     form.onsubmit=function(e){
       e.preventDefault();
       var cart=read();
       if(!cart.length){ omsg.textContent=op.dataset.empty; return; }
-      var ids=['of_name','of_email','of_phone','of_addr','of_city','of_zip'], vals={}, ok=true;
-      ids.forEach(function(id){
-        var el=op.querySelector('#'+id), v=(el.value||'').trim();
-        if(!v){ el.classList.add('bad'); ok=false; } else { el.classList.remove('bad'); }
-        vals[id]=v;
+      var need=['of_name','of_email','of_phone'];
+      var box=zone.value==='gr'&&method()==='box';
+      if(box){ need.push('of_locker'); } else { need=need.concat(['of_addr','of_city','of_zip']); }
+      var vals={}, ok=true;
+      ['of_name','of_email','of_phone','of_addr','of_city','of_zip','of_locker'].forEach(function(id){
+        var el=op.querySelector('#'+id); if(!el) return;
+        var v=(el.value||'').trim(); vals[id]=v;
+        var must=need.indexOf(id)>=0;
+        if(must&&!v){ el.classList.add('bad'); ok=false; } else { el.classList.remove('bad'); }
       });
       if(!ok){ omsg.textContent=op.dataset.req; return; }
       vals.of_notes=(op.querySelector('#of_notes').value||'').trim();
+
       var lines=[], tot=0;
       cart.forEach(function(it){
         var sum=it.price*it.q; tot+=sum;
         lines.push('- '+it.name+' | '+[it.size,it.color].filter(Boolean).join(' / ')+
                    ' | x'+it.q+' | '+money(sum));
       });
+      var sc=shipCost();
+      var zt=zone.options[zone.selectedIndex].text;
+      var how=box?(op.querySelector('label.dl_m b').textContent+': '+vals.of_locker)
+                 :(vals.of_addr+', '+vals.of_city+' '+vals.of_zip);
       var body=[op.dataset.subject,'',lines.join('\n'),'',
-        op.dataset.total+': '+money(tot),'',
+        op.dataset.items+': '+money(tot),
+        op.dataset.shiph+': '+(sc===null?op.dataset.ask:money(sc)),
+        op.dataset.grand+': '+(sc===null?money(tot)+' + '+op.dataset.ask:money(tot+sc)),'',
         '---','',
-        vals.of_name,vals.of_email,vals.of_phone,
-        vals.of_addr+', '+vals.of_city+' '+vals.of_zip,
-        vals.of_notes?('','',vals.of_notes):''].join('\n');
+        vals.of_name,vals.of_email,vals.of_phone,'',
+        zt,how,
+        vals.of_notes?('\n'+vals.of_notes):''].join('\n');
+
       var ep=op.dataset.endpoint;
       if(ep){
         var fd=new FormData();
