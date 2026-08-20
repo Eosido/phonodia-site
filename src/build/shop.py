@@ -84,6 +84,11 @@ SHIP = {'gr': [[5, 400], [15, 900]], 'eu': [[5, 1500], [15, 2500]]}
 SHIP_MAX = 15
 LOCKER_FINDER = 'https://boxnow.gr/locker-finder'
 
+# Η επιλογή θυρίδας εμφανίζεται ΜΟΝΟ όταν η ΑΜΚΕ έχει πραγματικά λογαριασμό BOX NOW.
+# Μέχρι τότε ζητάμε σκέτη διεύθυνση, για να μην υποσχόμαστε κάτι που δεν μπορούμε
+# να κάνουμε. Γίνεται True με μία λέξη, μόλις ανοίξει ο λογαριασμός.
+SHOW_LOCKER = False
+
 T['el'].update(
     d_h='Τρόπος παράδοσης',
     d_zone='Πού θα σταλεί',
@@ -277,10 +282,10 @@ def order_page(lang, shop_href):
             '<h3 class="of_h">%s</h3>' % esc(t['d_h']) +
             '<p class="of_row"><label for="of_zone">%s</label>'
             '<select id="of_zone">%s</select></p>' % (esc(t['d_zone']), zones) +
-            '<div class="dl_methods" id="dl_methods">%s%s</div>'
-            % (radio('box', t['d_box'], t['d_box_hint'], True),
-               radio('door', t['d_door'], t['d_door_hint'])) +
-            '<div id="dl_locker">%s</div>' % locker +
+            ('<div class="dl_methods" id="dl_methods">%s%s</div>'
+             % (radio('box', t['d_box'], t['d_box_hint'], True),
+                radio('door', t['d_door'], t['d_door_hint']))
+             + '<div id="dl_locker">%s</div>' % locker if SHOW_LOCKER else '') +
             '<div id="dl_addr">%s</div>' % addr +
             '<div class="ship_box" id="ship_box"></div>' +
             '<p class="of_row"><label for="of_notes">%s</label>'
@@ -462,12 +467,14 @@ JS = r'''
     var oc=op.querySelector('#order_cart');
     var zone=op.querySelector('#of_zone'), meths=op.querySelector('#dl_methods');
     var boxWrap=op.querySelector('#dl_locker'), addrWrap=op.querySelector('#dl_addr');
+    var hasBox=!!meths;   // όσο δεν έχουμε λογαριασμό BOX NOW, δεν υπάρχουν καν τα κουτιά
     var shipBox=op.querySelector('#ship_box');
     var form=op.querySelector('#order_form'), omsg=op.querySelector('#of_msg');
 
     function itemsTotal(){ var t=0; read().forEach(function(it){ t+=it.price*it.q; }); return t; }
     function itemsCount(){ var n=0; read().forEach(function(it){ n+=it.q; }); return n; }
-    function method(){ var r=op.querySelector('input[name=dl]:checked'); return r?r.value:'door'; }
+    function method(){ if(!hasBox) return 'door';
+      var r=op.querySelector('input[name=dl]:checked'); return r?r.value:'door'; }
 
     // Πόσο κοστίζει η αποστολή· null σημαίνει «θα το πούμε μαζί».
     function shipCost(){
@@ -492,12 +499,14 @@ JS = r'''
     }
 
     function sync(){
-      var gr=zone.value==='gr';
-      // Οι θυρίδες BOX NOW υπάρχουν μόνο στην Ελλάδα. Έξω, μόνο στην πόρτα.
-      meths.classList.toggle('hide',!gr);
-      if(!gr){ op.querySelector('input[name=dl][value=door]').checked=true; }
-      var box=gr&&method()==='box';
-      boxWrap.classList.toggle('hide',!box);
+      var gr=zone.value==='gr', box=false;
+      if(hasBox){
+        // Οι θυρίδες BOX NOW υπάρχουν μόνο στην Ελλάδα. Έξω, μόνο στην πόρτα.
+        meths.classList.toggle('hide',!gr);
+        if(!gr){ op.querySelector('input[name=dl][value=door]').checked=true; }
+        box=gr&&method()==='box';
+        boxWrap.classList.toggle('hide',!box);
+      }
       addrWrap.classList.toggle('hide',box);
 
       var items=itemsTotal(), sc=shipCost(), n=itemsCount();
@@ -520,7 +529,7 @@ JS = r'''
       var cart=read();
       if(!cart.length){ omsg.textContent=op.dataset.empty; return; }
       var need=['of_name','of_email','of_phone'];
-      var box=zone.value==='gr'&&method()==='box';
+      var box=hasBox&&zone.value==='gr'&&method()==='box';
       if(box){ need.push('of_locker'); } else { need=need.concat(['of_addr','of_city','of_zip']); }
       var vals={}, ok=true;
       ['of_name','of_email','of_phone','of_addr','of_city','of_zip','of_locker'].forEach(function(id){
@@ -542,6 +551,7 @@ JS = r'''
       var zt=zone.options[zone.selectedIndex].text;
       var how=box?(op.querySelector('label.dl_m b').textContent+': '+vals.of_locker)
                  :(vals.of_addr+', '+vals.of_city+' '+vals.of_zip);
+      if(!hasBox){ how=vals.of_addr+', '+vals.of_city+' '+vals.of_zip; }
       var body=[op.dataset.subject,'',lines.join('\n'),'',
         op.dataset.items+': '+money(tot),
         op.dataset.shiph+': '+(sc===null?op.dataset.ask:money(sc)),
