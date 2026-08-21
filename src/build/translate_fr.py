@@ -81,8 +81,8 @@ UI = {
     'on request': 'sur demande',
     'Grand total': 'Total à payer',
     'Items': 'Articles',
-    'Garments are printed to order within 10 to 15 days and travel from Needleworks in Herakleion.':
-        'Les vêtements sont imprimés à la commande sous 10 à 15 jours et partent de Needleworks à Héraklion.',
+    'Garments are printed to order by the NeedleWorks shop and reach their destination within 15 days at the latest.':
+        'Les vêtements sont imprimés à la commande par la boutique NeedleWorks et arrivent à destination en 15 jours au maximum.',
     # μενού
     'The Ensemble': "L'Ensemble",
     'A few words about the ensemble': "Quelques mots sur l'ensemble",
