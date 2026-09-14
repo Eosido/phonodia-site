@@ -660,6 +660,45 @@ def add_hero_video(hero):
 
 
 # ====================================================================== 1. HOME (EL)
+def add_new_event_card(c):
+    """Βάζει τη συναυλία των Αρχανών πρώτη στο πλέγμα «Εμφανίσεις» της αρχικής.
+
+    Το πλέγμα το είχε φτιάξει το WordPress και δεν ξέρει τίποτα για τη νέα συναυλία.
+    Αντιγράφουμε την πρώτη κάρτα, της αλλάζουμε αφίσα, τίτλο και σύνδεσμο, και τη
+    βάζουμε μπροστά. Κρατάμε τρεις κάρτες, όσες χωρά η σειρά.
+    """
+    cards = [it for it in c.xpath('.//div[contains(@class,"vc_grid-item")]')
+             if 'vc_grid-item-mini' not in (it.get('class') or '') and it.xpath('.//h3')]
+    if not cards:
+        print('add_new_event_card: δεν βρέθηκε πλέγμα εμφανίσεων')
+        return
+    card = copy.deepcopy(cards[0])
+    for a in card.xpath('.//a[@href]'):
+        a.set('href', NEW_EVENT_URL)
+        if a.get('title') is not None:
+            a.set('title', NEW_EVENT['title'])
+    for img in card.xpath('.//img'):
+        img.set('src', AFISA_ARXANES)
+        img.set('alt', NEW_EVENT['title'])
+    for z in card.xpath('.//*[contains(@style,"background-image")]'):
+        z.set('style', "background-image: url('%s') !important" % AFISA_ARXANES)
+    for z in card.xpath('.//*[@data-bgimage]'):
+        z.set('data-bgimage', AFISA_ARXANES)
+    for h3 in card.xpath('.//h3'):
+        for ch in list(h3):
+            h3.remove(ch)
+        h3.text = NEW_EVENT['title']
+    cards[0].addprevious(card)
+    # Για να μη βρεθούν δύο κάρτες «Πνοή» δίπλα δίπλα, φεύγει η παλιά «Πνοή» του
+    # Ρεθύμνου· αν δεν υπάρχει, φεύγει απλώς η τελευταία ώστε να μείνουν τρεις.
+    same = [it for it in cards
+            if it.xpath('.//h3') and it.xpath('.//h3')[0].text_content().strip() == NEW_EVENT['title']]
+    drop = same[0] if same else (cards[-1] if len(cards) >= 3 else None)
+    if drop is not None:
+        drop.getparent().remove(drop)
+    print('add_new_event_card: μπήκε η συναυλία των Αρχανών')
+
+
 def build_home():
     c = prep(home_doc.get_element_by_id('lc_swp_content'))
     # hero: remove saved <video> and the raw_code block; add our video
@@ -669,6 +708,7 @@ def build_home():
     for raw in hero.xpath('.//div[contains(@class,"wpb_raw_html")]'):
         raw.getparent().remove(raw)
     add_hero_video(hero)
+    add_new_event_card(c)
     # vc grid: drop inline positioning already stripped by fix_refs; remove nested style/link junk (done)
     html_ = (c.text or '') + ''.join(tostr(ch) for ch in c if isinstance(ch.tag, str))
     html_ = relink(html_, '')
@@ -681,6 +721,7 @@ def build_home_en():
     for v in hero.xpath('.//video'): v.getparent().remove(v)
     for raw in hero.xpath('.//div[contains(@class,"wpb_raw_html")]'): raw.getparent().remove(raw)
     add_hero_video(hero)
+    add_new_event_card(c)
     h = (c.text or '') + ''.join(tostr(ch) for ch in c if isinstance(ch.tag, str))
     en = pages[SITE + '/en/homepage/']
     about_en = paras(sec(SITE + '/en/homepage/', None, 1))
