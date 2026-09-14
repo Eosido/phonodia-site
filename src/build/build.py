@@ -342,7 +342,15 @@ for hd in (HEADER_HOME, HEADER_INNER):
 # Το e-shop υπάρχει στη ζωντανή σελίδα αλλά λείπει από το μενού της — μπαίνει εδώ,
 # με τη δική της ονομασία «Καλλιτεχνικά αναμνηστικά», πριν από την Επικοινωνία.
 SHOP_LABEL = 'Κατάστημα'
-for hd in (HEADER_HOME, HEADER_INNER):
+
+# 14 Σεπ 2026 — ο Ιωάννης Ιδομενέως ζήτησε να βγει η σελίδα ΧΩΡΙΣ το κατάστημα, ώστε να
+# φύγουμε από το Bluehost χωρίς να περιμένουμε τη Viva, τις μεταφορικές και τον λογιστή.
+# Με SHOP_OPEN = False: δεν μπαίνει στο μενού, φεύγει το καλάθι από την κορυφή, και δεν
+# χτίζονται καθόλου οι σελίδες του καταστήματος. Όλος ο κώδικας μένει άθικτος και
+# περιμένει — μία λέξη τον ξαναφέρνει.
+SHOP_OPEN = False
+
+for hd in (HEADER_HOME, HEADER_INNER) if SHOP_OPEN else ():
     for ul in hd.xpath('.//ul[contains(@class,"menu")]'):
         if ul.getparent() is not None and 'sub-menu' in (ul.get('class') or ''):
             continue
@@ -356,6 +364,14 @@ for hd in (HEADER_HOME, HEADER_INNER):
             a.set('href', SITE + '/προϊόντα/')
             a.text = SHOP_LABEL
             lang_li.addprevious(li)
+
+# Το καλαθάκι πάνω δεξιά δεν έχει νόημα όσο το κατάστημα είναι κλειστό.
+if not SHOP_OPEN:
+    for hd in (HEADER_HOME, HEADER_INNER):
+        for a in hd.xpath('.//a[contains(@class,"cart-contents")]'):
+            par = a.getparent()
+            (par.getparent() if par is not None and par.tag == 'li' else par).remove(
+                par if par is not None and par.tag == 'li' else a)
 
 # 17 Αυγ 2026: το Blog κρύβεται από το μενού (οι σελίδες παραμένουν έτοιμες)
 HIDE_MENU = {'Blog'}
@@ -1291,7 +1307,9 @@ if __name__ == '__main__':
     build_home(); build_home_en()
     build_members(); build_artists()
     build_events(); build_videos(); build_gallery(); build_contact()
-    build_products(); build_text_pages(); build_blog()
+    if SHOP_OPEN:
+        build_products()       # κλειστό κατάστημα: δεν χτίζονται καθόλου οι σελίδες του
+    build_text_pages(); build_blog()
     # εργαλείο αυτονομίας + λίστα αρχείων που δεν δημοσιεύονται
     os.makedirs(OUT + '/tools', exist_ok=True)
     shutil.copy(os.path.dirname(os.path.abspath(__file__)) + '/localise.py', OUT + '/tools/localise.py')
