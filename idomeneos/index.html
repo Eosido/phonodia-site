@@ -900,7 +900,10 @@ em{font-style:italic;color:var(--ink)}
 .enroll .btn-solid{background:#F5EDE1;color:var(--accent-deep)}
 .enroll .btn-solid:hover{background:#fff}
 .enroll .btn-solid .dot{background:var(--accent)}
-.enroll-choices{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.enroll-choices{display:flex;flex-wrap:wrap;gap:1.6rem 2.2rem;justify-content:center;align-items:flex-start}
+.enroll-choice{display:flex;flex-direction:column;align-items:center;max-width:19rem}
+.enroll-note{margin-top:.75rem;font-family:var(--sans);font-size:.95rem;line-height:1.45;color:rgba(247,241,231,0.88);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+@media(max-width:520px){.enroll .btn{font-size:1.08rem;line-height:1.25;padding:.85em 1.5em;white-space:normal;text-align:center}.enroll .btn .dot{flex-shrink:0}}
 
 /* ════════ CLOSING (swan) ════════ */
 .closing{position:relative;overflow:hidden;background:var(--dark);padding:clamp(70px,10vw,130px) 24px clamp(64px,11vh,130px);min-height:94vh;display:flex;align-items:flex-end;justify-content:center}
@@ -1328,8 +1331,14 @@ html{ background:var(--dark); }
       <h2 data-en="Together">Μαζί</h2>
       <p class="enroll-warm" data-en="Fill in the form and we will be in touch right away to choose the best path forward.">Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε άμεσα για να επιλέξουμε τη βέλτιστη διαδρομή.</p>
       <div class="enroll-choices">
-        <a href="https://forms.gle/i5YK5sN4z8swoDLv5" target="_blank" rel="noopener" class="btn btn-solid" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Lessons" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Cours"><span class="dot"></span>Μαθήματα</a>
-        <a href="#seminaria" class="btn btn-light" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Seminars" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Séminaires"><span class="dot"></span>Σεμινάρια</a>
+        <div class="enroll-choice">
+          <a href="https://forms.gle/i5YK5sN4z8swoDLv5" target="_blank" rel="noopener" class="btn btn-solid" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Lessons &amp;amp; Vocal Workshops" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Cours &amp;amp; Ateliers Vocaux"><span class="dot"></span>Μαθήματα &amp; Φωνητικά Εργαστήρια</a>
+          <p class="enroll-note" data-en="Individual lessons, or vocal workshops in small groups — in person or online." data-fr="Cours individuels, ou ateliers vocaux en petits groupes — en présentiel ou en ligne.">Ατομικά μαθήματα ή φωνητικά εργαστήρια σε μικρές ομάδες — δια ζώσης ή online.</p>
+        </div>
+        <div class="enroll-choice">
+          <a href="#seminaria" class="btn btn-light" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Experiential Seminars" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Séminaires expérientiels"><span class="dot"></span>Βιωματικά Σεμινάρια</a>
+          <p class="enroll-note" data-en="Two-day seminars in which everyone sings and takes part actively, both days." data-fr="Séminaires de deux jours où chacun chante et participe activement, les deux jours.">Διήμερα σεμινάρια όπου όλοι τραγουδούν και συμμετέχουν ενεργά, και τις δύο μέρες.</p>
+        </div>
       </div>
     </div>
   </section>
