@@ -900,6 +900,7 @@ em{font-style:italic;color:var(--ink)}
 .enroll .btn-solid{background:#F5EDE1;color:var(--accent-deep)}
 .enroll .btn-solid:hover{background:#fff}
 .enroll .btn-solid .dot{background:var(--accent)}
+.enroll-choices{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
 
 /* ════════ CLOSING (swan) ════════ */
 .closing{position:relative;overflow:hidden;background:var(--dark);padding:clamp(70px,10vw,130px) 24px clamp(64px,11vh,130px);min-height:94vh;display:flex;align-items:flex-end;justify-content:center}
@@ -1320,13 +1321,16 @@ html{ background:var(--dark); }
   </section>
 
   <!-- ═══════════ ΜΑΖΙ ═══════════ -->
-  <section class="enroll" data-screen-label="Μαζί">
+  <section class="enroll" id="egrafi" data-screen-label="Μαζί">
     <div class="ph" style="background-image:url(&quot;assets/dc907b02e8b0.jpg&quot;)"></div>
     <div class="inner reveal">
       <div class="eyebrow" data-en="The next step">Το επόμενο βήμα</div>
       <h2 data-en="Together">Μαζί</h2>
       <p class="enroll-warm" data-en="Fill in the form and we will be in touch right away to choose the best path forward.">Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε άμεσα για να επιλέξουμε τη βέλτιστη διαδρομή.</p>
-      <a href="https://forms.gle/i5YK5sN4z8swoDLv5" target="_blank" rel="noopener" class="btn btn-solid" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;I want to enroll"><span class="dot"></span>Επιθυμώ να εγγραφώ</a>
+      <div class="enroll-choices">
+        <a href="https://forms.gle/i5YK5sN4z8swoDLv5" target="_blank" rel="noopener" class="btn btn-solid" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Lessons" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Cours"><span class="dot"></span>Μαθήματα</a>
+        <a href="#seminaria" class="btn btn-light" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Seminars" data-fr="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Séminaires"><span class="dot"></span>Σεμινάρια</a>
+      </div>
     </div>
   </section>
 
@@ -1366,7 +1370,7 @@ html{ background:var(--dark); }
         <button data-lang="fr" class="lang-btn" type="button" aria-pressed="false">FR</button>
       </div>
     </div>
-    <a class="tb-cta" href="https://forms.gle/i5YK5sN4z8swoDLv5" target="_blank" rel="noopener" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Enroll"><span class="dot"></span>Εγγραφή</a>
+    <a class="tb-cta" href="#egrafi" data-en="&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;Enroll"><span class="dot"></span>Εγγραφή</a>
   </div>
 </div>
 
