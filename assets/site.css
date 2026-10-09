@@ -2006,4 +2006,3 @@ li.lc_langs a:hover{opacity:1}
 li.lc_langs a.on{opacity:1;box-shadow:0 0 0 2px #ff9568;border-radius:1px}
 svg.lc_flag{display:block;width:25px;height:16px;border-radius:1px}
 @media (max-width:1024px){li.lc_langs{gap:14px}svg.lc_flag{width:28px;height:18px}}
-/* ΠΡΟΣΩΡΙΝΑ 6/10/2026: κρύβεται η κάρτα Πνοή (Αρχάνες) μέχρι την καινούργια αφίσα. Για να ξαναφανεί, σβήνεται αυτό το κομμάτι. */ .vc_grid-item:has(img[src*="afisa-pnoi-arxanes-2026"]), li.single_event_list:has(img[src*="afisa-pnoi-arxanes-2026"]){display:none!important}
