@@ -1297,6 +1297,70 @@ def apply_local_images():
 
 
 
+# ---------------------------------------------------------------- προεπισκόπηση συνδέσμων
+# Χωρίς og:image, το WhatsApp και το Facebook διαλέγουν μόνες τους μια εικόνα της σελίδας
+# και έπαιρναν το λογότυπο IRIS από τη γραμμή πληρωμών. Εδώ ορίζουμε ρητά φωτογραφία
+# του συνόλου (1200x630, src/clone/og-phonodia.jpg) και τίτλο/περιγραφή ανά γλώσσα.
+OG_SITE = 'https://www.phonodiavocalensemble.com'
+OG_IMAGE = '/img/og-phonodia.jpg'
+OG_DESC = {
+    'el': 'Φωνωδία – Μεικτό Φωνητικό Σύνολο από την Κρήτη. Συναυλίες, μέλη, φωτογραφίες και βίντεο.',
+    'en': 'Phonodia – a mixed vocal ensemble from Crete. Concerts, members, photos and videos.',
+    'fr': 'Phonodia – ensemble vocal mixte de Crète. Concerts, membres, photos et vidéos.',
+}
+OG_LOCALE = {'el': 'el_GR', 'en': 'en_US', 'fr': 'fr_FR'}
+OG_SKIP = ('idomeneos', 'tools', 'src', '.git')
+
+
+def emit_og(out=None):
+    """Βάζει στην κεφαλίδα κάθε σελίδας τις ετικέτες og:/twitter: και το image_src.
+    Δεν αγγίζει σελίδες που έχουν ήδη og:image (π.χ. /idomeneos/)."""
+    out = out or OUT
+    src = CLONE + '/og-phonodia.jpg'
+    if os.path.exists(src):
+        os.makedirs(out + '/img', exist_ok=True)
+        if os.path.abspath(src) != os.path.abspath(out + OG_IMAGE):
+            shutil.copy(src, out + OG_IMAGE)
+    n = 0
+    for root, dirs, fs in os.walk(out):
+        if os.path.relpath(root, out) == '.':
+            dirs[:] = [d for d in dirs if d not in OG_SKIP]
+        if 'index.html' not in fs:
+            continue
+        path = os.path.join(root, 'index.html')
+        txt = open(path, encoding='utf-8').read()
+        if 'og:image' in txt or '</head>' not in txt:
+            continue
+        m = re.search(r'<html[^>]*\blang="(\w+)"', txt)
+        lang = m.group(1) if m else 'el'
+        lang = lang if lang in OG_DESC else 'el'
+        m = re.search(r'<title>(.*?)</title>', txt, re.S)
+        title = m.group(1).strip() if m else 'Φωνωδία'
+        img = OG_SITE + OG_IMAGE
+        desc = esc(OG_DESC[lang])
+        tags = (
+            '<meta property="og:type" content="website">\n'
+            '<meta property="og:site_name" content="%s">\n'
+            '<meta property="og:locale" content="%s">\n'
+            '<meta property="og:title" content="%s">\n'
+            '<meta property="og:description" content="%s">\n'
+            '<meta property="og:image" content="%s">\n'
+            '<meta property="og:image:type" content="image/jpeg">\n'
+            '<meta property="og:image:width" content="1200">\n'
+            '<meta property="og:image:height" content="630">\n'
+            '<meta name="twitter:card" content="summary_large_image">\n'
+            '<meta name="twitter:title" content="%s">\n'
+            '<meta name="twitter:description" content="%s">\n'
+            '<meta name="twitter:image" content="%s">\n'
+            '<link rel="image_src" href="%s">\n'
+            % ('Φωνωδία · Phonodia', OG_LOCALE[lang], title, desc, img, title, desc, img, img))
+        txt = txt.replace('</head>', tags + '</head>', 1)
+        open(path, 'w', encoding='utf-8').write(txt)
+        n += 1
+    print('emit_og: %d σελίδες' % n)
+
+
+
 # ---------------------------------------------------------------- ορθογραφία
 # Λάθη που εντόπισε ο Ιωάννης Ιδομενέως στο ίδιο το WordPress. Τα διορθώνουμε εδώ,
 # ώστε τα αρχεία της συγκομιδής να μένουν αυτούσια και η κάθε αλλαγή να φαίνεται.
@@ -1374,5 +1438,6 @@ if __name__ == '__main__':
     translate_fr.main()
     emit_afisa()                   # η αφίσα των Αρχανών, 18 Αυγ 2026
     apply_local_images()           # οι φωτογραφίες ζουν πλέον μέσα στη σελίδα
+    emit_og()                      # προεπισκόπηση συνδέσμων (WhatsApp/Facebook)
 
 
