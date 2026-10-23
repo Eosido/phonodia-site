@@ -1300,9 +1300,9 @@ def apply_local_images():
 # ---------------------------------------------------------------- προεπισκόπηση συνδέσμων
 # Χωρίς og:image, το WhatsApp και το Facebook διαλέγουν μόνες τους μια εικόνα της σελίδας
 # και έπαιρναν το λογότυπο IRIS από τη γραμμή πληρωμών. Εδώ ορίζουμε ρητά φωτογραφία
-# του συνόλου (1200x630, src/clone/og-phonodia.jpg) και τίτλο/περιγραφή ανά γλώσσα.
+# του συνόλου (1200x630, src/clone/og-phonodia-2.jpg) και τίτλο/περιγραφή ανά γλώσσα.
 OG_SITE = 'https://www.phonodiavocalensemble.com'
-OG_IMAGE = '/img/og-phonodia.jpg'
+OG_IMAGE = '/img/og-phonodia-2.jpg'
 OG_DESC = {
     'el': 'Φωνωδία – Μεικτό Φωνητικό Σύνολο από την Κρήτη. Συναυλίες, μέλη, φωτογραφίες και βίντεο.',
     'en': 'Phonodia – a mixed vocal ensemble from Crete. Concerts, members, photos and videos.',
@@ -1316,7 +1316,7 @@ def emit_og(out=None):
     """Βάζει στην κεφαλίδα κάθε σελίδας τις ετικέτες og:/twitter: και το image_src.
     Δεν αγγίζει σελίδες που έχουν ήδη og:image (π.χ. /idomeneos/)."""
     out = out or OUT
-    src = CLONE + '/og-phonodia.jpg'
+    src = CLONE + '/og-phonodia-2.jpg'
     if os.path.exists(src):
         os.makedirs(out + '/img', exist_ok=True)
         if os.path.abspath(src) != os.path.abspath(out + OG_IMAGE):
