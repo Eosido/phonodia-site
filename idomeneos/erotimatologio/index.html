@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Η φωνή μου και εγώ · Ερωτηματολόγιο</title>
+<meta name="description" content="Δώδεκα ερωτήσεις για τη φωνή σας. Στο τέλος παίρνετε το δικό σας cheat sheet: πού βρίσκεστε, τι μπορεί να αλλάξει με τα μαθήματα και μικρές ασκήσεις για να ξεκινήσετε από σήμερα.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Η φωνή μου και εγώ · Ερωτηματολόγιο">
+<meta property="og:description" content="Δώδεκα ερωτήσεις για τη φωνή σας και το δικό σας cheat sheet στο τέλος.">
+<style>
+/* Alegreya, όπως στη σελίδα «Η φωνή μου» (τοπικά αρχεία) */
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  --paper:#EEEDF6;
+  --card:#F7F6FB;
+  --ink:#1C1A2C;
+  --ink-soft:#46415F;
+  --head:#1B3A6B;
+  --gold:#C29A3E;
+  --gold-soft:rgba(194,154,62,0.14);
+  --line:rgba(28,26,44,0.18);
+  --serif:'Alegreya', Georgia, 'Times New Roman', serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:#0D1626;
+    --card:#132036;
+    --ink:#EDF0F7;
+    --ink-soft:rgba(237,240,247,0.74);
+    --head:#EDF0F7;
+    --gold:#D4AE55;
+    --gold-soft:rgba(212,174,85,0.16);
+    --line:rgba(237,240,247,0.2);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.25rem;
+  line-height:1.6;
+  padding:40px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px));
+}
+main { max-width:40rem; margin:0 auto; }
+p { margin:0 0 .9rem; }
+.staff {
+  height:37px; margin-bottom:36px;
+  background:repeating-linear-gradient(to bottom, var(--line) 0 1px, transparent 1px 9px);
+}
+h1, h2, h3 { font-family:var(--serif); font-weight:500; color:var(--head); text-wrap:balance; margin:0; }
+h1 { font-size:clamp(2.1rem,7vw,2.9rem); line-height:1.12; margin-bottom:.5rem; }
+h2 { font-size:1.5rem; line-height:1.25; margin-bottom:.7rem; }
+h3 { font-size:1.25rem; line-height:1.3; margin-bottom:.4rem; }
+.sub { color:var(--ink-soft); margin-bottom:1.4rem; }
+strong { font-weight:500; color:var(--head); }
+a { color:var(--ink); text-decoration-color:var(--gold); text-underline-offset:4px; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+
+/* Ερωτήσεις */
+fieldset { border:0; margin:0; padding:1.6rem 0 0; border-top:1px solid var(--line); margin-top:1.6rem; }
+legend { padding:0; font-size:1.3rem; font-weight:500; color:var(--head); line-height:1.35; margin-bottom:.8rem; }
+legend .num { color:var(--gold); margin-right:.35em; }
+.hint { font-size:1.02rem; color:var(--ink-soft); margin:-.4rem 0 .7rem; }
+label.opt {
+  display:flex; gap:.7rem; align-items:flex-start;
+  padding:.65rem .85rem; margin-bottom:.5rem;
+  border:1px solid var(--line); border-radius:10px; background:var(--card);
+  cursor:pointer; font-size:1.12rem; line-height:1.45;
+  transition:border-color .15s, background .15s;
+}
+label.opt:hover { border-color:var(--gold); }
+label.opt input { margin-top:.32rem; accent-color:var(--gold); flex:none; width:1.05rem; height:1.05rem; }
+label.opt:has(input:checked) { border-color:var(--gold); background:var(--gold-soft); }
+
+.progress { position:sticky; top:0; z-index:2; background:var(--paper); padding:.6rem 0; font-size:1rem; color:var(--ink-soft); }
+.bar { height:3px; background:var(--line); border-radius:2px; overflow:hidden; margin-top:.35rem; }
+.bar span { display:block; height:100%; width:0; background:var(--gold); transition:width .25s; }
+
+.btn {
+  display:inline-block; font-family:var(--serif); font-size:1.15rem; font-weight:500;
+  padding:.7rem 1.4rem; border-radius:999px; border:1px solid var(--gold);
+  background:var(--gold); color:#1C1A2C; cursor:pointer; text-decoration:none;
+}
+.btn.ghost { background:transparent; color:var(--ink); }
+.btn[disabled] { opacity:.45; cursor:not-allowed; }
+.actions { margin-top:2rem; display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; }
+.missing { font-size:1rem; color:var(--ink-soft); }
+
+/* Αποτέλεσμα: το cheat sheet */
+#result { display:none; margin-top:2.4rem; }
+#result.show { display:block; }
+.sheet { border:1px solid var(--gold); border-radius:14px; background:var(--card); padding:1.5rem 1.3rem; }
+.eyebrow { font-size:.95rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:.3rem; }
+.level { font-size:clamp(1.8rem,6vw,2.3rem); line-height:1.15; margin-bottom:.6rem; }
+.sheet section { border-top:1px solid var(--line); margin-top:1.3rem; padding-top:1.1rem; }
+.sheet ul { margin:0 0 .6rem; padding-left:1.2em; }
+.sheet li { margin-bottom:.5rem; padding-left:.2em; }
+.sheet li::marker { color:var(--gold); }
+.need { margin-bottom:1.1rem; }
+.need .letter { color:var(--gold); margin-right:.35em; }
+.need .try { font-size:1.05rem; color:var(--ink-soft); border-left:2px solid var(--gold); padding-left:.8rem; margin-top:.4rem; }
+.contact { font-size:1.08rem; }
+.name { font-size:1.25rem; font-weight:500; color:var(--head); margin-bottom:.1rem; }
+.back { margin-top:2.4rem; font-size:1.05rem; color:var(--ink-soft); }
+
+@media print {
+  body { background:#fff; color:#000; padding:0; font-size:12pt; }
+  .noprint, .staff, #quiz, .progress, .intro { display:none !important; }
+  #result { display:block; margin:0; }
+  .sheet { border:0; padding:0; background:#fff; }
+  a { color:#000; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="staff" aria-hidden="true"></div>
+
+  <div class="intro">
+    <h1>Η φωνή μου και εγώ</h1>
+    <p class="sub">Ένα μικρό ερωτηματολόγιο · Ιωάννης Ιδομενέως, Φωνητική Τέχνη</p>
+    <p>Αναρωτιέστε αν τα μαθήματα φωνής είναι για εσάς; Δώδεκα ερωτήσεις, λίγα λεπτά. Απαντήστε με αυτό που νιώθετε σήμερα, χωρίς να το σκεφτείτε πολύ. Δεν υπάρχουν σωστές και λάθος απαντήσεις.</p>
+    <p>Στο τέλος παίρνετε το δικό σας <strong>cheat sheet</strong>: πού βρίσκεστε τώρα με τη φωνή σας, τι μπορεί να αλλάξει μέσα σας με τα μαθήματα και μικρές ασκήσεις για να ξεκινήσετε από σήμερα κιόλας. Μπορείτε να το τυπώσετε ή να το κρατήσετε στο κινητό.</p>
+    <p class="hint">Οι απαντήσεις σας μένουν μόνο στη συσκευή σας. Δεν αποστέλλονται πουθενά.</p>
+  </div>
+
+  <div class="progress noprint" aria-live="polite">
+    <span id="progText">0 από 12</span>
+    <div class="bar"><span id="progBar"></span></div>
+  </div>
+
+  <form id="quiz" novalidate></form>
+
+  <div class="actions noprint" id="quizActions">
+    <button class="btn" type="button" id="showBtn" disabled>Δείτε το cheat sheet σας</button>
+    <span class="missing" id="missing"></span>
+  </div>
+
+  <div id="result" aria-live="polite"></div>
+
+  <p class="back noprint"><a href="../">Η φωνή μου · αρχική σελίδα</a></p>
+</main>
+
+<script>
+(function () {
+  // Επίπεδα: 0 = Ξεκινώ, 1 = Προχωρώ, 2 = Εμβαθύνω (null = δεν μετράει στο επίπεδο)
+  // Ανάγκες, από τα πέντε οφέλη της σελίδας «Η φωνή μου»:
+  // v = φωνή, e = συναίσθημα, b = αναπνοή και στρες, f = ελευθερία στον κόσμο, c = δημιουργικότητα
+  var Q = [
+    { q:'Όταν ακούτε τη φωνή σας ηχογραφημένη, τι νιώθετε;', a:[
+      ['Δεν μου αρέσει. Θα την ήθελα αλλιώτικη.', 0, 'v'],
+      ['Την αποδέχομαι, αλλά νιώθω ότι κάτι κρατιέται.', 1, 'v'],
+      ['Μου αρέσει και θέλω να ακούσω πού αλλού μπορεί να φτάσει.', 2, 'c'] ]},
+    { q:'Τραγουδάτε;', a:[
+      ['Μόνο όταν δεν με ακούει κανείς, ή καθόλου.', 0, 'f'],
+      ['Σε παρέες, σε χορωδία, ερασιτεχνικά.', 1, 'v'],
+      ['Έχω σπουδάσει τραγούδι ή τραγουδώ σε σκηνή.', 2, 'c'] ]},
+    { q:'Σας έχουν πει ποτέ ότι «δεν έχετε φωνή» ή ότι «φαλτσάρετε»;', a:[
+      ['Ναι, και το πίστεψα.', 0, 'v'],
+      ['Ναι, αλλά μέσα μου νιώθω ότι δεν ισχύει.', 1, 'v'],
+      ['Όχι, ή δεν με απασχολεί πια.', 2, 'c'] ]},
+    { q:'Όταν συγκινείστε, τι γίνεται με τη φωνή σας;', a:[
+      ['Κλείνει, σφίγγεται ο λαιμός μου.', 0, 'e'],
+      ['Τη συγκρατώ, για να μη φανεί τι νιώθω.', 1, 'e'],
+      ['Θα ήθελα να μπορώ να φέρνω αυτή τη συγκίνηση στο τραγούδι.', 2, 'e'] ]},
+    { q:'Πώς είναι η αναπνοή σας μέσα στη μέρα;', a:[
+      ['Συχνά κοντή, ψηλά στο στήθος. Κουράζομαι εύκολα.', 0, 'b'],
+      ['Καλή, αλλά στο άγχος χάνεται.', 1, 'b'],
+      ['Τη δουλεύω ήδη και θέλω να τη δέσω με την ερμηνεία.', 2, 'b'] ]},
+    { q:'Πόσο συχνά νιώθετε ένταση στους ώμους, στο σαγόνι ή στον λαιμό;', a:[
+      ['Σχεδόν κάθε μέρα.', 0, 'b'],
+      ['Στις δύσκολες μέρες.', 1, 'b'],
+      ['Σπάνια. Ξέρω πώς να χαλαρώνω.', 2, 'c'] ]},
+    { q:'Όταν μιλάτε μπροστά σε κόσμο, σε μια σύσκεψη, σε μια τάξη, σε μια ξενάγηση:', a:[
+      ['Τρέμει η φωνή μου και θέλω να τελειώσει γρήγορα.', 0, 'f'],
+      ['Τα καταφέρνω, αλλά η φωνή μου κουράζεται ή βραχνιάζει.', 1, 'v'],
+      ['Νιώθω άνεση. Θέλω η φωνή μου να αγγίζει πιο βαθιά όσους ακούν.', 2, 'f'] ]},
+    { q:'Και στη σκηνή;', hint:'Όποια σκηνή κι αν είναι: ένα τραπέζι με κόσμο, μια γιορτή, μια συναυλία.', a:[
+      ['Δεν έχω βρεθεί ποτέ. Ούτε που το φαντάζομαι.', 0, 'f'],
+      ['Έχω τρακ που με εμποδίζει να δώσω ό,τι έχω.', 1, 'f'],
+      ['Νιώθω σαν στο σπίτι μου και ψάχνω το επόμενο βήμα στην ερμηνεία.', 2, 'c'] ]},
+    { q:'Πόσο γνωρίζετε τη φωνή σας, την έκτασή της, τα χρώματά της;', a:[
+      ['Καθόλου.', 0, 'v'],
+      ['Λίγο, από χορωδία ή από μαθήματα που έκανα κάποτε.', 1, 'v'],
+      ['Αρκετά, και θέλω να πάω πιο βαθιά.', 2, 'c'] ]},
+    { q:'Τι σας κρατά πίσω από το να ξεκινήσετε ή να συνεχίσετε;', a:[
+      ['Νομίζω ότι το τραγούδι δεν είναι για μένα.', 0, 'v'],
+      ['Ο χρόνος. Δεν βρίσκω πότε.', 1, 'f', 'time'],
+      ['Δεν έχω βρει δάσκαλο που να με βλέπει ολόκληρο, σαν άνθρωπο.', 2, 'e'] ]},
+    { q:'Αν η φωνή σας μπορούσε να σας πει κάτι σήμερα, τι θα σας έλεγε;', a:[
+      ['«Άκουσέ με. Είμαι εδώ.»', null, 'v'],
+      ['«Άφησέ με να βγω.»', null, 'e'],
+      ['«Ανάσανε.»', null, 'b'],
+      ['«Πάμε παρακάτω. Δημιούργησε.»', null, 'c'] ]},
+    { q:'Τι θα θέλατε να έχει αλλάξει μέσα σας σε έναν χρόνο από σήμερα;', a:[
+      ['Να τραγουδώ χωρίς ντροπή, όπου κι αν βρίσκομαι.', null, 'f'],
+      ['Να εκφράζω αυτό που νιώθω.', null, 'e'],
+      ['Να νιώθω πιο ήρεμα μέσα στη μέρα μου.', null, 'b'],
+      ['Να ακουστεί η δημιουργικότητά μου, να ερμηνεύω.', null, 'c'] ]}
+  ];
+
+  var LEVELS = [
+    { name:'Ξεκινώ',
+      lead:'Η φωνή σας είναι εκεί και σας περιμένει. Τα μαθήματα είναι φτιαγμένα ακριβώς για ανθρώπους που νιώθουν όπως εσείς σήμερα. Δεν χρειάζεται καμία προηγούμενη εμπειρία, ούτε μουσικές γνώσεις.',
+      gain:[
+        'Ακούτε, ίσως για πρώτη φορά, την αληθινή σας φωνή, χωρίς κριτική.',
+        'Μαθαίνετε να αναπνέετε ελεύθερα και να αφήνετε το σώμα να χαλαρώσει.',
+        'Φεύγει σιγά σιγά η ντροπή και το τραγούδι γίνεται χαρά.',
+        'Παίρνετε απλά εργαλεία για να συνεχίζετε μόνοι σας, στην καθημερινότητά σας.'
+      ],
+      path:'Ένα πρώτο ατομικό μάθημα, όπου γνωριζόμαστε και ακούμε τη φωνή σας με ησυχία. Ή ένα Βιωματικό Σεμινάριο, όπου τραγουδάμε όλοι μαζί και κανείς δεν είναι μόνος του.'
+    },
+    { name:'Προχωρώ',
+      lead:'Έχετε ήδη μια σχέση με τη φωνή σας. Νιώθετε όμως ότι κάτι κρατιέται, ότι υπάρχει περισσότερο μέσα σας απ’ όσο βγαίνει. Αυτό το «περισσότερο» είναι αυτό που δουλεύουμε στα μαθήματα.',
+      gain:[
+        'Λύνονται οι εντάσεις που κουράζουν ή κλείνουν τη φωνή.',
+        'Η αναπνοή σάς στηρίζει και μέσα στο άγχος, στη σκηνή, στη δουλειά.',
+        'Το συναίσθημα περνά στη φωνή χωρίς να την κόβει.',
+        'Γνωρίζετε την έκταση και τα χρώματα της φωνής σας και τα χρησιμοποιείτε συνειδητά.'
+      ],
+      path:'Ατομικά μαθήματα με σταθερό ρυθμό, ή φωνητικά εργαστήρια σε μικρές ομάδες, δια ζώσης ή online.'
+    },
+    { name:'Εμβαθύνω',
+      lead:'Η φωνή σας είναι ήδη μέρος της ζωής σας, ίσως και της δουλειάς σας. Ψάχνετε το επόμενο βήμα: την ερμηνεία που συγκινεί, τη σύνδεση με αυτό που είστε βαθιά.',
+      gain:[
+        'Η τεχνική σας δένεται με την έκφραση, ώστε να ακούγεται ο άνθρωπος πίσω από τη φωνή.',
+        'Η ερμηνεία βαθαίνει. Η φωνή σας αγγίζει όσους σας ακούν.',
+        'Ανοίγουν νέες κατευθύνσεις στο ρεπερτόριο και στη φωνή σας.',
+        'Βρίσκετε ησυχία και ελευθερία στη σκηνή.'
+      ],
+      path:'Ατομικά μαθήματα ερμηνείας και φωνητικής τέχνης, δια ζώσης ή online, για τραγουδιστές, ηθοποιούς, φοιτητές τραγουδιού και θεάτρου.'
+    }
+  ];
+
+  // Τα πέντε οφέλη, με τα λόγια της σελίδας «Η φωνή μου», και μία μικρή άσκηση για το καθένα
+  var NEEDS = {
+    v:{ letter:'α', title:'Η αληθινή μου φωνή',
+        text:'Αρχίζω να ακούω την αληθινή μου φωνή, που ήταν πάντα εκεί. Με περιμένει να τραγουδήσω.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι η σχέση σας με τη φωνή σας θέλει φροντίδα και εμπιστοσύνη.',
+        ex:'Με κλειστά χείλη, κάντε ένα απαλό βουητό «μμμ» σε έναν άνετο τόνο, για ένα λεπτό. Ακουμπήστε το χέρι στο στήθος και νιώστε τη δόνηση.' },
+    e:{ letter:'β', title:'Ο συναισθηματικός μου κόσμος',
+        text:'Ανοίγω τον συναισθηματικό μου κόσμο. Η έκφραση θεραπεύει.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι τα συναισθήματά σας θέλουν δρόμο για να βγουν, και η φωνή είναι ένας τέτοιος δρόμος.',
+        ex:'Διαλέξτε ένα τραγούδι που σας αγγίζει. Πείτε τον πρώτο στίχο μιλώντας, μετά ψιθυριστά, μετά τραγουδιστά. Προσέξτε τι νιώθετε σε καθέναν από τους τρεις τρόπους.' },
+    b:{ letter:'γ', title:'Η αναπνοή και η ηρεμία μου',
+        text:'Η αναπνοή μου διευρύνεται, συνδέομαι με τον βιορυθμό μου. Ησυχάζει το στρες, το σώμα χαλαρώνει.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι η ένταση της μέρας κάθεται στο σώμα και στην αναπνοή σας.',
+        ex:'Εισπνεύστε από τη μύτη, αφήνοντας την κοιλιά να ανοίξει. Εκπνεύστε αργά σε ένα «σσσ», όσο κρατάει χωρίς κόπο. Τέσσερις φορές, πριν από μια δύσκολη στιγμή της μέρας.' },
+    f:{ letter:'δ', title:'Ελευθερία στον κόσμο',
+        text:'Λειτουργώ πιο ελεύθερα στον κόσμο. Στη σκηνή, στην εργασία, στις σχέσεις, παντού.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι η φωνή σας μαζεύεται όταν σας κοιτάζουν ή σας ακούν άλλοι.',
+        ex:'Πριν από μια ομιλία ή ένα τραγούδι, αφήστε ένα χασμουρητό και μετά έναν αναστεναγμό σε «αχ», από ψηλά προς τα χαμηλά. Ο λαιμός ανοίγει και το σώμα ησυχάζει.' },
+    c:{ letter:'ε', title:'Η δημιουργικότητά μου',
+        text:'Η δημιουργικότητα μέσα από τη φωνή μου συγκινεί. Ένα δώρο στον εαυτό μου και στους άλλους.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι έχετε ήδη βάση και θέλετε η φωνή σας να γίνει έκφραση και ερμηνεία.',
+        ex:'Τραγουδήστε την ίδια μουσική φράση τρεις φορές: τρυφερά, χαρούμενα, με λύπη. Ηχογραφήστε τις και ακούστε τι αλλάζει στη φωνή σας κάθε φορά.' }
+  };
+  var ORDER = ['v','e','b','f','c'];
+  var FORM = 'https://forms.gle/i5YK5sN4z8swoDLv5';
+
+  var form = document.getElementById('quiz');
+  var html = '';
+  Q.forEach(function (item, i) {
+    html += '<fieldset><legend><span class="num">' + (i + 1) + '.</span>' + item.q + '</legend>';
+    if (item.hint) html += '<p class="hint">' + item.hint + '</p>';
+    item.a.forEach(function (ans, j) {
+      html += '<label class="opt"><input type="radio" name="q' + i + '" value="' + j + '"><span>' + ans[0] + '</span></label>';
+    });
+    html += '</fieldset>';
+  });
+  form.innerHTML = html;
+
+  var btn = document.getElementById('showBtn');
+  var missing = document.getElementById('missing');
+  function answered() {
+    var n = 0;
+    for (var i = 0; i < Q.length; i++) if (form.querySelector('input[name="q' + i + '"]:checked')) n++;
+    return n;
+  }
+  function update() {
+    var n = answered();
+    document.getElementById('progText').textContent = n + ' από ' + Q.length;
+    document.getElementById('progBar').style.width = (100 * n / Q.length) + '%';
+    btn.disabled = n < Q.length;
+    var left = Q.length - n;
+    missing.textContent = left ? (left === 1 ? 'Μένει μία ερώτηση.' : 'Μένουν ' + left + ' ερωτήσεις.') : '';
+  }
+  form.addEventListener('change', update);
+  update();
+
+  btn.addEventListener('click', function () {
+    var sum = 0, cnt = 0, time = false, tags = { v:0, e:0, b:0, f:0, c:0 };
+    Q.forEach(function (item, i) {
+      var el = form.querySelector('input[name="q' + i + '"]:checked');
+      if (!el) return;
+      var ans = item.a[+el.value];
+      if (ans[1] !== null) { sum += ans[1]; cnt++; }
+      tags[ans[2]]++;
+      if (ans[3] === 'time') time = true;
+    });
+    var avg = cnt ? sum / cnt : 0;
+    var lv = LEVELS[avg < 0.7 ? 0 : avg < 1.4 ? 1 : 2];
+    var top = ORDER.slice().sort(function (a, b) { return tags[b] - tags[a] || ORDER.indexOf(a) - ORDER.indexOf(b); }).slice(0, 3);
+
+    var r = '<div class="sheet">';
+    r += '<p class="eyebrow">Το cheat sheet μου · η φωνή μου και εγώ</p>';
+    r += '<h2 class="level">Το επίπεδό μου: ' + lv.name + '</h2>';
+    r += '<p>' + lv.lead + '</p>';
+
+    r += '<section><h3>Τι μπορεί να μου δώσουν τα μαθήματα</h3><ul>';
+    lv.gain.forEach(function (g) { r += '<li>' + g + '</li>'; });
+    r += '</ul></section>';
+
+    r += '<section><h3>Αυτό που έχω ανάγκη περισσότερο</h3>';
+    top.forEach(function (k) {
+      var n = NEEDS[k];
+      r += '<div class="need"><p><strong><span class="letter">' + n.letter + '</span>' + n.title + '</strong><br>' + n.text + '</p>';
+      r += '<p>' + n.why + '</p>';
+      r += '<p class="try"><strong>Για σήμερα:</strong> ' + n.ex + '</p></div>';
+    });
+    r += '</section>';
+
+    r += '<section><h3>Η μέθοδος, σε τρία βήματα</h3>';
+    r += '<p>Τρεις ενότητες, με τρία στάδια η καθεμία. Σε κάθε στάδιο ξεκινάμε από τη συνειδητοποίηση, περνάμε στην εξέλιξη και παίρνουμε τα εργαλεία για να συνεχίζουμε μόνοι μας, στην καθημερινότητά μας.</p>';
+    r += '<ul><li><strong>Αξιολόγηση:</strong> ακούμε μαζί πού βρίσκεται σήμερα η φωνή σας.</li><li><strong>Διδασκαλία:</strong> δουλεύουμε αυτό που έχετε ανάγκη, με τον δικό σας ρυθμό.</li><li><strong>Μελέτη:</strong> παίρνετε μαζί σας ό,τι χρειάζεστε για να συνεχίζετε μόνοι σας.</li></ul></section>';
+
+    r += '<section><h3>Η διαδρομή που σας ταιριάζει</h3><p>' + lv.path + '</p>';
+    if (time) r += '<p>Για τον χρόνο: τα μαθήματα γίνονται και online μέσω Zoom, από όποιο σημείο του πλανήτη, στην ώρα που σας βολεύει.</p>';
+    r += '<p>Στο Κέντρο Φωνητικής Τέχνης Κρήτης, Ιερολοχιτών 3, «Ρομαντική γωνιά», Ηράκλειο, ή online.</p></section>';
+
+    r += '<section class="contact"><h3>Το πρώτο βήμα</h3>';
+    r += '<p>Συμπληρώστε τη φόρμα εγγραφής. Θα λάβετε την απάντησή μου με τα επόμενα βήματα και ορίζουμε την πρώτη μας συνάντηση, δια ζώσης ή διαδικτυακή.</p>';
+    r += '<p class="noprint"><a class="btn" href="' + FORM + '" target="_blank" rel="noopener">Επιθυμώ να εγγραφώ</a></p>';
+    r += '<p class="name">Ιωάννης Ιδομενέως</p>';
+    r += '<p><a href="tel:+306932855194">693 285 5194</a><br><a href="mailto:ioannis.idomeneos@gmail.com">ioannis.idomeneos@gmail.com</a><br>Φόρμα εγγραφής: <a href="' + FORM + '">forms.gle/i5YK5sN4z8swoDLv5</a></p>';
+    r += '<p>Καλή μας συνάντηση.</p></section>';
+    r += '</div>';
+
+    r += '<div class="actions noprint"><button class="btn ghost" type="button" onclick="window.print()">Εκτύπωση ή αποθήκευση σε PDF</button>';
+    r += '<button class="btn ghost" type="button" id="againBtn">Ξανά από την αρχή</button></div>';
+
+    var box = document.getElementById('result');
+    box.innerHTML = r;
+    box.classList.add('show');
+    box.scrollIntoView({ behavior:'smooth', block:'start' });
+    document.getElementById('againBtn').addEventListener('click', function () {
+      form.reset(); box.classList.remove('show'); box.innerHTML = ''; update();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
