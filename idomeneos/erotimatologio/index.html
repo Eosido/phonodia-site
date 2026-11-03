@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Η φωνή μου και εγώ · Ερωτηματολόγιο</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Ένα μικρό ερωτηματολόγιο για τη σχέση σας με τη φωνή σας. Ιωάννης Ιδομενέως, Φωνητική Τέχνη.">
+<meta name="theme-color" content="#EEEDF6">
+<style>
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400 500; font-display:swap;
+  src:url("../assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400 500; font-display:swap;
+  src:url("../assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400 500; font-display:swap;
+  src:url("../assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya'; font-style:italic; font-weight:400 500; font-display:swap;
+  src:url("../assets/730709865d25.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:italic; font-weight:400 500; font-display:swap;
+  src:url("../assets/5bcf29a0182c.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:italic; font-weight:400 500; font-display:swap;
+  src:url("../assets/a7ea197994df.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/92d062913983.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/122b22a2ed34.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/123cd4a1e139.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/8d59e3c69325.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/1ab85ac020d6.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya Sans'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/005c64e2da1b.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  --paper:#EEEDF6; --paper-2:#E0DEF0; --card:#F8F7FD;
+  --ink:#1C1A2C; --ink-soft:#46415F; --head:#1B3A6B;
+  --btn-bg:#1B3A6B; --btn-ink:#F8F7FD;
+  --gold:#C29A3E; --gold-deep:#7A5C18;
+  --staff:rgba(122,92,24,.38);
+  --line:rgba(28,26,44,.16); --line-soft:rgba(28,26,44,.08);
+  --glow1:rgba(27,58,107,.13); --glow2:rgba(194,154,62,.20);
+  --grain:.06;
+  --serif:'Alegreya', Georgia, 'Times New Roman', serif;
+  --sans:'Alegreya Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:#0D1626; --paper-2:#16223A; --card:#121D31;
+    --ink:#EDF0F7; --ink-soft:rgba(237,240,247,.78); --head:#EDF0F7;
+    --btn-bg:#D4AE55; --btn-ink:#0D1626;
+    --gold:#D4AE55; --gold-deep:#D4AE55;
+    --staff:rgba(212,174,85,.42);
+    --line:rgba(237,240,247,.22); --line-soft:rgba(237,240,247,.1);
+    --glow1:rgba(80,120,200,.16); --glow2:rgba(212,174,85,.12);
+    --grain:.03;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; background:var(--paper); }
+body {
+  margin:0; min-height:100vh; min-height:100svh;
+  color:var(--ink); font-family:var(--serif); font-size:1.2rem; line-height:1.6;
+}
+body::before {
+  content:""; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(110% 55% at 92% -8%, var(--glow1), transparent 62%),
+    radial-gradient(90% 50% at -10% 108%, var(--glow2), transparent 62%),
+    var(--paper);
+}
+body::after {
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:var(--grain);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .2 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.wrap { max-width:42rem; margin:0 auto; padding:26px max(20px, env(safe-area-inset-right)) 80px max(20px, env(safe-area-inset-left)); }
+.brand { font-family:var(--sans); font-size:1rem; letter-spacing:.07em; color:var(--ink-soft); margin:0; }
+
+/* Πεντάγραμμο: κάθε απάντηση αφήνει μια νότα */
+.staff { position:relative; height:54px; margin:14px 0 26px; }
+.staff .ln { position:absolute; left:0; right:0; height:1px; background:var(--staff); }
+.staff::before, .staff::after { content:""; position:absolute; top:9px; height:36px; width:1.5px; background:var(--staff); }
+.staff::before { left:0; } .staff::after { right:0; }
+.nt {
+  position:absolute; width:14px; height:10.5px; border-radius:50%; background:var(--gold);
+  transform:translate(-50%,-50%) rotate(-18deg) scale(.3); opacity:0;
+  transition:opacity .5s ease, transform .5s ease, background .3s ease;
+}
+.nt i { position:absolute; left:calc(100% - 1.2px); bottom:50%; width:1.5px; height:27px; background:inherit; transform:rotate(18deg); transform-origin:bottom left; }
+.nt.on { opacity:.92; transform:translate(-50%,-50%) rotate(-18deg) scale(1); }
+.nt.cur { opacity:1; background:var(--head); transform:translate(-50%,-50%) rotate(-18deg) scale(1.25); box-shadow:0 0 0 6px color-mix(in srgb, var(--gold) 30%, transparent); }
+
+.enter { animation:rise .55s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion: reduce) {
+  .enter { animation:none; }
+  .nt, .opt, .btn { transition:none !important; }
+}
+
+h1, h2, h3 { font-family:var(--serif); font-weight:500; color:var(--head); text-wrap:balance; margin:0; }
+h1 { font-size:clamp(2.5rem,9vw,3.6rem); line-height:1.08; margin-bottom:.45rem; }
+h2 { font-size:clamp(1.6rem,5.6vw,2.15rem); line-height:1.22; margin-bottom:1.1rem; }
+h3 { font-size:1.55rem; line-height:1.25; margin-bottom:.6rem; }
+h1:focus, h2:focus { outline:none; }
+p { margin:0 0 1rem; text-wrap:pretty; }
+.sub { font-size:1.25rem; color:var(--ink-soft); margin-bottom:1.8rem; }
+.eyebrow { font-family:var(--sans); font-size:1rem; letter-spacing:.08em; color:var(--gold-deep); margin:0 0 .6rem; font-weight:500; }
+.hint { color:var(--ink-soft); font-style:italic; margin:-.4rem 0 1.1rem; }
+
+.promise {
+  display:flex; gap:12px; align-items:flex-start;
+  background:color-mix(in srgb, var(--card) 80%, transparent); border:1px solid var(--line); border-radius:14px;
+  padding:14px 16px; margin:1.6rem 0 1.8rem; font-size:1.1rem; color:var(--ink);
+}
+.promise::before { content:""; flex:none; width:9px; height:9px; margin-top:.55em; border-radius:50%; background:var(--gold); }
+.promise p { margin:0; }
+
+.btn {
+  display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:0 28px; border-radius:999px; border:0;
+  background:var(--btn-bg); color:var(--btn-ink); font:500 1.12rem var(--sans); letter-spacing:.02em; text-decoration:none; cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease; -webkit-tap-highlight-color:transparent;
+}
+.btn .dot { width:8px; height:8px; border-radius:50%; background:var(--gold); }
+@media (prefers-color-scheme: dark) { .btn .dot { background:var(--btn-ink); } }
+.btn:hover { transform:translateY(-2px); box-shadow:0 10px 24px -12px rgba(27,58,107,.6); }
+.btn:focus-visible, .link:focus-visible, input:focus-visible, a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.btn-line { background:transparent; color:var(--head); border:1.5px solid var(--head); }
+.btn-line:hover { box-shadow:none; background:color-mix(in srgb, var(--head) 8%, transparent); }
+.link { background:none; border:0; padding:8px 4px; font:500 1.05rem var(--sans); color:var(--ink-soft); cursor:pointer; letter-spacing:.02em; }
+.link:hover { color:var(--head); text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:4px; }
+
+/* Επιλογές */
+.opts { margin:0 0 .8rem; }
+.opt {
+  display:flex; gap:14px; align-items:flex-start; width:100%; text-align:left; font:inherit; font-size:1.18rem; line-height:1.4; color:var(--ink);
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:15px 18px; margin:0 0 12px; cursor:pointer;
+  transition:border-color .2s, transform .2s, box-shadow .2s, background .2s; -webkit-tap-highlight-color:transparent;
+}
+.opt:hover { border-color:var(--gold); box-shadow:0 8px 24px -14px rgba(27,58,107,.45); transform:translateY(-1px); }
+.opt:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.opt[aria-pressed="true"] { border-color:var(--head); background:color-mix(in srgb, var(--head) 9%, var(--card)); }
+.ltr {
+  flex:none; display:grid; place-items:center; width:34px; height:34px; border-radius:50%;
+  border:1.5px solid var(--gold); color:var(--gold-deep); font-style:italic; font-size:1.15rem; line-height:1; transition:background .2s, color .2s;
+}
+.opt[aria-pressed="true"] .ltr { background:var(--gold); color:#1C1A2C; }
+.navrow { display:flex; justify-content:space-between; align-items:center; min-height:44px; }
+
+/* Σημείωμα */
+.result section { margin-top:2.6rem; padding-top:2.2rem; border-top:1px solid var(--line); }
+.result section:first-of-type { margin-top:1.2rem; }
+.level { display:inline-block; position:relative; font-size:clamp(3.4rem,16vw,6rem); line-height:1; font-weight:500; color:var(--head); margin:.05em 0 .3em; padding-bottom:.12em; }
+.level::after { content:""; position:absolute; left:0; bottom:-6px; width:100%; height:2px; background:linear-gradient(90deg, var(--gold), transparent); }
+.label { font-family:var(--sans); font-weight:500; color:var(--head); letter-spacing:.02em; margin:1.4rem 0 .5rem; font-size:1.1rem; }
+ul.gold { margin:0 0 1rem; padding-left:1.2em; }
+ul.gold li { margin-bottom:.6rem; padding-left:.3em; }
+ul.gold li::marker { color:var(--gold); }
+.route { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:12px; padding:16px 18px; }
+.route strong { color:var(--head); font-weight:500; }
+.need { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 22px 20px; margin:0 0 16px; }
+.need-h { display:flex; align-items:center; gap:14px; margin-bottom:.8rem; }
+.need-h .ltr { width:42px; height:42px; font-size:1.4rem; }
+.need-h h3 { margin:0; }
+.quote { font-style:italic; font-size:1.3rem; line-height:1.45; color:var(--ink); margin:0 0 .9rem; }
+.why { color:var(--ink-soft); }
+.today { background:var(--paper-2); border-left:3px solid var(--gold); border-radius:10px; padding:14px 16px; margin:0; }
+.today .lab { display:block; font-family:var(--sans); font-weight:500; letter-spacing:.06em; color:var(--gold-deep); font-size:1rem; margin-bottom:.2rem; }
+.today p { margin:0; }
+.aside { background:color-mix(in srgb, var(--gold) 14%, var(--card)); border-radius:12px; padding:14px 18px; margin:0 0 1.2rem; }
+.aside p { margin:0; }
+.aside strong { font-weight:500; color:var(--head); }
+.lead { font-size:1.3rem; }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(12rem, 1fr)); gap:12px; margin:.4rem 0 1rem; }
+.grid3 div { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+.grid3 b { display:block; font-weight:500; color:var(--head); font-size:1.2rem; margin-bottom:.2rem; }
+.grid3 span { font-size:1.08rem; line-height:1.45; display:block; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin:0 0 1.4rem; }
+.mailbox { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
+.mailbox p { margin:0 0 .8rem; }
+.mailrow { display:flex; flex-wrap:wrap; gap:10px; }
+.mailrow input {
+  flex:1 1 14rem; min-height:52px; padding:0 18px; border-radius:999px; border:1.5px solid var(--line); background:var(--paper);
+  color:var(--ink); font:1.1rem var(--serif);
+}
+.mailrow input::placeholder { color:var(--ink-soft); opacity:.8; }
+.small { font-size:1rem; color:var(--ink-soft); margin:.8rem 0 0 !important; }
+.status { min-height:1.5em; font-family:var(--sans); color:var(--head); margin:.8rem 0 0; }
+.contact { margin:1.6rem 0 1rem; }
+.contact .name { font-size:1.4rem; font-weight:500; color:var(--head); margin-bottom:.15rem; }
+.contact p { margin:0 0 .2rem; }
+a { color:var(--ink); text-decoration-color:var(--gold); text-underline-offset:4px; }
+.closing { font-size:1.35rem; font-style:italic; color:var(--head); margin:1.2rem 0 0; }
+.again { margin-top:2rem; text-align:center; }
+.printhead { display:none; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+@media print {
+  body::before, body::after, .brand, .actions, .mailbox, .again, .noprint { display:none !important; }
+  html { background:#fff; }
+  body { color:#000; font-size:12pt; background:#fff; }
+  .wrap { max-width:none; padding:0; }
+  .printhead { display:block; font-family:var(--sans); margin:0 0 10pt; color:#000; }
+  :root { --head:#1B3A6B; --gold-deep:#7A5C18; --ink-soft:#333; --card:#fff; --paper-2:#f3f0e6; --line:rgba(0,0,0,.25); }
+  .need, .route, .grid3 div, .today, .aside { break-inside:avoid; }
+  .enter { animation:none; }
+  a { color:#000; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="brand">Ιωάννης Ιδομενέως · Φωνητική Τέχνη</p>
+  <div class="staff" id="staff" aria-hidden="true"></div>
+  <div class="sr" id="live" aria-live="polite"></div>
+  <main id="app"></main>
+  <noscript><p>Το ερωτηματολόγιο χρειάζεται JavaScript για να λειτουργήσει. Μπορείτε να επικοινωνήσετε απευθείας: 693 285 5194, ioannis.idomeneos@gmail.com.</p></noscript>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+var FORM_URL = 'https://forms.gle/i5YK5sN4z8swoDLv5';
+var LET = { a:'α', b:'β', c:'γ', d:'δ', e:'ε' };
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ----- Ερωτήσεις: [κείμενο, επίπεδο (1 Ξεκινώ, 2 Προχωρώ, 3 Εμβαθύνω, 0 κανένα), ανάγκη, σημαία] ----- */
+var Q = [
+ { t:'Όταν ακούτε τη φωνή σας ηχογραφημένη, τι νιώθετε;', o:[
+   ['Απλώς δεν μου αρέσει.',1,'a'],
+   ['Τη συνηθίζω σιγά σιγά και κάποιες φορές τραγουδάω λίγο πιο ελεύθερα.',2,'a'],
+   ['Μου αρέσει και θέλω να ακούσω πού αλλού μπορεί να φτάσει.',3,'e'] ]},
+ { t:'Τραγουδάτε;', o:[
+   ['Μόνο όταν δεν με ακούει κανείς, ή καθόλου.',1,'d'],
+   ['Σε παρέες, σε χορωδία, ερασιτεχνικά.',2,'a'],
+   ['Έχω σπουδάσει τραγούδι και/ή τραγουδώ στη σκηνή.',3,'e'] ]},
+ { t:'Όταν ήσασταν παιδί, τραγουδούσατε;', o:[
+   ['Δεν θυμάμαι να τραγουδούσα. Ίσως κάποιος μου είχε πει ότι δεν μπορώ.',1,'a'],
+   ['Τραγουδούσα πολύ και για κάποιο λόγο κάποια στιγμή σταμάτησα.',2,'d'],
+   ['Τραγουδούσα και συνεχίζω να τραγουδώ.',3,'e'] ]},
+ { t:'Σας έχουν πει ποτέ ότι «δεν έχετε φωνή» ή ότι «φαλτσάρετε»;', o:[
+   ['Ναι, και το πίστεψα.',1,'a','falso'],
+   ['Ναι, και κάτι μέσα μου λέει ότι δεν ισχύει.',2,'a','falso'],
+   ['Όχι, ή δεν με απασχολεί πια.',3,'e'] ]},
+ { t:'Όταν συγκινείστε, πώς νιώθετε τη φωνή σας;', o:[
+   ['Κλείνει, σφίγγεται ο λαιμός μου.',0,'b'],
+   ['Τη συγκρατώ, για να μη φανεί τι νιώθω.',0,'b'],
+   ['Θα ήθελα να δίνω ελεύθερα αυτή τη συγκίνηση μέσα από τη φωνή μου και στους άλλους.',0,'b'] ]},
+ { t:'Πώς νιώθετε το σώμα και την ανάσα σας μέσα στη μέρα;', o:[
+   ['Ώμοι, σαγόνι ή λαιμός σφίγγονται συχνά. Η ανάσα συνήθως είναι ψηλά στο στήθος.',1,'c'],
+   ['Τις περισσότερες μέρες καλά. Όταν αγχώνομαι σφίγγομαι και η ανάσα μικραίνει.',2,'c'],
+   ['Νιώθω ότι είμαι σε καλό δρόμο και θέλω να τα εξελίξω για να γίνουν στήριγμα της ερμηνείας μου.',3,'c'] ]},
+ { t:'Όταν μιλάτε μπροστά σε κόσμο, σε μια σύσκεψη, σε μια τάξη, σε μια ξενάγηση:', o:[
+   ['Τρέμει η φωνή μου και θέλω να τελειώσει γρήγορα.',1,'d'],
+   ['Τα καταφέρνω, και στο τέλος η φωνή μου κουράζεται ή βραχνιάζει.',2,'c'],
+   ['Νιώθω άνεση. Θέλω η φωνή μου να αγγίζει πιο βαθιά όσους ακούν.',3,'d'] ]},
+ { t:'Και στη σκηνή;', hint:'Όποια σκηνή κι αν είναι: ένα τραπέζι με κόσμο, μια γιορτή, μια συναυλία.', o:[
+   ['Δεν έχω βρεθεί ποτέ. Ούτε που το φαντάζομαι.',1,'d'],
+   ['Έχω τρακ που με εμποδίζει να τραγουδήσω όπως μπορώ.',2,'d'],
+   ['Νιώθω πολύ άνετα και ψάχνω το επόμενο βήμα στην ερμηνεία.',3,'e'] ]},
+ { t:'Όταν μιλάτε ή τραγουδάτε σε κάποιον, τι κάνει το βλέμμα σας;', o:[
+   ['Τα μάτια μου είναι κλειστά ή κοιτάω χαμηλά. Δυσκολεύομαι όταν με κοιτάζουν.',1,'d'],
+   ['Κάποιες φορές συνδέω την έκφραση με τα μάτια μου και συχνά αυτή η σύνδεση χάνεται.',2,'b'],
+   ['Νιώθω πολύ ζωντανά τα μάτια μου, συνδεδεμένα με την ερμηνεία μου.',3,'e'] ]},
+ { t:'Τι σας κρατά πίσω από το να ξεκινήσετε ή να συνεχίσετε;', o:[
+   ['Νομίζω ότι το τραγούδι δεν είναι για μένα.',1,'a'],
+   ['Ο χρόνος. Δεν βρίσκω πότε.',2,'d','online'],
+   ['Θα ήθελα να έχω έναν δάσκαλο που να δουλεύουμε σε πολλές διαστάσεις και να αντιλαμβάνεται τη μοναδικότητά μου.',3,'b'] ]},
+ { t:'Αν η φωνή σας μπορούσε να σας πει κάτι σήμερα, τι θα σας έλεγε;', o:[
+   ['«Άκουσέ με, είμαι εδώ.»',0,'a'],
+   ['«Θέλω να συνδεθώ περισσότερο με τα συναισθήματά σου.»',0,'b'],
+   ['«Αγάπησέ με λίγο περισσότερο.»',0,'d'],
+   ['«Νιώθω όμορφα όταν με χρησιμοποιείς δημιουργικά και η κάθε λέξη αποκτά βαθύτερο νόημα.»',0,'e'],
+   ['«Δεν μπορώ να ακούσω τι μου λέει.»',0,'a'] ]},
+ { t:'Τι θα θέλατε να έχει αλλάξει μέσα σας σε έναν χρόνο από σήμερα;', o:[
+   ['Να τραγουδώ χωρίς ντροπή, όπου κι αν βρίσκομαι.',0,'d'],
+   ['Να εκφράζω αυτό που νιώθω.',0,'b'],
+   ['Να νιώθω πιο ήρεμα μέσα στη μέρα μου.',0,'c'],
+   ['Να επικοινωνώ βαθιά με τους ανθρώπους μέσα από τη φωνή μου.',0,'e'] ]}
+];
+var N = Q.length;
+
+/* ----- Επίπεδα ----- */
+var LEVELS = {
+ 1: { name:'Ξεκινώ',
+  p:'Η αληθινή σας φωνή είναι εκεί και σας περιμένει. Τα μαθήματα αφορούν ανθρώπους που επιθυμούν να συνδεθούν με την αληθινή τους φωνή, με ή δίχως μουσικές γνώσεις. Ως παιδιά, σχεδόν όλα όσα αναζητάμε στο τραγούδι λειτουργούσαν φυσικά: η στάση του σώματος, η αναπνοή, η στήριξη, η ολοζώντανη ηρεμία. Ψάχνουμε λοιπόν κάτι που ήδη γνωρίζαμε.',
+  list:['Ακούτε, ίσως για πρώτη φορά, την αληθινή σας φωνή, χωρίς κριτική.',
+        'Η αναπνοή ανοίγει και το σώμα θυμάται πώς να χαλαρώνει.',
+        'Η ντροπή φεύγει σιγά σιγά και το τραγούδι γίνεται χαρά.',
+        'Παίρνετε απλά εργαλεία για τη δική σας εξάσκηση στην καθημερινότητά σας.'],
+  route:'Ένα πρώτο ατομικό μάθημα ή η συμμετοχή σας σε ένα φωνητικό εργαστήριο ή βιωματικό σεμινάριο φωνητικής τέχνης. Εκεί ακούμε τη φωνή σας και προχωράμε βήμα-βήμα.' },
+ 2: { name:'Προχωρώ',
+  p:'Έχετε ήδη μια σχέση με τη φωνή σας. Νιώθετε πως μέσα σας υπάρχουν περισσότερα από όσα βγαίνουν σήμερα. Αυτά τα «περισσότερα» δουλεύουμε στα μαθήματα.',
+  list:['Λύνονται οι εντάσεις που κουράζουν ή κλείνουν τη φωνή.',
+        'Έχετε πιο συνειδητή σύνδεση με την αναπνοή σας και έτσι νιώθετε πιο ήρεμα, με περισσότερη ενέργεια στην καθημερινότητά σας.',
+        'Το συναίσθημα συνδέεται με τη φωνή σας χωρίς να την «κλείνει».',
+        'Γνωρίζετε την έκταση και τα χρώματα της φωνής σας και τα χρησιμοποιείτε συνειδητά.'],
+  route:'Ατομικά ή ομαδικά εβδομαδιαία μαθήματα, δια ζώσης ή μέσω διαδικτύου.' },
+ 3: { name:'Εμβαθύνω',
+  p:'Η φωνή σας είναι ήδη μέρος της ζωής σας, ίσως και της εργασίας σας. Ψάχνετε το επόμενο βήμα: την ερμηνεία που συγκινεί, τη σύνδεση με τον βαθύτερο ψυχικό σας κόσμο. Στα μαθήματά μας προχωράμε από το σημείο που βρισκόμαστε και συναντάμε την αληθινή μουσική και τη βαθύτερη σύνδεση με όσους μας ακούν.',
+  list:['Η τεχνική συνδέεται με την έκφραση και δημιουργούμε αληθινή μουσική.',
+        'Η ερμηνεία σας είναι πιο βαθιά και η φωνή σας αγγίζει όσους σας ακούν.',
+        'Ανοίγουν νέοι δρόμοι στο ρεπερτόριο και στη φωνή σας.',
+        'Τραγουδάτε με εσωτερική ηρεμία στη σκηνή και το βλέμμα σας επικοινωνεί βαθιά με τους ανθρώπους.'],
+  route:'Ατομικά μαθήματα ερμηνείας και φωνητικής τέχνης, δια ζώσης ή μέσω διαδικτύου, για όσους τραγουδούν, παίζουν θέατρο ή σπουδάζουν, και για κάθε άνθρωπο που επιθυμεί να πάει πιο βαθιά.' }
+};
+
+/* ----- Ανάγκες ----- */
+var NEEDS = {
+ a: { t:'Η αληθινή μου φωνή',
+  q:'Αρχίζω να ακούω την αληθινή μου φωνή, που ήταν πάντα εκεί. Με περιμένει να τραγουδήσω.',
+  w:'Από τις απαντήσεις σας φαίνεται ότι η σχέση σας με τη φωνή σας χρειάζεται φροντίδα και εμπιστοσύνη.',
+  d:'Με κλειστά χείλη, κάντε ένα απαλό «μμμ», σε ύψος κοντά σε αυτό που μιλάτε, για ένα λεπτό. Ακουμπήστε το χέρι στο στήθος και νιώστε τη δόνηση.' },
+ b: { t:'Ο συναισθηματικός μου κόσμος',
+  q:'Ανοίγω τον συναισθηματικό μου κόσμο. Η έκφραση θεραπεύει.',
+  w:'Από τις απαντήσεις σας φαίνεται ότι τα συναισθήματά σας ζητούν δρόμο για να βγουν, και η φωνή είναι ένας τέτοιος δρόμος.',
+  d:'Διαλέξτε ένα τραγούδι που σας αγγίζει. Πείτε τον πρώτο στίχο μιλώντας, μετά πολύ σιγανά, σαν να τον λέτε σε κάποιον που κάθεται δίπλα σας, και μετά τραγουδιστά. Προσέξτε τι νιώθετε κάθε φορά.' },
+ c: { t:'Η αναπνοή και η ηρεμία μου',
+  q:'Η αναπνοή μου διευρύνεται, συνδέομαι με τον βιορυθμό μου. Ησυχάζει το στρες, το σώμα χαλαρώνει.',
+  w:'Από τις απαντήσεις σας φαίνεται ότι η ένταση της μέρας κάθεται στο σώμα και στην αναπνοή σας.',
+  d:'Εισπνεύστε από τη μύτη και αφήστε την κοιλιά και τα πλευρά να ανοίξουν. Εκπνεύστε αργά από τα χείλη, σαν να φυσάτε ένα κερί χωρίς να το σβήσετε, όσο κρατάει χωρίς κόπο. Τέσσερις φορές, πριν από μια δύσκολη στιγμή της μέρας.' },
+ d: { t:'Ελευθερία.',
+  q:'Λειτουργώ πιο ελεύθερα στην επικοινωνία μου με τους άλλους.',
+  w:'Από τις απαντήσεις σας φαίνεται ότι δυσκολεύεστε να αφεθείτε να τραγουδήσετε όταν σας κοιτάζουν ή σας ακούν άλλοι.',
+  d:'Πριν από μια ομιλία ή ένα τραγούδι, αφήστε ένα χασμουρητό και μετά έναν αναστεναγμό σε «αχ», από ψηλά προς τα χαμηλά. Ο λαιμός ανοίγει και το σώμα ησυχάζει. Κι όταν μιλάτε, αφήστε για λίγο το βλέμμα σας να συναντήσει τα μάτια όσων σας ακούν.' },
+ e: { t:'Δημιουργικότητα.',
+  q:'Η δημιουργικότητα μέσα από τη φωνή μου συγκινεί. Ένα δώρο στον εαυτό μου και στους άλλους.',
+  w:'Από τις απαντήσεις σας φαίνεται ότι επιθυμείτε η φωνή σας να λειτουργεί με βαθιά έκφραση.',
+  d:'Τραγουδήστε τον ίδιο στίχο τρεις φορές: τρυφερά, χαρούμενα, με λύπη. Ηχογραφήστε και ακούστε τι αλλάζει στη φωνή σας κάθε φορά.' }
+};
+
+var TXT = {
+ falso:'Αν καταλαβαίνετε πότε κάτι δεν βγαίνει σωστά, η ακοή σας λειτουργεί. Και όποιος ακούει, μπορεί να διορθώσει.',
+ lead:'Με όποια διαδρομή κι αν συνδεθείτε, είναι ανοιχτή για εσάς. Όταν συνδεόμαστε με την αληθινή μας φωνή, το τραγούδι λειτουργεί θεραπευτικά, για εμάς και για όσους μας ακούν.',
+ method:'Τρεις ενότητες: Το σώμα μου, Ο ψυχικός μου κόσμος, Η έκφρασή μου. Η καθεμία έχει τρία στάδια. Σε κάθε στάδιο ξεκινάμε από τη συνειδητοποίηση, περνάμε στην εξέλιξη και παίρνουμε τα εργαλεία για να συνεχίζουμε στην καθημερινότητά μας.',
+ steps:[['Αξιολόγηση','Ακούμε μαζί πού βρίσκεται σήμερα η φωνή σας.'],
+        ['Διδασκαλία','Δουλεύουμε ό,τι έχετε ανάγκη με τον τρόπο που σας ταιριάζει.'],
+        ['Μελέτη','Παίρνετε μαζί σας ό,τι χρειάζεστε για να εξελιχθείτε στην καθημερινότητά σας.']],
+ where:'Στο Κέντρο Φωνητικής Τέχνης Κρήτης, Ιερολοχιτών 3, «Ρομαντική γωνιά», Ηράκλειο, ή μέσω διαδικτύου.',
+ online:'Για τον χρόνο: τα μαθήματα γίνονται και μέσω διαδικτύου, με Zoom, από όποιο σημείο του πλανήτη, στην ώρα που σας βολεύει.',
+ first:'Συμπληρώστε τη φόρμα εγγραφής. Θα λάβετε την απάντησή μου με τα επόμενα βήματα και ορίζουμε το πρώτο μας μάθημα, δια ζώσης ή μέσω διαδικτύου.',
+ bye:'Καλή μας συνάντηση.',
+ mailAsk:'Αν θέλετε να λάβετε τις απαντήσεις με email, σημειώστε εδώ το email σας για να σας αποσταλούν.',
+ promise:'Οι απαντήσεις σας μένουν μόνο στη συσκευή σας. Δεν αποστέλλονται πουθενά.'
+};
+
+/* ----- Κατάσταση (μόνο στη μνήμη της σελίδας) ----- */
+var answers = [];
+var step = -1;
+var lock = false;
+
+var app = document.getElementById('app');
+var staff = document.getElementById('staff');
+var live = document.getElementById('live');
+var notes = [];
+var CONTOUR = [6,5,4,5,3,2,3,1,2,3,2,4];
+
+function buildStaff() {
+  var i, l, n;
+  for (i = 0; i < 5; i++) { l = document.createElement('div'); l.className = 'ln'; l.style.top = (9 + i * 9) + 'px'; staff.appendChild(l); }
+  for (i = 0; i < N; i++) {
+    n = document.createElement('div'); n.className = 'nt';
+    n.style.left = (6 + i * (88 / (N - 1))) + '%';
+    n.style.top = (9 + CONTOUR[i] * 4.5) + 'px';
+    n.appendChild(document.createElement('i'));
+    staff.appendChild(n); notes.push(n);
+  }
+}
+function updateStaff() {
+  notes.forEach(function (n, i) {
+    n.classList.toggle('on', step >= N || i < step);
+    n.classList.toggle('cur', i === step);
+  });
+}
+
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ----- Βαθμολόγηση ----- */
+function compute() {
+  var sum = 0, cnt = 0, need = { a:0, b:0, c:0, d:0, e:0 }, pick = { a:0, b:0, c:0, d:0, e:0 };
+  var falso = false, online = false;
+  answers.forEach(function (ai, qi) {
+    var o = Q[qi].o[ai];
+    if (o[1] > 0) { sum += o[1]; cnt++; }
+    need[o[2]]++;
+    if (qi >= 10) pick[o[2]]++;
+    if (o[3] === 'falso') falso = true;
+    if (o[3] === 'online') online = true;
+  });
+  var avg = cnt ? sum / cnt : 1;
+  var level = avg < 5 / 3 ? 1 : (avg < 7 / 3 ? 2 : 3);
+  var order = ['a','b','c','d','e'];
+  var top = order.slice().sort(function (x, y) {
+    return (need[y] - need[x]) || (pick[y] - pick[x]) || (order.indexOf(x) - order.indexOf(y));
+  }).slice(0, 3);
+  return { level:level, top:top, falso:falso, online:online, avg:avg };
+}
+
+/* ----- Οθόνες ----- */
+function focusHeading(first) {
+  var h = app.querySelector('[tabindex="-1"]');
+  if (h && !first) h.focus({ preventScroll:true });
+  if (!first) window.scrollTo({ top:0, behavior: reduce ? 'auto' : 'smooth' });
+}
+
+function showIntro(first) {
+  step = -1; updateStaff();
+  app.innerHTML =
+    '<section class="enter">' +
+    '<h1 tabindex="-1">Η φωνή μου και εγώ</h1>' +
+    '<p class="sub">Ένα μικρό ερωτηματολόγιο · Ιωάννης Ιδομενέως, Φωνητική Τέχνη</p>' +
+    '<p>Αναρωτιέστε αν τα μαθήματα φωνής σας αφορούν; Δώδεκα ερωτήσεις, λίγα λεπτά. Απαντήστε με αυτό που νιώθετε σήμερα, χωρίς να το σκεφτείτε πολύ. Δεν υπάρχουν σωστές και λάθος απαντήσεις.</p>' +
+    '<p>Στο τέλος παίρνετε το προσωπικό σας σημείωμα: πού βρίσκεστε σήμερα με τη φωνή σας, τι μπορεί να αλλάξει μέσα σας με τα μαθήματα και μικρές ασκήσεις για να ξεκινήσετε από σήμερα κιόλας. Μπορείτε να το τυπώσετε, να το κρατήσετε στο κινητό ή να το λάβετε στο email σας.</p>' +
+    '<div class="promise"><p>' + esc(TXT.promise) + '</p></div>' +
+    '<button type="button" class="btn" id="go"><span class="dot"></span>Ξεκινάμε</button>' +
+    '</section>';
+  document.getElementById('go').addEventListener('click', function () { showQ(0); });
+  focusHeading(first);
+}
+
+function showQ(i) {
+  step = i; lock = false; updateStaff();
+  var q = Q[i], sel = answers[i];
+  var html = '<section class="enter">' +
+    '<p class="eyebrow">Ερώτηση ' + (i + 1) + ' από ' + N + '</p>' +
+    '<h2 id="qt" tabindex="-1">' + esc(q.t) + '</h2>' +
+    (q.hint ? '<p class="hint">(' + esc(q.hint) + ')</p>' : '') +
+    '<div class="opts" role="group" aria-labelledby="qt">';
+  q.o.forEach(function (o, k) {
+    var letter = ['α','β','γ','δ'][k];
+    html += '<button type="button" class="opt" data-k="' + k + '" aria-pressed="' + (sel === k ? 'true' : 'false') + '">' +
+            '<span class="ltr" aria-hidden="true">' + letter + '</span><span>' + esc(o[0]) + '</span></button>';
+  });
+  html += '</div><div class="navrow">' +
+    (i > 0 ? '<button type="button" class="link" id="back">← Πίσω</button>' : '<span></span>') + '</div></section>';
+  app.innerHTML = html;
+  live.textContent = 'Ερώτηση ' + (i + 1) + ' από ' + N;
+  Array.prototype.forEach.call(app.querySelectorAll('.opt'), function (b) {
+    b.addEventListener('click', function () {
+      if (lock) return; lock = true;
+      var k = +b.getAttribute('data-k');
+      answers[i] = k;
+      Array.prototype.forEach.call(app.querySelectorAll('.opt'), function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      setTimeout(function () { if (i + 1 < N) showQ(i + 1); else showResult(); }, reduce ? 80 : 380);
+    });
+  });
+  var back = document.getElementById('back');
+  if (back) back.addEventListener('click', function () { showQ(i - 1); });
+  focusHeading(false);
+}
+
+/* ----- Σημείωμα ----- */
+function noteText(r) {
+  var L = LEVELS[r.level], out = [];
+  out.push('Η φωνή μου και εγώ · το προσωπικό μου σημείωμα');
+  out.push('Ιωάννης Ιδομενέως, Φωνητική Τέχνη');
+  out.push('');
+  out.push('ΠΟΥ ΒΡΙΣΚΟΜΑΙ ΣΗΜΕΡΑ: ' + L.name);
+  out.push(L.p);
+  out.push('');
+  out.push('Τι μπορεί να αλλάξει μέσα μου:');
+  L.list.forEach(function (x) { out.push('– ' + x); });
+  out.push('Η διαδρομή που μου ταιριάζει: ' + L.route);
+  out.push('');
+  out.push('ΟΙ ΑΝΑΓΚΕΣ ΠΟΥ ΦΑΝΗΚΑΝ ΠΕΡΙΣΣΟΤΕΡΟ');
+  r.top.forEach(function (k) {
+    var n = NEEDS[k];
+    out.push('');
+    out.push(LET[k] + '. ' + n.t);
+    out.push(n.q);
+    out.push(n.w);
+    out.push('Για σήμερα: ' + n.d);
+  });
+  out.push('');
+  out.push('ΟΙ ΑΠΑΝΤΗΣΕΙΣ ΜΟΥ');
+  answers.forEach(function (ai, qi) {
+    out.push((qi + 1) + '. ' + Q[qi].t + ' → ' + ['α','β','γ','δ'][ai] + ') ' + Q[qi].o[ai][0]);
+  });
+  out.push('');
+  if (r.falso) out.push('Για το φάλτσο: ' + TXT.falso);
+  out.push(TXT.lead);
+  out.push('');
+  out.push('Η μέθοδος: ' + TXT.method);
+  TXT.steps.forEach(function (s) { out.push('– ' + s[0] + ': ' + s[1]); });
+  out.push('');
+  out.push('Πού: ' + TXT.where);
+  if (r.online) out.push(TXT.online);
+  out.push('');
+  out.push('Το πρώτο βήμα: ' + TXT.first);
+  out.push('Φόρμα εγγραφής: ' + FORM_URL);
+  out.push('Ιωάννης Ιδομενέως · 693 285 5194 · ioannis.idomeneos@gmail.com');
+  out.push(TXT.bye);
+  return out.join('\n');
+}
+
+function showResult() {
+  step = N; updateStaff();
+  var r = compute(), L = LEVELS[r.level];
+  var h = '<div class="result enter">' +
+    '<p class="printhead">Η φωνή μου και εγώ · Ιωάννης Ιδομενέως, Φωνητική Τέχνη</p>' +
+    '<section><p class="eyebrow">Το προσωπικό σας σημείωμα · Πού βρίσκεστε σήμερα</p>' +
+    '<h1 class="level" tabindex="-1">' + L.name + '</h1>' +
+    '<p>' + esc(L.p) + '</p>' +
+    '<p class="label">Τι μπορεί να αλλάξει μέσα σας:</p><ul class="gold">';
+  L.list.forEach(function (x) { h += '<li>' + esc(x) + '</li>'; });
+  h += '</ul><p class="route"><strong>Η διαδρομή που σας ταιριάζει:</strong> ' + esc(L.route) + '</p></section>';
+
+  h += '<section><p class="eyebrow">Οι ανάγκες που φάνηκαν περισσότερο</p>';
+  r.top.forEach(function (k) {
+    var n = NEEDS[k];
+    h += '<article class="need"><div class="need-h"><span class="ltr" aria-hidden="true">' + LET[k] + '</span><h3>' + esc(n.t) + '</h3></div>' +
+      '<p class="quote">' + esc(n.q) + '</p><p class="why">' + esc(n.w) + '</p>' +
+      '<div class="today"><span class="lab">Για σήμερα</span><p>' + esc(n.d) + '</p></div></article>';
+  });
+  h += '</section>';
+
+  h += '<section>';
+  if (r.falso) h += '<div class="aside"><p><strong>Για το φάλτσο:</strong> ' + esc(TXT.falso) + '</p></div>';
+  h += '<p class="lead">' + esc(TXT.lead) + '</p>' +
+    '<h3 style="margin-top:1.6rem">Η μέθοδος</h3><p>' + esc(TXT.method) + '</p><div class="grid3">';
+  TXT.steps.forEach(function (s) { h += '<div><b>' + s[0] + '</b><span>' + esc(s[1]) + '</span></div>'; });
+  h += '</div><h3 style="margin-top:1.6rem">Πού</h3><p>' + esc(TXT.where) + '</p>';
+  if (r.online) h += '<p>' + esc(TXT.online) + '</p>';
+  h += '</section>';
+
+  h += '<section class="noprint"><h3>Κρατήστε το σημείωμά σας</h3>' +
+    '<div class="actions"><button type="button" class="btn btn-line" id="print">Εκτύπωση</button>' +
+    '<button type="button" class="btn btn-line" id="copy">Αντιγραφή</button></div>' +
+    '<form class="mailbox" id="mailform" novalidate><p><label for="em">' + esc(TXT.mailAsk) + '</label></p>' +
+    '<div class="mailrow"><input id="em" type="email" inputmode="email" autocomplete="email" placeholder="το email σας" aria-describedby="mnote">' +
+    '<button type="submit" class="btn"><span class="dot"></span>Αποστολή</button></div>' +
+    '<p class="small" id="mnote">Ανοίγει η δική σας εφαρμογή email, με το σημείωμα και τις απαντήσεις σας έτοιμα, και το στέλνετε εσείς στον εαυτό σας. ' +
+    'Οι απαντήσεις σας μένουν μόνο σε εσάς.</p></form>' +
+    '<p class="status" id="status" role="status"></p></section>';
+
+  h += '<section><h3>Το πρώτο βήμα</h3><p>' + esc(TXT.first) + '</p>' +
+    '<p><a class="btn" href="' + FORM_URL + '" target="_blank" rel="noopener"><span class="dot"></span>Επιθυμώ να εγγραφώ</a></p>' +
+    '<div class="contact"><p class="name">Ιωάννης Ιδομενέως</p>' +
+    '<p><a href="tel:+306932855194">693 285 5194</a></p>' +
+    '<p><a href="mailto:ioannis.idomeneos@gmail.com">ioannis.idomeneos@gmail.com</a></p>' +
+    '<p>Φόρμα εγγραφής: <a href="' + FORM_URL + '" target="_blank" rel="noopener">forms.gle/i5YK5sN4z8swoDLv5</a></p></div>' +
+    '<p class="closing">' + TXT.bye + '</p></section>' +
+    '<p class="again noprint"><button type="button" class="link" id="again">Ξανά από την αρχή</button></p></div>';
+
+  app.innerHTML = h;
+  live.textContent = 'Το σημείωμά σας είναι έτοιμο.';
+
+  var status = document.getElementById('status');
+  document.getElementById('print').addEventListener('click', function () { window.print(); });
+  document.getElementById('copy').addEventListener('click', function () {
+    var t = noteText(r);
+    function ok() { status.textContent = 'Το σημείωμα αντιγράφηκε.'; }
+    function fallback() {
+      var ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); ok(); } catch (e) { status.textContent = 'Δεν μπόρεσε να γίνει αντιγραφή. Μπορείτε να χρησιμοποιήσετε την Εκτύπωση.'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, fallback); else fallback();
+  });
+  document.getElementById('mailform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = document.getElementById('em').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { status.textContent = 'Γράψτε ένα έγκυρο email, για παράδειγμα όνομα@παράδειγμα.gr'; return; }
+    var url = 'mailto:' + v + '?subject=' + encodeURIComponent('Η φωνή μου και εγώ: το προσωπικό μου σημείωμα') +
+              '&body=' + encodeURIComponent(noteText(r));
+    status.textContent = 'Άνοιξε η εφαρμογή email σας. Αν δεν άνοιξε, πατήστε «Αντιγραφή» και επικολλήστε το σημείωμα σε ένα νέο μήνυμα.';
+    (window.__openMail || function (u) { window.location.href = u; })(url);
+  });
+  document.getElementById('again').addEventListener('click', function () { answers = []; showIntro(false); });
+  focusHeading(false);
+}
+
+buildStaff();
+showIntro(true);
+})();
+</script>
+</body>
+</html>
