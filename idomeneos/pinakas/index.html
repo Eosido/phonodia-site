@@ -15,147 +15,176 @@
 -->
 <style>
 :root{
-  --blue:#1747D6; --blue2:#3A6DFF; --blueD:#0B2A8F; --red:#E8102E; --yellow:#FFD400;
-  --light:#E6EEFF; --ink:#0B1B4D; --barH:62px;
+  --b1:#1C3FE6; --b2:#3A2BD8; --b3:#7421CF;            /* μπλε → λουλακί → βιολετί */
+  --blue:#2450F0; --blue2:#5B7CFF; --blueD:#13208F; --red:#FF2D55; --red2:#E0103A; --gold:#FFC93C;
+  --light:#EEF2FF; --light2:#D9E3FF; --ink:#0E1550; --barH:66px;
+  --grad:linear-gradient(100deg,var(--b1) 0%,var(--b2) 55%,var(--b3) 100%);
+  --hot:linear-gradient(160deg,#FF5A78 0%,#E0103A 100%);
 }
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#fff;overflow:hidden;font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink)}
+html,body{margin:0;height:100%;background:#fff;overflow:hidden;font-family:"Segoe UI Variable Text","Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink)}
 button{font-family:inherit}
 
 /* ---------- Γραμμή εργαλείων ---------- */
-#bar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:2px;
-  padding:4px 6px;background:var(--blue);color:#fff;transition:transform .18s ease;user-select:none}
-#bar.hidden{transform:translateY(-105%)}
-.tb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:50px;height:54px;
-  padding:3px 5px;border:0;border-radius:10px;background:transparent;color:#fff;font-size:11.5px;font-weight:600;line-height:1.05;cursor:pointer;white-space:nowrap}
-.tb svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;flex:none}
-.tb svg.fill{fill:currentColor;stroke:none}
-.tb:hover{background:var(--blue2)}
-.tb.on{background:var(--red)}
-.tb:disabled{opacity:.38;cursor:default;background:transparent}
-.tb.small{min-width:40px}
-.sep{width:2px;height:42px;background:rgba(255,255,255,.4);margin:0 5px;border-radius:1px}
-.grp{display:flex;align-items:center;gap:2px}
-#colors{display:grid;grid-template-columns:repeat(3,26px);gap:4px;padding:0 4px}
-.sw{width:26px;height:24px;border-radius:7px;border:2px solid #fff;cursor:pointer;padding:0}
-.sw.on{outline:3px solid var(--yellow);outline-offset:1px}
-.sz{width:40px;height:46px;border:0;border-radius:10px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.sz:hover{background:var(--blue2)} .sz.on{background:var(--red)}
-.sz i{display:block;background:#fff;border-radius:50%}
-#pageLbl{min-width:58px;text-align:center;font-weight:700;font-size:17px}
-#saveDot{font-size:11px;font-weight:600;padding:0 6px;color:#fff;opacity:.9;white-space:nowrap}
+#bar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:7px;
+  padding:6px 10px;background:var(--grad);color:#fff;transition:transform .22s cubic-bezier(.3,.7,.2,1);user-select:none;
+  box-shadow:0 4px 20px rgba(45,30,170,.35)}
+#bar.hidden{transform:translateY(-110%)}
+.logo{display:flex;align-items:center;gap:9px;padding:0 4px 0 0;font-weight:800;font-size:15px;letter-spacing:.2px;line-height:1.05}
+.logo i{width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 32% 26%,#fff 0%,#EEF2FF 55%,#C9D4FF 100%);box-shadow:0 3px 10px rgba(0,0,0,.25),inset 0 0 0 2px rgba(255,255,255,.8)}
+.logo svg{width:34px;height:34px;fill:var(--b2)}
+.logo small{display:block;font-weight:600;font-size:10.5px;opacity:.85;letter-spacing:.4px}
+.grp{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.11);border-radius:16px;padding:3px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.tb{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:54px;height:54px;
+  padding:3px 5px;border:0;border-radius:13px;background:transparent;color:#fff;font-size:11px;font-weight:600;line-height:1.05;
+  cursor:pointer;white-space:nowrap;transition:background .15s, transform .1s, box-shadow .15s}
+.tb svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none;overflow:visible}
+.tb svg .f{fill:currentColor;fill-opacity:.28}
+.tb svg .s{fill:currentColor;stroke:none}
+.tb svg.fill{fill:currentColor;stroke:none;width:30px;height:30px}
+.tb:hover{background:rgba(255,255,255,.2)}
+.tb:active{transform:scale(.94)}
+.tb.on{background:var(--hot);box-shadow:0 4px 12px rgba(224,16,58,.5),inset 0 1px 0 rgba(255,255,255,.4)}
+.tb:disabled{opacity:.35;cursor:default;background:transparent;transform:none}
+.tb.small{min-width:42px}
+#colors{display:grid;grid-template-columns:repeat(3,26px);gap:5px;padding:2px 6px}
+.sw{width:26px;height:26px;border-radius:50%;border:2.5px solid #fff;cursor:pointer;padding:0;
+  box-shadow:0 2px 5px rgba(0,0,0,.3),inset 0 -3px 5px rgba(0,0,0,.18);transition:transform .12s}
+.sw:hover{transform:scale(1.1)}
+.sw.on{border-color:var(--gold);transform:scale(1.14);box-shadow:0 0 0 2px rgba(255,201,60,.45),0 2px 8px rgba(0,0,0,.35)}
+.sz{width:40px;height:50px;border:0;border-radius:12px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .15s}
+.sz svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-linecap:round}
+.sz:hover{background:rgba(255,255,255,.2)} .sz.on{background:var(--hot);box-shadow:0 4px 12px rgba(224,16,58,.5)}
+#pageLbl{min-width:62px;text-align:center;font-weight:800;font-size:16px;background:rgba(255,255,255,.95);color:var(--b2);
+  border-radius:11px;padding:6px 8px;box-shadow:inset 0 -2px 0 rgba(58,43,216,.18)}
+#saveDot{position:absolute;right:12px;bottom:3px;font-size:10.5px;font-weight:700;color:#fff;opacity:.85;white-space:nowrap;pointer-events:none}
 
 /* πιο πυκνή γραμμή σε οθόνες φορητού */
+@media (max-width:1700px){ .logo b, .logo small{display:none} }
 @media (max-width:1560px){
-  .tb{min-width:43px;padding:3px 2px;font-size:10.5px;letter-spacing:-.1px}
+  #bar{gap:4px;padding:5px 6px}
+  .tb{min-width:44px;padding:3px 2px;font-size:10.5px}
   .tb.small{min-width:36px}
-  .sep{margin:0 2px}
   .sz{width:32px}
-  #colors{grid-template-columns:repeat(3,22px);gap:3px;padding:0 2px}
-  .sw{width:22px;height:22px}
-  #pageLbl{min-width:48px;font-size:15px}
-  #saveDot{font-size:0;padding:0 2px} #saveDot::first-letter{font-size:14px}
+  #colors{grid-template-columns:repeat(3,21px);gap:4px;padding:0 3px}
+  .sw{width:21px;height:21px;border-width:2px}
+  #pageLbl{min-width:50px;font-size:14px;padding:5px 4px}
+  .logo{display:none}
+  #saveDot{right:6px;bottom:1px;font-size:9.5px}
 }
-@media (max-width:1180px){
+@media (max-width:1240px){
   .tb span:not(#symIcon){display:none}
-  .tb{height:44px;min-width:40px}
+  .tb{height:46px;min-width:40px}
 }
+
 /* εμφάνιση της γραμμής όταν είναι κρυμμένη */
 #reveal{position:fixed;top:0;left:0;right:0;height:8px;z-index:19;display:none}
-#revealTab{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:21;display:none;background:var(--blue);color:#fff;
-  border:0;border-radius:0 0 12px 12px;padding:6px 18px;font-weight:700;font-size:14px;cursor:pointer}
+#revealTab{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:21;display:none;background:var(--grad);color:#fff;
+  border:0;border-radius:0 0 14px 14px;padding:7px 20px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(45,30,170,.35)}
 body.barHidden #reveal{display:block}
 
 /* ---------- Επιφάνεια ---------- */
 #stage{position:fixed;left:0;right:0;bottom:0;top:var(--barH);background:#fff;touch-action:none;user-select:none;-webkit-user-select:none;overflow:hidden}
 body.barHidden #stage{top:0}
 #stage canvas{position:absolute;left:0;top:0;touch-action:none}
-#txt{position:absolute;display:none;z-index:12;margin:0;padding:0;border:0;outline:2px dashed var(--blue2);outline-offset:4px;
+#txt{position:absolute;display:none;z-index:12;margin:0;padding:0;border:0;outline:2px dashed var(--blue2);outline-offset:4px;border-radius:2px;
   background:transparent;resize:none;overflow:hidden;white-space:pre;line-height:1.2;font-weight:600;
   font-family:"Segoe UI",Arial,Helvetica,sans-serif;min-width:30px}
 
 /* μικρή γραμμή για την επιλογή */
-#selbar{position:absolute;z-index:14;display:none;gap:4px;background:var(--blue);padding:4px;border-radius:10px;box-shadow:0 4px 14px rgba(11,42,143,.35)}
-#selbar button{border:0;border-radius:8px;background:transparent;color:#fff;font-weight:700;font-size:13px;padding:6px 9px;cursor:pointer;white-space:nowrap}
-#selbar button:hover{background:var(--blue2)}
-#selbar button.del{background:var(--red)}
+#selbar{position:absolute;z-index:14;display:none;gap:3px;background:var(--grad);padding:4px;border-radius:14px;box-shadow:0 6px 18px rgba(45,30,170,.4)}
+#selbar button{border:0;border-radius:10px;background:transparent;color:#fff;font-weight:700;font-size:13px;padding:7px 10px;cursor:pointer;white-space:nowrap}
+#selbar button:hover{background:rgba(255,255,255,.2)}
+#selbar button.del{background:var(--hot)}
 
 /* ---------- Αναδυόμενα παράθυρα ---------- */
-.pop{position:fixed;z-index:30;display:none;background:#fff;border:3px solid var(--blue);border-radius:14px;padding:10px 14px 14px;
-  box-shadow:0 12px 34px rgba(11,42,143,.35);max-height:calc(100vh - 80px);overflow:auto;color:var(--ink);max-width:calc(100vw - 16px)}
-.pop.open{display:block}
-.pop h3{margin:10px 0 6px;font-size:14px;color:var(--blue);text-transform:none;letter-spacing:.2px}
-.pop h3:first-child{margin-top:2px}
+.pop{position:fixed;z-index:30;display:none;background:#fff;border-radius:20px;padding:0 16px 16px;
+  box-shadow:0 20px 50px rgba(45,30,170,.33),0 0 0 1.5px rgba(36,80,240,.22);max-height:calc(100vh - 84px);overflow:auto;color:var(--ink);max-width:calc(100vw - 16px)}
+.pop::before{content:'';display:block;position:sticky;top:0;height:6px;margin:0 -16px 8px;background:linear-gradient(90deg,var(--b1),var(--b3),var(--red));z-index:1}
+.pop.open{display:block;animation:popin .16s ease-out}
+@keyframes popin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.pop h3{margin:12px 0 7px;font-size:13px;color:var(--b2);display:flex;align-items:center;gap:7px;letter-spacing:.2px}
+.pop h3::before{content:'';width:4px;height:15px;border-radius:2px;background:linear-gradient(var(--blue),var(--red))}
+.pop h3:first-of-type{margin-top:6px}
 .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.pb{background:var(--light);border:2px solid transparent;color:var(--blueD);border-radius:10px;padding:8px 12px;font-weight:700;font-size:15px;cursor:pointer;line-height:1.1}
-.pb:hover{border-color:var(--blue2)}
-.pb.on{background:var(--red);color:#fff}
-.pb.wide{display:block;width:100%;text-align:left;margin:4px 0;padding:11px 14px}
-.pb.danger{background:#FFE3E7;color:#B00020}
-.symb{width:66px;height:66px;padding:2px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pb{background:var(--light);border:0;box-shadow:inset 0 0 0 1.5px var(--light2);color:var(--blueD);border-radius:12px;padding:8px 13px;
+  font-weight:700;font-size:15px;cursor:pointer;line-height:1.1;transition:background .12s, box-shadow .12s, transform .1s}
+.pb:hover{background:#fff;box-shadow:inset 0 0 0 2px var(--blue2),0 3px 10px rgba(36,80,240,.15)}
+.pb:active{transform:scale(.96)}
+.pb.on{background:var(--hot);color:#fff;box-shadow:0 4px 12px rgba(224,16,58,.35)}
+.pb.wide{display:flex;align-items:center;gap:10px;width:100%;text-align:left;margin:5px 0;padding:11px 14px}
+.pb.wide em{font-style:normal;font-size:20px;width:26px;text-align:center}
+.pb.danger{background:#FFEDF1;color:#C0002E;box-shadow:inset 0 0 0 1.5px #FFD0DA}
+.symb{width:68px;height:70px;padding:2px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .symb svg{width:48px;height:48px;fill:currentColor}
 .symb span{font-size:10px;font-weight:600;margin-top:1px;white-space:nowrap}
-.pop label.chk{display:flex;gap:8px;align-items:center;font-weight:600;font-size:15px;margin:6px 0;cursor:pointer}
-.pop label.chk input{width:20px;height:20px;accent-color:var(--red)}
-.pop input[type=number],.pop select{font-size:16px;padding:6px;border:2px solid var(--blue);border-radius:8px;color:var(--ink);background:#fff;width:70px}
+.pop label.chk{display:flex;gap:8px;align-items:center;font-weight:600;font-size:15px;margin:8px 0;cursor:pointer}
+.pop label.chk input{width:20px;height:20px;accent-color:var(--red2)}
+.pop input[type=number],.pop select{font-size:16px;padding:6px;border:2px solid var(--blue2);border-radius:10px;color:var(--ink);background:#fff;width:70px}
 .pop p,.pop li{font-size:14px;line-height:1.45;margin:4px 0}
 .pop ul{padding-left:18px;margin:4px 0}
-.pop kbd{background:var(--light);border:1px solid var(--blue2);border-radius:5px;padding:0 5px;font-weight:700;font-family:inherit;color:var(--blueD)}
 #diag{font-weight:700;color:var(--blue)}
+.keys{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+.k{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;padding:3px 0}
+.k span{flex:none;display:flex;gap:3px;min-width:92px;justify-content:flex-end}
+kbd{display:inline-block;min-width:26px;text-align:center;background:linear-gradient(#fff,#EEF2FF);border-radius:7px;padding:3px 6px;
+  font:800 12.5px/1.1 inherit;font-family:inherit;color:var(--b2);box-shadow:inset 0 0 0 1.5px #C7D3FF,0 2px 0 #B5C4FF}
 
 /* ---------- Παράθυρο επιβεβαίωσης & μηνύματα ---------- */
-#modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(11,42,143,.35)}
+#modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(30,20,120,.32);backdrop-filter:blur(2px)}
 #modal.open{display:flex}
-#modal .box{background:#fff;border:3px solid var(--blue);border-radius:16px;padding:22px 24px;max-width:460px;width:calc(100% - 32px);box-shadow:0 16px 40px rgba(11,42,143,.4)}
-#modal .msg{font-size:18px;font-weight:600;margin-bottom:18px;line-height:1.4}
+#modal .box{background:#fff;border-radius:22px;padding:0 24px 22px;max-width:470px;width:calc(100% - 32px);box-shadow:0 22px 60px rgba(45,30,170,.45);overflow:hidden}
+#modal .box::before{content:'';display:block;height:7px;margin:0 -24px 20px;background:linear-gradient(90deg,var(--b1),var(--b3),var(--red))}
+#modal .msg{font-size:18px;font-weight:600;margin-bottom:20px;line-height:1.45}
 #modal .btns{display:flex;gap:10px;justify-content:flex-end}
-#modal button{font-size:16px;font-weight:700;border-radius:10px;padding:10px 18px;cursor:pointer;border:2px solid var(--blue)}
-#mCancel{background:#fff;color:var(--blue)}
-#mOk{background:var(--blue);color:#fff}
-#mOk.danger{background:var(--red);border-color:var(--red)}
-#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;background:var(--blue);color:#fff;font-weight:700;font-size:15px;
-  padding:10px 18px;border-radius:12px;box-shadow:0 8px 24px rgba(11,42,143,.35);opacity:0;pointer-events:none;transition:opacity .2s}
-#toast.show{opacity:1}
-#toast.err{background:var(--red)}
+#modal button{font-size:16px;font-weight:700;border-radius:12px;padding:11px 20px;cursor:pointer;border:0}
+#mCancel{background:var(--light);color:var(--blueD);box-shadow:inset 0 0 0 1.5px var(--light2)}
+#mOk{background:var(--grad);color:#fff;box-shadow:0 4px 12px rgba(45,30,170,.35)}
+#mOk.danger{background:var(--hot);box-shadow:0 4px 12px rgba(224,16,58,.4)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,8px);z-index:60;background:var(--grad);color:#fff;font-weight:700;font-size:15px;
+  padding:11px 20px;border-radius:14px;box-shadow:0 10px 26px rgba(45,30,170,.4);opacity:0;pointer-events:none;transition:opacity .2s, transform .2s}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast.err{background:var(--hot)}
 </style>
 </head>
 <body>
 <noscript><p style="padding:20px;font-size:20px">Χρειάζεται να είναι ενεργή η JavaScript στο πρόγραμμα περιήγησης.</p></noscript>
 
 <div id="bar">
+  <div class="logo"><i id="logoIcon"></i><div><b>Πίνακας</b><small>ΠΕΝΤΑΓΡΑΜΜΟΥ</small></div></div>
   <div class="grp" id="tools">
-    <button class="tb" data-tool="pen" title="Στυλό (P) — με Shift σχεδιάζει ευθεία"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L16 4.5l3.5 3.5L8.5 19z"/><path d="M14 6.5l3.5 3.5"/></svg><span>Στυλό</span></button>
-    <button class="tb" data-tool="eraser" title="Γόμα (E) — σβήνει μόνο τη γραφή"><svg viewBox="0 0 24 24"><path d="M9 20h11"/><path d="M4.5 15.5l9-9.5 6 6-8.5 8H8z"/><path d="M9 10.5l5.5 5.5"/></svg><span>Γόμα</span></button>
-    <button class="tb" data-tool="line" title="Γραμμή (L) — με Shift οριζόντια/κάθετη"><svg viewBox="0 0 24 24"><path d="M5 19L19 5"/><circle cx="5" cy="19" r="1.6" class="dotc"/><circle cx="19" cy="5" r="1.6"/></svg><span>Γραμμή</span></button>
-    <button class="tb" data-tool="text" title="Κείμενο (T)"><svg viewBox="0 0 24 24"><path d="M5 7V4.5h14V7"/><path d="M12 4.5V20"/><path d="M8.5 20h7"/></svg><span>Κείμενο</span></button>
-    <button class="tb" data-tool="select" title="Επιλογή και μετακίνηση (V)"><svg viewBox="0 0 24 24"><path d="M5.5 3.5l13 8-5.5 1.5-3 6z"/></svg><span>Επιλογή</span></button>
-    <button class="tb" data-tool="laser" title="Δείκτης λέιζερ (K) — δεν μένει στη σελίδα"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/></svg><span>Δείκτης</span></button>
+    <button class="tb" data-tool="pen" title="Στυλό (P) — με Shift σχεδιάζει ευθεία"><svg viewBox="0 0 24 24"><path class="f" d="M7.5 2.8h9l1.6 6.6L12 21.3 5.9 9.4z"/><path d="M7.5 2.8h9l1.6 6.6L12 21.3 5.9 9.4z"/><path d="M12 12.6v8.6"/><circle cx="12" cy="10.9" r="1.6"/></svg><span>Στυλό</span></button>
+    <button class="tb" data-tool="eraser" title="Γόμα (E) — σβήνει γραφή, σύμβολα και κείμενα· όχι τα πεντάγραμμα"><svg viewBox="0 0 24 24"><path class="f" d="M3.6 15.1l9.3-9.3a2 2 0 012.8 0l3.5 3.5a2 2 0 010 2.8l-8.1 8.2H8.6z"/><path d="M3.6 15.1l9.3-9.3a2 2 0 012.8 0l3.5 3.5a2 2 0 010 2.8l-8.1 8.2H8.6z"/><path d="M8.6 10.1l6.5 6.5"/><path d="M11.2 20.3h9.3"/></svg><span>Γόμα</span></button>
+    <button class="tb" data-tool="line" title="Γραμμή (L) — με Shift οριζόντια/κάθετη"><svg viewBox="0 0 24 24"><path d="M5 19L19 5"/><circle class="s" cx="5" cy="19" r="2.3"/><circle class="s" cx="19" cy="5" r="2.3"/></svg><span>Γραμμή</span></button>
+    <button class="tb" data-tool="text" title="Κείμενο (T)"><svg viewBox="0 0 24 24"><path class="f" d="M7.4 14h9.2L12 4z"/><path d="M5.2 19.5L12 4l6.8 15.5"/><path d="M8 13.6h8"/><path d="M3.3 19.5h4M16.7 19.5h4"/></svg><span>Κείμενο</span></button>
+    <button class="tb" data-tool="select" title="Επιλογή και μετακίνηση (V)"><svg viewBox="0 0 24 24"><path class="f" d="M5 3.3l13.2 7.3-5.7 1.7-2.8 5.5z"/><path d="M5 3.3l13.2 7.3-5.7 1.7-2.8 5.5z"/><path d="M13.2 13.4l5.3 5.3"/></svg><span>Επιλογή</span></button>
+    <button class="tb" data-tool="laser" title="Δείκτης λέιζερ (K) — δείχνει χωρίς να γράφει"><svg viewBox="0 0 24 24"><circle class="f" cx="12" cy="12" r="6.6" style="stroke:none"/><circle class="s" cx="12" cy="12" r="3.1"/><path d="M12 2.4v2.6M12 19v2.6M2.4 12H5M19 12h2.6M5.2 5.2l1.8 1.8M17 17l1.8 1.8M5.2 18.8L7 17M17 7l1.8-1.8"/></svg><span>Δείκτης</span></button>
     <button class="tb" id="bSym" data-tool="sym" title="Μουσικά σύμβολα (S)"><span id="symIcon"></span><span>Σύμβολα ▾</span></button>
   </div>
-  <div class="sep"></div>
-  <div id="colors"></div>
-  <div class="grp" id="sizes"></div>
-  <div class="sep"></div>
   <div class="grp">
-    <button class="tb" id="bUndo" title="Αναίρεση (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 010 11H11"/></svg><span>Αναίρεση</span></button>
-    <button class="tb" id="bRedo" title="Επανάληψη (Ctrl+Y)"><svg viewBox="0 0 24 24"><path d="M15 14l5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 000 11H13"/></svg><span>Επανάληψη</span></button>
-    <button class="tb" id="bClear" title="Καθαρισμός σελίδας"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9.5 7V4h5v3"/><path d="M6.5 7l1 13h9l1-13"/><path d="M10 11v5.5M14 11v5.5"/></svg><span>Καθαρισμός</span></button>
+    <div id="colors"></div>
+    <div style="display:flex" id="sizes"></div>
   </div>
-  <div class="sep"></div>
   <div class="grp">
-    <button class="tb" id="bPage" title="Ρυθμίσεις σελίδας: πεντάγραμμα, κλειδί, ρυθμός"><svg viewBox="0 0 24 24" style="stroke-width:1.6"><path d="M3 6.5h18M3 9.5h18M3 12.5h18M3 15.5h18M3 18.5h18"/></svg><span>Σελίδα ▾</span></button>
-    <button class="tb small" id="bPrev" title="Προηγούμενη σελίδα (← ή PageUp)"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span>Πίσω</span></button>
+    <button class="tb" id="bUndo" title="Αναίρεση (Ctrl+Z)"><svg viewBox="0 0 24 24"><path d="M8.8 14.6L4 9.8 8.8 5"/><path d="M4 9.8h10.2a5.6 5.6 0 010 11.2h-3.6"/></svg><span>Αναίρεση</span></button>
+    <button class="tb" id="bRedo" title="Επανάληψη (Ctrl+Y)"><svg viewBox="0 0 24 24"><path d="M15.2 14.6L20 9.8 15.2 5"/><path d="M20 9.8H9.8a5.6 5.6 0 000 11.2h3.6"/></svg><span>Επανάληψη</span></button>
+    <button class="tb" id="bClear" title="Καθαρισμός σελίδας"><svg viewBox="0 0 24 24"><path d="M15.6 2.8l-4.2 8.4"/><path class="f" d="M11.4 11.2l3.9 2-2.7 7.9c-3.3 0-6.8-1.6-8.4-3.9z"/><path d="M11.4 11.2l3.9 2-2.7 7.9c-3.3 0-6.8-1.6-8.4-3.9z"/><path d="M7.6 16.6l1.8-2.6M10.3 18.6l1.2-2.9"/><path d="M19.2 8.4v3.4M17.5 10.1h3.4M19.6 15.2v2.2M18.5 16.3h2.2" stroke-width="1.5"/></svg><span>Καθαρισμός</span></button>
+  </div>
+  <div class="grp">
+    <button class="tb" id="bPage" title="Σελίδα: πεντάγραμμα, λευκός χώρος, κλειδί, ρυθμός"><svg viewBox="0 0 24 24"><path d="M2.5 6.5h19M2.5 9.5h19M2.5 12.5h19M2.5 15.5h19M2.5 18.5h19" stroke-width="1.25"/><ellipse class="s" cx="9.4" cy="17" rx="2.7" ry="1.95" transform="rotate(-22 9.4 17)"/><path d="M11.85 16.3V4.4" stroke-width="1.7"/><path d="M11.85 4.4c1 2.4 4.2 3 3.6 6.6" stroke-width="1.7"/></svg><span>Σελίδα ▾</span></button>
+    <button class="tb small" id="bPrev" title="Προηγούμενη σελίδα (← ή PageUp)"><svg viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6" stroke-width="2.3"/></svg><span>Πίσω</span></button>
     <div id="pageLbl">1 / 1</div>
-    <button class="tb small" id="bNext" title="Επόμενη σελίδα (→ ή PageDown)"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg><span>Μπροστά</span></button>
-    <button class="tb small" id="bAdd" title="Νέα σελίδα μετά από αυτή"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M12 10v7.5M8.25 13.75h7.5"/></svg><span>Νέα</span></button>
+    <button class="tb small" id="bNext" title="Επόμενη σελίδα (→ ή PageDown)"><svg viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6" stroke-width="2.3"/></svg><span>Μπροστά</span></button>
+    <button class="tb small" id="bAdd" title="Νέα σελίδα μετά από αυτή (N)"><svg viewBox="0 0 24 24"><path class="f" d="M6 2.8h8.2l4.3 4.3v14.1H6z"/><path d="M6 2.8h8.2l4.3 4.3v14.1H6z"/><path d="M14 2.8v4.5h4.5"/><path d="M12.2 10.6v7M8.7 14.1h7"/></svg><span>Νέα</span></button>
   </div>
-  <div class="sep"></div>
   <div class="grp">
-    <button class="tb" id="bFile" title="Αποθήκευση, άνοιγμα, εξαγωγή PNG και PDF"><svg viewBox="0 0 24 24"><path d="M3.5 6.5h6l2 2h9v11h-17z"/></svg><span>Αρχείο ▾</span></button>
-    <button class="tb" id="bPress" title="Ευαισθησία πίεσης γραφίδας"><svg viewBox="0 0 24 24"><path d="M3 17c2.5-7 4.5 3 7-3s4.5 4 6.5-2 3.5 1 4.5-1"/></svg><span id="pressLbl">Πίεση: ναι</span></button>
-    <button class="tb" id="bFull" title="Πλήρης οθόνη (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Πλήρης</span></button>
-    <button class="tb" id="bHide" title="Κρύψιμο εργαλείων (H)"><svg viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg><span>Κρύψιμο</span></button>
-    <button class="tb small" id="bSet" title="Ρυθμίσεις και βοήθεια"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 115 1c-.7 1-2.5 1.4-2.5 3.2"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><span>Βοήθεια</span></button>
+    <button class="tb" id="bFile" title="Αποθήκευση, άνοιγμα, εξαγωγή PNG και PDF"><svg viewBox="0 0 24 24"><path class="f" d="M3 7.5a2 2 0 012-2h4.3l2 2.2H19a2 2 0 012 2v8.8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M3 7.5a2 2 0 012-2h4.3l2 2.2H19a2 2 0 012 2v8.8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 11v5.6M9.6 14.3L12 16.7l2.4-2.4"/></svg><span>Αρχείο ▾</span></button>
+    <button class="tb" id="bPress" title="Ευαισθησία πίεσης γραφίδας"><svg viewBox="0 0 24 24"><path class="s" d="M2.6 17.6c3-.5 4.6-8.8 8.4-8.8 3.6 0 3.2 7 6.6 7 1.6 0 2.8-2.4 3.8-4.6l.6.3c-.8 3.4-2.2 7.7-4.9 7.7-4.4 0-4.4-7.4-6.3-7.4-2.4 0-3.9 6.6-8.2 6.3z"/></svg><span id="pressLbl">Πίεση: ναι</span></button>
+    <button class="tb" id="bFull" title="Πλήρης οθόνη (F)"><svg viewBox="0 0 24 24"><path d="M3.8 9V3.8H9M20.2 9V3.8H15M3.8 15v5.2H9M20.2 15v5.2H15" stroke-width="2.2"/></svg><span>Πλήρης</span></button>
+    <button class="tb" id="bHide" title="Κρύψιμο εργαλείων (H)"><svg viewBox="0 0 24 24"><path class="f" d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" style="stroke:none"/><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 20L20 4" stroke-width="2.2"/></svg><span>Κρύψιμο</span></button>
+    <button class="tb small" id="bSet" title="Ρυθμίσεις, συντομεύσεις και βοήθεια"><svg viewBox="0 0 24 24"><circle class="f" cx="12" cy="12" r="9.2" style="stroke:none"/><circle cx="12" cy="12" r="9.2"/><path d="M9.4 9.4a2.7 2.7 0 115.1 1.2c-.7 1.1-2.5 1.4-2.5 3.3"/><circle class="s" cx="12" cy="17.2" r="1.05"/></svg><span>Βοήθεια</span></button>
   </div>
   <span id="saveDot"></span>
 </div>
@@ -183,6 +212,8 @@ body.barHidden #stage{top:0}
 <div class="pop" id="pPage">
   <h3>Πεντάγραμμα σε αυτή τη σελίδα</h3>
   <div class="row" id="optStaves"></div>
+  <h3>Λευκός χώρος κάτω: πόσα πεντάγραμμα να φύγουν από το τέλος</h3>
+  <div class="row" id="optBlank"></div>
   <h3>Κλειδί στην αρχή κάθε πενταγράμμου</h3>
   <div class="row" id="optClef"></div>
   <h3>Ρυθμός στην αρχή</h3>
@@ -195,26 +226,26 @@ body.barHidden #stage{top:0}
     <button class="pb" id="ptUse">Βάλε</button>
   </div>
   <h3>Σελίδες</h3>
-  <button class="pb wide" id="pAll">Ίδια διάταξη σε όλες τις σελίδες</button>
-  <button class="pb wide" id="pDupPage">Αντίγραφο αυτής της σελίδας</button>
-  <button class="pb wide danger" id="pDelPage">Διαγραφή αυτής της σελίδας</button>
+  <button class="pb wide" id="pAll"><em>⇶</em> Ίδια διάταξη σε όλες τις σελίδες</button>
+  <button class="pb wide" id="pDupPage"><em>⧉</em> Αντίγραφο αυτής της σελίδας</button>
+  <button class="pb wide danger" id="pDelPage"><em>✕</em> Διαγραφή αυτής της σελίδας</button>
 </div>
 
 <!-- Αρχείο -->
 <div class="pop" id="pFile">
   <h3>Εξαγωγή</h3>
-  <button class="pb wide" id="fPng">🖼 Εικόνα PNG — η τρέχουσα σελίδα</button>
-  <button class="pb wide" id="fPdf">📄 PDF — όλες οι σελίδες</button>
+  <button class="pb wide" id="fPng"><em>🖼</em> Εικόνα PNG — η τρέχουσα σελίδα</button>
+  <button class="pb wide" id="fPdf"><em>📄</em> PDF — όλες οι σελίδες</button>
   <h3>Εργασία</h3>
-  <button class="pb wide" id="fSave">💾 Αποθήκευση όλης της εργασίας σε αρχείο</button>
-  <button class="pb wide" id="fLoad">📂 Άνοιγμα εργασίας από αρχείο</button>
-  <button class="pb wide danger" id="fNew">✱ Νέα, κενή εργασία</button>
+  <button class="pb wide" id="fSave"><em>💾</em> Αποθήκευση όλης της εργασίας σε αρχείο</button>
+  <button class="pb wide" id="fLoad"><em>📂</em> Άνοιγμα εργασίας από αρχείο</button>
+  <button class="pb wide danger" id="fNew"><em>✱</em> Νέα, κενή εργασία</button>
   <p id="fInfo" style="font-size:13px"></p>
   <input type="file" id="fileIn" accept=".json,.pentagramma,application/json" style="display:none">
 </div>
 
 <!-- Ρυθμίσεις & βοήθεια -->
-<div class="pop" id="pSet" style="width:440px">
+<div class="pop" id="pSet" style="width:560px">
   <h3>Γραφίδα</h3>
   <label class="chk"><input type="checkbox" id="optPress"> Το πάχος ακολουθεί την πίεση της γραφίδας</label>
   <div class="row"><span style="font-weight:600">Εξομάλυνση γραμμής:</span>
@@ -222,24 +253,35 @@ body.barHidden #stage{top:0}
   <p>Τελευταία επαφή: <span id="diag">—</span></p>
   <h3>Σύμβολα</h3>
   <label class="chk"><input type="checkbox" id="optSnap"> Μαγνήτης: τα σύμβολα κουμπώνουν σε γραμμές και διαστήματα</label>
-  <h3>Συντομεύσεις πληκτρολογίου</h3>
-  <ul>
-    <li><kbd>P</kbd> στυλό · <kbd>E</kbd> γόμα · <kbd>L</kbd> γραμμή · <kbd>T</kbd> κείμενο · <kbd>V</kbd> επιλογή · <kbd>K</kbd> δείκτης · <kbd>S</kbd> σύμβολα</li>
-    <li><kbd>1</kbd>–<kbd>6</kbd> χρώματα · <kbd>Shift</kbd> ευθεία γραμμή</li>
-    <li><kbd>Ctrl</kbd>+<kbd>Z</kbd> αναίρεση · <kbd>Ctrl</kbd>+<kbd>Y</kbd> επανάληψη</li>
-    <li><kbd>←</kbd> <kbd>→</kbd> σελίδες · <kbd>H</kbd> κρύψιμο εργαλείων · <kbd>F</kbd> πλήρης οθόνη</li>
-    <li>Με επιλογή: <kbd>Delete</kbd> σβήσιμο · <kbd>Ctrl</kbd>+<kbd>D</kbd> αντίγραφο · <kbd>+</kbd>/<kbd>−</kbd> μέγεθος · βελάκια για μετακίνηση</li>
-    <li>Διπλό κλικ σε κείμενο με την Επιλογή: διόρθωση του κειμένου</li>
-  </ul>
+  <h3>Συντομεύσεις</h3>
+  <div class="keys">
+    <div class="k"><span><kbd>P</kbd></span>Στυλό</div>
+    <div class="k"><span><kbd>Ctrl</kbd><kbd>Z</kbd></span>Αναίρεση</div>
+    <div class="k"><span><kbd>E</kbd></span>Γόμα</div>
+    <div class="k"><span><kbd>Ctrl</kbd><kbd>Y</kbd></span>Επανάληψη</div>
+    <div class="k"><span><kbd>L</kbd></span>Γραμμή</div>
+    <div class="k"><span><kbd>←</kbd><kbd>→</kbd></span>Σελίδα πίσω / μπροστά</div>
+    <div class="k"><span><kbd>T</kbd></span>Κείμενο</div>
+    <div class="k"><span><kbd>N</kbd></span>Νέα σελίδα</div>
+    <div class="k"><span><kbd>V</kbd></span>Επιλογή</div>
+    <div class="k"><span><kbd>H</kbd></span>Κρύψιμο εργαλείων</div>
+    <div class="k"><span><kbd>K</kbd></span>Δείκτης λέιζερ</div>
+    <div class="k"><span><kbd>F</kbd></span>Πλήρης οθόνη</div>
+    <div class="k"><span><kbd>S</kbd></span>Σύμβολα</div>
+    <div class="k"><span><kbd>1</kbd>…<kbd>6</kbd></span>Χρώματα</div>
+    <div class="k"><span><kbd>Shift</kbd></span>Ευθεία γραμμή</div>
+    <div class="k"><span><kbd>Delete</kbd></span>Σβήσιμο επιλογής</div>
+    <div class="k"><span><kbd>Ctrl</kbd><kbd>D</kbd></span>Αντίγραφο επιλογής</div>
+    <div class="k"><span><kbd>+</kbd><kbd>−</kbd></span>Μέγεθος επιλογής</div>
+  </div>
+  <p style="margin-top:8px">Διπλό κλικ σε κείμενο με την Επιλογή: διόρθωση. Το πλαϊνό κουμπί της γραφίδας (δεξί κλικ) σβήνει όσο το κρατάτε.</p>
   <h3>Για τη γραφίδα XP-Pen</h3>
   <ul>
-    <li>Για να δουλέψει η πίεση, στο πρόγραμμα οδήγησης της XP-Pen πρέπει να είναι ενεργό το <b>Windows Ink</b>.</li>
-    <li>Αν το κουμπί της γραφίδας κάνει «δεξί κλικ», εδώ λειτουργεί ως γόμα όσο το κρατάτε πατημένο.</li>
-    <li>Αν ένα παρατεταμένο άγγιγμα ανοίγει κύκλο ή μενού, απενεργοποιήστε στα Windows το «Πατήστε παρατεταμένα για δεξί κλικ» (Ρυθμίσεις → Συσκευές → Πένα και Windows Ink).</li>
+    <li>Για την πίεση: στο πρόγραμμα οδήγησης της XP-Pen ενεργό το <b>Windows Ink</b>.</li>
+    <li>Αν το παρατεταμένο άγγιγμα ανοίγει κύκλο ή μενού: Windows → Ρυθμίσεις → Συσκευές → Πένα και Windows Ink → κλείστε το «πατήστε παρατεταμένα για δεξί κλικ».</li>
   </ul>
   <p style="font-size:12px;margin-top:10px">Μουσικά σύμβολα: Bravura © Steinberg Media Technologies GmbH, άδεια SIL Open Font License 1.1.</p>
 </div>
-
 <div id="modal"><div class="box"><div class="msg" id="mMsg"></div><div class="btns"><button id="mCancel">Άκυρο</button><button id="mOk">Ναι</button></div></div></div>
 <div id="toast"></div>
 
@@ -250,7 +292,7 @@ body.barHidden #stage{top:0}
    1 διάστημα πενταγράμμου = 250 μονάδες. Ο άξονας y κοιτάζει προς τα κάτω.
    d = διαδρομή, w = πλάτος, b = [x0, y0, x1, y1] όρια.
    ===================================================================== */
-const G = {"gClef":{"d":"M376 -415C374 -427 376 -428 382 -434C398 -449 419 -470 438 -491C522 -583 572 -702 572 -815C572 -902 548 -988 507 -1048C492 -1070 466 -1098 455 -1098C441 -1098 410 -1072 390 -1050C316 -968 292 -843 292 -739C292 -681 299 -616 306 -575C308 -563 309 -561 297 -551C233 -498 164 -437 112 -373C43 -287 0 -194 0 -87C0 87 119 252 364 252C387 252 413 250 433 246C444 244 446 243 448 255C460 322 475 409 475 456C475 604 375 622 316 622C262 622 236 606 236 593C236 586 245 583 268 576C299 567 335 540 335 482C335 427 300 380 239 380C172 380 132 433 132 495C132 560 171 658 322 658C389 658 519 628 519 458C519 401 501 306 490 244C488 232 489 233 503 227C604 187 671 102 671 -11C671 -139 577 -252 430 -252C404 -252 404 -252 401 -270ZM470 -943C503 -943 530 -916 530 -861C530 -792 497 -728 419 -650C403 -634 379 -611 356 -591C349 -585 345 -586 343 -599C339 -625 337 -659 337 -691C337 -847 409 -943 470 -943ZM361 -262C364 -243 364 -244 346 -238C258 -208 201 -129 201 -44C201 46 248 110 316 133C324 136 336 139 343 139C351 139 355 134 355 128C355 121 347 118 340 115C298 97 268 54 268 8C268 -49 307 -92 368 -109C384 -113 386 -112 388 -101L438 197C440 208 439 208 424 211C408 214 388 216 368 216C193 216 80 119 80 -20C80 -79 90 -158 173 -252C233 -319 279 -356 326 -394C336 -402 338 -401 340 -390ZM430 -103C428 -115 429 -118 441 -117C522 -110 589 -42 589 46C589 109 551 160 495 188C483 194 481 194 479 182Z","w":671,"b":[0,-1098,671,658]},"fClef":{"d":"M252 -262C78 -262 0 -135 0 -39C0 41 42 110 123 110C186 110 229 66 229 4C229 -60 182 -100 133 -100C106 -100 96 -93 83 -93C70 -93 67 -101 67 -111C67 -151 127 -224 229 -224C335 -224 381 -120 381 37C381 140 359 260 297 356C237 449 134 534 10 605C1 610 -5 615 -5 623C-5 629 -1 635 8 635C13 635 19 633 25 630C158 565 286 489 392 375C479 281 531 159 531 28C531 -146 425 -262 252 -262ZM629 -180C598 -180 574 -156 574 -125C574 -94 598 -70 629 -70C660 -70 684 -94 684 -125C684 -156 660 -180 629 -180ZM630 71C599 71 576 94 576 125C576 156 599 179 630 179C661 179 684 156 684 125C684 94 661 71 630 71Z","w":684,"b":[-5,-262,684,635]},"cClef":{"d":"M230 -482C230 -496 223 -503 209 -503H208C194 -503 187 -496 187 -482V482C187 496 194 503 208 503H209C223 503 230 496 230 482V44C230 36 235 37 239 38C265 45 307 71 328 184C331 200 337 209 347 209C358 209 363 199 368 182C381 138 404 89 475 89C540 89 558 153 558 284C558 415 535 474 452 474C430 474 410 471 394 466C377 461 367 454 367 447C367 442 383 436 394 432C414 425 434 405 434 367C434 323 405 298 366 298C323 298 289 327 289 380C289 443 344 506 463 506C627 506 699 391 699 287C699 149 623 53 490 53C461 53 442 58 429 62C424 64 418 65 413 65C409 65 404 64 400 61C386 52 364 20 364 0C364 -20 386 -52 400 -61C404 -64 409 -65 413 -65C418 -65 424 -64 429 -62C442 -58 461 -53 490 -53C623 -53 699 -149 699 -287C699 -391 627 -506 463 -506C344 -506 289 -443 289 -380C289 -327 323 -298 366 -298C405 -298 434 -323 434 -367C434 -405 414 -425 394 -432C383 -436 367 -442 367 -447C367 -454 377 -461 394 -466C410 -471 430 -474 452 -474C535 -474 558 -415 558 -284C558 -153 540 -89 475 -89C404 -89 381 -138 368 -182C363 -199 358 -209 347 -209C337 -209 331 -200 328 -184C307 -71 265 -45 239 -38C235 -37 230 -36 230 -44ZM21 -503C7 -503 0 -496 0 -482V482C0 496 7 503 21 503H107C121 503 128 496 128 482V-482C128 -496 121 -503 107 -503Z","w":699,"b":[0,-506,699,506]},"flat":{"d":"M12 170C15 174 18 175 21 175C24 175 27 173 27 173C57 156 81 129 106 112C195 50 226 -11 226 -57C226 -114 182 -150 136 -153C129 -153 122 -152 115 -150C104 -147 92 -143 81 -136C75 -131 64 -122 59 -122C57 -122 56 -122 54 -123C47 -126 43 -133 43 -140C44 -162 50 -402 50 -422C50 -433 41 -439 31 -439C17 -439 1 -429 0 -411C0 -411 4 160 12 170ZM47 81C47 81 44 21 44 -19C44 -35 45 -47 46 -51C50 -63 76 -85 90 -93C99 -98 108 -100 116 -100C126 -100 135 -96 141 -89C151 -78 157 -61 157 -42C157 -24 152 -3 140 18C127 42 98 74 68 93C64 95 61 96 58 96C49 96 47 86 47 81Z","w":226,"b":[0,-439,226,175]},"natural":{"d":"M141 -181C139 -181 138 -180 137 -180C137 -180 73 -157 47 -157C41 -157 37 -158 37 -162V-329C37 -336 31 -341 25 -341H12C5 -341 0 -336 0 -329V186C0 192 3 195 8 195C9 195 11 194 12 194C12 194 14 194 15 193C29 187 85 163 114 163C124 163 131 166 131 174V323C131 330 136 335 143 335H156C162 335 168 330 168 323V-179C168 -184 164 -187 160 -187C159 -187 157 -187 156 -186ZM37 -39C37 -53 98 -79 122 -79C128 -79 131 -78 131 -74V29C131 47 74 70 49 70C42 70 37 68 37 64Z","w":168,"b":[0,-341,168,335]},"sharp":{"d":"M237 -118C244 -121 249 -129 249 -135V-206C249 -211 246 -214 242 -214C240 -214 239 -214 237 -213C237 -213 217 -205 212 -204C205 -204 198 -209 198 -217V-339C198 -345 192 -350 184 -350C174 -350 168 -345 168 -339V-209C167 -199 164 -186 155 -180C143 -173 109 -159 92 -155C83 -155 80 -167 80 -175V-295C80 -301 73 -306 66 -306C56 -306 50 -301 50 -295V-160C50 -146 44 -136 38 -133C32 -130 12 -122 12 -122C5 -120 0 -112 0 -106V-35C0 -29 3 -26 8 -26C9 -26 11 -27 12 -27C12 -27 27 -33 34 -37C35 -37 36 -38 37 -38C44 -38 50 -28 50 -20V79C50 90 45 99 39 102C33 104 12 113 12 113C5 115 0 123 0 129V200C0 206 3 209 8 209C9 209 11 208 12 208C12 208 26 202 35 199C36 198 37 198 38 198C45 198 50 209 50 214V337C50 343 56 348 63 348C73 348 80 343 80 337V198C80 185 85 178 90 176L151 151C152 151 154 150 155 150C163 150 168 162 168 168V293C168 299 174 304 181 304C192 304 198 299 198 293V151C198 143 202 131 209 128C216 125 237 117 237 117C244 114 249 106 249 100V29C249 24 246 21 242 21C240 21 239 21 237 22L211 32C205 32 198 26 198 14V-79C198 -86 203 -105 211 -108ZM168 45C162 65 115 85 92 85C86 85 81 83 80 80C78 76 77 54 77 30C77 -1 78 -36 80 -44C82 -61 128 -82 153 -82C160 -82 166 -80 168 -76C170 -71 172 -46 172 -19C172 8 170 36 168 45Z","w":249,"b":[0,-350,249,348]},"dsharp":{"d":"M190 32C179 26 143 6 143 -1C143 -15 176 -30 190 -35C194 -35 198 -34 202 -34C218 -34 233 -38 240 -44C245 -49 247 -64 247 -80C247 -97 244 -115 240 -120C236 -125 220 -127 203 -127C185 -127 167 -125 162 -120C158 -117 157 -99 157 -81C152 -70 136 -34 124 -34C110 -34 94 -67 90 -81C90 -98 87 -116 82 -120C78 -125 62 -127 46 -127C29 -127 11 -125 5 -120C2 -118 0 -101 0 -83C0 -65 2 -47 5 -44C12 -38 30 -34 47 -34C51 -34 54 -35 57 -35C68 -29 104 -9 104 -2C104 11 72 27 58 32H48C30 32 11 34 5 39C2 42 0 59 0 77C0 95 2 113 5 115C12 121 28 125 45 125C60 125 76 122 82 115C88 110 90 93 90 77C90 76 91 74 92 73C98 59 110 31 123 31C136 31 153 63 157 77C157 95 158 112 162 115C169 121 185 125 202 125C218 125 233 122 240 115C245 110 247 95 247 79C247 62 244 44 240 39C235 34 217 32 200 32Z","w":250,"b":[0,-127,247,125]},"dflat":{"d":"M314 -151C309 -151 305 -151 300 -150C288 -147 277 -141 267 -135C260 -131 252 -122 243 -122C241 -122 239 -122 238 -123C231 -125 228 -132 228 -140C228 -161 234 -402 234 -421C234 -432 225 -437 215 -437C202 -437 186 -428 184 -411C184 -411 185 -274 187 -135C172 -145 155 -151 136 -151H130C125 -151 120 -151 116 -150C104 -147 93 -141 83 -135C75 -131 68 -122 59 -122C57 -122 56 -122 54 -123C47 -125 43 -132 43 -140C43 -161 50 -402 50 -421C50 -432 41 -437 31 -437C17 -437 1 -428 0 -411C0 -411 5 161 12 170C15 174 18 175 21 175C24 175 27 173 27 173C58 157 83 129 106 112C143 86 171 59 190 35C192 110 194 167 197 170C200 174 203 175 205 175C208 175 211 173 211 173C242 157 266 129 289 113C379 50 411 -11 411 -57C411 -113 367 -150 320 -151ZM141 18C128 42 99 73 67 93C64 95 60 96 58 96C50 96 47 86 47 80C47 80 44 21 44 -18C44 -34 45 -46 46 -50C50 -63 77 -85 91 -93C100 -98 109 -100 117 -100C127 -100 135 -97 141 -90C151 -78 157 -61 157 -41C157 -23 152 -2 141 18ZM324 18C312 42 283 73 251 93C247 95 244 96 242 96C234 96 231 86 231 80C231 80 228 11 228 -27C228 -38 228 -47 229 -50C233 -63 260 -85 275 -93C284 -98 293 -100 301 -100C311 -100 319 -97 325 -90C334 -78 340 -61 340 -41C340 -23 335 -3 324 18Z","w":413,"b":[0,-437,411,175]},"noteWhole":{"d":"M235 -136C90 -136 0 -75 0 -1C0 72 62 137 224 137C402 137 459 75 459 -1C459 -78 336 -136 235 -136ZM121 -68C133 -105 173 -111 207 -111C281 -111 341 -31 341 35C341 42 340 49 339 55C334 82 318 101 291 108C280 111 269 112 258 112C248 112 239 111 229 108C211 102 193 92 178 79C170 72 162 64 155 55C134 30 117 -7 117 -41C117 -50 118 -59 121 -68Z","w":459,"b":[0,-136,459,137]},"noteHalfUp":{"d":"M112 145C302 145 341 -9 341 -48V-875H311V-118C291 -135 262 -145 227 -145C54 -145 0 -11 0 49C0 110 49 145 112 145ZM139 -52C196 -85 232 -97 256 -97C278 -97 290 -87 298 -73C302 -66 305 -59 305 -51C305 -28 281 0 200 53C148 88 112 100 87 100C63 100 49 88 41 74C37 67 34 59 34 51C34 26 59 -6 139 -52Z","w":341,"b":[0,-875,341,145]},"noteHalfDown":{"d":"M227 -145C54 -145 0 -12 0 48V875H30V117C50 135 79 145 112 145C303 145 341 -10 341 -48C341 -107 294 -145 227 -145ZM200 53C148 88 112 100 87 100C63 100 49 88 41 74C37 67 34 59 34 51C34 26 59 -6 139 -52C196 -85 232 -97 256 -97C278 -97 290 -87 298 -73C302 -66 305 -59 305 -51C305 -28 281 0 200 53Z","w":341,"b":[0,-145,341,875]},"noteQuarterUp":{"d":"M302 -115C283 -132 255 -141 222 -141C99 -141 0 -50 0 47C0 106 48 141 109 141C209 141 332 48 332 -47V-875H302Z","w":332,"b":[0,-875,332,141]},"noteQuarterDown":{"d":"M222 -141C99 -141 0 -50 0 47V875H30V114C50 131 78 141 109 141C209 141 332 48 332 -47C332 -104 287 -141 222 -141Z","w":332,"b":[0,-141,332,875]},"note8thUp":{"d":"M451 -594C400 -673 358 -755 342 -851C339 -867 331 -873 312 -873C307 -873 303 -871 302 -864V-118C283 -135 255 -144 222 -144C99 -144 0 -53 0 44C0 103 48 138 109 138C209 138 332 45 332 -50V-611C394 -573 468 -463 499 -390C514 -356 523 -299 523 -240C523 -195 516 -148 499 -103C497 -97 496 -92 496 -88C496 -72 506 -63 512 -59L514 -58C523 -57 535 -61 540 -78C540 -78 566 -173 566 -251C566 -376 514 -494 451 -594Z","w":566,"b":[0,-873,566,138]},"note8thDown":{"d":"M275 68C309 35 332 -6 332 -47C332 -104 287 -141 222 -141C99 -141 0 -50 0 47V879H3C5 881 8 882 11 882C19 882 24 881 29 879H30V878C36 875 39 869 40 860C57 765 131 678 182 599C245 500 306 381 306 256C306 178 286 107 278 75C277 72 276 70 275 68ZM221 422C187 500 142 574 30 621V114C50 131 78 141 109 141C152 141 198 124 237 98C238 101 239 104 240 108C254 150 261 200 261 245C261 304 236 388 221 422Z","w":332,"b":[0,-141,332,882]},"note16thUp":{"d":"M552 -327C552 -330 551 -332 551 -336C551 -338 551 -340 552 -343C555 -349 577 -409 577 -470C577 -483 576 -494 574 -506C564 -574 538 -602 466 -680C412 -738 356 -754 339 -860C337 -871 325 -873 319 -873C313 -873 302 -872 302 -872V-118C283 -135 255 -144 222 -144C99 -144 0 -53 0 44C0 103 48 138 109 138C209 138 332 45 332 -50V-474C387 -470 449 -453 509 -331C532 -283 541 -234 541 -182C541 -153 538 -123 533 -93C532 -89 532 -87 532 -84C532 -70 539 -62 546 -60C549 -59 551 -58 554 -58C561 -58 568 -62 574 -75C578 -80 581 -137 581 -185V-207C581 -249 570 -290 552 -327ZM538 -440C536 -432 536 -422 531 -414C530 -411 523 -408 518 -408C515 -408 513 -409 511 -412C495 -437 478 -457 457 -481C410 -535 364 -559 343 -641C342 -642 342 -643 342 -644C342 -648 348 -654 356 -654H364C425 -654 479 -598 512 -549C530 -523 539 -492 539 -460C539 -453 539 -447 538 -440Z","w":581,"b":[0,-873,581,138]},"note16thDown":{"d":"M282 84C280 76 278 71 276 67C310 35 332 -6 332 -47C332 -104 287 -141 222 -141C99 -141 0 -50 0 47V879H1V882C1 882 12 883 18 883C24 883 36 881 38 870C62 716 259 673 283 516C285 505 286 493 286 480C286 419 264 359 261 353C260 351 260 349 260 346C260 342 261 340 261 337C283 291 292 237 292 183C292 149 288 115 282 84ZM218 341C158 464 88 481 30 485V114C50 131 78 141 109 141C153 141 202 123 242 95C247 125 250 157 250 188C250 241 241 293 218 341ZM221 559C188 608 124 664 63 664H55C47 664 41 659 41 654C41 653 41 652 42 651C63 569 119 546 166 491C187 468 204 448 220 422C222 419 224 418 227 418C232 418 239 421 240 425C245 432 245 442 247 450C248 457 248 464 248 470C248 503 239 533 221 559Z","w":332,"b":[0,-141,332,883]},"restWhole":{"d":"M282 109V17C282 2 270 -9 256 -9H26C11 -9 0 2 0 17V109C0 123 11 135 26 135H256C270 135 282 123 282 109Z","w":283,"b":[0,-9,282,135]},"restHalf":{"d":"M282 -24V-116C282 -131 270 -142 256 -142H26C11 -142 0 -131 0 -116V-24C0 -10 11 2 26 2H256C270 2 282 -10 282 -24Z","w":283,"b":[0,-142,282,2]},"restQuarter":{"d":"M78 38C94 58 108 77 121 98C123 102 127 110 127 112C127 113 127 115 126 116C124 120 120 121 115 121C111 121 103 119 99 118C94 118 88 115 83 115C40 115 1 158 1 211C1 261 44 310 117 366C125 372 135 375 143 375C150 375 157 373 158 369C159 366 160 364 160 362C160 353 152 345 144 338C131 338 120 311 118 302C115 294 114 285 114 276C114 245 129 210 161 204C166 203 171 203 177 203C206 203 239 214 255 220C256 220 257 221 258 221C261 222 263 222 265 222C268 222 270 221 270 218C270 206 244 173 233 161C195 115 164 78 164 22C164 18 165 13 165 9C169 -49 205 -97 231 -138C234 -143 235 -148 235 -153C235 -163 231 -172 231 -172C231 -172 83 -348 66 -365C61 -370 54 -373 48 -373C38 -373 28 -366 28 -352C28 -347 29 -342 32 -336C36 -325 93 -274 93 -202C93 -165 78 -122 33 -75C23 -65 19 -54 19 -46C19 -32 29 -22 29 -22Z","w":270,"b":[1,-373,270,375]},"rest8th":{"d":"M134 -107C134 -144 104 -174 67 -174C30 -174 0 -144 0 -107C0 -86 12 -68 27 -56C36 -50 45 -45 55 -43C63 -41 72 -39 81 -39C95 -39 109 -42 120 -46C134 -50 143 -54 156 -61C158 -62 160 -62 161 -62C165 -62 166 -58 166 -53C166 -50 166 -46 165 -42C162 -27 90 172 72 238C72 250 95 251 101 251C112 251 126 249 136 241C139 239 237 -112 237 -112C241 -130 246 -146 247 -151C247 -161 237 -166 235 -167C233 -167 230 -167 224 -163C217 -157 167 -97 134 -97Z","w":250,"b":[0,-174,247,251]},"rest16th":{"d":"M208 -111C208 -149 178 -179 140 -179C103 -179 72 -149 72 -111C72 -91 84 -72 100 -60C108 -54 118 -49 128 -46C135 -44 143 -43 152 -43C166 -43 182 -46 194 -50C208 -54 217 -58 230 -65C233 -66 235 -67 237 -67C240 -67 242 -65 242 -60C242 -57 241 -52 239 -45C237 -37 193 101 184 120C176 139 149 151 135 151C136 147 136 144 136 141C136 103 105 73 68 73C30 73 0 103 0 141C0 161 12 180 28 192C36 198 45 203 55 206C63 208 71 209 80 209C94 209 110 206 122 202C136 198 142 195 155 188C157 188 159 190 159 193C159 194 158 195 158 196L63 479C63 480 62 481 62 482C62 490 71 500 93 500C122 500 127 488 131 477L247 96C273 11 292 -56 292 -56C292 -56 317 -144 319 -157C319 -159 320 -160 320 -161C320 -167 312 -171 310 -172C305 -172 302 -170 299 -168C292 -162 242 -102 208 -101Z","w":320,"b":[0,-179,320,500]},"brace":{"d":"M0 -500C24 -463 37 -435 37 -397C37 -330 2 -251 2 -175C2 -121 20 -48 61 -1C64 3 71 -1 69 -6C45 -45 37 -91 37 -131C37 -212 69 -285 69 -354C69 -404 56 -452 16 -500C55 -547 69 -595 69 -645C69 -714 37 -788 37 -868C37 -909 44 -954 68 -993C71 -999 63 -1003 60 -999C19 -951 2 -879 2 -824C2 -748 37 -669 37 -602C37 -564 24 -537 0 -500Z","w":70,"b":[0,-1001,69,1]},"dot":{"d":"M100 0C100 -28 78 -50 50 -50C22 -50 0 -28 0 0C0 28 22 50 50 50C78 50 100 28 100 0Z","w":100,"b":[0,-50,100,50]},"ledger":{"d":"M412 20V-20H-80V20Z","w":332,"b":[-80,-20,412,20]},"noteheadBlack":{"d":"M97 125C186 125 295 43 295 -42C295 -93 255 -125 198 -125C88 -125 0 -44 0 42C0 94 43 125 97 125Z","w":295,"b":[0,-125,295,125]},"repeatLeft":{"d":"M192 0H228V-1000H192ZM0 0H125V-1000H0ZM316 -572C344 -572 366 -594 366 -622C366 -650 344 -672 316 -672C289 -672 266 -650 266 -622C266 -594 289 -572 316 -572ZM316 -320C344 -320 366 -342 366 -370C366 -397 344 -420 316 -420C289 -420 266 -397 266 -370C266 -342 289 -320 316 -320Z","w":368,"b":[0,-1000,366,0]},"repeatRight":{"d":"M175 0V-1000H139V0ZM367 -1000H242V0H367ZM51 -680C23 -680 1 -658 1 -630C1 -603 23 -580 51 -580C78 -580 101 -603 101 -630C101 -658 78 -680 51 -680ZM51 -428C23 -428 1 -406 1 -378C1 -350 23 -328 51 -328C78 -328 101 -350 101 -378C101 -406 78 -428 51 -428Z","w":367,"b":[1,-1000,367,0]},"fermata":{"d":"M302 -221C515 -221 558 -63 568 -25C569 -22 569 -19 570 -18C577 -4 581 3 591 3C600 3 605 -1 605 -11C605 -14 605 -17 604 -21C542 -327 333 -329 304 -329C272 -329 65 -327 4 -21C3 -17 3 -13 3 -10C3 0 8 3 16 3C25 3 30 -4 36 -18C37 -19 38 -23 39 -27C51 -68 96 -221 302 -221ZM358 -52C358 -81 333 -106 303 -106C274 -106 249 -81 249 -52C249 -22 274 3 303 3C333 3 358 -22 358 -52Z","w":605,"b":[3,-329,605,3]},"common":{"d":"M233 -251C203 -251 168 -243 141 -231C52 -192 5 -85 5 10C5 19 5 28 6 37C11 91 37 142 70 182C108 228 163 249 223 249C398 249 424 90 424 61C424 39 413 39 409 39C401 39 394 40 394 57C394 186 284 216 252 216C171 216 128 137 128 -28C128 -193 204 -227 258 -227C310 -227 331 -203 331 -193C331 -184 328 -171 313 -171C273 -171 250 -128 250 -97C250 -40 299 -22 327 -22C327 -22 403 -25 403 -108C403 -239 252 -251 233 -251Z","w":424,"b":[5,-251,424,249]},"cut":{"d":"M398 40C394 40 388 42 388 57C388 185 278 215 246 215C236 215 228 214 220 212C216 211 210 205 210 197V-199C210 -206 228 -223 235 -224C241 -225 247 -225 252 -225C303 -225 325 -201 325 -191C325 -183 322 -169 307 -169C267 -169 244 -126 244 -95C244 -39 293 -21 321 -21C321 -21 397 -24 397 -107C397 -237 246 -249 227 -249C225 -249 228 -248 221 -248C215 -249 210 -266 210 -271V-344C210 -352 203 -361 192 -361C184 -361 175 -352 175 -344V-256C175 -249 165 -240 163 -240L136 -230C46 -191 0 -85 0 10C0 19 0 29 1 38C6 91 31 141 66 182C90 211 121 231 156 240C163 243 175 256 175 265V342C175 351 184 359 192 359C203 359 210 351 210 342V263C210 257 214 252 221 249C391 246 418 90 418 59C417 40 407 40 402 40ZM175 163C175 172 172 175 169 175C167 175 165 174 164 172C137 134 123 67 123 -26C123 -102 139 -149 161 -180C162 -182 163 -182 164 -182C169 -182 175 -174 175 -166Z","w":417,"b":[0,-361,418,359]},"t0":{"d":"M450 0C450 -139 354 -251 235 -251C116 -251 20 -139 20 0C20 138 116 250 235 250C354 250 450 138 450 0ZM235 -220C276 -220 310 -125 310 -7C310 110 276 205 235 205C193 205 160 110 160 -7C160 -125 193 -220 235 -220Z","w":470,"b":[20,-251,450,250]},"t1":{"d":"M24 -13C24 -13 20 -7 20 0C20 5 23 11 31 14C35 15 39 16 40 16C50 16 54 7 54 7C54 7 97 -62 108 -81C112 -88 116 -91 118 -91C122 -91 124 -83 124 -77V181C124 204 101 219 80 219C73 219 63 222 63 234C63 245 72 250 85 250H298C314 250 314 234 314 234C314 234 314 219 299 219C285 219 267 201 267 184V-228C267 -244 261 -250 247 -251C233 -251 208 -247 195 -247C176 -247 158 -248 143 -250C141 -250 139 -251 138 -251C128 -251 124 -241 120 -232Z","w":334,"b":[20,-251,314,250]},"t2":{"d":"M421 91C421 79 416 77 409 77C401 77 398 81 396 87C396 88 395 89 395 90C385 114 377 133 356 133C351 133 346 132 339 130C326 125 319 124 309 119C289 111 242 95 201 95C188 95 175 97 164 101C186 65 271 35 293 29C308 25 350 17 383 -10C407 -29 426 -58 426 -102C426 -149 406 -183 380 -205C329 -248 251 -254 229 -254C202 -254 168 -253 142 -247C107 -240 72 -219 48 -191C31 -170 20 -145 20 -118C20 -104 23 -90 29 -75C44 -44 75 -20 111 -20C172 -20 181 -83 181 -108C181 -168 112 -171 112 -191C114 -205 132 -229 191 -229C280 -229 281 -162 281 -133C281 -95 269 -60 247 -31C211 17 183 41 134 71C79 106 40 155 23 218C23 220 22 222 22 224C22 235 29 248 40 255C43 257 46 257 48 257C70 257 82 196 141 196C181 196 196 250 285 250C328 250 405 246 421 91Z","w":446,"b":[20,-254,426,257]},"t3":{"d":"M213 -248C208 -248 203 -249 198 -249C112 -249 26 -192 26 -139C26 -106 45 -62 107 -58H112C156 -58 178 -90 178 -123V-131C175 -168 150 -170 145 -172C140 -174 125 -172 125 -186V-190C127 -207 158 -215 167 -215C252 -215 260 -162 260 -138V-131C260 -57 201 -28 138 -25C128 -24 114 -19 114 -8C114 4 131 4 139 4C254 4 263 82 263 95C263 201 209 213 187 213C183 213 179 212 178 212C170 211 151 211 150 196V191C150 169 172 154 173 125C173 115 172 104 168 94C157 69 128 53 101 53C97 53 94 53 90 54C73 57 54 67 42 80C25 95 20 119 20 141C22 219 93 249 191 251H200C299 251 401 200 401 112V105C400 91 398 77 392 64C388 54 381 44 373 35C367 27 359 20 349 14L328 2L295 -7C290 -8 287 -8 285 -12C284 -14 284 -15 284 -17C284 -21 285 -25 288 -26C299 -29 310 -30 319 -35C334 -42 347 -49 358 -62C374 -80 380 -103 380 -126C380 -218 255 -245 213 -248Z","w":421,"b":[20,-249,401,251]},"t4":{"d":"M362 74V-140C362 -148 361 -157 350 -157C341 -157 336 -155 330 -148L235 -33C231 -28 226 -22 226 -10V74H91C171 6 331 -221 334 -232C334 -234 335 -235 335 -237C335 -245 328 -251 320 -251C311 -251 270 -249 252 -249C234 -249 189 -251 181 -251C172 -251 158 -248 158 -232C158 -108 60 31 30 73L24 81C24 82 23 83 23 84C21 88 20 92 20 95C20 105 28 112 40 112H226V175C226 202 204 210 186 210C170 210 163 219 163 229C163 239 167 250 182 250H395C405 250 415 243 415 229C415 215 403 209 393 209C383 209 362 203 362 171V112H435C445 112 450 105 450 93C450 81 446 74 435 74Z","w":470,"b":[20,-251,450,250]},"t5":{"d":"M76 -59C76 -59 80 -115 81 -124C82 -132 87 -137 96 -137H100C110 -135 157 -128 198 -128C337 -128 342 -208 342 -224C342 -237 339 -245 328 -245C315 -245 237 -236 205 -236C173 -236 87 -244 70 -246C52 -246 47 -237 46 -229L35 -7V-5C35 8 45 10 55 10C65 10 66 1 77 -10C87 -20 111 -43 145 -43C179 -43 248 -24 248 87C248 197 189 211 163 211C155 211 147 211 140 208C135 205 129 201 128 194C128 187 135 183 140 180C163 166 178 141 178 113C178 69 143 35 100 35C46 35 24 74 21 109C20 115 20 121 20 127C20 210 74 251 197 251C317 251 383 177 383 87C383 -4 309 -78 218 -78C160 -78 117 -68 85 -49C83 -48 81 -48 80 -48C76 -48 76 -52 76 -55Z","w":403,"b":[20,-246,383,251]},"t6":{"d":"M260 -100C272 -88 289 -83 305 -83C313 -83 322 -85 330 -87C361 -95 385 -127 385 -159C385 -163 385 -166 384 -170C379 -203 351 -227 321 -238C297 -248 268 -251 242 -251C166 -250 95 -213 59 -145C37 -103 20 -50 20 -3V1C21 47 29 99 51 139C72 177 106 218 145 235C170 246 200 249 225 249C270 249 320 242 356 213C391 185 414 140 414 95C414 39 384 5 352 -19C325 -39 294 -50 263 -50C231 -50 198 -38 172 -15C170 -13 168 -13 166 -13C160 -13 157 -21 157 -37C160 -222 219 -227 240 -227C260 -227 273 -222 273 -212C273 -198 254 -186 248 -174C243 -165 241 -155 241 -145C241 -130 246 -115 256 -104C257 -102 259 -101 260 -100ZM222 -2C254 -2 281 48 281 110C281 172 254 222 222 222C190 222 164 172 164 110C164 48 190 -2 222 -2Z","w":434,"b":[20,-251,414,249]},"t7":{"d":"M421 -204C421 -231 421 -244 404 -244C403 -244 387 -240 383 -233C376 -221 362 -164 337 -164C312 -164 265 -249 182 -249C124 -249 109 -226 95 -213C81 -200 75 -196 68 -195C60 -195 47 -209 42 -219C40 -223 35 -226 30 -226C25 -226 20 -223 20 -214V-49C20 -49 21 -33 31 -33C39 -33 42 -42 46 -53C56 -78 69 -136 114 -136C154 -136 202 -61 260 -61C288 -61 302 -76 310 -82C313 -84 317 -86 319 -86C323 -86 325 -83 326 -77C326 -49 249 7 189 78C151 122 120 180 120 219C120 240 120 250 139 250C157 250 179 241 204 241C229 241 276 250 286 250C296 250 302 242 302 213C302 46 421 -97 421 -200Z","w":441,"b":[20,-249,421,250]},"t8":{"d":"M334 -36C370 -59 394 -92 394 -142C394 -244 247 -259 220 -259C104 -259 25 -206 25 -122C25 -53 64 -16 112 11C60 36 20 69 20 132C20 219 110 259 209 259C309 259 416 216 416 81C416 21 381 -12 334 -36ZM282 -59C202 -87 117 -104 117 -167C117 -209 174 -230 218 -230C250 -230 335 -214 335 -144C335 -104 315 -78 282 -59ZM205 226C138 226 77 192 77 127C77 87 112 50 156 33C229 65 303 86 303 152C303 192 272 226 205 226Z","w":436,"b":[20,-259,416,259]},"t9":{"d":"M174 98C162 86 145 81 129 81C121 81 112 83 104 85C73 93 49 125 49 157C49 161 49 164 50 168C55 201 83 225 113 236C137 246 166 249 192 249C268 248 339 211 375 143C397 101 414 48 414 1V-3C413 -49 405 -101 383 -141C362 -179 328 -220 289 -237C264 -248 234 -251 209 -251C164 -251 114 -244 78 -215C43 -187 20 -142 20 -97C20 -41 50 -7 82 17C109 37 140 48 171 48C203 48 236 36 262 13C264 11 266 11 268 11C274 11 277 19 277 35C274 220 215 225 194 225C174 225 161 220 161 210C161 196 180 184 186 172C191 163 193 153 193 143C193 128 188 113 178 102C177 100 175 99 174 98ZM212 0C180 0 153 -50 153 -112C153 -174 180 -224 212 -224C244 -224 270 -174 270 -112C270 -50 244 0 212 0Z","w":434,"b":[20,-251,414,249]}};
+const G = {"gClef":{"d":"M376 -415C374 -427 376 -428 382 -434C398 -449 419 -470 438 -491C522 -583 572 -702 572 -815C572 -902 548 -988 507 -1048C492 -1070 466 -1098 455 -1098C441 -1098 410 -1072 390 -1050C316 -968 292 -843 292 -739C292 -681 299 -616 306 -575C308 -563 309 -561 297 -551C233 -498 164 -437 112 -373C43 -287 0 -194 0 -87C0 87 119 252 364 252C387 252 413 250 433 246C444 244 446 243 448 255C460 322 475 409 475 456C475 604 375 622 316 622C262 622 236 606 236 593C236 586 245 583 268 576C299 567 335 540 335 482C335 427 300 380 239 380C172 380 132 433 132 495C132 560 171 658 322 658C389 658 519 628 519 458C519 401 501 306 490 244C488 232 489 233 503 227C604 187 671 102 671 -11C671 -139 577 -252 430 -252C404 -252 404 -252 401 -270ZM470 -943C503 -943 530 -916 530 -861C530 -792 497 -728 419 -650C403 -634 379 -611 356 -591C349 -585 345 -586 343 -599C339 -625 337 -659 337 -691C337 -847 409 -943 470 -943ZM361 -262C364 -243 364 -244 346 -238C258 -208 201 -129 201 -44C201 46 248 110 316 133C324 136 336 139 343 139C351 139 355 134 355 128C355 121 347 118 340 115C298 97 268 54 268 8C268 -49 307 -92 368 -109C384 -113 386 -112 388 -101L438 197C440 208 439 208 424 211C408 214 388 216 368 216C193 216 80 119 80 -20C80 -79 90 -158 173 -252C233 -319 279 -356 326 -394C336 -402 338 -401 340 -390ZM430 -103C428 -115 429 -118 441 -117C522 -110 589 -42 589 46C589 109 551 160 495 188C483 194 481 194 479 182Z","w":671,"b":[0,-1098,671,658]},"fClef":{"d":"M252 -262C78 -262 0 -135 0 -39C0 41 42 110 123 110C186 110 229 66 229 4C229 -60 182 -100 133 -100C106 -100 96 -93 83 -93C70 -93 67 -101 67 -111C67 -151 127 -224 229 -224C335 -224 381 -120 381 37C381 140 359 260 297 356C237 449 134 534 10 605C1 610 -5 615 -5 623C-5 629 -1 635 8 635C13 635 19 633 25 630C158 565 286 489 392 375C479 281 531 159 531 28C531 -146 425 -262 252 -262ZM629 -180C598 -180 574 -156 574 -125C574 -94 598 -70 629 -70C660 -70 684 -94 684 -125C684 -156 660 -180 629 -180ZM630 71C599 71 576 94 576 125C576 156 599 179 630 179C661 179 684 156 684 125C684 94 661 71 630 71Z","w":684,"b":[-5,-262,684,635]},"cClef":{"d":"M230 -482C230 -496 223 -503 209 -503H208C194 -503 187 -496 187 -482V482C187 496 194 503 208 503H209C223 503 230 496 230 482V44C230 36 235 37 239 38C265 45 307 71 328 184C331 200 337 209 347 209C358 209 363 199 368 182C381 138 404 89 475 89C540 89 558 153 558 284C558 415 535 474 452 474C430 474 410 471 394 466C377 461 367 454 367 447C367 442 383 436 394 432C414 425 434 405 434 367C434 323 405 298 366 298C323 298 289 327 289 380C289 443 344 506 463 506C627 506 699 391 699 287C699 149 623 53 490 53C461 53 442 58 429 62C424 64 418 65 413 65C409 65 404 64 400 61C386 52 364 20 364 0C364 -20 386 -52 400 -61C404 -64 409 -65 413 -65C418 -65 424 -64 429 -62C442 -58 461 -53 490 -53C623 -53 699 -149 699 -287C699 -391 627 -506 463 -506C344 -506 289 -443 289 -380C289 -327 323 -298 366 -298C405 -298 434 -323 434 -367C434 -405 414 -425 394 -432C383 -436 367 -442 367 -447C367 -454 377 -461 394 -466C410 -471 430 -474 452 -474C535 -474 558 -415 558 -284C558 -153 540 -89 475 -89C404 -89 381 -138 368 -182C363 -199 358 -209 347 -209C337 -209 331 -200 328 -184C307 -71 265 -45 239 -38C235 -37 230 -36 230 -44ZM21 -503C7 -503 0 -496 0 -482V482C0 496 7 503 21 503H107C121 503 128 496 128 482V-482C128 -496 121 -503 107 -503Z","w":699,"b":[0,-506,699,506]},"flat":{"d":"M12 170C15 174 18 175 21 175C24 175 27 173 27 173C57 156 81 129 106 112C195 50 226 -11 226 -57C226 -114 182 -150 136 -153C129 -153 122 -152 115 -150C104 -147 92 -143 81 -136C75 -131 64 -122 59 -122C57 -122 56 -122 54 -123C47 -126 43 -133 43 -140C44 -162 50 -402 50 -422C50 -433 41 -439 31 -439C17 -439 1 -429 0 -411C0 -411 4 160 12 170ZM47 81C47 81 44 21 44 -19C44 -35 45 -47 46 -51C50 -63 76 -85 90 -93C99 -98 108 -100 116 -100C126 -100 135 -96 141 -89C151 -78 157 -61 157 -42C157 -24 152 -3 140 18C127 42 98 74 68 93C64 95 61 96 58 96C49 96 47 86 47 81Z","w":226,"b":[0,-439,226,175]},"natural":{"d":"M141 -181C139 -181 138 -180 137 -180C137 -180 73 -157 47 -157C41 -157 37 -158 37 -162V-329C37 -336 31 -341 25 -341H12C5 -341 0 -336 0 -329V186C0 192 3 195 8 195C9 195 11 194 12 194C12 194 14 194 15 193C29 187 85 163 114 163C124 163 131 166 131 174V323C131 330 136 335 143 335H156C162 335 168 330 168 323V-179C168 -184 164 -187 160 -187C159 -187 157 -187 156 -186ZM37 -39C37 -53 98 -79 122 -79C128 -79 131 -78 131 -74V29C131 47 74 70 49 70C42 70 37 68 37 64Z","w":168,"b":[0,-341,168,335]},"sharp":{"d":"M237 -118C244 -121 249 -129 249 -135V-206C249 -211 246 -214 242 -214C240 -214 239 -214 237 -213C237 -213 217 -205 212 -204C205 -204 198 -209 198 -217V-339C198 -345 192 -350 184 -350C174 -350 168 -345 168 -339V-209C167 -199 164 -186 155 -180C143 -173 109 -159 92 -155C83 -155 80 -167 80 -175V-295C80 -301 73 -306 66 -306C56 -306 50 -301 50 -295V-160C50 -146 44 -136 38 -133C32 -130 12 -122 12 -122C5 -120 0 -112 0 -106V-35C0 -29 3 -26 8 -26C9 -26 11 -27 12 -27C12 -27 27 -33 34 -37C35 -37 36 -38 37 -38C44 -38 50 -28 50 -20V79C50 90 45 99 39 102C33 104 12 113 12 113C5 115 0 123 0 129V200C0 206 3 209 8 209C9 209 11 208 12 208C12 208 26 202 35 199C36 198 37 198 38 198C45 198 50 209 50 214V337C50 343 56 348 63 348C73 348 80 343 80 337V198C80 185 85 178 90 176L151 151C152 151 154 150 155 150C163 150 168 162 168 168V293C168 299 174 304 181 304C192 304 198 299 198 293V151C198 143 202 131 209 128C216 125 237 117 237 117C244 114 249 106 249 100V29C249 24 246 21 242 21C240 21 239 21 237 22L211 32C205 32 198 26 198 14V-79C198 -86 203 -105 211 -108ZM168 45C162 65 115 85 92 85C86 85 81 83 80 80C78 76 77 54 77 30C77 -1 78 -36 80 -44C82 -61 128 -82 153 -82C160 -82 166 -80 168 -76C170 -71 172 -46 172 -19C172 8 170 36 168 45Z","w":249,"b":[0,-350,249,348]},"dsharp":{"d":"M190 32C179 26 143 6 143 -1C143 -15 176 -30 190 -35C194 -35 198 -34 202 -34C218 -34 233 -38 240 -44C245 -49 247 -64 247 -80C247 -97 244 -115 240 -120C236 -125 220 -127 203 -127C185 -127 167 -125 162 -120C158 -117 157 -99 157 -81C152 -70 136 -34 124 -34C110 -34 94 -67 90 -81C90 -98 87 -116 82 -120C78 -125 62 -127 46 -127C29 -127 11 -125 5 -120C2 -118 0 -101 0 -83C0 -65 2 -47 5 -44C12 -38 30 -34 47 -34C51 -34 54 -35 57 -35C68 -29 104 -9 104 -2C104 11 72 27 58 32H48C30 32 11 34 5 39C2 42 0 59 0 77C0 95 2 113 5 115C12 121 28 125 45 125C60 125 76 122 82 115C88 110 90 93 90 77C90 76 91 74 92 73C98 59 110 31 123 31C136 31 153 63 157 77C157 95 158 112 162 115C169 121 185 125 202 125C218 125 233 122 240 115C245 110 247 95 247 79C247 62 244 44 240 39C235 34 217 32 200 32Z","w":250,"b":[0,-127,247,125]},"dflat":{"d":"M314 -151C309 -151 305 -151 300 -150C288 -147 277 -141 267 -135C260 -131 252 -122 243 -122C241 -122 239 -122 238 -123C231 -125 228 -132 228 -140C228 -161 234 -402 234 -421C234 -432 225 -437 215 -437C202 -437 186 -428 184 -411C184 -411 185 -274 187 -135C172 -145 155 -151 136 -151H130C125 -151 120 -151 116 -150C104 -147 93 -141 83 -135C75 -131 68 -122 59 -122C57 -122 56 -122 54 -123C47 -125 43 -132 43 -140C43 -161 50 -402 50 -421C50 -432 41 -437 31 -437C17 -437 1 -428 0 -411C0 -411 5 161 12 170C15 174 18 175 21 175C24 175 27 173 27 173C58 157 83 129 106 112C143 86 171 59 190 35C192 110 194 167 197 170C200 174 203 175 205 175C208 175 211 173 211 173C242 157 266 129 289 113C379 50 411 -11 411 -57C411 -113 367 -150 320 -151ZM141 18C128 42 99 73 67 93C64 95 60 96 58 96C50 96 47 86 47 80C47 80 44 21 44 -18C44 -34 45 -46 46 -50C50 -63 77 -85 91 -93C100 -98 109 -100 117 -100C127 -100 135 -97 141 -90C151 -78 157 -61 157 -41C157 -23 152 -2 141 18ZM324 18C312 42 283 73 251 93C247 95 244 96 242 96C234 96 231 86 231 80C231 80 228 11 228 -27C228 -38 228 -47 229 -50C233 -63 260 -85 275 -93C284 -98 293 -100 301 -100C311 -100 319 -97 325 -90C334 -78 340 -61 340 -41C340 -23 335 -3 324 18Z","w":413,"b":[0,-437,411,175]},"noteWhole":{"d":"M235 -136C90 -136 0 -75 0 -1C0 72 62 137 224 137C402 137 459 75 459 -1C459 -78 336 -136 235 -136ZM121 -68C133 -105 173 -111 207 -111C281 -111 341 -31 341 35C341 42 340 49 339 55C334 82 318 101 291 108C280 111 269 112 258 112C248 112 239 111 229 108C211 102 193 92 178 79C170 72 162 64 155 55C134 30 117 -7 117 -41C117 -50 118 -59 121 -68Z","w":459,"b":[0,-136,459,137]},"noteHalfUp":{"d":"M112 145C302 145 341 -9 341 -48V-875H311V-118C291 -135 262 -145 227 -145C54 -145 0 -11 0 49C0 110 49 145 112 145ZM139 -52C196 -85 232 -97 256 -97C278 -97 290 -87 298 -73C302 -66 305 -59 305 -51C305 -28 281 0 200 53C148 88 112 100 87 100C63 100 49 88 41 74C37 67 34 59 34 51C34 26 59 -6 139 -52Z","w":341,"b":[0,-875,341,145]},"noteHalfDown":{"d":"M227 -145C54 -145 0 -12 0 48V875H30V117C50 135 79 145 112 145C303 145 341 -10 341 -48C341 -107 294 -145 227 -145ZM200 53C148 88 112 100 87 100C63 100 49 88 41 74C37 67 34 59 34 51C34 26 59 -6 139 -52C196 -85 232 -97 256 -97C278 -97 290 -87 298 -73C302 -66 305 -59 305 -51C305 -28 281 0 200 53Z","w":341,"b":[0,-145,341,875]},"noteQuarterUp":{"d":"M302 -115C283 -132 255 -141 222 -141C99 -141 0 -50 0 47C0 106 48 141 109 141C209 141 332 48 332 -47V-875H302Z","w":332,"b":[0,-875,332,141]},"noteQuarterDown":{"d":"M222 -141C99 -141 0 -50 0 47V875H30V114C50 131 78 141 109 141C209 141 332 48 332 -47C332 -104 287 -141 222 -141Z","w":332,"b":[0,-141,332,875]},"note8thUp":{"d":"M451 -594C400 -673 358 -755 342 -851C339 -867 331 -873 312 -873C307 -873 303 -871 302 -864V-118C283 -135 255 -144 222 -144C99 -144 0 -53 0 44C0 103 48 138 109 138C209 138 332 45 332 -50V-611C394 -573 468 -463 499 -390C514 -356 523 -299 523 -240C523 -195 516 -148 499 -103C497 -97 496 -92 496 -88C496 -72 506 -63 512 -59L514 -58C523 -57 535 -61 540 -78C540 -78 566 -173 566 -251C566 -376 514 -494 451 -594Z","w":566,"b":[0,-873,566,138]},"note8thDown":{"d":"M275 68C309 35 332 -6 332 -47C332 -104 287 -141 222 -141C99 -141 0 -50 0 47V879H3C5 881 8 882 11 882C19 882 24 881 29 879H30V878C36 875 39 869 40 860C57 765 131 678 182 599C245 500 306 381 306 256C306 178 286 107 278 75C277 72 276 70 275 68ZM221 422C187 500 142 574 30 621V114C50 131 78 141 109 141C152 141 198 124 237 98C238 101 239 104 240 108C254 150 261 200 261 245C261 304 236 388 221 422Z","w":332,"b":[0,-141,332,882]},"note16thUp":{"d":"M552 -327C552 -330 551 -332 551 -336C551 -338 551 -340 552 -343C555 -349 577 -409 577 -470C577 -483 576 -494 574 -506C564 -574 538 -602 466 -680C412 -738 356 -754 339 -860C337 -871 325 -873 319 -873C313 -873 302 -872 302 -872V-118C283 -135 255 -144 222 -144C99 -144 0 -53 0 44C0 103 48 138 109 138C209 138 332 45 332 -50V-474C387 -470 449 -453 509 -331C532 -283 541 -234 541 -182C541 -153 538 -123 533 -93C532 -89 532 -87 532 -84C532 -70 539 -62 546 -60C549 -59 551 -58 554 -58C561 -58 568 -62 574 -75C578 -80 581 -137 581 -185V-207C581 -249 570 -290 552 -327ZM538 -440C536 -432 536 -422 531 -414C530 -411 523 -408 518 -408C515 -408 513 -409 511 -412C495 -437 478 -457 457 -481C410 -535 364 -559 343 -641C342 -642 342 -643 342 -644C342 -648 348 -654 356 -654H364C425 -654 479 -598 512 -549C530 -523 539 -492 539 -460C539 -453 539 -447 538 -440Z","w":581,"b":[0,-873,581,138]},"note16thDown":{"d":"M282 84C280 76 278 71 276 67C310 35 332 -6 332 -47C332 -104 287 -141 222 -141C99 -141 0 -50 0 47V879H1V882C1 882 12 883 18 883C24 883 36 881 38 870C62 716 259 673 283 516C285 505 286 493 286 480C286 419 264 359 261 353C260 351 260 349 260 346C260 342 261 340 261 337C283 291 292 237 292 183C292 149 288 115 282 84ZM218 341C158 464 88 481 30 485V114C50 131 78 141 109 141C153 141 202 123 242 95C247 125 250 157 250 188C250 241 241 293 218 341ZM221 559C188 608 124 664 63 664H55C47 664 41 659 41 654C41 653 41 652 42 651C63 569 119 546 166 491C187 468 204 448 220 422C222 419 224 418 227 418C232 418 239 421 240 425C245 432 245 442 247 450C248 457 248 464 248 470C248 503 239 533 221 559Z","w":332,"b":[0,-141,332,883]},"restWhole":{"d":"M282 109V17C282 2 270 -9 256 -9H26C11 -9 0 2 0 17V109C0 123 11 135 26 135H256C270 135 282 123 282 109Z","w":283,"b":[0,-9,282,135]},"restHalf":{"d":"M282 -24V-116C282 -131 270 -142 256 -142H26C11 -142 0 -131 0 -116V-24C0 -10 11 2 26 2H256C270 2 282 -10 282 -24Z","w":283,"b":[0,-142,282,2]},"restQuarter":{"d":"M78 38C94 58 108 77 121 98C123 102 127 110 127 112C127 113 127 115 126 116C124 120 120 121 115 121C111 121 103 119 99 118C94 118 88 115 83 115C40 115 1 158 1 211C1 261 44 310 117 366C125 372 135 375 143 375C150 375 157 373 158 369C159 366 160 364 160 362C160 353 152 345 144 338C131 338 120 311 118 302C115 294 114 285 114 276C114 245 129 210 161 204C166 203 171 203 177 203C206 203 239 214 255 220C256 220 257 221 258 221C261 222 263 222 265 222C268 222 270 221 270 218C270 206 244 173 233 161C195 115 164 78 164 22C164 18 165 13 165 9C169 -49 205 -97 231 -138C234 -143 235 -148 235 -153C235 -163 231 -172 231 -172C231 -172 83 -348 66 -365C61 -370 54 -373 48 -373C38 -373 28 -366 28 -352C28 -347 29 -342 32 -336C36 -325 93 -274 93 -202C93 -165 78 -122 33 -75C23 -65 19 -54 19 -46C19 -32 29 -22 29 -22Z","w":270,"b":[1,-373,270,375]},"rest8th":{"d":"M134 -107C134 -144 104 -174 67 -174C30 -174 0 -144 0 -107C0 -86 12 -68 27 -56C36 -50 45 -45 55 -43C63 -41 72 -39 81 -39C95 -39 109 -42 120 -46C134 -50 143 -54 156 -61C158 -62 160 -62 161 -62C165 -62 166 -58 166 -53C166 -50 166 -46 165 -42C162 -27 90 172 72 238C72 250 95 251 101 251C112 251 126 249 136 241C139 239 237 -112 237 -112C241 -130 246 -146 247 -151C247 -161 237 -166 235 -167C233 -167 230 -167 224 -163C217 -157 167 -97 134 -97Z","w":250,"b":[0,-174,247,251]},"rest16th":{"d":"M208 -111C208 -149 178 -179 140 -179C103 -179 72 -149 72 -111C72 -91 84 -72 100 -60C108 -54 118 -49 128 -46C135 -44 143 -43 152 -43C166 -43 182 -46 194 -50C208 -54 217 -58 230 -65C233 -66 235 -67 237 -67C240 -67 242 -65 242 -60C242 -57 241 -52 239 -45C237 -37 193 101 184 120C176 139 149 151 135 151C136 147 136 144 136 141C136 103 105 73 68 73C30 73 0 103 0 141C0 161 12 180 28 192C36 198 45 203 55 206C63 208 71 209 80 209C94 209 110 206 122 202C136 198 142 195 155 188C157 188 159 190 159 193C159 194 158 195 158 196L63 479C63 480 62 481 62 482C62 490 71 500 93 500C122 500 127 488 131 477L247 96C273 11 292 -56 292 -56C292 -56 317 -144 319 -157C319 -159 320 -160 320 -161C320 -167 312 -171 310 -172C305 -172 302 -170 299 -168C292 -162 242 -102 208 -101Z","w":320,"b":[0,-179,320,500]},"brace":{"d":"M0 -500C24 -463 37 -435 37 -397C37 -330 2 -251 2 -175C2 -121 20 -48 61 -1C64 3 71 -1 69 -6C45 -45 37 -91 37 -131C37 -212 69 -285 69 -354C69 -404 56 -452 16 -500C55 -547 69 -595 69 -645C69 -714 37 -788 37 -868C37 -909 44 -954 68 -993C71 -999 63 -1003 60 -999C19 -951 2 -879 2 -824C2 -748 37 -669 37 -602C37 -564 24 -537 0 -500Z","w":70,"b":[0,-1001,69,1]},"dot":{"d":"M100 0C100 -28 78 -50 50 -50C22 -50 0 -28 0 0C0 28 22 50 50 50C78 50 100 28 100 0Z","w":100,"b":[0,-50,100,50]},"ledger":{"d":"M412 20V-20H-80V20Z","w":332,"b":[-80,-20,412,20]},"noteheadBlack":{"d":"M97 125C186 125 295 43 295 -42C295 -93 255 -125 198 -125C88 -125 0 -44 0 42C0 94 43 125 97 125Z","w":295,"b":[0,-125,295,125]},"repeatLeft":{"d":"M192 0H228V-1000H192ZM0 0H125V-1000H0ZM316 -572C344 -572 366 -594 366 -622C366 -650 344 -672 316 -672C289 -672 266 -650 266 -622C266 -594 289 -572 316 -572ZM316 -320C344 -320 366 -342 366 -370C366 -397 344 -420 316 -420C289 -420 266 -397 266 -370C266 -342 289 -320 316 -320Z","w":368,"b":[0,-1000,366,0]},"repeatRight":{"d":"M175 0V-1000H139V0ZM367 -1000H242V0H367ZM51 -680C23 -680 1 -658 1 -630C1 -603 23 -580 51 -580C78 -580 101 -603 101 -630C101 -658 78 -680 51 -680ZM51 -428C23 -428 1 -406 1 -378C1 -350 23 -328 51 -328C78 -328 101 -350 101 -378C101 -406 78 -428 51 -428Z","w":367,"b":[1,-1000,367,0]},"fermata":{"d":"M302 -221C515 -221 558 -63 568 -25C569 -22 569 -19 570 -18C577 -4 581 3 591 3C600 3 605 -1 605 -11C605 -14 605 -17 604 -21C542 -327 333 -329 304 -329C272 -329 65 -327 4 -21C3 -17 3 -13 3 -10C3 0 8 3 16 3C25 3 30 -4 36 -18C37 -19 38 -23 39 -27C51 -68 96 -221 302 -221ZM358 -52C358 -81 333 -106 303 -106C274 -106 249 -81 249 -52C249 -22 274 3 303 3C333 3 358 -22 358 -52Z","w":605,"b":[3,-329,605,3]},"common":{"d":"M233 -251C203 -251 168 -243 141 -231C52 -192 5 -85 5 10C5 19 5 28 6 37C11 91 37 142 70 182C108 228 163 249 223 249C398 249 424 90 424 61C424 39 413 39 409 39C401 39 394 40 394 57C394 186 284 216 252 216C171 216 128 137 128 -28C128 -193 204 -227 258 -227C310 -227 331 -203 331 -193C331 -184 328 -171 313 -171C273 -171 250 -128 250 -97C250 -40 299 -22 327 -22C327 -22 403 -25 403 -108C403 -239 252 -251 233 -251Z","w":424,"b":[5,-251,424,249]},"cut":{"d":"M398 40C394 40 388 42 388 57C388 185 278 215 246 215C236 215 228 214 220 212C216 211 210 205 210 197V-199C210 -206 228 -223 235 -224C241 -225 247 -225 252 -225C303 -225 325 -201 325 -191C325 -183 322 -169 307 -169C267 -169 244 -126 244 -95C244 -39 293 -21 321 -21C321 -21 397 -24 397 -107C397 -237 246 -249 227 -249C225 -249 228 -248 221 -248C215 -249 210 -266 210 -271V-344C210 -352 203 -361 192 -361C184 -361 175 -352 175 -344V-256C175 -249 165 -240 163 -240L136 -230C46 -191 0 -85 0 10C0 19 0 29 1 38C6 91 31 141 66 182C90 211 121 231 156 240C163 243 175 256 175 265V342C175 351 184 359 192 359C203 359 210 351 210 342V263C210 257 214 252 221 249C391 246 418 90 418 59C417 40 407 40 402 40ZM175 163C175 172 172 175 169 175C167 175 165 174 164 172C137 134 123 67 123 -26C123 -102 139 -149 161 -180C162 -182 163 -182 164 -182C169 -182 175 -174 175 -166Z","w":417,"b":[0,-361,418,359]},"barline":{"d":"M40 0V-1000H0V0Z","w":40,"b":[0,-1000,40,0]},"barDouble":{"d":"M40 0V-1000H0V0ZM180 -1000H140V0H180Z","w":180,"b":[0,-1000,180,0]},"barFinal":{"d":"M40 0V-1000H0V0ZM265 -1000H140V0H265Z","w":265,"b":[0,-1000,265,0]},"accent":{"d":"M326 -105C339 -108 339 -115 339 -123C339 -131 339 -137 326 -141L26 -243C22 -244 18 -245 17 -245C8 -245 5 -239 2 -231C1 -227 0 -224 0 -221C0 -216 3 -211 14 -207C14 -207 230 -134 240 -130C245 -129 247 -126 247 -123C247 -120 245 -118 239 -116C228 -113 14 -40 14 -40C3 -35 0 -30 0 -25C0 -22 1 -19 2 -16C5 -9 9 -1 16 -1C17 -1 19 -1 20 -2Z","w":339,"b":[0,-245,339,-1]},"tie":{"d":"M365 183H361C326 244 252 275 179 275C106 275 34 244 4 183H0C29 279 103 326 178 326C255 326 333 278 365 183Z","w":365,"b":[0,183,365,326]},"t0":{"d":"M450 0C450 -139 354 -251 235 -251C116 -251 20 -139 20 0C20 138 116 250 235 250C354 250 450 138 450 0ZM235 -220C276 -220 310 -125 310 -7C310 110 276 205 235 205C193 205 160 110 160 -7C160 -125 193 -220 235 -220Z","w":470,"b":[20,-251,450,250]},"t1":{"d":"M24 -13C24 -13 20 -7 20 0C20 5 23 11 31 14C35 15 39 16 40 16C50 16 54 7 54 7C54 7 97 -62 108 -81C112 -88 116 -91 118 -91C122 -91 124 -83 124 -77V181C124 204 101 219 80 219C73 219 63 222 63 234C63 245 72 250 85 250H298C314 250 314 234 314 234C314 234 314 219 299 219C285 219 267 201 267 184V-228C267 -244 261 -250 247 -251C233 -251 208 -247 195 -247C176 -247 158 -248 143 -250C141 -250 139 -251 138 -251C128 -251 124 -241 120 -232Z","w":334,"b":[20,-251,314,250]},"t2":{"d":"M421 91C421 79 416 77 409 77C401 77 398 81 396 87C396 88 395 89 395 90C385 114 377 133 356 133C351 133 346 132 339 130C326 125 319 124 309 119C289 111 242 95 201 95C188 95 175 97 164 101C186 65 271 35 293 29C308 25 350 17 383 -10C407 -29 426 -58 426 -102C426 -149 406 -183 380 -205C329 -248 251 -254 229 -254C202 -254 168 -253 142 -247C107 -240 72 -219 48 -191C31 -170 20 -145 20 -118C20 -104 23 -90 29 -75C44 -44 75 -20 111 -20C172 -20 181 -83 181 -108C181 -168 112 -171 112 -191C114 -205 132 -229 191 -229C280 -229 281 -162 281 -133C281 -95 269 -60 247 -31C211 17 183 41 134 71C79 106 40 155 23 218C23 220 22 222 22 224C22 235 29 248 40 255C43 257 46 257 48 257C70 257 82 196 141 196C181 196 196 250 285 250C328 250 405 246 421 91Z","w":446,"b":[20,-254,426,257]},"t3":{"d":"M213 -248C208 -248 203 -249 198 -249C112 -249 26 -192 26 -139C26 -106 45 -62 107 -58H112C156 -58 178 -90 178 -123V-131C175 -168 150 -170 145 -172C140 -174 125 -172 125 -186V-190C127 -207 158 -215 167 -215C252 -215 260 -162 260 -138V-131C260 -57 201 -28 138 -25C128 -24 114 -19 114 -8C114 4 131 4 139 4C254 4 263 82 263 95C263 201 209 213 187 213C183 213 179 212 178 212C170 211 151 211 150 196V191C150 169 172 154 173 125C173 115 172 104 168 94C157 69 128 53 101 53C97 53 94 53 90 54C73 57 54 67 42 80C25 95 20 119 20 141C22 219 93 249 191 251H200C299 251 401 200 401 112V105C400 91 398 77 392 64C388 54 381 44 373 35C367 27 359 20 349 14L328 2L295 -7C290 -8 287 -8 285 -12C284 -14 284 -15 284 -17C284 -21 285 -25 288 -26C299 -29 310 -30 319 -35C334 -42 347 -49 358 -62C374 -80 380 -103 380 -126C380 -218 255 -245 213 -248Z","w":421,"b":[20,-249,401,251]},"t4":{"d":"M362 74V-140C362 -148 361 -157 350 -157C341 -157 336 -155 330 -148L235 -33C231 -28 226 -22 226 -10V74H91C171 6 331 -221 334 -232C334 -234 335 -235 335 -237C335 -245 328 -251 320 -251C311 -251 270 -249 252 -249C234 -249 189 -251 181 -251C172 -251 158 -248 158 -232C158 -108 60 31 30 73L24 81C24 82 23 83 23 84C21 88 20 92 20 95C20 105 28 112 40 112H226V175C226 202 204 210 186 210C170 210 163 219 163 229C163 239 167 250 182 250H395C405 250 415 243 415 229C415 215 403 209 393 209C383 209 362 203 362 171V112H435C445 112 450 105 450 93C450 81 446 74 435 74Z","w":470,"b":[20,-251,450,250]},"t5":{"d":"M76 -59C76 -59 80 -115 81 -124C82 -132 87 -137 96 -137H100C110 -135 157 -128 198 -128C337 -128 342 -208 342 -224C342 -237 339 -245 328 -245C315 -245 237 -236 205 -236C173 -236 87 -244 70 -246C52 -246 47 -237 46 -229L35 -7V-5C35 8 45 10 55 10C65 10 66 1 77 -10C87 -20 111 -43 145 -43C179 -43 248 -24 248 87C248 197 189 211 163 211C155 211 147 211 140 208C135 205 129 201 128 194C128 187 135 183 140 180C163 166 178 141 178 113C178 69 143 35 100 35C46 35 24 74 21 109C20 115 20 121 20 127C20 210 74 251 197 251C317 251 383 177 383 87C383 -4 309 -78 218 -78C160 -78 117 -68 85 -49C83 -48 81 -48 80 -48C76 -48 76 -52 76 -55Z","w":403,"b":[20,-246,383,251]},"t6":{"d":"M260 -100C272 -88 289 -83 305 -83C313 -83 322 -85 330 -87C361 -95 385 -127 385 -159C385 -163 385 -166 384 -170C379 -203 351 -227 321 -238C297 -248 268 -251 242 -251C166 -250 95 -213 59 -145C37 -103 20 -50 20 -3V1C21 47 29 99 51 139C72 177 106 218 145 235C170 246 200 249 225 249C270 249 320 242 356 213C391 185 414 140 414 95C414 39 384 5 352 -19C325 -39 294 -50 263 -50C231 -50 198 -38 172 -15C170 -13 168 -13 166 -13C160 -13 157 -21 157 -37C160 -222 219 -227 240 -227C260 -227 273 -222 273 -212C273 -198 254 -186 248 -174C243 -165 241 -155 241 -145C241 -130 246 -115 256 -104C257 -102 259 -101 260 -100ZM222 -2C254 -2 281 48 281 110C281 172 254 222 222 222C190 222 164 172 164 110C164 48 190 -2 222 -2Z","w":434,"b":[20,-251,414,249]},"t7":{"d":"M421 -204C421 -231 421 -244 404 -244C403 -244 387 -240 383 -233C376 -221 362 -164 337 -164C312 -164 265 -249 182 -249C124 -249 109 -226 95 -213C81 -200 75 -196 68 -195C60 -195 47 -209 42 -219C40 -223 35 -226 30 -226C25 -226 20 -223 20 -214V-49C20 -49 21 -33 31 -33C39 -33 42 -42 46 -53C56 -78 69 -136 114 -136C154 -136 202 -61 260 -61C288 -61 302 -76 310 -82C313 -84 317 -86 319 -86C323 -86 325 -83 326 -77C326 -49 249 7 189 78C151 122 120 180 120 219C120 240 120 250 139 250C157 250 179 241 204 241C229 241 276 250 286 250C296 250 302 242 302 213C302 46 421 -97 421 -200Z","w":441,"b":[20,-249,421,250]},"t8":{"d":"M334 -36C370 -59 394 -92 394 -142C394 -244 247 -259 220 -259C104 -259 25 -206 25 -122C25 -53 64 -16 112 11C60 36 20 69 20 132C20 219 110 259 209 259C309 259 416 216 416 81C416 21 381 -12 334 -36ZM282 -59C202 -87 117 -104 117 -167C117 -209 174 -230 218 -230C250 -230 335 -214 335 -144C335 -104 315 -78 282 -59ZM205 226C138 226 77 192 77 127C77 87 112 50 156 33C229 65 303 86 303 152C303 192 272 226 205 226Z","w":436,"b":[20,-259,416,259]},"t9":{"d":"M174 98C162 86 145 81 129 81C121 81 112 83 104 85C73 93 49 125 49 157C49 161 49 164 50 168C55 201 83 225 113 236C137 246 166 249 192 249C268 248 339 211 375 143C397 101 414 48 414 1V-3C413 -49 405 -101 383 -141C362 -179 328 -220 289 -237C264 -248 234 -251 209 -251C164 -251 114 -244 78 -215C43 -187 20 -142 20 -97C20 -41 50 -7 82 17C109 37 140 48 171 48C203 48 236 36 262 13C264 11 266 11 268 11C274 11 277 19 277 35C274 220 215 225 194 225C174 225 161 220 161 210C161 196 180 184 186 172C191 163 193 153 193 143C193 128 188 113 178 102C177 100 175 99 174 98ZM212 0C180 0 153 -50 153 -112C153 -174 180 -224 212 -224C244 -224 270 -174 270 -112C270 -50 244 0 212 0Z","w":434,"b":[20,-251,414,249]}};
 
 /* ===================================================================== */
 const PW = 1600, PH = 900;            // λογικό μέγεθος σελίδας (16:9)
@@ -269,11 +311,12 @@ const SYM_GROUPS = [
   ['Αλλοιώσεις', [['sharp','Δίεση'],['flat','Ύφεση'],['natural','Αναίρεση'],['dsharp','Δ. δίεση'],['dflat','Δ. ύφεση']]],
   ['Φθόγγοι (το στέλεχος γυρίζει μόνο του)', [['noteWhole','Ολόκληρη'],['noteHalfUp','Μισή'],['noteQuarterUp','Τέταρτο'],['note8thUp','Όγδοο'],['note16thUp','16ο']]],
   ['Παύσεις', [['restWhole','Ολόκληρης'],['restHalf','Μισής'],['restQuarter','Τετάρτου'],['rest8th','Ογδόου'],['rest16th','16ου']]],
-  ['Άλλα', [['dot','Τελεία'],['ledger','Βοηθ. γραμμή'],['fermata','Κορώνα'],['repeatLeft','Αρχή επαν.'],['repeatRight','Τέλος επαν.']]]
+  ['Διαστολές και επαναλήψεις', [['barline','Διαστολή'],['barDouble','Διπλή'],['barFinal','Τελική'],['repeatLeft','Αρχή επαν.'],['repeatRight','Τέλος επαν.']]],
+  ['Άλλα', [['dot','Τελεία'],['ledger','Βοηθ. γραμμή'],['fermata','Κορώνα'],['accent','Τονισμός']]]
 ];
 // θέση του σημείου αναφοράς ως προς την πάνω γραμμή (σε μονάδες), για τις μικρογραφίες
 const PREVIEW_OFF = {gClef:750,fClef:250,cClef:500,restWhole:250,restHalf:500,restQuarter:500,rest8th:500,rest16th:500,
-  repeatLeft:1000,repeatRight:1000,noteWhole:625,noteHalfUp:625,noteQuarterUp:625,note8thUp:625,note16thUp:625,
+  repeatLeft:1000,repeatRight:1000,barline:1000,barDouble:1000,barFinal:1000,accent:-150,noteWhole:625,noteHalfUp:625,noteQuarterUp:625,note8thUp:625,note16thUp:625,
   noteHalfDown:375,noteQuarterDown:375,note8thDown:375,note16thDown:375,
   sharp:500,flat:500,natural:500,dsharp:500,dflat:500,dot:375,ledger:-250,fermata:-150,time:500};
 
@@ -283,7 +326,7 @@ const r1 = v => Math.round(v*10)/10;
 const uid = () => Math.random().toString(36).slice(2,10) + Date.now().toString(36);
 
 /* ---------------- Κατάσταση ---------------- */
-function newPage(t){ t = t || {}; return {id:uid(), staves: t.staves ?? 6, clef: t.clef || 'none', time: t.time || '', objs: []}; }
+function newPage(t){ t = t || {}; return {id:uid(), staves: t.staves ?? 6, blank: t.blank || 0, clef: t.clef || 'none', time: t.time || '', objs: []}; }
 let doc = {app:'pentagramma', v:1, cur:0, pages:[newPage()]};
 const ui = {tool:'pen', color:0, size:1, pressure:true, smooth:1, snap:true, sym:'noteQuarterUp', time:'4/4'};
 let sel = [];             // επιλεγμένα αντικείμενα
@@ -305,7 +348,8 @@ function layout(pg){
   const top = 70, bot = 50, slot = (PH-top-bot)/n;
   const s = Math.min(44, slot/8.5);
   const L = [];
-  for(let i=0;i<n;i++){
+  const shown = n - clamp(pg.blank|0, 0, n - 1);   // τα κάτω πεντάγραμμα που αφαιρέθηκαν μένουν λευκός χώρος
+  for(let i=0;i<shown;i++){
     const mid = top + slot*(i+0.5);
     L.push({i, s, top:mid-2*s, mid, bot:mid+2*s, x0:60, x1:PW-50});
   }
@@ -590,8 +634,8 @@ function drawLive(){
 }
 
 /* ---------------- Αναίρεση ---------------- */
-function snap(pg){ return JSON.stringify({staves:pg.staves, clef:pg.clef, time:pg.time, objs:pg.objs}); }
-function restore(pg, s){ const d = JSON.parse(s); pg.staves = d.staves; pg.clef = d.clef; pg.time = d.time; pg.objs = d.objs; }
+function snap(pg){ return JSON.stringify({staves:pg.staves, blank:pg.blank|0, clef:pg.clef, time:pg.time, objs:pg.objs}); }
+function restore(pg, s){ const d = JSON.parse(s); pg.staves = d.staves; pg.blank = d.blank|0; pg.clef = d.clef; pg.time = d.time; pg.objs = d.objs; }
 function pushUndo(pg, s){ const h = H(pg); h.u.push(s ?? snap(pg)); if(h.u.length > 120) h.u.shift(); h.r = []; }
 function commitIfChanged(pg, tok){ if(snap(pg) !== tok){ pushUndo(pg, tok); changed(); return true; } return false; }
 function changed(){ updateUI(); saveSoon(); }
@@ -640,7 +684,7 @@ function roundPts(p){ return p.map((v,i) => i%3 === 2 ? Math.round(v*100)/100 : 
 function eraseAt(pg, x, y, r){
   let did = false; const out = [];
   for(const o of pg.objs){
-    if(o.t !== 's'){ out.push(o); continue; }
+    if(o.t !== 's'){ if(eraserHits(o, x, y, r)) did = true; else out.push(o); continue; }
     const b = bbox(o);
     if(x + r < b.x0 || x - r > b.x1 || y + r < b.y0 || y - r > b.y1){ out.push(o); continue; }
     const p = o.p, rr = r + o.w*0.5, r2 = rr*rr; let run = [], pieces = [], hit = false;
@@ -655,6 +699,27 @@ function eraseAt(pg, x, y, r){
   }
   if(did){ pg.objs = out; sel = sel.filter(o => out.includes(o)); }
   return did;
+}
+// η γόμα σβήνει ένα σύμβολο ή κείμενο όταν ο κύκλος της αγγίξει το σχήμα του
+function eraserHits(o, x, y, r){
+  const b = bbox(o);
+  if(x + r < b.x0 || x - r > b.x1 || y + r < b.y0 || y - r > b.y1) return false;
+  if(o.t === 'x') return true;
+  const sc = o.sp/U, parts = [];
+  if(o.k === 'time'){
+    const t = timeParts(o.v);
+    if(t.c){ const g = G[t.c]; parts.push([t.c, o.x - (g.b[0]+g.b[2])/2*sc, o.y]); }
+    else for(const [str, yy] of [[t.n, o.y - o.sp], [t.d, o.y + o.sp]]){
+      let xx = o.x - digitsW(str)*sc/2;
+      for(const ch of str){ const g = G['t'+ch]; if(!g) continue; parts.push(['t'+ch, xx, yy]); xx += g.w*sc; }
+    }
+  } else parts.push([o.k, o.x - anchorX(o.k)*sc, o.y]);
+  const m = measureCtx; m.setTransform(1,0,0,1,0,0); m.lineWidth = 2*r/sc;
+  for(const [k, ox, oy] of parts){
+    const ux = (x - ox)/sc, uy = (y - oy)/sc, path = pathOf(k);
+    if(m.isPointInPath(path, ux, uy) || m.isPointInStroke(path, ux, uy)) return true;
+  }
+  return false;
 }
 function eraseSeg(pg, a, b, r){
   const d = Math.hypot(b.x-a.x, b.y-a.y), n = Math.max(1, Math.ceil(d/(r*0.4)));
@@ -677,8 +742,10 @@ function placeSym(o, x, y, pg, setSize){
   if(!ui.snap || !st){ o.y = r1(y); return; }
   const s = st.s, k = o.k;
   const fixed = {gClef:st.bot-s, fClef:st.top+s, time:st.mid, restWhole:st.top+s, restHalf:st.mid, restQuarter:st.mid,
-                 rest8th:st.mid, rest16th:st.mid, repeatLeft:st.bot, repeatRight:st.bot};
+                 rest8th:st.mid, rest16th:st.mid, repeatLeft:st.bot, repeatRight:st.bot,
+                 barline:st.bot, barDouble:st.bot, barFinal:st.bot};
   if(k in fixed){ o.y = r1(fixed[k]); return; }
+  if(k === 'accent'){ o.y = r1(y); return; }
   if(k === 'fermata'){ o.y = r1(Math.min(y, st.top - 0.6*s)); return; }
   if(k === 'cClef'){ const ln = clamp(Math.round((y - st.top)/s), 0, 4); o.y = r1(st.top + ln*s); return; }
   const h = clamp(Math.round((y - st.top)/(s/2)), -12, 20);
@@ -749,6 +816,7 @@ function openText(x, y, existing){
                  : {o:null, x, y, fs:SIZES[ui.size].txt, c:COLORS[ui.color][0]};
   if(existing){ hiddenObj = existing; drawInk(); }
   ta.value = existing ? existing.s : '';
+  tedOpened = performance.now();
   positionTA(); ta.style.display = 'block';
   const foc = () => { if(ted && document.activeElement !== ta){ ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); } };
   foc(); setTimeout(foc, 0); setTimeout(foc, 60);
@@ -770,7 +838,7 @@ function autosizeTA(){
   ta.style.width = Math.ceil(w + ted.fs*view.sc*0.8) + 'px';
   ta.style.height = Math.ceil(ted.fs*view.sc*1.2*lines.length + 2) + 'px';
 }
-let committing = false;
+let committing = false, tedOpened = 0;
 function commitText(){
   if(!ted || committing) return; committing = true;
   const v = ta.value.replace(/\s+$/, ''), pg = curPage(), tok = snap(pg);
@@ -787,7 +855,12 @@ ta.addEventListener('keydown', e => {
   else if(e.key === 'Escape'){ e.preventDefault(); cancelText(); }
   e.stopPropagation();
 });
-ta.addEventListener('blur', () => setTimeout(commitText, 0));
+// μια αθέλητη απώλεια εστίασης αμέσως μετά το άνοιγμα (από το ίδιο κλικ) δεν κλείνει το κείμενο
+ta.addEventListener('blur', () => setTimeout(() => {
+  if(!ted) return;
+  if(performance.now() - tedOpened < 400){ ta.focus(); return; }
+  if(document.activeElement !== ta) commitText();
+}, 0));
 
 /* ---------------- Είσοδος γραφίδας / ποντικιού (Pointer Events) ---------------- */
 function toPage(e){
@@ -863,7 +936,7 @@ cLive.addEventListener('pointerdown', e => {
       }
       const hit = hitTest(pg, pt.x, pt.y), now = performance.now();
       if(hit){
-        if(hit.t === 'x' && lastClick.o === hit && now - lastClick.t < 400){ sel = []; openText(0, 0, hit); lastClick = {t:0, o:null}; requestLive(); return; }
+        if(hit.t === 'x' && lastClick.o === hit && now - lastClick.t < 500){ sel = []; openText(0, 0, hit); lastClick = {t:0, o:null}; requestLive(); return; }
         lastClick = {t:now, o:hit};
         if(e.shiftKey){ sel = sel.includes(hit) ? sel.filter(o => o !== hit) : sel.concat([hit]); }
         else if(!sel.includes(hit)) sel = [hit];
@@ -877,6 +950,11 @@ cLive.addEventListener('pointerdown', e => {
   requestLive();
 });
 let lastClick = {t:0, o:null};
+cLive.addEventListener('dblclick', e => {
+  if(ui.tool !== 'select' || ted || act) return;
+  const pt = toPage(e), hit = hitTest(curPage(), pt.x, pt.y);
+  if(hit && hit.t === 'x'){ sel = []; openText(0, 0, hit); requestLive(); }
+});
 cLive.addEventListener('pointermove', e => {
   const pt = toPage(e);
   hover = pt;
@@ -1002,7 +1080,8 @@ function buildPagePop(){
   $('#optClef').innerHTML = CLEF_OPTS.map(([v, n]) => `<button class="pb" data-clef="${v}">${n}</button>`).join('');
   $('#optTime').innerHTML = `<button class="pb" data-ptime="">Χωρίς</button>` + TIMES.map(v => `<button class="pb" data-ptime="${v}">${timeLabel(v)}</button>`).join('');
   const setp = (fn) => { const pg = curPage(), tok = snap(pg); fn(pg); if(commitIfChanged(pg, tok)){ sel = []; drawAll(); } updatePagePop(); };
-  document.querySelectorAll('[data-staves]').forEach(b => b.onclick = () => setp(pg => pg.staves = +b.dataset.staves));
+  document.querySelectorAll('[data-staves]').forEach(b => b.onclick = () => setp(pg => { pg.staves = +b.dataset.staves; pg.blank = clamp(pg.blank|0, 0, Math.max(0, pg.staves - 1)); }));
+  setBlank = v => setp(pg => pg.blank = v);
   document.querySelectorAll('[data-clef]').forEach(b => b.onclick = () => setp(pg => pg.clef = b.dataset.clef));
   document.querySelectorAll('[data-ptime]').forEach(b => b.onclick = () => setp(pg => pg.time = b.dataset.ptime));
   $('#ptUse').onclick = () => {
@@ -1012,8 +1091,8 @@ function buildPagePop(){
   };
   $('#pAll').onclick = async () => {
     const c = curPage();
-    if(!await ask('Να πάρουν όλες οι σελίδες την ίδια διάταξη (πεντάγραμμα, κλειδί, ρυθμό) με αυτή; Η γραφή τους μένει όπως είναι.', 'Ναι, σε όλες')) return;
-    for(const pg of doc.pages){ if(pg === c) continue; const tok = snap(pg); pg.staves = c.staves; pg.clef = c.clef; pg.time = c.time; if(snap(pg) !== tok) pushUndo(pg, tok); }
+    if(!await ask('Να πάρουν όλες οι σελίδες την ίδια διάταξη (πεντάγραμμα, λευκό χώρο, κλειδί, ρυθμό) με αυτή; Η γραφή τους μένει όπως είναι.', 'Ναι, σε όλες')) return;
+    for(const pg of doc.pages){ if(pg === c) continue; const tok = snap(pg); pg.staves = c.staves; pg.blank = c.blank|0; pg.clef = c.clef; pg.time = c.time; if(snap(pg) !== tok) pushUndo(pg, tok); }
     changed(); toast('Η διάταξη μπήκε σε όλες τις σελίδες.');
   };
   $('#pDupPage').onclick = () => {
@@ -1027,15 +1106,26 @@ function buildPagePop(){
     hist.delete(curPage().id); doc.pages.splice(doc.cur, 1); doc.cur = Math.min(doc.cur, doc.pages.length - 1); sel = []; drawAll(); updateUI(); saveSoon();
   };
 }
+let setBlank = null;
 function updatePagePop(){
   const pg = curPage();
+  const ob = $('#optBlank'), n = pg.staves|0;
+  if(n < 2) ob.innerHTML = '<span style="font-size:14px">Χρειάζονται τουλάχιστον 2 πεντάγραμμα.</span>';
+  else {
+    let h = `<button class="pb" data-blank="0">Κανένας</button>`;
+    for(let k=1;k<n;k++) h += `<button class="pb" data-blank="${k}">−${k}</button>`;
+    ob.innerHTML = h;
+    ob.querySelectorAll('[data-blank]').forEach(b => { b.classList.toggle('on', +b.dataset.blank === (pg.blank|0)); b.onclick = () => setBlank(+b.dataset.blank); });
+  }
   document.querySelectorAll('[data-staves]').forEach(b => b.classList.toggle('on', +b.dataset.staves === pg.staves));
   document.querySelectorAll('[data-clef]').forEach(b => b.classList.toggle('on', b.dataset.clef === pg.clef));
   document.querySelectorAll('[data-ptime]').forEach(b => b.classList.toggle('on', b.dataset.ptime === pg.time));
 }
 function buildBar(){
   $('#colors').innerHTML = COLORS.map(([c, n], i) => `<button class="sw" data-color="${i}" title="${n} (${i+1})" style="background:${c}"></button>`).join('');
-  $('#sizes').innerHTML = SIZES.map((s, i) => `<button class="sz" data-size="${i}" title="${s.name}"><i style="width:${6+i*5}px;height:${6+i*5}px"></i></button>`).join('');
+  $('#sizes').innerHTML = SIZES.map((s, i) => `<button class="sz" data-size="${i}" title="Πάχος: ${s.name}"><svg viewBox="0 0 30 30"><path d="M5 20c4-9 8-9 10-4s6 5 10-4" stroke-width="${[2,4,6.5][i]}"/></svg></button>`).join('');
+  const lg = G.gClef, lb = lg.b;
+  $('#logoIcon').innerHTML = `<svg viewBox="${lb[0]-120} ${lb[1]-40} ${lb[2]-lb[0]+240} ${lb[3]-lb[1]+80}"><path d="${lg.d}"/></svg>`;
   document.querySelectorAll('[data-color]').forEach(b => b.onclick = () => setColor(+b.dataset.color));
   document.querySelectorAll('[data-size]').forEach(b => b.onclick = () => { ui.size = +b.dataset.size; savePrefs(); updateUI(); requestLive(); });
   document.querySelectorAll('#tools [data-tool]').forEach(b => b.onclick = () => {
@@ -1073,7 +1163,7 @@ function buildBar(){
   $('#fNew').onclick = async () => {
     closePops();
     if(!await ask('Να ξεκινήσει νέα, κενή εργασία; Όλες οι σελίδες θα σβηστούν. Αν θέλετε να κρατήσετε την τωρινή, πρώτα «Αποθήκευση σε αρχείο».', 'Νέα εργασία', true)) return;
-    const c = curPage(); doc = {app:'pentagramma', v:1, cur:0, pages:[newPage({staves:c.staves, clef:c.clef, time:c.time})]}; hist.clear(); sel = []; drawAll(); changed();
+    const c = curPage(); doc = {app:'pentagramma', v:1, cur:0, pages:[newPage(c)]}; hist.clear(); sel = []; drawAll(); changed();
   };
 }
 function setTool(t, keepSel){
@@ -1158,7 +1248,7 @@ function goPage(i){
   doc.cur = i; sel = []; drawAll(); updateUI(); saveSoon();
 }
 function addPage(){
-  const c = curPage(); doc.pages.splice(doc.cur + 1, 0, newPage({staves:c.staves, clef:c.clef, time:c.time}));
+  const c = curPage(); doc.pages.splice(doc.cur + 1, 0, newPage(c));
   doc.cur++; sel = []; drawAll(); updateUI(); saveSoon();
   toast(`Νέα σελίδα ${doc.cur + 1}`);
 }
@@ -1211,6 +1301,7 @@ document.addEventListener('keydown', e => {
   if(map[c]){ setTool(map[c]); closePops(); return; }
   if(c === 'KeyS'){ setTool('sym'); togglePop('pSym', $('#bSym')); return; }
   if(/^Digit[1-6]$/.test(c)){ setColor(+c.slice(5) - 1); return; }
+  if(c === 'KeyN'){ addPage(); return; }
   if(c === 'KeyH'){ setBar(document.body.classList.contains('barHidden')); return; }
   if(c === 'KeyF'){ toggleFull(); return; }
   if(c === 'ArrowLeft' || c === 'PageUp'){ e.preventDefault(); goPage(doc.cur - 1); return; }
@@ -1245,7 +1336,7 @@ async function saveNow(){
 function savePrefs(){ try { localStorage.setItem(LS_UI, JSON.stringify({tool:ui.tool, color:ui.color, size:ui.size, pressure:ui.pressure, smooth:ui.smooth, snap:ui.snap, sym:ui.sym, time:ui.time})); } catch(_){} }
 function validDoc(d){
   if(!d || !Array.isArray(d.pages) || !d.pages.length) return null;
-  const pages = d.pages.map(p => ({id:uid(), staves:STAVES_OPTS.includes(+p.staves) ? +p.staves : 6,
+  const pages = d.pages.map(p => ({id:uid(), staves:STAVES_OPTS.includes(+p.staves) ? +p.staves : 6, blank:clamp(p.blank|0, 0, 7),
     clef:['none','g','f','c','grand'].includes(p.clef) ? p.clef : 'none', time:typeof p.time === 'string' ? p.time : '',
     objs:Array.isArray(p.objs) ? p.objs.filter(o => o && (o.t === 's' && Array.isArray(o.p) || o.t === 'g' && (G[o.k] || o.k === 'time') || o.t === 'x' && typeof o.s === 'string')) : []}));
   return {app:'pentagramma', v:1, cur:clamp(d.cur|0, 0, pages.length - 1), pages};
@@ -1280,7 +1371,7 @@ function download(blob, name){
 }
 function saveFile(){
   commitText();
-  const data = JSON.stringify({app:'pentagramma', v:1, saved:new Date().toISOString(), cur:doc.cur, pages:doc.pages.map(p => ({staves:p.staves, clef:p.clef, time:p.time, objs:p.objs}))});
+  const data = JSON.stringify({app:'pentagramma', v:1, saved:new Date().toISOString(), cur:doc.cur, pages:doc.pages.map(p => ({staves:p.staves, blank:p.blank|0, clef:p.clef, time:p.time, objs:p.objs}))});
   download(new Blob([data], {type:'application/json'}), `Πίνακας-εργασία_${stamp()}.json`);
   toast('Η εργασία αποθηκεύτηκε στις Λήψεις.');
 }
