@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Η μουσική ανάγνωση και εγώ · Ερωτηματολόγιο</title>
+<meta name="description" content="Δώδεκα ερωτήσεις για τη σχέση σας με την παρτιτούρα. Στο τέλος παίρνετε το δικό σας cheat sheet: πού βρίσκεστε, τι μπορεί να αλλάξει με τα μαθήματα μουσικής ανάγνωσης και μικρές ασκήσεις για να ξεκινήσετε από σήμερα.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Η μουσική ανάγνωση και εγώ · Ερωτηματολόγιο">
+<meta property="og:description" content="Δώδεκα ερωτήσεις για τη σχέση σας με την παρτιτούρα και το δικό σας cheat sheet στο τέλος.">
+<style>
+/* Alegreya, όπως στη σελίδα «Η φωνή μου» (τοπικά αρχεία) */
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  --paper:#EEEDF6;
+  --card:#F7F6FB;
+  --ink:#1C1A2C;
+  --ink-soft:#46415F;
+  --head:#1B3A6B;
+  --gold:#C29A3E;
+  --gold-soft:rgba(194,154,62,0.14);
+  --line:rgba(28,26,44,0.18);
+  --serif:'Alegreya', Georgia, 'Times New Roman', serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:#0D1626;
+    --card:#132036;
+    --ink:#EDF0F7;
+    --ink-soft:rgba(237,240,247,0.74);
+    --head:#EDF0F7;
+    --gold:#D4AE55;
+    --gold-soft:rgba(212,174,85,0.16);
+    --line:rgba(237,240,247,0.2);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.25rem;
+  line-height:1.6;
+  padding:40px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px));
+}
+main { max-width:40rem; margin:0 auto; }
+p { margin:0 0 .9rem; }
+.staff {
+  height:37px; margin-bottom:36px;
+  background:repeating-linear-gradient(to bottom, var(--line) 0 1px, transparent 1px 9px);
+}
+h1, h2, h3 { font-family:var(--serif); font-weight:500; color:var(--head); text-wrap:balance; margin:0; }
+h1 { font-size:clamp(2.1rem,7vw,2.9rem); line-height:1.12; margin-bottom:.5rem; }
+h2 { font-size:1.5rem; line-height:1.25; margin-bottom:.7rem; }
+h3 { font-size:1.25rem; line-height:1.3; margin-bottom:.4rem; }
+.sub { color:var(--ink-soft); margin-bottom:1.4rem; }
+strong { font-weight:500; color:var(--head); }
+a { color:var(--ink); text-decoration-color:var(--gold); text-underline-offset:4px; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+
+/* Ερωτήσεις */
+fieldset { border:0; margin:0; padding:1.6rem 0 0; border-top:1px solid var(--line); margin-top:1.6rem; }
+legend { padding:0; font-size:1.3rem; font-weight:500; color:var(--head); line-height:1.35; margin-bottom:.8rem; }
+legend .num { color:var(--gold); margin-right:.35em; }
+.hint { font-size:1.02rem; color:var(--ink-soft); margin:-.4rem 0 .7rem; }
+label.opt {
+  display:flex; gap:.7rem; align-items:flex-start;
+  padding:.65rem .85rem; margin-bottom:.5rem;
+  border:1px solid var(--line); border-radius:10px; background:var(--card);
+  cursor:pointer; font-size:1.12rem; line-height:1.45;
+  transition:border-color .15s, background .15s;
+}
+label.opt:hover { border-color:var(--gold); }
+label.opt input { margin-top:.32rem; accent-color:var(--gold); flex:none; width:1.05rem; height:1.05rem; }
+label.opt:has(input:checked) { border-color:var(--gold); background:var(--gold-soft); }
+
+.progress { position:sticky; top:0; z-index:2; background:var(--paper); padding:.6rem 0; font-size:1rem; color:var(--ink-soft); }
+.bar { height:3px; background:var(--line); border-radius:2px; overflow:hidden; margin-top:.35rem; }
+.bar span { display:block; height:100%; width:0; background:var(--gold); transition:width .25s; }
+
+.btn {
+  display:inline-block; font-family:var(--serif); font-size:1.15rem; font-weight:500;
+  padding:.7rem 1.4rem; border-radius:999px; border:1px solid var(--gold);
+  background:var(--gold); color:#1C1A2C; cursor:pointer; text-decoration:none;
+}
+.btn.ghost { background:transparent; color:var(--ink); }
+.btn[disabled] { opacity:.45; cursor:not-allowed; }
+.actions { margin-top:2rem; display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; }
+.missing { font-size:1rem; color:var(--ink-soft); }
+
+/* Αποτέλεσμα: το cheat sheet */
+#result { display:none; margin-top:2.4rem; }
+#result.show { display:block; }
+.sheet { border:1px solid var(--gold); border-radius:14px; background:var(--card); padding:1.5rem 1.3rem; }
+.eyebrow { font-size:.95rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:.3rem; }
+.level { font-size:clamp(1.8rem,6vw,2.3rem); line-height:1.15; margin-bottom:.6rem; }
+.sheet section { border-top:1px solid var(--line); margin-top:1.3rem; padding-top:1.1rem; }
+.sheet ul { margin:0 0 .6rem; padding-left:1.2em; }
+.sheet li { margin-bottom:.5rem; padding-left:.2em; }
+.sheet li::marker { color:var(--gold); }
+.need { margin-bottom:1.1rem; }
+.need .letter { color:var(--gold); margin-right:.35em; }
+.need .try { font-size:1.05rem; color:var(--ink-soft); border-left:2px solid var(--gold); padding-left:.8rem; margin-top:.4rem; }
+.contact { font-size:1.08rem; }
+.name { font-size:1.25rem; font-weight:500; color:var(--head); margin-bottom:.1rem; }
+.back { margin-top:2.4rem; font-size:1.05rem; color:var(--ink-soft); }
+
+@media print {
+  body { background:#fff; color:#000; padding:0; font-size:12pt; }
+  .noprint, .staff, #quiz, .progress, .intro { display:none !important; }
+  #result { display:block; margin:0; }
+  .sheet { border:0; padding:0; background:#fff; }
+  a { color:#000; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="staff" aria-hidden="true"></div>
+
+  <div class="intro">
+    <h1>Η μουσική ανάγνωση και εγώ</h1>
+    <p class="sub">Ένα μικρό ερωτηματολόγιο · Ιωάννης Ιδομενέως, Μουσική ανάγνωση</p>
+    <p>Αναρωτιέστε αν τα μαθήματα μουσικής ανάγνωσης είναι για εσάς; Δώδεκα ερωτήσεις, λίγα λεπτά. Απαντήστε με αυτό που ισχύει για εσάς σήμερα, χωρίς να το σκεφτείτε πολύ. Δεν υπάρχουν σωστές και λάθος απαντήσεις.</p>
+    <p>Στο τέλος παίρνετε το δικό σας <strong>cheat sheet</strong>: πού βρίσκεστε τώρα με την παρτιτούρα, τι μπορεί να αλλάξει με τα μαθήματα και μικρές ασκήσεις για να ξεκινήσετε από σήμερα κιόλας. Μπορείτε να το τυπώσετε ή να το κρατήσετε στο κινητό.</p>
+    <p class="hint">Οι απαντήσεις σας μένουν μόνο στη συσκευή σας. Δεν αποστέλλονται πουθενά.</p>
+  </div>
+
+  <div class="progress noprint" aria-live="polite">
+    <span id="progText">0 από 12</span>
+    <div class="bar"><span id="progBar"></span></div>
+  </div>
+
+  <form id="quiz" novalidate></form>
+
+  <div class="actions noprint" id="quizActions">
+    <button class="btn" type="button" id="showBtn" disabled>Δείτε το cheat sheet σας</button>
+    <span class="missing" id="missing"></span>
+  </div>
+
+  <div id="result" aria-live="polite"></div>
+
+  <p class="back noprint"><a href="../">Η φωνή μου · αρχική σελίδα</a> · <a href="../erotimatologio/">Το ερωτηματολόγιο για τη φωνή</a></p>
+</main>
+
+<script>
+(function () {
+  // Επίπεδα: 0 = Ξεκινώ, 1 = Προχωρώ, 2 = Εμβαθύνω (null = δεν μετράει στο επίπεδο)
+  // Ανάγκες: v = οι νότες (το μάτι), r = ο ρυθμός, e = το εσωτερικό αυτί,
+  // f = αυτονομία και σιγουριά στο σύνολο, c = κατανόηση και έκφραση
+  var Q = [
+    { q:'Όταν ανοίγετε μια παρτιτούρα, τι νιώθετε;', a:[
+      ['Σαν να κοιτάζω μια γλώσσα που δεν καταλαβαίνω.', 0, 'v'],
+      ['Αναγνωρίζω κάποια σημάδια, αλλά χάνομαι γρήγορα.', 1, 'v'],
+      ['Τη διαβάζω, και θέλω να τη διαβάζω πιο γρήγορα και πιο βαθιά.', 2, 'c'] ]},
+    { q:'Πώς μαθαίνετε ένα καινούριο τραγούδι;', a:[
+      ['Μόνο με το αυτί, ακούγοντάς το ξανά και ξανά.', 0, 'f'],
+      ['Με μια ηχογράφηση της φωνής μου, ρίχνοντας και μια ματιά στην παρτιτούρα.', 1, 'f'],
+      ['Από την παρτιτούρα. Η ηχογράφηση με βοηθά μόνο στο τέλος.', 2, 'c'] ]},
+    { q:'Τις νότες στο πεντάγραμμο:', a:[
+      ['Δεν τις γνωρίζω, ή τις μετράω μία μία από τη ντο.', 0, 'v'],
+      ['Τις βρίσκω στο κλειδί του σολ. Στα άλλα κλειδιά δυσκολεύομαι.', 1, 'v'],
+      ['Τις διαβάζω άνετα, και σε περισσότερα κλειδιά.', 2, 'v'] ]},
+    { q:'Ο ρυθμός στην παρτιτούρα:', a:[
+      ['Μπερδεύομαι με τις αξίες: ολόκληρα, μισά, τέταρτα.', 0, 'r'],
+      ['Τα απλά τα διαβάζω. Στις παρεστιγμένες, στις συγκοπές, στα τρίηχα χάνομαι.', 1, 'r'],
+      ['Διαβάζω και σύνθετους ρυθμούς, και θέλω να τους νιώθω πιο ελεύθερα στο σώμα.', 2, 'r'] ]},
+    { q:'Όταν βλέπετε μια νότα, μπορείτε να την ακούσετε μέσα σας πριν την τραγουδήσετε;', a:[
+      ['Όχι. Χρειάζομαι το πιάνο ή κάποιον να μου τη δώσει.', 0, 'e'],
+      ['Μερικές φορές, όταν η μελωδία κινείται σκαλί σκαλί.', 1, 'e'],
+      ['Συνήθως ναι. Θέλω σιγουριά και στα μεγάλα πηδήματα.', 2, 'e'] ]},
+    { q:'Σε μια χορωδία ή σε ένα σύνολο, όταν οι άλλες φωνές τραγουδούν κάτι διαφορετικό:', hint:'Αν δεν έχετε τραγουδήσει σε σύνολο, διαλέξτε αυτό που φαντάζεστε.', a:[
+      ['Χάνω τη φωνή μου και ακολουθώ όποιον ακούω πιο δυνατά.', 0, 'f'],
+      ['Κρατιέμαι, αν έχω δίπλα μου κάποιον από τη φωνή μου.', 1, 'f'],
+      ['Κρατώ τη φωνή μου και ακούω πώς δένει με τις άλλες.', 2, 'c'] ]},
+    { q:'Πόσο χρόνο σας παίρνει να μάθετε τη φωνή σας σε ένα νέο έργο;', a:[
+      ['Πολύ. Συχνά πηγαίνω στην πρόβα με άγχος, γιατί δεν την έχω μάθει.', 0, 'f'],
+      ['Αρκετό. Τη μαθαίνω, αλλά με κόπο.', 1, 'v'],
+      ['Λίγο. Θέλω να φτάσω να τραγουδώ με την πρώτη ματιά, prima vista.', 2, 'v'] ]},
+    { q:'Τα σημάδια γύρω από τις νότες, p, f, crescendo, λεγκάτο, οι ιταλικοί όροι:', a:[
+      ['Δεν ξέρω τι σημαίνουν.', 0, 'c'],
+      ['Ξέρω μερικά, αλλά τα προσπερνώ όταν τραγουδώ.', 1, 'c'],
+      ['Τα ξέρω και θέλω να γίνονται ζωντανή ερμηνεία.', 2, 'c'] ]},
+    { q:'Κλίμακες, διαστήματα, τονικότητες:', a:[
+      ['Μου ακούγονται ακατανόητα.', 0, 'e'],
+      ['Τα έχω ακούσει, αλλά δεν τα έχω κατακτήσει.', 1, 'e'],
+      ['Τα ξέρω θεωρητικά και θέλω να τα ακούω και να τα τραγουδώ με σιγουριά.', 2, 'e'] ]},
+    { q:'Τι σας κρατά πίσω από το να ξεκινήσετε ή να συνεχίσετε;', a:[
+      ['Νομίζω ότι η ανάγνωση της μουσικής είναι για όσους ξεκίνησαν από παιδιά.', 0, 'v'],
+      ['Ο χρόνος. Δεν βρίσκω πότε.', 1, 'f', 'time'],
+      ['Η θεωρία που έμαθα ήταν στεγνή, χωρίς τραγούδι. Θέλω να τη ζήσω.', 2, 'c'] ]},
+    { q:'Αν από αύριο διαβάζατε άνετα μουσική, τι θα κάνατε πρώτα;', a:[
+      ['Θα άνοιγα τις παρτιτούρες των τραγουδιών που αγαπώ.', null, 'v'],
+      ['Θα πήγαινα στην πρόβα με σιγουριά.', null, 'f'],
+      ['Θα έγραφα στο χαρτί τις μελωδίες που ακούω μέσα μου.', null, 'e'],
+      ['Θα τραγουδούσα κάθε ρυθμό χωρίς φόβο.', null, 'r'] ]},
+    { q:'Τι θα θέλατε να έχει αλλάξει σε έναν χρόνο από σήμερα;', a:[
+      ['Να μαθαίνω τη φωνή μου χωρίς να περιμένω ηχογραφήσεις.', null, 'f'],
+      ['Να νιώθω τον ρυθμό με σιγουριά.', null, 'r'],
+      ['Να ακούω τη μουσική μέσα μου, μόνο κοιτάζοντας τη σελίδα.', null, 'e'],
+      ['Να καταλαβαίνω τι ζητά ο συνθέτης και να το τραγουδώ με έκφραση.', null, 'c'] ]}
+  ];
+
+  var LEVELS = [
+    { name:'Ξεκινώ',
+      lead:'Η παρτιτούρα μπορεί σήμερα να μοιάζει με ξένη γλώσσα. Μαθαίνεται σε κάθε ηλικία, βήμα βήμα, και τα μαθήματα είναι φτιαγμένα για ανθρώπους που ξεκινούν από την αρχή. Δεν χρειάζεται καμία προηγούμενη γνώση.',
+      gain:[
+        'Γνωρίζετε τις νότες στο πεντάγραμμο και τις βρίσκετε χωρίς να μετράτε.',
+        'Νιώθετε τον ρυθμό στο σώμα και διαβάζετε τις βασικές αξίες.',
+        'Αρχίζετε να ακούτε μέσα σας τη μελωδία που βλέπετε.',
+        'Φεύγει ο φόβος μπροστά στη σελίδα και η μουσική γίνεται πιο δική σας.'
+      ],
+      path:'Ατομικά μαθήματα, δια ζώσης ή online, όπου προχωράμε με τον δικό σας ρυθμό.'
+    },
+    { name:'Προχωρώ',
+      lead:'Έχετε ήδη τις βάσεις. Διαβάζετε, αλλά με κόπο, και κάπου χάνεστε: σε έναν ρυθμό, σε ένα διάστημα, σε ένα άλλο κλειδί. Αυτά τα σημεία δουλεύουμε στα μαθήματα, για να γίνει η ανάγνωση φυσική.',
+      gain:[
+        'Διαβάζετε με σιγουριά πιο σύνθετους ρυθμούς: παρεστιγμένες, συγκοπές, τρίηχα.',
+        'Τα διαστήματα γίνονται ήχος που αναγνωρίζετε και τραγουδάτε.',
+        'Μαθαίνετε τη φωνή σας σε ένα νέο έργο πιο γρήγορα, χωρίς να εξαρτάστε από ηχογραφήσεις.',
+        'Κρατάτε τη φωνή σας στη χορωδία με ηρεμία, ακούγοντας και τις άλλες.'
+      ],
+      path:'Ατομικά μαθήματα με σταθερό ρυθμό, ή μαθήματα σε μικρές ομάδες, δια ζώσης ή online.'
+    },
+    { name:'Εμβαθύνω',
+      lead:'Διαβάζετε ήδη μουσική. Ψάχνετε το επόμενο βήμα: να τραγουδάτε με την πρώτη ματιά, να ακούτε μέσα σας ολόκληρη τη σελίδα και να γίνεται η παρτιτούρα ερμηνεία.',
+      gain:[
+        'Αναπτύσσετε την ανάγνωση με την πρώτη ματιά, prima vista.',
+        'Το εσωτερικό αυτί δυναμώνει, και στα μεγάλα πηδήματα και στις αλλαγές τονικότητας.',
+        'Καταλαβαίνετε τι ζητά ο συνθέτης και το κάνετε έκφραση.',
+        'Η θεωρία που ξέρετε γίνεται ζωντανή, μέσα από το τραγούδι.'
+      ],
+      path:'Ατομικά μαθήματα, δια ζώσης ή online, για μέλη χορωδιών, τραγουδιστές, φοιτητές μουσικής και όσους θέλουν να πάνε πιο βαθιά.'
+    }
+  ];
+
+  // Οι πέντε ανάγκες, με μία μικρή άσκηση για την καθεμία
+  var NEEDS = {
+    v:{ letter:'α', title:'Οι νότες: το μάτι',
+        text:'Βλέπω τη σελίδα και αναγνωρίζω τις νότες χωρίς κόπο.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι οι νότες στο πεντάγραμμο θέλουν ακόμα να γίνουν οικείες.',
+        ex:'Στο κλειδί του σολ, οι νότες στις πέντε γραμμές, από κάτω προς τα πάνω, είναι μι, σολ, σι, ρε, φα. Πείτε τες δυνατά πέντε φορές σήμερα, και βρείτε τες σε μια παρτιτούρα που έχετε.' },
+    r:{ letter:'β', title:'Ο ρυθμός',
+        text:'Νιώθω τον ρυθμό στο σώμα μου και τον διαβάζω με σιγουριά.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι ο ρυθμός είναι το σημείο που σας σταματά.',
+        ex:'Περπατήστε στο δωμάτιο με σταθερό βήμα. Κάθε βήμα είναι ένα τέταρτο. Χτυπήστε παλαμάκια δύο φορές σε κάθε βήμα: αυτά είναι τα όγδοα. Μετά μία φορά κάθε δύο βήματα: αυτά είναι τα μισά.' },
+    e:{ letter:'γ', title:'Το εσωτερικό αυτί',
+        text:'Ακούω μέσα μου τη μουσική που βλέπω, πριν την τραγουδήσω.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι θέλετε να ακούτε τις νότες μέσα σας και να τις βρίσκετε μόνοι σας.',
+        ex:'Τραγουδήστε αργά ντο, ρε, μι, φα, σολ και πίσω. Μετά τραγουδήστε μόνο τη ντο και τη σολ, και ακούστε μέσα σας, σιωπηλά, τις νότες που είναι ανάμεσα.' },
+    f:{ letter:'δ', title:'Αυτονομία και σιγουριά',
+        text:'Μαθαίνω τη φωνή μου μόνος μου, μόνη μου, και πηγαίνω στην πρόβα με σιγουριά.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι σήμερα στηρίζεστε στις ηχογραφήσεις ή στις φωνές γύρω σας.',
+        ex:'Πάρτε ένα τραγούδι που ξέρετε καλά. Ακούστε το κρατώντας την παρτιτούρα του και ακολουθήστε τις νότες με το δάχτυλο. Προσέξτε πού ανεβαίνει και πού κατεβαίνει η μελωδία.' },
+    c:{ letter:'ε', title:'Κατανόηση και έκφραση',
+        text:'Καταλαβαίνω τι ζητά ο συνθέτης και το κάνω τραγούδι.',
+        why:'Από τις απαντήσεις σας φαίνεται ότι έχετε βάση και θέλετε η παρτιτούρα να γίνει ερμηνεία.',
+        ex:'Διαλέξτε μια παρτιτούρα και σημειώστε όλα τα σημάδια έκφρασης: p, f, crescendo, λεγκάτο. Τραγουδήστε μια φράση χωρίς αυτά και μετά ακολουθώντας τα. Ακούστε τι αλλάζει.' }
+  };
+  var ORDER = ['v','r','e','f','c'];
+  var FORM = 'https://forms.gle/i5YK5sN4z8swoDLv5';
+
+  var form = document.getElementById('quiz');
+  var html = '';
+  Q.forEach(function (item, i) {
+    html += '<fieldset><legend><span class="num">' + (i + 1) + '.</span>' + item.q + '</legend>';
+    if (item.hint) html += '<p class="hint">' + item.hint + '</p>';
+    item.a.forEach(function (ans, j) {
+      html += '<label class="opt"><input type="radio" name="q' + i + '" value="' + j + '"><span>' + ans[0] + '</span></label>';
+    });
+    html += '</fieldset>';
+  });
+  form.innerHTML = html;
+
+  var btn = document.getElementById('showBtn');
+  var missing = document.getElementById('missing');
+  function answered() {
+    var n = 0;
+    for (var i = 0; i < Q.length; i++) if (form.querySelector('input[name="q' + i + '"]:checked')) n++;
+    return n;
+  }
+  function update() {
+    var n = answered();
+    document.getElementById('progText').textContent = n + ' από ' + Q.length;
+    document.getElementById('progBar').style.width = (100 * n / Q.length) + '%';
+    btn.disabled = n < Q.length;
+    var left = Q.length - n;
+    missing.textContent = left ? (left === 1 ? 'Μένει μία ερώτηση.' : 'Μένουν ' + left + ' ερωτήσεις.') : '';
+  }
+  form.addEventListener('change', update);
+  update();
+
+  btn.addEventListener('click', function () {
+    var sum = 0, cnt = 0, time = false, tags = { v:0, r:0, e:0, f:0, c:0 };
+    Q.forEach(function (item, i) {
+      var el = form.querySelector('input[name="q' + i + '"]:checked');
+      if (!el) return;
+      var ans = item.a[+el.value];
+      if (ans[1] !== null) { sum += ans[1]; cnt++; }
+      tags[ans[2]]++;
+      if (ans[3] === 'time') time = true;
+    });
+    var avg = cnt ? sum / cnt : 0;
+    var lv = LEVELS[avg < 0.7 ? 0 : avg < 1.4 ? 1 : 2];
+    var top = ORDER.slice().sort(function (a, b) { return tags[b] - tags[a] || ORDER.indexOf(a) - ORDER.indexOf(b); }).slice(0, 3);
+
+    var r = '<div class="sheet">';
+    r += '<p class="eyebrow">Το cheat sheet μου · η φωνή μου και εγώ</p>';
+    r += '<h2 class="level">Το επίπεδό μου: ' + lv.name + '</h2>';
+    r += '<p>' + lv.lead + '</p>';
+
+    r += '<section><h3>Τι μπορεί να μου δώσουν τα μαθήματα</h3><ul>';
+    lv.gain.forEach(function (g) { r += '<li>' + g + '</li>'; });
+    r += '</ul></section>';
+
+    r += '<section><h3>Αυτό που έχω ανάγκη περισσότερο</h3>';
+    top.forEach(function (k) {
+      var n = NEEDS[k];
+      r += '<div class="need"><p><strong><span class="letter">' + n.letter + '</span>' + n.title + '</strong><br>' + n.text + '</p>';
+      r += '<p>' + n.why + '</p>';
+      r += '<p class="try"><strong>Για σήμερα:</strong> ' + n.ex + '</p></div>';
+    });
+    r += '</section>';
+
+    r += '<section><h3>Πώς δουλεύουμε</h3>';
+    r += '<p>Η ανάγνωση της μουσικής μαθαίνεται βήμα βήμα, με τη φωνή μας και με το σώμα μας. Ξεκινάμε από εκεί που βρίσκεστε σήμερα και προχωράμε με τον δικό σας ρυθμό.</p>';
+    r += '<ul><li><strong>Αξιολόγηση:</strong> βλέπουμε μαζί πού βρίσκεστε σήμερα με τις νότες, τον ρυθμό και το αυτί.</li><li><strong>Διδασκαλία:</strong> δουλεύουμε αυτό που έχετε ανάγκη, τραγουδώντας αυτό που διαβάζουμε.</li><li><strong>Μελέτη:</strong> παίρνετε μαζί σας μικρές ασκήσεις για να συνεχίζετε μόνοι σας, στην καθημερινότητά σας.</li></ul></section>';
+
+    r += '<section><h3>Η διαδρομή που σας ταιριάζει</h3><p>' + lv.path + '</p>';
+    if (time) r += '<p>Για τον χρόνο: τα μαθήματα γίνονται και online μέσω Zoom, από όποιο σημείο του πλανήτη, στην ώρα που σας βολεύει.</p>';
+    r += '<p>Στο Κέντρο Φωνητικής Τέχνης Κρήτης, Ιερολοχιτών 3, «Ρομαντική γωνιά», Ηράκλειο, ή online.</p></section>';
+
+    r += '<section class="contact"><h3>Το πρώτο βήμα</h3>';
+    r += '<p>Συμπληρώστε τη φόρμα εγγραφής. Θα λάβετε την απάντησή μου με τα επόμενα βήματα και ορίζουμε την πρώτη μας συνάντηση, δια ζώσης ή διαδικτυακή.</p>';
+    r += '<p class="noprint"><a class="btn" href="' + FORM + '" target="_blank" rel="noopener">Επιθυμώ να εγγραφώ</a></p>';
+    r += '<p class="name">Ιωάννης Ιδομενέως</p>';
+    r += '<p><a href="tel:+306932855194">693 285 5194</a><br><a href="mailto:ioannis.idomeneos@gmail.com">ioannis.idomeneos@gmail.com</a><br>Φόρμα εγγραφής: <a href="' + FORM + '">' + FORM.replace(/^https?:\/\//, '') + '</a></p>';
+    r += '<p>Καλή μας συνάντηση.</p></section>';
+    r += '</div>';
+
+    r += '<div class="actions noprint"><button class="btn ghost" type="button" onclick="window.print()">Εκτύπωση ή αποθήκευση σε PDF</button>';
+    r += '<button class="btn ghost" type="button" id="againBtn">Ξανά από την αρχή</button></div>';
+
+    var box = document.getElementById('result');
+    box.innerHTML = r;
+    box.classList.add('show');
+    box.scrollIntoView({ behavior:'smooth', block:'start' });
+    document.getElementById('againBtn').addEventListener('click', function () {
+      form.reset(); box.classList.remove('show'); box.innerHTML = ''; update();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
