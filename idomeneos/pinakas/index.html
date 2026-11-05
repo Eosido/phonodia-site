@@ -729,10 +729,10 @@ function redrawView(){ drawBg(); drawInk(); requestLive(); if(ted) positionTA();
 // μεγέθυνση: το σημείο της σελίδας pagePt μένει κάτω από το σημείο της οθόνης clientPt
 function setView(zoom, pagePt, clientPt){
   const r = stage.getBoundingClientRect();
-  view.zoom = clamp(zoom, 1, 6);
+  view.zoom = clamp(zoom, 0.2, 6);   // από 20% (πολύ μικρό) ως 600%
   const sc = Math.min(view.W/PW, view.H/PH)*view.zoom, cx = (view.W - PW*sc)/2, cy = (view.H - PH*sc)/2;
   if(pagePt && clientPt){ view.panX = (clientPt.x - r.left) - pagePt.x*sc - cx; view.panY = (clientPt.y - r.top) - pagePt.y*sc - cy; }
-  if(view.zoom === 1){ view.panX = 0; view.panY = 0; }
+  if(view.zoom <= 1){ view.panX = 0; view.panY = 0; }
   computeView(); redrawView();
 }
 function zoomBy(f){
@@ -1314,7 +1314,7 @@ stage.addEventListener('wheel', e => {
   if(e.ctrlKey || e.metaKey){
     e.preventDefault();
     setView(view.zoom*Math.exp(-e.deltaY*0.0018), clientToPage({x:e.clientX, y:e.clientY}), {x:e.clientX, y:e.clientY});
-  } else if(view.zoom > 1.001){
+  } else if(view.panX || view.panY || view.zoom > 1.001){
     e.preventDefault();
     view.panX -= e.shiftKey ? e.deltaY : e.deltaX; view.panY -= e.shiftKey ? 0 : e.deltaY;
     computeView(); redrawView();
