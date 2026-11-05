@@ -424,7 +424,10 @@ function anchorX(k){
 }
 function drawGlyph(ctx, k, x, y, sp, color){
   const sc = sp/U;
-  ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc); ctx.fillStyle = color; ctx.fill(pathOf(k)); ctx.restore();
+  ctx.save(); ctx.translate(x, y);
+  // το κλειδί του σολ λίγο πιο λεπτό και κομψό (στενότερο, ίδιο σημείο πάνω στη γραμμή του σολ)
+  if(k === 'gClef'){ const g = G.gClef.b, cx = (g[0] + g[2])/2*sc; ctx.translate(cx*0.16, 0); ctx.scale(sc*0.84, sc*0.94); }
+  else ctx.scale(sc, sc); ctx.fillStyle = color; ctx.fill(pathOf(k)); ctx.restore();
 }
 function timeParts(v){
   if(v === 'C') return {c:'common'};
@@ -757,7 +760,7 @@ function redrawView(){ drawBg(); drawInk(); requestLive(); if(ted) positionTA();
 // μεγέθυνση: το σημείο της σελίδας pagePt μένει κάτω από το σημείο της οθόνης clientPt
 function setView(zoom, pagePt, clientPt){
   const r = stage.getBoundingClientRect();
-  view.zoom = clamp(zoom, 0.2, 6);   // από 20% (πολύ μικρό) ως 600%
+  view.zoom = clamp(zoom, 1, 6);   // ποτέ μικρότερο από την οθόνη: η σελίδα την πιάνει πάντα ολόκληρη
   const sc = Math.min(view.W/PW, view.H/PH)*view.zoom, cx = (view.W - PW*sc)/2, cy = (view.H - PH*sc)/2;
   if(pagePt && clientPt){ view.panX = (clientPt.x - r.left) - pagePt.x*sc - cx; view.panY = (clientPt.y - r.top) - pagePt.y*sc - cy; }
   if(view.zoom <= 1){ view.panX = 0; view.panY = 0; }
