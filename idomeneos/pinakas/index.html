@@ -623,12 +623,40 @@ function drawBeamGroup(ctx, g, L){
     i = j;
   }
 }
+const stemmable = o => o && o.t === 'g' && hasStem(o.k) && !/^noteHalf/.test(o.k);
+const to8th = o => { if(/^noteQuarter/.test(o.k)){ o.k = o.k.replace('Quarter', '8th'); touch(o); } };
+// Μια (σχεδόν) ευθεία γραμμή από στέλεχος σε στέλεχος ενώνει τις νότες: τα τέταρτα γίνονται όγδοα με ράβδο
+function beamFromLine(pg, x0, y0, x1, y1){
+  const cands = pg.objs.filter(stemmable); if(cands.length < 2) return false;
+  const near = (px, py) => {
+    let best = null, bd = 1e9;
+    for(const o of cands){
+      const sc = o.sp/U, hw = G.noteheadBlack.w*sc, up = /Up$/.test(o.k), sx = up ? o.x + hw/2 : o.x - hw/2, ty = o.y + (up ? -3.5 : 3.5)*o.sp;
+      const d = distSeg(px, py, sx, o.y + (up ? -1 : 1)*o.sp, sx, ty + (up ? -0.8 : 0.8)*o.sp);
+      if(d < 1.1*o.sp && d < bd){ bd = d; best = o; }
+    }
+    return best;
+  };
+  const a = near(x0, y0), b = near(x1, y1); if(!a || !b || a === b) return false;
+  const L = layout(pg), sa = L.length ? nearestStaff(L, a.y) : null;
+  const lo = Math.min(a.x, b.x), hi = Math.max(a.x, b.x);
+  const group = cands.filter(o => o.x >= lo - 0.5 && o.x <= hi + 0.5 && (!sa || nearestStaff(L, o.y) === sa));
+  const id = 'b' + uid(); for(const o of group){ to8th(o); o.bm = id; touch(o); }
+  return true;
+}
+function straightish(p){
+  const n = p.length/3; if(n < 2) return null;
+  const x0 = p[0], y0 = p[1], x1 = p[3*n-3], y1 = p[3*n-2], len = Math.hypot(x1 - x0, y1 - y0); if(len < 8) return null;
+  for(let i=0;i<p.length;i+=3) if(distSeg(p[i], p[i+1], x0, y0, x1, y1) > Math.max(4, 0.12*len)) return null;
+  return [x0, y0, x1, y1];
+}
 function joinBeam(list){
   const notes = list.filter(isBeamable); if(notes.length < 2) return false;
   const id = 'b' + uid(); for(const o of notes){ o.bm = id; touch(o); } return true;
 }
 function beamSel(){
   const pg = curPage(), tok = snap(pg);
+  if(sel.filter(stemmable).length >= 2) sel.filter(stemmable).forEach(to8th);
   if(!joinBeam(sel)){ toast('Επιλέξτε δύο ή περισσότερους όγδοους (ή 16α) για να ενωθούν.', true); return; }
   commitIfChanged(pg, tok); drawInk(); requestLive();
 }
@@ -802,21 +830,21 @@ function drawLive(){
       for(let i=1;i<laser.length;i++){
         const a = laser[i-1], b = laser[i]; if(b.gap) continue;
         const al = Math.max(0, 1 - (now - b.t)/life);
-        if(pass === 0){ x.strokeStyle = `rgba(255,120,170,${al*0.28})`; x.lineWidth = 16*px; }
-        else { x.strokeStyle = `rgba(232,71,127,${al*0.9})`; x.lineWidth = 5*px; }
+        if(pass === 0){ x.strokeStyle = `rgba(255,120,170,${al*0.28})`; x.lineWidth = 13*px; }
+        else { x.strokeStyle = `rgba(232,71,127,${al*0.9})`; x.lineWidth = 4*px; }
         x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke();
       }
     }
   }
   if(ui.tool === 'laser' && hover){
     const pressed = act && act.type === 'laser', ph = (now % 1400)/1400;
-    const R0 = (pressed ? 26 : 20)*px, g = x.createRadialGradient(hover.x, hover.y, 0, hover.x, hover.y, R0);
+    const R0 = (pressed ? 21 : 16)*px, g = x.createRadialGradient(hover.x, hover.y, 0, hover.x, hover.y, R0);
     g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(0.22, 'rgba(255,190,215,1)');
     g.addColorStop(0.5, 'rgba(240,90,145,.55)'); g.addColorStop(1, 'rgba(232,71,127,0)');
     x.fillStyle = g; x.beginPath(); x.arc(hover.x, hover.y, R0, 0, Math.PI*2); x.fill();
     // δαχτυλίδι που ανοίγει και σβήνει
     x.strokeStyle = `rgba(232,71,127,${0.7*(1-ph)})`; x.lineWidth = 2.5*px;
-    x.beginPath(); x.arc(hover.x, hover.y, (10 + 26*ph)*px, 0, Math.PI*2); x.stroke();
+    x.beginPath(); x.arc(hover.x, hover.y, (8 + 21*ph)*px, 0, Math.PI*2); x.stroke();
   }
   if(laser.length || ui.tool === 'laser' || playing) requestLive();
   // ακρόαση: φωτίζονται οι νότες που ακούγονται
@@ -1052,7 +1080,7 @@ function updateSelBar(){
   if(!show){ selbar.style.display = 'none'; return; }
   selbar.style.display = 'flex';
   $('#sFlip').style.display = sel.some(o => o.t === 'g' && hasStem(o.k) && !o.bm) ? '' : 'none';
-  $('#sBeam').style.display = sel.filter(isBeamable).length >= 2 && !sel.filter(isBeamable).every(o => o.bm && o.bm === sel.find(isBeamable).bm) ? '' : 'none';
+  $('#sBeam').style.display = sel.filter(stemmable).length >= 2 && !sel.filter(stemmable).every(o => o.bm && o.bm === sel.find(stemmable).bm) ? '' : 'none';
   $('#sUnbeam').style.display = sel.some(o => o.bm) ? '' : 'none';
   const b = unionBB(sel), w = selbar.offsetWidth, h = selbar.offsetHeight;
   let left = view.ox + b.x0*view.sc, top = view.oy + b.y0*view.sc - h - 12;
@@ -1286,10 +1314,13 @@ function finish(e){
         if(n >= 3 && Math.hypot(last.x - p[n-3], last.y - p[n-2]) > 0.75 && ui.smooth < 2) p.push(last.x, last.y, a.spr);
         o = {t:'s', c:a.c, w:a.w, p:roundPts(resample(p, 2.5))};
       }
+      { const tok = snap(pg), sl = straightish(o.p);
+        if(sl && beamFromLine(pg, ...sl)){ commitIfChanged(pg, tok); drawInk(); toast('Οι νότες ενώθηκαν σε όγδοα ♫'); break; } }
       pushUndo(pg); pg.objs.push(o); drawOneInk(o); changed();
       break; }
     case 'line': {
       const en = angleSnap(a.x0, a.y0, a.cur.x, a.cur.y, a.shift);
+      { const tok = snap(pg); if(Math.hypot(en.x - a.x0, en.y - a.y0) >= 8 && beamFromLine(pg, a.x0, a.y0, en.x, en.y)){ commitIfChanged(pg, tok); drawInk(); toast('Οι νότες ενώθηκαν σε όγδοα ♫'); break; } }
       if(Math.hypot(en.x - a.x0, en.y - a.y0) >= 2){ const o = lineObj(a.x0, a.y0, en.x, en.y, a.c, a.w); pushUndo(pg); pg.objs.push(o); drawOneInk(o); changed(); }
       break; }
     case 'erase': commitIfChanged(pg, a.tok); drawInk(); break;
