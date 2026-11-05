@@ -102,11 +102,23 @@ body.barHidden #stage{top:0}
 #zoombar button{border:0;background:transparent;color:#fff;font-size:18px;font-weight:800;width:36px;height:34px;border-radius:10px;cursor:pointer}
 #zoombar button:hover{background:rgba(255,255,255,.16)}
 #zLbl{color:#fff;font-weight:700;font-size:13px;min-width:46px;text-align:center}
-body.barHidden #zoombar, body.barHidden #entryHud{display:none}
+body.barHidden #zoombar, body.barHidden #entryHud, body.barHidden #palette{display:none}
 #entryHud{position:absolute;left:12px;bottom:12px;right:200px;z-index:13;display:none;background:rgba(255,255,255,.94);color:var(--ink);font-size:12.5px;line-height:1.5;
   border-radius:12px;padding:6px 12px;box-shadow:0 4px 14px rgba(10,15,70,.18),inset 0 0 0 1.5px #F4B8CF}
 #entryHud b{color:#B8185A}
 body.entrying #entryHud{display:block}
+/* σειρά συμβόλων από κάτω */
+#palette{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;z-index:13;display:flex;align-items:center;gap:3px;padding:5px;max-width:calc(100% - 340px);overflow-x:auto;
+  background:var(--grad);border-radius:18px;box-shadow:0 8px 22px rgba(10,15,70,.4),inset 0 0 0 1px rgba(255,215,120,.25);user-select:none;scrollbar-width:none}
+#palette button{flex:none;width:44px;height:48px;border:0;border-radius:12px;background:rgba(255,255,255,.1);color:#fff;cursor:grab;display:flex;align-items:center;justify-content:center;touch-action:none;padding:0;transition:background .12s,transform .1s}
+#palette button:hover{background:rgba(255,255,255,.2)} #palette button:active{transform:scale(.94)}
+#palette button.on{background:var(--hot);box-shadow:0 3px 10px rgba(200,30,100,.5)}
+#palette button svg{height:34px;max-width:32px;fill:currentColor}
+#palette button.kb{width:auto;padding:0 11px;font-weight:800;font-size:13px;gap:5px;white-space:nowrap}
+#palette .psep{flex:none;width:2px;height:30px;background:rgba(255,255,255,.3);margin:0 4px;border-radius:1px}
+#pghost{position:fixed;z-index:90;pointer-events:none;color:#1C2B8C;opacity:.9;display:none}
+#pghost svg{height:64px;fill:currentColor}
+#entryHud{bottom:72px!important}
 /* κινητό: η γραμμή εργαλείων κυλά οριζόντια */
 @media (max-width:900px){
   #bar{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
@@ -217,6 +229,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
   <canvas id="cInk"></canvas>
   <canvas id="cLive"></canvas>
   <textarea id="txt" spellcheck="false" autocomplete="off"></textarea>
+  <div id="palette" title="Πιάστε ένα σύμβολο και σύρτε το στο πεντάγραμμο, ή πατήστε το και μετά πατήστε εκεί που το θέλετε"></div>
   <div id="zoombar"><button id="zOut" title="Σμίκρυνση (Ctrl −)">−</button><span id="zLbl">100%</span><button id="zIn" title="Μεγέθυνση (Ctrl +)">＋</button><button id="zFit" title="Όλη η σελίδα (Ctrl 0)">⤢</button></div>
   <div id="entryHud"><b>⌨ Εισαγωγή νοτών</b> · ↑↓ ύψος (Shift: οκτάβα) · ←→ θέση · <b>1</b> 32ο <b>2</b> 16ο <b>3</b> 8ο <b>4</b> ♩ <b>5</b> μισό <b>6</b> ολόκληρο · <b>.</b> τελεία · <b>Shift+1–6</b> ακόρδο · <b>⌫</b> παύση · <b>Delete</b> σβήσιμο · <b>+ − =</b> ♯ ♭ ♮ · <b>Esc</b> τέλος</div>
   <div id="selbar">
@@ -285,6 +298,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
 <div class="pop" id="pSet" style="width:560px">
   <h3>Γραφίδα</h3>
   <label class="chk"><input type="checkbox" id="optPress"> Το πάχος ακολουθεί την πίεση της γραφίδας</label>
+  <label class="chk"><input type="checkbox" id="optBarrel"> Το πλαϊνό κουμπί της γραφίδας σβήνει (δεξί κλικ)</label>
   <div class="row"><span style="font-weight:600">Εξομάλυνση γραμμής:</span>
     <button class="pb" data-smooth="0">Καμία</button><button class="pb" data-smooth="1">Ήπια</button><button class="pb" data-smooth="2">Δυνατή</button></div>
   <p>Τελευταία επαφή: <span id="diag">—</span></p>
@@ -318,7 +332,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
     <div class="k"><span><kbd>H</kbd><kbd>Esc</kbd></span>Εμφάνιση εργαλείων</div>
     <div class="k"><span><kbd>Esc</kbd></span>Τέλος επιλογής / ακρόασης</div>
   </div>
-  <p style="margin-top:8px">Διπλό κλικ σε κείμενο με την Επιλογή: διόρθωση. Το πλαϊνό κουμπί της γραφίδας (δεξί κλικ) σβήνει όσο το κρατάτε.</p>
+  <p style="margin-top:8px">Διπλό κλικ σε κείμενο με την Επιλογή: διόρθωση. Το πλαϊνό κουμπί της γραφίδας σβήνει όσο το κρατάτε, αν ενεργοποιήσετε την επιλογή «Γραφίδα» πιο πάνω· αλλιώς δεν κάνει τίποτα, για να μη σβήνει κατά λάθος.</p>
   <h3>Για τη γραφίδα XP-Pen</h3>
   <ul>
     <li>Για την πίεση: στο πρόγραμμα οδήγησης της XP-Pen ενεργό το <b>Windows Ink</b>.</li>
@@ -328,6 +342,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
 </div>
 <div id="modal"><div class="box"><div class="msg" id="mMsg"></div><div class="btns"><button id="mCancel">Άκυρο</button><button id="mOk">Ναι</button></div></div></div>
 <div id="toast"></div>
+<div id="pghost"></div>
 
 <script>
 'use strict';
@@ -376,7 +391,7 @@ const uid = () => Math.random().toString(36).slice(2,10) + Date.now().toString(3
 /* ---------------- Κατάσταση ---------------- */
 function newPage(t){ t = t || {}; return {id:uid(), staves: t.staves ?? 6, blank: t.blank || 0, bars: (t.bars || []).slice(), clef: t.clef || 'none', time: t.time || '', objs: []}; }
 let doc = {app:'pentagramma', v:1, cur:0, pages:[newPage()]};
-const ui = {tempo:80, gstyle:'hand', tool:'pen', color:0, size:1, pressure:true, smooth:1, snap:true, sym:'noteQuarterUp', time:'4/4'};
+const ui = {barrelErase:false, tempo:80, gstyle:'hand', tool:'pen', color:0, size:1, pressure:true, smooth:1, snap:true, sym:'noteQuarterUp', time:'4/4'};
 let sel = [];             // επιλεγμένα αντικείμενα
 let act = null;           // τρέχουσα κίνηση
 let hover = null;         // θέση του δείκτη (για γόμα / σύμβολα)
@@ -1191,12 +1206,20 @@ function noteDevice(e){
   lastPtr = (names[e.pointerType] || e.pointerType) + (e.pointerType === 'pen' ? ', πίεση ' + (e.pressure||0).toFixed(2) : '');
   diag.textContent = lastPtr;
 }
+// Τη στιγμή της επαφής η πίεση της πένας «πετάγεται» ψηλά και βγάζει χοντρή κουκίδα· τα πρώτα σημεία παίρνουν την πίεση της κανονικής γραφής
+function calmStart(p){
+  const n = p.length/3; if(n < 1) return;
+  if(n === 1){ p[2] = Math.min(p[2], 0.5); return; }
+  const k = Math.min(5, n - 1), ref = p[3*k + 2];
+  for(let i=0;i<k;i++) p[3*i + 2] = Math.min(p[3*i + 2], ref);
+}
 function addPenPoint(x, y, pr){
   const a = [1, 0.5, 0.28][ui.smooth];
   act.sx += (x - act.sx)*a; act.sy += (y - act.sy)*a; act.spr += (pr - act.spr)*0.35;
   const p = act.pts, n = p.length;
   if(Math.hypot(act.sx - p[n-3], act.sy - p[n-2]) >= 0.75) p.push(act.sx, act.sy, act.spr);
   else p[n-1] = Math.max(p[n-1], act.spr);
+  if(p.length/3 <= 7) calmStart(p);
 }
 cLive.addEventListener('contextmenu', e => e.preventDefault());
 const touches = new Map(); let pinch = null;
@@ -1223,8 +1246,9 @@ cLive.addEventListener('pointerdown', e => {
   const pt = toPage(e), pg = curPage();
   if(pt.x < -4 || pt.y < -4 || pt.x > PW + 4 || pt.y > PH + 4){ if(ui.tool === 'select'){ sel = []; requestLive(); } return; }
   let tool = ui.tool;
-  if(e.button === 2 || e.button === 5 || (e.buttons & 32)) tool = 'eraser';
-  else if(e.button !== 0) return;
+  const isPen = e.pointerType === 'pen', barrel = e.button === 2 || (isPen && (e.buttons & 2));
+  if(e.button === 5 || (e.buttons & 32) || (barrel && (!isPen || ui.barrelErase))) tool = 'eraser';   // ουρά πένας, ή πλαϊνό κουμπί (μόνο αν το ενεργοποιήσετε)
+  else if(e.button !== 0 && !(isPen && barrel)) return;
   hover = pt;
   switch(tool){
     case 'pen': {
@@ -1332,6 +1356,7 @@ function finish(e){
       else {
         const p = a.pts, n = p.length, last = a.cur;
         if(n >= 3 && Math.hypot(last.x - p[n-3], last.y - p[n-2]) > 0.75 && ui.smooth < 2) p.push(last.x, last.y, a.spr);
+        calmStart(p);
         o = {t:'s', c:a.c, w:a.w, p:roundPts(resample(p, 2.5))};
       }
       { const tok = snap(pg), sl = straightish(o.p);
@@ -1344,7 +1369,7 @@ function finish(e){
       if(Math.hypot(en.x - a.x0, en.y - a.y0) >= 2){ const o = lineObj(a.x0, a.y0, en.x, en.y, a.c, a.w); pushUndo(pg); pg.objs.push(o); drawOneInk(o); changed(); }
       break; }
     case 'erase': commitIfChanged(pg, a.tok); drawInk(); break;
-    case 'place': fitMeasure(pg, a.o); autoBeam(pg, a.o); commitIfChanged(pg, a.tok); drawInk(); break;
+    case 'place': fitMeasure(pg, a.o); autoBeam(pg, a.o); commitIfChanged(pg, a.tok); drawInk(); if(isNote(a.o.k)) playObj(pg, a.o, 0.8); break;
     case 'move': case 'scale': commitIfChanged(pg, a.tok); drawInk(); break;
     case 'rect': {
       const x0 = Math.min(a.x0, a.cur.x), x1 = Math.max(a.x0, a.cur.x), y0 = Math.min(a.y0, a.cur.y), y1 = Math.max(a.y0, a.cur.y);
@@ -1396,6 +1421,53 @@ function timeSVG(v){
   return `<svg viewBox="${pb.vb}">${pb.lines}${body}</svg>`;
 }
 const timeLabel = v => v === 'C|' ? '¢' : v === 'C' ? 'C' : v;
+/* ---- Σειρά συμβόλων από κάτω: πατάτε για να οπλίσετε το σύμβολο, ή το σέρνετε πάνω στο πεντάγραμμο ---- */
+const PALETTE = [['noteWhole','Ολόκληρη'],['noteHalfUp','Μισή'],['noteQuarterUp','Τέταρτο'],['note8thUp','Όγδοο'],['note16thUp','16ο'],['note32ndUp','32ο'],'|',
+  ['restWhole','Παύση ολόκληρης'],['restHalf','Παύση μισής'],['restQuarter','Παύση τετάρτου'],['rest8th','Παύση ογδόου'],['rest16th','Παύση 16ου'],'|',
+  ['sharp','Δίεση'],['flat','Ύφεση'],['natural','Αναίρεση'],'|',['dot','Τελεία'],['barline','Διαστολή']];
+function iconSVG(k){
+  const g = G[k], b = g.b, pad = k === 'dot' ? 190 : 40;
+  return `<svg viewBox="${b[0] - pad} ${b[1] - pad} ${b[2] - b[0] + 2*pad} ${b[3] - b[1] + 2*pad}"><path d="${g.d}"/></svg>`;
+}
+let pdrag = null;
+function buildPalette(){
+  const el = $('#palette'); let h = '<button class="kb" id="pEntry" title="Εισαγωγή νοτών με το πληκτρολόγιο (I)">⌨ Εισαγωγή</button><span class="psep"></span>';
+  for(const it of PALETTE) h += it === '|' ? '<span class="psep"></span>' : `<button data-psym="${it[0]}" title="${it[1]}">${iconSVG(it[0])}</button>`;
+  el.innerHTML = h;
+  $('#pEntry').onclick = () => startEntry();
+  el.querySelectorAll('[data-psym]').forEach(btn => {
+    btn.addEventListener('pointerdown', e => {
+      if(e.button !== 0) return; e.preventDefault();
+      ui.sym = btn.dataset.psym; setTool('sym'); closePops();
+      pdrag = {id:e.pointerId, x0:e.clientX, y0:e.clientY, moved:false, k:ui.sym};
+      try { btn.setPointerCapture(e.pointerId); } catch(_){}
+    });
+    btn.addEventListener('pointermove', e => {
+      if(!pdrag || e.pointerId !== pdrag.id) return;
+      if(!pdrag.moved && Math.hypot(e.clientX - pdrag.x0, e.clientY - pdrag.y0) > 8){
+        pdrag.moved = true; const g = $('#pghost'); g.innerHTML = iconSVG(pdrag.k); g.style.display = 'block';
+      }
+      if(pdrag.moved){ const g = $('#pghost'); g.style.left = (e.clientX - 20) + 'px'; g.style.top = (e.clientY - 38) + 'px'; }
+    });
+    const end = e => {
+      if(!pdrag || e.pointerId !== pdrag.id) return;
+      const d = pdrag; pdrag = null; $('#pghost').style.display = 'none';
+      if(!d.moved || e.type === 'pointercancel') return;
+      const r = cLive.getBoundingClientRect(), pr = $('#palette').getBoundingClientRect();
+      const over = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      const onPal = e.clientX >= pr.left && e.clientX <= pr.right && e.clientY >= pr.top && e.clientY <= pr.bottom;
+      if(over && !onPal) dropSym(clientToPage({x:e.clientX, y:e.clientY}));
+    };
+    btn.addEventListener('pointerup', end); btn.addEventListener('pointercancel', end);
+  });
+  updateUI();
+}
+function dropSym(pt){
+  const pg = curPage(), tok = snap(pg), o = makeSym(pt.x, pt.y, pg);
+  pg.objs.push(o); fitMeasure(pg, o); autoBeam(pg, o);
+  commitIfChanged(pg, tok); drawInk(); requestLive();
+  if(isNote(o.k)) playObj(pg, o, 0.8);
+}
 function buildSymPop(){
   const p = $('#pSym');
   let h = `<h3>Γρήγορη εισαγωγή</h3><button class="pb wide" id="entryGo"><em>⌨</em> Εισαγωγή νοτών με το πληκτρολόγιο, όπως στο Finale (I)</button><h3>Γραφή των συμβόλων</h3><div class="row"><button class="pb${ui.gstyle === 'hand' ? ' on' : ''}" data-gs="hand">✍ Χειροποίητη</button><button class="pb${ui.gstyle === 'print' ? ' on' : ''}" data-gs="print">▣ Τυπωμένη</button></div>`;
@@ -1513,6 +1585,7 @@ function buildBar(){
   $('#reveal').addEventListener('pointerenter', () => { $('#revealTab').style.display = 'block'; });
   stage.addEventListener('pointerenter', () => { $('#revealTab').style.display = 'none'; });
   $('#optPress').onchange = e => { ui.pressure = e.target.checked; savePrefs(); updateUI(); };
+  $('#optBarrel').onchange = e => { ui.barrelErase = e.target.checked; savePrefs(); };
   $('#optSnap').onchange = e => { ui.snap = e.target.checked; savePrefs(); updateUI(); };
   document.querySelectorAll('[data-smooth]').forEach(b => b.onclick = () => { ui.smooth = +b.dataset.smooth; savePrefs(); updateUI(); });
   $('#sDel').onclick = deleteSel;
@@ -1537,7 +1610,7 @@ function buildBar(){
 function setStyleUI(s){
   ui.gstyle = s; setGlyphStyle(s); savePrefs();
   const open = $('#pSym').classList.contains('open');
-  buildSymPop(); if(open) $('#pSym').classList.add('open');
+  buildSymPop(); buildPalette(); if(open) $('#pSym').classList.add('open');
   document.querySelectorAll('[data-gs2]').forEach(b => b.classList.toggle('on', b.dataset.gs2 === s));
   drawLogo(); updateUI(); drawAll();
 }
@@ -1568,12 +1641,14 @@ function cursorFor(){
 function updateUI(){
   document.querySelectorAll('#tools [data-tool]').forEach(b => b.classList.toggle('on', b.dataset.tool === ui.tool || (b.dataset.tool === 'sym' && ui.tool === 'entry')));
   document.body.classList.toggle('entrying', ui.tool === 'entry');
+  document.querySelectorAll('[data-psym]').forEach(b => b.classList.toggle('on', ui.tool === 'sym' && ui.sym === b.dataset.psym));
+  const pe = $('#pEntry'); if(pe) pe.classList.toggle('on', ui.tool === 'entry');
   document.querySelectorAll('[data-color]').forEach(b => b.classList.toggle('on', +b.dataset.color === ui.color));
   document.querySelectorAll('[data-size]').forEach(b => b.classList.toggle('on', +b.dataset.size === ui.size));
   document.querySelectorAll('[data-smooth]').forEach(b => b.classList.toggle('on', +b.dataset.smooth === ui.smooth));
   document.querySelectorAll('[data-sym]').forEach(b => b.classList.toggle('on', ui.sym === b.dataset.sym));
   document.querySelectorAll('[data-time]').forEach(b => b.classList.toggle('on', ui.sym === 'time' && ui.time === b.dataset.time));
-  $('#optPress').checked = ui.pressure; $('#optSnap').checked = ui.snap; const s2 = $('#optSnap2'); if(s2) s2.checked = ui.snap;
+  $('#optBarrel').checked = ui.barrelErase; $('#optPress').checked = ui.pressure; $('#optSnap').checked = ui.snap; const s2 = $('#optSnap2'); if(s2) s2.checked = ui.snap;
   $('#bPlay').classList.toggle('on', !!playing);
   $('#playLbl').textContent = playing ? '■ Σταμάτα' : 'Ακρόαση ▾';
   const h = H(curPage());
@@ -1722,7 +1797,7 @@ async function saveNow(){
   else { $('#saveDot').textContent = '⚠ χωρίς αποθήκευση';
     if(!saveWarned){ saveWarned = true; toast('Ο περιηγητής δεν επιτρέπει αυτόματη αποθήκευση. Χρησιμοποιήστε «Αρχείο → Αποθήκευση σε αρχείο».', true); } }
 }
-function savePrefs(){ try { localStorage.setItem(LS_UI, JSON.stringify({tempo:ui.tempo, gstyle:ui.gstyle, tool:ui.tool, color:ui.color, size:ui.size, pressure:ui.pressure, smooth:ui.smooth, snap:ui.snap, sym:ui.sym, time:ui.time})); } catch(_){} }
+function savePrefs(){ try { localStorage.setItem(LS_UI, JSON.stringify({barrelErase:ui.barrelErase, tempo:ui.tempo, gstyle:ui.gstyle, tool:ui.tool, color:ui.color, size:ui.size, pressure:ui.pressure, smooth:ui.smooth, snap:ui.snap, sym:ui.sym, time:ui.time})); } catch(_){} }
 function validDoc(d){
   if(!d || !Array.isArray(d.pages) || !d.pages.length) return null;
   const pages = d.pages.map(p => ({id:uid(), staves:STAVES_OPTS.includes(+p.staves) ? +p.staves : 6, blank:clamp(p.blank|0, 0, 7), bars:Array.isArray(p.bars) ? p.bars.slice(0, 8).map(v => clamp(v|0, 0, 16)) : [],
@@ -1738,7 +1813,7 @@ async function loadSaved(){
     try { const v = JSON.parse(raw); if(!best || v.t > best.t) best = v; } catch(_){}
   }
   if(best){ const d = validDoc(best.doc); if(d) doc = d; }
-  try { const p = JSON.parse(localStorage.getItem(LS_UI) || 'null'); if(p) Object.assign(ui, { tempo:clamp(+p.tempo || 80, 40, 160), gstyle:p.gstyle === 'print' ? 'print' : 'hand',
+  try { const p = JSON.parse(localStorage.getItem(LS_UI) || 'null'); if(p) Object.assign(ui, { barrelErase:p.barrelErase === true, tempo:clamp(+p.tempo || 80, 40, 160), gstyle:p.gstyle === 'print' ? 'print' : 'hand',
     tool:['pen','eraser','line','text','select','laser','sym'].includes(p.tool) ? p.tool : 'pen',
     color:clamp(p.color|0, 0, COLORS.length - 1), size:clamp(p.size ?? 1, 0, 2), pressure:p.pressure !== false,
     smooth:clamp(p.smooth ?? 1, 0, 2), snap:p.snap !== false, sym:G[p.sym] || p.sym === 'time' ? p.sym : 'noteQuarterUp', time:typeof p.time === 'string' ? p.time : '4/4' }); } catch(_){}
@@ -2155,7 +2230,7 @@ function entryClick(pt){
 (async function init(){
   await loadSaved();
   setGlyphStyle(ui.gstyle);
-  buildBar(); buildSymPop(); buildPagePop();
+  buildBar(); buildSymPop(); buildPagePop(); buildPalette();
   measureBar();
   new ResizeObserver(() => { measureBar(); resize(); }).observe($('#bar'));
   new ResizeObserver(resize).observe(stage);
