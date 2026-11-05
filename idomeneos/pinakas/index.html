@@ -218,7 +218,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
   <canvas id="cLive"></canvas>
   <textarea id="txt" spellcheck="false" autocomplete="off"></textarea>
   <div id="zoombar"><button id="zOut" title="Σμίκρυνση (Ctrl −)">−</button><span id="zLbl">100%</span><button id="zIn" title="Μεγέθυνση (Ctrl +)">＋</button><button id="zFit" title="Όλη η σελίδα (Ctrl 0)">⤢</button></div>
-  <div id="entryHud"><b>⌨ Εισαγωγή νοτών</b> · ↑↓ ύψος (Shift: οκτάβα) · ←→ θέση · <b>1</b> 32ο <b>2</b> 16ο <b>3</b> 8ο <b>4</b> ♩ <b>5</b> μισό <b>6</b> ολόκληρο · <b>.</b> τελεία · <b>⌫</b> παύση · <b>Delete</b> σβήσιμο · <b>+ − =</b> ♯ ♭ ♮ · <b>Esc</b> τέλος</div>
+  <div id="entryHud"><b>⌨ Εισαγωγή νοτών</b> · ↑↓ ύψος (Shift: οκτάβα) · ←→ θέση · <b>1</b> 32ο <b>2</b> 16ο <b>3</b> 8ο <b>4</b> ♩ <b>5</b> μισό <b>6</b> ολόκληρο · <b>.</b> τελεία · <b>Shift+1–6</b> ακόρδο · <b>⌫</b> παύση · <b>Delete</b> σβήσιμο · <b>+ − =</b> ♯ ♭ ♮ · <b>Esc</b> τέλος</div>
   <div id="selbar">
     <button class="del" id="sDel" title="Διαγραφή (Delete)">✕ Διαγραφή</button>
     <button id="sDup" title="Αντίγραφο (Ctrl+D)">⧉ Αντίγραφο</button>
@@ -1059,6 +1059,23 @@ function moveSel(dx, dy){
   for(const o of sel) applyXform(o, clone(o), (x,y) => [x+dx, y+dy], 1);
   commitIfChanged(pg, tok); drawInk(); requestLive();
 }
+// ↑↓ πάνω σε επιλεγμένες νότες: ανεβαίνουν/κατεβαίνουν κατά ένα σκαλοπάτι του πενταγράμμου (Shift: οκτάβα)
+function pitchSel(dir, octave){
+  const notes = sel.filter(o => o.t === 'g' && isNote(o.k)); if(!notes.length || notes.length !== sel.length) return false;
+  const pg = curPage(), tok = snap(pg), L = layout(pg); if(!L.length) return false;
+  const sn = ui.snap; ui.snap = true;
+  for(const o of notes){
+    const st = nearestStaff(L, o.y), stepPx = st.s/2*(octave ? 7 : 1);
+    const lim = [st.top - 6*st.s, st.bot + 6*st.s];
+    o.y = clamp(o.y - dir*stepPx, lim[0], lim[1]); placeSym(o, o.x, o.y, pg, false); touch(o);
+    // τελεία και αλλοίωση ακολουθούν τη νότα
+    for(const q of pg.objs) if((q.k === 'dot' || q.k in ACC) && !sel.includes(q) && Math.abs(q.x - o.x) < 3*o.sp && Math.abs(q.y - (o.y + dir*stepPx)) < 0.8*o.sp){ q.y = r1(q.y - dir*stepPx); touch(q); }
+  }
+  ui.snap = sn;
+  commitIfChanged(pg, tok); drawInk(); requestLive();
+  playObj(pg, notes[0], 0.8);
+  return true;
+}
 function deleteSel(){
   if(!sel.length) return;
   const pg = curPage(), tok = snap(pg);
@@ -1660,6 +1677,7 @@ document.addEventListener('keydown', e => {
     if(c === 'Delete' || c === 'Backspace'){ e.preventDefault(); deleteSel(); return; }
     if(c === 'ArrowLeft'){ e.preventDefault(); moveSel(-st, 0); return; }
     if(c === 'ArrowRight'){ e.preventDefault(); moveSel(st, 0); return; }
+    if((c === 'ArrowUp' || c === 'ArrowDown') && pitchSel(c === 'ArrowUp' ? 1 : -1, e.shiftKey)){ e.preventDefault(); return; }
     if(c === 'ArrowUp'){ e.preventDefault(); moveSel(0, -st); return; }
     if(c === 'ArrowDown'){ e.preventDefault(); moveSel(0, st); return; }
     if(c === 'Equal' || c === 'NumpadAdd'){ e.preventDefault(); scaleSel(1.1); return; }
@@ -2009,6 +2027,12 @@ function fitMeasure(pg, o){
   if(!(isNote(o.k) || /^rest/.test(o.k))) return;
   const L = layout(pg); if(!L.length) return;
   let st = nearestStaff(L, o.y), cap = capOf(pg);
+  // μαγνήτης ακόρδου: νότα που μπαίνει κοντά σε άλλη νότα του ίδιου πενταγράμμου κουμπώνει στην ίδια κατακόρυφη (δεν προσθέτει χρόνο)
+  if(isNote(o.k)){
+    let best = null, bd = 1.1*st.s;
+    for(const q of pg.objs){ if(q === o || !isNote(q.k) || nearestStaff(L, q.y).i !== st.i) continue; const d = Math.abs(q.x - o.x); if(d < bd){ bd = d; best = q; } }
+    if(best){ o.x = best.x; if(hasStem(o.k) && hasStem(best.k)) o.k = setDir(o.k, /Up$/.test(best.k) ? 'Up' : 'Down'); touch(o); return; }
+  }
   for(let guard = 0; guard < 40; guard++){
     const M = measures(pg, st); if(!M) return;
     const m = clamp(Math.floor((o.x - M.a)/M.w), 0, M.n - 1);
@@ -2064,6 +2088,15 @@ function entryKey(e){
   }
   const dg = /^(Digit|Numpad)([1-6])$/.exec(c);
   if(dg && !e.shiftKey){ entryNote(KEYDUR[dg[2]]); return true; }
+  if(dg && e.shiftKey){                       // Shift + αριθμός: νότα πάνω από την προηγούμενη, στον ίδιο χρόνο (ακόρδο)
+    if(!last || !isNote(last.o.k)){ toast('Πρώτα βάλτε μια νότα, και μετά Shift + αριθμό για να προσθέσετε από πάνω της.', true); return true; }
+    const L = layout(pg), st = L[last.si], tok = snap(pg), dn = KEYDUR[dg[2]];
+    const o = {t:'g', k: dn === 'Whole' ? 'noteWhole' : 'note' + dn + 'Up', c:last.o.c, sp:last.o.sp, x:last.o.x, y:r1(st.bot - entry.step*st.s/2)};
+    const sn = ui.snap; ui.snap = true; placeSym(o, o.x, o.y, pg, false); ui.snap = sn;
+    if(hasStem(o.k) && hasStem(last.o.k)) o.k = setDir(o.k, /Up$/.test(last.o.k) ? 'Up' : 'Down');
+    pg.objs.push(o); last.extras.push(o);
+    commitIfChanged(pg, tok); drawInk(); requestLive(); playObj(pg, o, last.d); return true;
+  }
   if(c === 'Backspace'){
     if(!last || !isNote(last.o.k)) return true;
     const tok = snap(pg), o = last.o, dn = o.k.replace(/^note/, '').replace(/(Up|Down)$/, '');
