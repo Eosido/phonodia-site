@@ -760,7 +760,7 @@ function redrawView(){ drawBg(); drawInk(); requestLive(); if(ted) positionTA();
 // μεγέθυνση: το σημείο της σελίδας pagePt μένει κάτω από το σημείο της οθόνης clientPt
 function setView(zoom, pagePt, clientPt){
   const r = stage.getBoundingClientRect();
-  view.zoom = clamp(zoom, 1, 6);   // ποτέ μικρότερο από την οθόνη: η σελίδα την πιάνει πάντα ολόκληρη
+  view.zoom = clamp(zoom, 0.3, 6);   // σμίκρυνση ως 30%· ο χώρος γραφής πιάνει πάντα όλη την οθόνη
   const sc = Math.min(view.W/PW, view.H/PH)*view.zoom, cx = (view.W - PW*sc)/2, cy = (view.H - PH*sc)/2;
   if(pagePt && clientPt){ view.panX = (clientPt.x - r.left) - pagePt.x*sc - cx; view.panY = (clientPt.y - r.top) - pagePt.y*sc - cy; }
   if(view.zoom <= 1){ view.panX = 0; view.panY = 0; }
@@ -775,6 +775,16 @@ function drawBg(){
   const x = xBg; x.setTransform(1,0,0,1,0,0); x.fillStyle = '#fff'; x.fillRect(0,0,cBg.width,cBg.height);
   setPT(x);
   drawPageBg(x, curPage());
+  if(view.zoom < 0.999){
+    // σμίκρυνση: τα πεντάγραμμα συνεχίζονται σε όλη την οθόνη, σαν τετράδιο μουσικής
+    const sc = view.sc, vx0 = -view.ox/sc, vx1 = (view.W - view.ox)/sc, vy0 = -view.oy/sc, vy1 = (view.H - view.oy)/sc, L = layout(curPage());
+    x.fillStyle = '#000';
+    for(let k = Math.floor(vy0/PH); k <= Math.floor(vy1/PH); k++) for(const st of L){
+      const lw = lineW(st.s);
+      for(let j=0;j<5;j++){ const y = st.top + j*st.s + k*PH; if(k === 0){ x.fillRect(vx0, y - lw/2, st.x0 - vx0, lw); x.fillRect(st.x1, y - lw/2, vx1 - st.x1, lw); } else x.fillRect(vx0, y - lw/2, vx1 - vx0, lw); }
+    }
+    return;
+  }
   if(view.ox > 2 || view.oy > 2){ // λεπτό γαλάζιο περίγραμμα σελίδας, μόνο στην οθόνη
     x.strokeStyle = '#9DBBFF'; x.lineWidth = 1.5/view.sc; x.strokeRect(0, 0, PW, PH);
   }
@@ -783,12 +793,12 @@ let inkReq = false;
 function drawInk(){
   inkReq = false;
   const x = xInk; x.setTransform(1,0,0,1,0,0); x.clearRect(0,0,cInk.width,cInk.height);
-  setPT(x); x.save(); x.beginPath(); x.rect(0,0,PW,PH); x.clip();
+  setPT(x); x.save();
   drawObjs(x, curPage(), hiddenObj);
   x.restore();
 }
 function requestInk(){ if(!inkReq){ inkReq = true; requestAnimationFrame(drawInk); } }
-function drawOneInk(o){ const x = xInk; setPT(x); x.save(); x.beginPath(); x.rect(0,0,PW,PH); x.clip(); drawObj(x, o, layout(curPage())); x.restore(); }
+function drawOneInk(o){ const x = xInk; setPT(x); x.save(); drawObj(x, o, layout(curPage())); x.restore(); }
 function drawAll(){ drawBg(); drawInk(); requestLive(); }
 
 let liveReq = false;
@@ -1204,7 +1214,6 @@ cLive.addEventListener('pointerdown', e => {
   try { cLive.setPointerCapture(e.pointerId); } catch(_){}
   noteDevice(e);
   const pt = toPage(e), pg = curPage();
-  if(pt.x < -4 || pt.y < -4 || pt.x > PW + 4 || pt.y > PH + 4){ if(ui.tool === 'select'){ sel = []; requestLive(); } return; }
   let tool = ui.tool;
   if(e.button === 2 || e.button === 5 || (e.buttons & 32)) tool = 'eraser';
   else if(e.button !== 0) return;
