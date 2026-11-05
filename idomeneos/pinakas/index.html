@@ -239,7 +239,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;background:linear-grad
   <div class="row" id="optStaves"></div>
   <h3>Λευκός χώρος κάτω: πόσα πεντάγραμμα να φύγουν από το τέλος</h3>
   <div class="row" id="optBlank"></div>
-  <h3>Μέτρα σε κάθε πεντάγραμμο</h3>
+  <h3>Μέτρα σε κάθε πεντάγραμμο: 2, 3, 4 ή 8</h3>
   <div id="optBars"></div>
   <h3>Κλειδί στην αρχή κάθε πενταγράμμου</h3>
   <div class="row" id="optClef"></div>
@@ -1445,7 +1445,7 @@ function updatePagePop(){
     const L = layout(pg), ob = $('#optBars');
     if(!L.length) ob.innerHTML = '<span style="font-size:14px">Δεν υπάρχουν πεντάγραμμα.</span>';
     else {
-      const opts = [0, 2, 3, 4, 6, 8], lab = n => n ? n : 'Χωρίς', bars = pg.bars || [];
+      const opts = [0, 2, 3, 4, 8], lab = n => n ? n : 'Χωρίς', bars = pg.bars || [];
       const all = L.every(st => (bars[st.i]|0) === (bars[0]|0)) ? (bars[0]|0) : -1;
       let h = `<div class="row" style="margin-bottom:6px"><b style="min-width:64px">Σε όλα:</b>` + opts.map(n => `<button class="pb${all === n ? ' on' : ''}" data-ball="${n}">${lab(n)}</button>`).join('') + '</div>';
       for(const st of L) h += `<div class="row" style="margin:3px 0"><span style="min-width:64px;font-weight:600">${st.i + 1}ο:</span>` + opts.map(n => `<button class="pb${(bars[st.i]|0) === n ? ' on' : ''}" data-bs="${st.i}:${n}" style="padding:5px 11px">${lab(n)}</button>`).join('') + '</div>';
