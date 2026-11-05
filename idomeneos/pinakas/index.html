@@ -1327,7 +1327,7 @@ function finish(e){
       if(Math.hypot(en.x - a.x0, en.y - a.y0) >= 2){ const o = lineObj(a.x0, a.y0, en.x, en.y, a.c, a.w); pushUndo(pg); pg.objs.push(o); drawOneInk(o); changed(); }
       break; }
     case 'erase': commitIfChanged(pg, a.tok); drawInk(); break;
-    case 'place': autoBeam(pg, a.o); commitIfChanged(pg, a.tok); drawInk(); break;
+    case 'place': fitMeasure(pg, a.o); autoBeam(pg, a.o); commitIfChanged(pg, a.tok); drawInk(); break;
     case 'move': case 'scale': commitIfChanged(pg, a.tok); drawInk(); break;
     case 'rect': {
       const x0 = Math.min(a.x0, a.cur.x), x1 = Math.max(a.x0, a.cur.x), y0 = Math.min(a.y0, a.cur.y), y1 = Math.max(a.y0, a.cur.y);
@@ -1982,6 +1982,41 @@ function entryAdvance(pg, d){
   const {st, M} = entryPos(pg);
   if(M){ entry.b += d; if(entry.b >= capOf(pg) - 1e-6){ entry.m++; entry.b = 0; if(entry.m >= M.n) entryNext(pg); } }
   else { entry.x += st.s*(2.3 + 1.3*Math.min(d, 2)); entry.b += d; if(entry.x > st.x1 - 1.5*st.s) entryNext(pg); }
+}
+/* Διάρκεια μιας νότας ή παύσης σε μονάδες χρόνου (τέταρτα), με τελεία αν υπάρχει */
+function durOfSym(pg, q, st){
+  const base = DUR[q.k.replace(/^(note|rest)/, '').replace(/(Up|Down)$/, '')] || 1;
+  const s = st.s;
+  return pg.objs.some(d => d.k === 'dot' && d.x > q.x && d.x - q.x < 3*s && Math.abs(d.y - q.y) < 0.8*s) ? base*1.5 : base;
+}
+/* Ένα σύμβολο που μπαίνει σε μέτρο που έχει ήδη γεμίσει πάει στο επόμενο μέτρο (ή στο επόμενο πεντάγραμμο).
+   Ακόρδα (νότες στην ίδια κατακόρυφη) μένουν στο ίδιο σημείο. */
+function fitMeasure(pg, o){
+  if(!(isNote(o.k) || /^rest/.test(o.k))) return;
+  const L = layout(pg); if(!L.length) return;
+  let st = nearestStaff(L, o.y);
+  for(let guard = 0; guard < 40; guard++){
+    const M = measures(pg, st); if(!M) return;
+    const m = clamp(Math.floor((o.x - M.a)/M.w), 0, M.n - 1);
+    const inM = x => clamp(Math.floor((x - M.a)/M.w), 0, M.n - 1) === m;
+    const onsets = [];
+    for(const q of pg.objs){
+      if(q === o || !(isNote(q.k) || /^rest/.test(q.k))) continue;
+      if(nearestStaff(L, q.y) !== st || !inM(q.x)) continue;
+      if(onsets.some(on => Math.abs(on.x - q.x) < 0.4*st.s)) continue;
+      onsets.push({x:q.x, d:durOfSym(pg, q, st)});
+    }
+    if(onsets.some(on => Math.abs(on.x - o.x) < 0.4*st.s)) return;     // ακόρδα στο ίδιο σημείο
+    const used = onsets.reduce((a, on) => a + on.d, 0), mine = durOfSym(pg, o, st);
+    if(used + mine <= capOf(pg) + 1e-6) return;                         // χωράει
+    if(m + 1 >= M.n){                                                  // τέλος πενταγράμμου: πάει στο από κάτω
+      if(st.i + 1 >= L.length) return;
+      const prev = st; st = L[st.i + 1]; const N = measures(pg, st); if(!N) return;
+      o.x = r1(N.a + 0.9*st.s); o.y = r1(o.y + (st.mid - prev.mid)); touch(o); return;
+    }
+    const N = measures(pg, st);
+    o.x = r1(N.a + N.w*(m + 1) + 1.2*st.s); touch(o);
+  }
 }
 function playObj(pg, o, beats){
   const ev = buildScore(pg).find(e => e.objs.includes(o)); if(!ev || !ev.midis.length) return;
