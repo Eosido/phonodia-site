@@ -1989,33 +1989,40 @@ function durOfSym(pg, q, st){
   const s = st.s;
   return pg.objs.some(d => d.k === 'dot' && d.x > q.x && d.x - q.x < 3*s && Math.abs(d.y - q.y) < 0.8*s) ? base*1.5 : base;
 }
+/* Χρόνος (σε τέταρτα) που έχουν ήδη καταλάβει οι νότες και οι παύσεις ενός μέτρου */
+function usedIn(pg, st, m, excl){
+  const L = layout(pg), M = measures(pg, st), onsets = [];
+  for(const q of pg.objs){
+    if(q === excl || !(isNote(q.k) || /^rest/.test(q.k))) continue;
+    if(nearestStaff(L, q.y).i !== st.i) continue;
+    if(clamp(Math.floor((q.x - M.a)/M.w), 0, M.n - 1) !== m) continue;
+    if(onsets.some(on => Math.abs(on.x - q.x) < 0.4*st.s)) continue;
+    onsets.push({x:q.x, d:durOfSym(pg, q, st)});
+  }
+  return {onsets, used: onsets.reduce((a, on) => a + on.d, 0)};
+}
+/* Η x-θέση μέσα στο μέτρο ύστερα από «beat» τέταρτα (ίδιος περίπου χώρος με τη γρήγορη εισαγωγή) */
+const beatX = (M, st, m, beat, cap) => M.a + M.w*m + 1.2*st.s + (M.w - 1.9*st.s)*beat/cap;
 /* Ένα σύμβολο που μπαίνει σε μέτρο που έχει ήδη γεμίσει πάει στο επόμενο μέτρο (ή στο επόμενο πεντάγραμμο).
-   Ακόρδα (νότες στην ίδια κατακόρυφη) μένουν στο ίδιο σημείο. */
+   Ακόρδα: μόνο αν το κλικ έγινε ακριβώς πάνω σε νότα· η μεταφερμένη νότα μπαίνει στην πρώτη ελεύθερη θέση. */
 function fitMeasure(pg, o){
   if(!(isNote(o.k) || /^rest/.test(o.k))) return;
   const L = layout(pg); if(!L.length) return;
-  let st = nearestStaff(L, o.y);
+  let st = nearestStaff(L, o.y), cap = capOf(pg);
   for(let guard = 0; guard < 40; guard++){
     const M = measures(pg, st); if(!M) return;
     const m = clamp(Math.floor((o.x - M.a)/M.w), 0, M.n - 1);
-    const inM = x => clamp(Math.floor((x - M.a)/M.w), 0, M.n - 1) === m;
-    const onsets = [];
-    for(const q of pg.objs){
-      if(q === o || !(isNote(q.k) || /^rest/.test(q.k))) continue;
-      if(nearestStaff(L, q.y) !== st || !inM(q.x)) continue;
-      if(onsets.some(on => Math.abs(on.x - q.x) < 0.4*st.s)) continue;
-      onsets.push({x:q.x, d:durOfSym(pg, q, st)});
+    const {onsets, used} = usedIn(pg, st, m, o), mine = durOfSym(pg, o, st);
+    if(guard === 0 && onsets.some(on => Math.abs(on.x - o.x) < 0.4*st.s)) return;   // ακόρδα
+    if(used + mine <= cap + 1e-6) return;                                           // χωράει
+    if(m + 1 < M.n){                                                                // επόμενο μέτρο, πρώτη ελεύθερη θέση
+      const nx = usedIn(pg, st, m + 1, o);
+      o.x = r1(beatX(M, st, m + 1, nx.used, cap)); touch(o); continue;
     }
-    if(onsets.some(on => Math.abs(on.x - o.x) < 0.4*st.s)) return;     // ακόρδα στο ίδιο σημείο
-    const used = onsets.reduce((a, on) => a + on.d, 0), mine = durOfSym(pg, o, st);
-    if(used + mine <= capOf(pg) + 1e-6) return;                         // χωράει
-    if(m + 1 >= M.n){                                                  // τέλος πενταγράμμου: πάει στο από κάτω
-      if(st.i + 1 >= L.length) return;
-      const prev = st; st = L[st.i + 1]; const N = measures(pg, st); if(!N) return;
-      o.x = r1(N.a + 0.9*st.s); o.y = r1(o.y + (st.mid - prev.mid)); touch(o); return;
-    }
-    const N = measures(pg, st);
-    o.x = r1(N.a + N.w*(m + 1) + 1.2*st.s); touch(o);
+    if(st.i + 1 >= L.length) return;                                                // τέλος της σελίδας
+    const prev = st; st = L[st.i + 1]; const N = measures(pg, st); if(!N) return;
+    const nx = usedIn(pg, st, 0, o);
+    o.x = r1(beatX(N, st, 0, nx.used, cap)); o.y = r1(o.y + (st.mid - prev.mid)); touch(o);
   }
 }
 function playObj(pg, o, beats){
@@ -2122,7 +2129,7 @@ function entryClick(pt){
   window.addEventListener('resize', () => { measureBar(); resize(); });
   resize(); updateUI();
   $('#saveDot').textContent = '';
-  window.__app = {entry:() => entry, measures, setView, buildScore, playing:() => playing, doc:() => doc, ui, view, layout, curPage, buildPDF, renderPageCanvas, hist:() => H(curPage()), sel:() => sel};
+  window.__app = {fitMeasure, usedIn, durOfSym, entry:() => entry, measures, setView, buildScore, playing:() => playing, doc:() => doc, ui, view, layout, curPage, buildPDF, renderPageCanvas, hist:() => H(curPage()), sel:() => sel};
 })();
 </script>
 </body>
