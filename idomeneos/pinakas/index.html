@@ -911,7 +911,7 @@ function drawLive(){
 function snap(pg){ return JSON.stringify({staves:pg.staves, blank:pg.blank|0, bars:pg.bars || [], clef:pg.clef, time:pg.time, objs:pg.objs}); }
 function restore(pg, s){ const d = JSON.parse(s); pg.staves = d.staves; pg.blank = d.blank|0; pg.bars = d.bars || []; pg.clef = d.clef; pg.time = d.time; pg.objs = d.objs; }
 function pushUndo(pg, s){ const h = H(pg); h.u.push(s ?? snap(pg)); if(h.u.length > 120) h.u.shift(); h.r = []; }
-function commitIfChanged(pg, tok){ if(snap(pg) !== tok){ pushUndo(pg, tok); changed(); return true; } return false; }
+function commitIfChanged(pg, tok){ normalizeMeasures(pg); if(snap(pg) !== tok){ pushUndo(pg, tok); changed(); return true; } return false; }
 function changed(){ updateUI(); saveSoon(); }
 function undo(){
   if(act) return; commitText(); const pg = curPage(), h = H(pg); if(!h.u.length) return;
@@ -2082,6 +2082,66 @@ function durOfSym(pg, q, st){
   const s = st.s;
   return pg.objs.some(d => d.k === 'dot' && d.x > q.x && d.x - q.x < 3*s && Math.abs(d.y - q.y) < 0.8*s) ? base*1.5 : base;
 }
+/* ---- Έλεγχος μέτρων: κανένα μέτρο δεν κρατά περισσότερους χρόνους από τον ρυθμό ----
+   Σε κάθε αλλαγή: οι νότες ενός πενταγράμμου διαβάζονται από αριστερά προς τα δεξιά· όταν ένα μέτρο υπερχειλίσει
+   (π.χ. από μια τελεία που μπήκε μετά), ό,τι περισσεύει πάει στην αρχή του επόμενου μέτρου. Οι ράβδοι δεν περνούν ποτέ πάνω από διαστολή. */
+function normalizeMeasures(pg){
+  if(!pg.bars || !pg.bars.some(n => n > 0) || !pg.objs.length) return false;
+  const L = layout(pg), cap = capOf(pg); let any = false;
+  for(const st of L){
+    const M = measures(pg, st); if(!M) continue;
+    const s = st.s, idx = x => clamp(Math.floor((x - M.a)/M.w), 0, M.n - 1);
+    const on = pg.objs.filter(q => q.t === 'g' && (isNote(q.k) || /^rest/.test(q.k)) && nearestStaff(L, q.y).i === st.i).sort((a, b) => a.x - b.x);
+    const onsets = [];
+    for(const q of on){ const last = onsets[onsets.length - 1], d = durOfSym(pg, q, st);
+      if(last && Math.abs(last.x - q.x) < 0.45*s){ last.items.push(q); last.d = Math.max(last.d, d); } else onsets.push({x:q.x, items:[q], d, fol:[]}); }
+    if(!onsets.length) continue;
+    // τελείες και αλλοιώσεις ακολουθούν τη νότα στην οποία ανήκουν
+    for(const q of pg.objs){
+      if(q.t !== 'g' || !(q.k === 'dot' || q.k in ACC) || nearestStaff(L, q.y).i !== st.i) continue;
+      let best = null, bd = 1e9;
+      for(const o of onsets) for(const it of o.items){
+        const dx = q.k === 'dot' ? q.x - it.x : it.x - q.x, lim = q.k === 'dot' ? 3*s : 2.8*s;
+        if(dx > 0 && dx < lim && Math.abs(q.y - it.y) < (q.k === 'dot' ? 0.8 : 0.35)*s + (q.k in ACC ? 0 : 0) && dx < bd){ bd = dx; best = o; }
+      }
+      if(best) best.fol.push(q);
+    }
+    let m = 0, b = 0, over = false;
+    for(const o of onsets){
+      const mi = idx(o.x); if(mi > m){ m = mi; b = 0; }
+      if(b > 0 && b + o.d > cap + 1e-6){ m++; b = 0; over = true; }
+      if(m >= M.n){ m = M.n - 1; }
+      o.m = m; o.b = b; b += o.d;
+    }
+    if(!over) continue;
+    any = true;
+    const byM = new Map(); for(const o of onsets){ if(!byM.has(o.m)) byM.set(o.m, []); byM.get(o.m).push(o); }
+    for(const [mm, list] of byM){
+      const x0 = M.a + M.w*mm + 0.9*s, avail = M.w - 1.35*s;
+      const w = o => wOfD(o.d), mn = o => (G.noteheadBlack.w/U + 0.55)*s*(o.fol.some(q => q.k in ACC) ? 1.45 : 1)*(o.fol.some(q => q.k === 'dot') ? 1.2 : 1);
+      const W = list.reduce((a, o) => a + w(o), 0), MN = list.reduce((a, o) => a + mn(o), 0);
+      const wid = o => avail > MN ? mn(o) + (avail - MN)*w(o)/W : avail*mn(o)/MN;
+      let acc = 0;
+      for(const o of list){
+        const nx = x0 + acc; acc += wid(o);
+        // η κεφαλή μπαίνει λίγο δεξιότερα όταν υπάρχει αλλοίωση μπροστά της
+        const accW = o.fol.some(q => q.k in ACC) ? 0.45*s : 0, target = nx + accW, dx = target - o.x;
+        if(Math.abs(dx) < 0.01) continue;
+        for(const q of [...o.items, ...o.fol]){ q.x = r1(q.x + dx); touch(q); }
+      }
+    }
+  }
+  // οι ράβδοι δεν περνούν πάνω από διαστολή
+  const groups = new Map();
+  for(const o of pg.objs) if(o.bm && isBeamable(o)){ if(!groups.has(o.bm)) groups.set(o.bm, []); groups.get(o.bm).push(o); }
+  for(const [id, g] of groups){
+    const st = nearestStaff(L, g[0].y), M = measures(pg, st); if(!M) continue;
+    const byM = new Map(); for(const o of g){ const mi = clamp(Math.floor((o.x - M.a)/M.w), 0, M.n - 1); if(!byM.has(mi)) byM.set(mi, []); byM.get(mi).push(o); }
+    if(byM.size > 1){ any = true; let first = true;
+      for(const list of byM.values()){ const nid = first ? id : 'b' + uid(); first = false; for(const o of list){ if(list.length > 1) o.bm = nid; else delete o.bm; touch(o); } } }
+  }
+  return any;
+}
 /* Χρόνος (σε τέταρτα) που έχουν ήδη καταλάβει οι νότες και οι παύσεις ενός μέτρου */
 function usedIn(pg, st, m, excl){
   const L = layout(pg), M = measures(pg, st), onsets = [];
@@ -2189,6 +2249,7 @@ function entryKey(e){
   }
   if(c === 'Period' || c === 'NumpadDecimal'){
     if(!last || last.extras.some(q => q.k === 'dot')) return true;
+    if(measures(pg, layout(pg)[last.si]) && last.b + last.d*1.5 > capOf(pg) + 1e-6){ toast('Η τελεία δεν χωράει: το μέτρο γεμίζει.', true); return true; }
     const tok = snap(pg), o = last.o, L = layout(pg), st = L[last.si], s = st.s;
     const onLine = Math.round((st.bot - o.y)/(s/2)) % 2 === 0;
     const hw = (o.k === 'noteWhole' ? G.noteWhole.b[2] : isNote(o.k) ? G.noteheadBlack.w : G[o.k].w)*o.sp/U;
