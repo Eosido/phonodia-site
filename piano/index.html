@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Πιάνο · ΦΩΝΩΔΙΑ</title>
+<meta name="description" content="Εικονικό πιάνο με ζεστό, απαλό ήχο και τρεις αισθητικές: πιάνο, synthesizer, κρύσταλλο.">
+<meta name="theme-color" content="#1a120f">
+<style>
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../idomeneos/assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../idomeneos/assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:400; font-display:swap;
+  src:url("../idomeneos/assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../idomeneos/assets/bd9ce42fc392.woff2") format('woff2'); unicode-range:U+1F00-1FFF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../idomeneos/assets/77e595b77d31.woff2") format('woff2'); unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF; }
+@font-face { font-family:'Alegreya'; font-style:normal; font-weight:500; font-display:swap;
+  src:url("../idomeneos/assets/c01893fd0e74.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --kw:44px; --kh:210px; --fh:170px;
+  --bw:calc(var(--kw)*.6); --bh:calc(var(--kh)*.63); --felt:9px;
+  --font:'Alegreya',Georgia,'Times New Roman',serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html,body{margin:0}
+body{
+  font-family:var(--font); font-size:17px; line-height:1.35;
+  color:var(--ink); background:var(--bg); background-attachment:fixed;
+  min-height:100vh; -webkit-font-smoothing:antialiased;
+  transition:background .5s, color .3s;
+}
+
+/* ───────── Θέματα: μεταβλητές ───────── */
+body[data-theme=grand]{
+  --bg:radial-gradient(ellipse 90% 60% at 50% -10%,#4a362b 0%,#241813 55%,#0d0908 100%);
+  --card:linear-gradient(180deg,rgba(56,40,32,.72),rgba(30,21,17,.82));
+  --cardline:rgba(233,196,130,.16);
+  --ink:#efe3cf; --soft:#b9a78d; --accent:#d4a95c; --accent2:#f0cf8a;
+  --chip:rgba(255,235,200,.06); --chipOn:#d4a95c; --chipOnInk:#241813;
+  --track:rgba(255,235,200,.16); --thumb:#f7ecd6;
+  --case:linear-gradient(180deg,#26262b 0%,#101013 28%,#09090b 100%);
+  --caseEdge:0 30px 60px -20px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,.18);
+  --feltbg:linear-gradient(180deg,#8f1d2b,#5b0f1a);
+  --disp:rgba(0,0,0,.35); --dispInk:#f0cf8a;
+}
+body[data-theme=synth]{
+  --bg:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(63,240,224,.12),transparent 60%),
+       radial-gradient(ellipse 70% 50% at 90% 10%,rgba(255,63,180,.12),transparent 60%),#090b10;
+  --card:linear-gradient(180deg,#141823,#0f121b);
+  --cardline:#232a3b;
+  --ink:#dfe7f5; --soft:#7e8aa6; --accent:#3ff0e0; --accent2:#ff3fb4;
+  --chip:#0b0e15; --chipOn:#3ff0e0; --chipOnInk:#06242a;
+  --track:#262d40; --thumb:#0b0e15;
+  --case:linear-gradient(180deg,#1b2030,#0d1018);
+  --caseEdge:0 30px 60px -20px rgba(0,0,0,.9), 0 0 0 1px #2a3248, 0 0 40px -8px rgba(63,240,224,.25);
+  --feltbg:linear-gradient(90deg,#3ff0e0,#7a7bff,#ff3fb4);
+  --disp:#070a10; --dispInk:#3ff0e0;
+  --font:var(--mono);
+}
+body[data-theme=crystal]{
+  --bg:radial-gradient(ellipse 60% 50% at 15% 10%,rgba(143,108,255,.45),transparent 65%),
+       radial-gradient(ellipse 60% 55% at 85% 20%,rgba(64,196,255,.35),transparent 65%),
+       radial-gradient(ellipse 70% 60% at 50% 100%,rgba(255,122,200,.32),transparent 70%),#140f2b;
+  --card:rgba(255,255,255,.09);
+  --cardline:rgba(255,255,255,.22);
+  --ink:#f6f1ff; --soft:#cbbfe8; --accent:#bfa4ff; --accent2:#7fe3ff;
+  --chip:rgba(255,255,255,.1); --chipOn:rgba(255,255,255,.88); --chipOnInk:#2a1a55;
+  --track:rgba(255,255,255,.25); --thumb:#fff;
+  --case:rgba(255,255,255,.07);
+  --caseEdge:0 30px 70px -20px rgba(20,8,60,.7), 0 0 0 1px rgba(255,255,255,.28), inset 0 1px 0 rgba(255,255,255,.4);
+  --feltbg:linear-gradient(90deg,#ff9ad5,#b89bff,#7fe3ff);
+  --disp:rgba(255,255,255,.1); --dispInk:#fff;
+}
+
+/* ───────── Διάταξη ───────── */
+.app{max-width:1500px;margin:0 auto;padding:14px 14px 60px}
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 2px 14px}
+.top .home{color:var(--soft);text-decoration:none;font-size:.9rem;letter-spacing:.06em}
+.top .home:hover{color:var(--accent2)}
+.top h1{margin:0;font-weight:500;font-size:1.9rem;letter-spacing:.04em;flex:1;color:var(--ink)}
+.top h1 small{font-size:.5em;letter-spacing:.22em;color:var(--accent);margin-left:.6em;text-transform:uppercase}
+.themes{display:flex;gap:6px;padding:4px;border-radius:999px;background:var(--disp);border:1px solid var(--cardline)}
+.themes button{font:inherit;font-size:.92rem;color:var(--soft);background:transparent;border:0;border-radius:999px;padding:7px 15px;cursor:pointer;transition:.2s}
+.themes button[aria-pressed=true]{background:var(--chipOn);color:var(--chipOnInk);box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.themes button:hover:not([aria-pressed=true]){color:var(--ink)}
+
+.case{position:relative;border-radius:20px;background:var(--case);box-shadow:var(--caseEdge);padding:14px 14px 12px}
+body[data-theme=crystal] .case{backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3)}
+body[data-theme=synth] .case{padding-left:34px;padding-right:34px}
+body[data-theme=synth] .case::before,body[data-theme=synth] .case::after{
+  content:'';position:absolute;top:0;bottom:0;width:22px;
+  background:linear-gradient(90deg,#5e3a21,#8d5a34 40%,#5e3a21);
+  box-shadow:inset 0 0 6px rgba(0,0,0,.6)}
+body[data-theme=synth] .case::before{left:0;border-radius:20px 0 0 20px}
+body[data-theme=synth] .case::after{right:0;border-radius:0 20px 20px 0}
+
+.disp{display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-height:46px;margin:0 0 10px;padding:8px 14px;border-radius:12px;background:var(--disp);border:1px solid var(--cardline)}
+.disp .chord{font-size:1.5rem;font-weight:500;color:var(--dispInk);min-width:7ch}
+body[data-theme=synth] .disp .chord{text-shadow:0 0 12px rgba(63,240,224,.7)}
+.disp .notes{color:var(--soft);flex:1;font-size:1rem;min-width:8ch}
+.disp .stat{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--soft)}
+.pill{padding:3px 10px;border-radius:999px;border:1px solid var(--cardline);opacity:.45;transition:.2s}
+.pill.on{opacity:1;color:var(--chipOnInk);background:var(--accent);border-color:transparent}
+.pill.rec.on{background:#e5484d;color:#fff;animation:blink 1.1s infinite}
+@keyframes blink{50%{opacity:.55}}
+
+.scroller{overflow-x:auto;overflow-y:hidden;border-radius:10px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;padding-bottom:2px}
+.board{position:relative;width:calc(52*var(--kw))}
+#fall{display:block;width:100%;height:var(--fh);pointer-events:none;
+  -webkit-mask-image:linear-gradient(transparent,#000 45%);mask-image:linear-gradient(transparent,#000 45%)}
+body.nofall #fall{display:none}
+.keys{position:relative;height:calc(var(--kh) + var(--felt));touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
+.keys::before{content:'';position:absolute;left:0;right:0;top:0;height:var(--felt);background:var(--feltbg);z-index:0;border-radius:3px 3px 0 0}
+body[data-theme=synth] .keys::before{height:5px;box-shadow:0 0 14px rgba(63,240,224,.7)}
+body[data-theme=synth]{--felt:5px}
+body[data-theme=crystal]{--felt:4px}
+
+.key{position:absolute;top:var(--felt);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px;
+  transform-origin:50% 0;transition:transform .05s,background .12s,box-shadow .12s}
+.key.white{left:calc(var(--i)*var(--kw));width:var(--kw);height:var(--kh);z-index:1;padding-bottom:9px}
+.key.black{left:calc((var(--i) + 1)*var(--kw) - var(--bw)/2);width:var(--bw);height:var(--bh);z-index:2;padding-bottom:7px}
+.key .nm{font-size:calc(var(--kw)*.27);color:rgba(0,0,0,.5);pointer-events:none;line-height:1;min-height:1em;font-family:var(--font)}
+.key .ck{font-family:var(--mono);font-size:calc(var(--kw)*.26);min-width:1.55em;height:1.55em;line-height:1.5em;text-align:center;border-radius:4px;
+  border:1px solid rgba(0,0,0,.28);color:rgba(0,0,0,.6);background:rgba(255,255,255,.45);pointer-events:none;display:none}
+.key.black .ck{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1)}
+body.showck .key[data-ck] .ck{display:block}
+.key .ck::after{content:attr(data-t)}
+
+/* Πιάνο (grand) */
+body[data-theme=grand] .key.white{
+  background:linear-gradient(180deg,#fdfaf1 0%,#f3ecdb 68%,#e4dac3 100%);
+  border-radius:0 0 6px 6px;border-right:1px solid #b8ab8f;border-left:1px solid rgba(255,255,255,.6);
+  box-shadow:inset 0 -7px 9px rgba(120,95,50,.12),0 3px 4px rgba(0,0,0,.45)}
+body[data-theme=grand] .key.white.down{background:linear-gradient(180deg,#eadfc7,#ddd1b4 70%,#cfc2a2);box-shadow:inset 0 -2px 5px rgba(80,60,20,.2);transform:translateY(2px)}
+body[data-theme=grand] .key.white.ring{background:linear-gradient(180deg,#f6eed9,#e9dfc6 70%,#d9ceb1)}
+body[data-theme=grand] .key.black{
+  background:linear-gradient(180deg,#44444a 0%,#17171b 40%,#050506 100%);
+  border-radius:0 0 4px 4px;box-shadow:inset 1px 0 1px rgba(255,255,255,.18),inset -1px 0 1px rgba(0,0,0,.6),inset 0 -5px 4px rgba(255,255,255,.07),0 5px 7px rgba(0,0,0,.65)}
+body[data-theme=grand] .key.black.down{background:linear-gradient(180deg,#5a5a62,#26262b 50%,#0d0d10);box-shadow:inset 1px 0 1px rgba(255,255,255,.18),0 2px 3px rgba(0,0,0,.6);transform:translateY(1.5px)}
+body[data-theme=grand] .key.black.ring{background:linear-gradient(180deg,#4d4d54,#1f1f24 45%,#08080a)}
+
+/* Synthesizer */
+body[data-theme=synth] .key.white{
+  background:linear-gradient(180deg,#f6f8fc,#dfe4ee);border-radius:0 0 4px 4px;border-right:1px solid #8b93a8;
+  box-shadow:inset 0 -5px 6px rgba(60,70,100,.15),0 3px 4px rgba(0,0,0,.5)}
+body[data-theme=synth] .key.white.down{background:linear-gradient(180deg,#d8fffb,#3ff0e0);box-shadow:0 0 22px rgba(63,240,224,.75),inset 0 -3px 6px rgba(0,80,80,.25);transform:translateY(2px)}
+body[data-theme=synth] .key.white.ring{background:linear-gradient(180deg,#e6fbf9,#93ece4)}
+body[data-theme=synth] .key.black{
+  background:linear-gradient(180deg,#2a2f3d,#0b0d13);border-radius:0 0 3px 3px;
+  box-shadow:inset 0 -4px 4px rgba(255,255,255,.08),0 5px 7px rgba(0,0,0,.7),0 0 0 1px #000}
+body[data-theme=synth] .key.black.down{background:linear-gradient(180deg,#ff8ad2,#ff3fb4);box-shadow:0 0 22px rgba(255,63,180,.8);transform:translateY(1.5px)}
+body[data-theme=synth] .key.black.ring{background:linear-gradient(180deg,#8a2e6c,#4a1639)}
+body[data-theme=synth] .key .nm{color:#5a6384}
+
+/* Κρύσταλλο */
+body[data-theme=crystal] .key.white{
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(226,232,255,.55));border-radius:0 0 10px 10px;
+  border:1px solid rgba(255,255,255,.7);border-top:0;
+  box-shadow:inset 0 -10px 16px rgba(150,160,255,.25),0 4px 10px rgba(30,10,80,.35);margin-left:0}
+body[data-theme=crystal] .key.white.down{background:linear-gradient(180deg,hsl(var(--h) 100% 92%),hsl(var(--h) 95% 72%));
+  box-shadow:0 0 28px hsl(var(--h) 100% 68%),inset 0 -8px 14px hsla(var(--h),100%,50%,.25);transform:translateY(2px)}
+body[data-theme=crystal] .key.white.ring{background:linear-gradient(180deg,hsl(var(--h) 100% 95%),hsl(var(--h) 80% 84%))}
+body[data-theme=crystal] .key.black{
+  background:linear-gradient(180deg,rgba(64,46,128,.92),rgba(24,14,64,.92));border-radius:0 0 8px 8px;
+  border:1px solid rgba(255,255,255,.3);border-top:0;box-shadow:0 6px 12px rgba(10,4,40,.6),inset 0 -6px 10px rgba(180,160,255,.2)}
+body[data-theme=crystal] .key.black.down{background:linear-gradient(180deg,hsl(var(--h) 90% 66%),hsl(var(--h) 80% 42%));box-shadow:0 0 28px hsl(var(--h) 100% 64%);transform:translateY(1.5px)}
+body[data-theme=crystal] .key.black.ring{background:linear-gradient(180deg,hsl(var(--h) 55% 45%),hsl(var(--h) 55% 25%))}
+body[data-theme=crystal] .key .nm{color:rgba(60,40,120,.7)}
+
+/* ───────── Μικρογραφία πλήκτρων (πλοήγηση) ───────── */
+.ov{position:relative;height:32px;margin-top:10px;border-radius:8px;overflow:hidden;background:var(--disp);border:1px solid var(--cardline);touch-action:none;cursor:ew-resize}
+.ov i{position:absolute;display:block}
+.ov .w{top:0;bottom:0;width:calc(100%/52);left:calc(var(--i)*100%/52);background:rgba(255,255,255,.55);border-right:1px solid rgba(0,0,0,.25)}
+.ov .b{top:0;height:62%;width:calc(60%/52);left:calc((var(--i) + 1)*100%/52 - 30%/52);background:#15151a;z-index:2}
+body[data-theme=synth] .ov .w{background:#c9cfdd}
+.ov .w.down,.ov .b.down{background:var(--accent2)}
+.ov .map{position:absolute;bottom:0;height:4px;background:var(--accent);z-index:3;border-radius:2px}
+.ov .win{position:absolute;top:0;bottom:0;border:2px solid var(--accent);border-radius:6px;background:rgba(255,255,255,.12);z-index:4;pointer-events:none;box-shadow:0 0 0 999px rgba(0,0,0,.28)}
+
+/* ───────── Πίνακας ελέγχου ───────── */
+.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:16px;padding:14px 16px 16px;box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+body[data-theme=crystal] .card{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.card h3{margin:0 0 10px;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.card.wide{grid-column:span 2}
+@media (max-width:640px){.card.wide{grid-column:auto}}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip,.btn{font:inherit;font-size:.95rem;color:var(--ink);background:var(--chip);border:1px solid var(--cardline);border-radius:999px;padding:7px 13px;cursor:pointer;transition:.15s}
+.chip:hover,.btn:hover{border-color:var(--accent)}
+.chip[aria-pressed=true],.btn.on{background:var(--chipOn);color:var(--chipOnInk);border-color:transparent;font-weight:500}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.rec.on{background:#e5484d;color:#fff}
+.btn.sq{width:38px;height:38px;padding:0;border-radius:10px;font-size:1.15rem;line-height:1}
+.hint{margin:10px 0 0;color:var(--soft);font-size:.92rem}
+.row{display:grid;grid-template-columns:118px 1fr 40px;align-items:center;gap:10px;margin:7px 0;font-size:.95rem}
+.row span:first-child{color:var(--soft)}
+.row output{font-family:var(--mono);font-size:.8rem;color:var(--soft);text-align:right}
+.step{display:flex;align-items:center;gap:10px;margin:8px 0}
+.step>span{color:var(--soft);font-size:.95rem;width:92px}
+.step b{min-width:3.2ch;text-align:center;font-weight:500;font-size:1.15rem;color:var(--ink)}
+.seg{display:inline-flex;gap:4px}
+.tog{display:flex;align-items:center;gap:9px;margin-top:10px;cursor:pointer;color:var(--ink);font-size:.95rem}
+.tog input{width:18px;height:18px;accent-color:var(--accent)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;margin:0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:5px;background:linear-gradient(var(--accent),var(--accent)) 0/var(--p,50%) 100% no-repeat,var(--track)}
+input[type=range]::-moz-range-track{height:5px;border-radius:5px;background:var(--track)}
+input[type=range]::-moz-range-progress{height:5px;border-radius:5px;background:var(--accent)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-6.5px;border-radius:50%;background:var(--thumb);border:2px solid var(--accent);box-shadow:0 1px 5px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--thumb);border:2px solid var(--accent)}
+.bpm{display:flex;align-items:center;gap:10px}
+.bpm .num{font-size:2.1rem;font-weight:500;min-width:3ch;text-align:center;color:var(--accent2);font-variant-numeric:tabular-nums}
+.bpm small{color:var(--soft);font-size:.8rem;letter-spacing:.12em}
+.dots{display:flex;gap:8px;margin:10px 0 2px;min-height:14px}
+.dots i{width:13px;height:13px;border-radius:50%;background:var(--track);transition:.08s}
+.dots i.on{background:var(--accent2);box-shadow:0 0 12px var(--accent2);transform:scale(1.25)}
+.dots i.acc.on{background:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+.prog{height:5px;border-radius:5px;background:var(--track);overflow:hidden;margin-top:10px}
+.prog i{display:block;height:100%;width:0;background:var(--accent)}
+.keyhelp{margin:0;padding:0;list-style:none;color:var(--soft);font-size:.93rem}
+.keyhelp li{margin:5px 0}
+kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;border:1px solid var(--cardline);background:var(--chip);color:var(--ink)}
+.foot{margin:26px 0 0;text-align:center;color:var(--soft);font-size:.85rem}
+
+@media (max-width:720px){
+  :root{--kh:170px;--fh:120px}
+  .app{padding:10px 10px 50px}
+  .top h1{font-size:1.5rem;flex-basis:100%;order:-1}
+  .case{padding:10px 8px}
+  body[data-theme=synth] .case{padding-left:24px;padding-right:24px}
+  body[data-theme=synth] .case::before,body[data-theme=synth] .case::after{width:14px}
+  .disp .chord{font-size:1.2rem}
+  .row{grid-template-columns:96px 1fr 36px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body data-theme="grand">
+<div class="app">
+
+  <header class="top">
+    <a class="home" href="../">← ΦΩΝΩΔΙΑ</a>
+    <h1>Πιάνο<small id="themeName">Κοντσέρτο</small></h1>
+    <div class="themes" id="themes" role="group" aria-label="Αισθητική">
+      <button data-theme="grand">Πιάνο</button>
+      <button data-theme="synth">Synthesizer</button>
+      <button data-theme="crystal">Κρύσταλλο</button>
+    </div>
+  </header>
+
+  <main class="case" id="case">
+    <div class="disp" aria-live="polite">
+      <div class="chord" id="chord">—</div>
+      <div class="notes" id="notes">Άγγιξε ένα πλήκτρο ή πάτησε το πληκτρολόγιο του υπολογιστή</div>
+      <div class="stat">
+        <span class="pill" id="pPedal">Πεντάλ</span>
+        <span class="pill" id="pMidi">MIDI</span>
+        <span class="pill rec" id="pRec">● REC</span>
+      </div>
+    </div>
+    <div class="scroller" id="scroller">
+      <div class="board" id="board">
+        <canvas id="fall"></canvas>
+        <div class="keys" id="keys"></div>
+      </div>
+    </div>
+    <div class="ov" id="ov" title="Σύρε για να μετακινηθείς στο πληκτρολόγιο"></div>
+  </main>
+
+  <section class="panel">
+
+    <div class="card wide">
+      <h3>Ήχος</h3>
+      <div class="chips" id="sounds"></div>
+      <p class="hint" id="soundHint"></p>
+    </div>
+
+    <div class="card">
+      <h3>Μίξη</h3>
+      <label class="row"><span>Όγκος</span><input type="range" id="vol" min="0" max="100"><output></output></label>
+      <label class="row"><span>Αντήχηση</span><input type="range" id="rev" min="0" max="100"><output></output></label>
+      <label class="row"><span>Απαλότητα</span><input type="range" id="tone" min="0" max="100"><output></output></label>
+      <label class="row"><span>Ένταση αφής</span><input type="range" id="touch" min="20" max="100"><output></output></label>
+    </div>
+
+    <div class="card">
+      <h3>Παίξιμο</h3>
+      <div class="step"><span>Οκτάβα</span><button class="btn sq" id="octM" aria-label="Οκτάβα κάτω">−</button><b id="octV"></b><button class="btn sq" id="octP" aria-label="Οκτάβα πάνω">+</button></div>
+      <div class="step"><span>Μεταφορά</span><button class="btn sq" id="trM" aria-label="Ημιτόνιο κάτω">−</button><b id="trV"></b><button class="btn sq" id="trP" aria-label="Ημιτόνιο πάνω">+</button></div>
+      <div class="step"><span>Πεντάλ</span><button class="btn" id="pedalBtn" aria-pressed="false">Sustain</button><small class="hint" style="margin:0">ή κράτα <kbd>Space</kbd></small></div>
+      <label class="row" style="margin-top:12px"><span>Μέγεθος πλήκτρων</span><input type="range" id="kw" min="28" max="76"><output></output></label>
+    </div>
+
+    <div class="card">
+      <h3>Εμφάνιση</h3>
+      <div class="chips" id="names" style="margin-bottom:4px">
+        <button class="chip" data-v="none">Χωρίς ονόματα</button>
+        <button class="chip" data-v="abc">C D E</button>
+        <button class="chip" data-v="sol">Ντο Ρε Μι</button>
+      </div>
+      <label class="tog"><input type="checkbox" id="ckBox"> Πλήκτρα του υπολογιστή πάνω στις νότες</label>
+      <label class="tog"><input type="checkbox" id="fallBox"> Ροή νοτών (φωτεινές γραμμές)</label>
+    </div>
+
+    <div class="card">
+      <h3>Μετρονόμος</h3>
+      <div class="bpm">
+        <button class="btn sq" id="bpmM" aria-label="Πιο αργά">−</button>
+        <div><div class="num" id="bpmV">92</div><small>BPM</small></div>
+        <button class="btn sq" id="bpmP" aria-label="Πιο γρήγορα">+</button>
+        <button class="btn" id="metBtn" aria-pressed="false" style="margin-left:auto">▶ Έναρξη</button>
+      </div>
+      <input type="range" id="bpm" min="30" max="240" style="margin-top:8px">
+      <div class="dots" id="dots"></div>
+      <div class="chips" id="beats" style="margin-top:8px">
+        <button class="chip" data-v="2">2</button><button class="chip" data-v="3">3</button><button class="chip" data-v="4">4</button><button class="chip" data-v="6">6</button>
+        <button class="chip" id="tapBtn" style="margin-left:auto">Tap tempo</button>
+      </div>
+    </div>
+
+    <div class="card wide">
+      <h3>Ηχογράφηση</h3>
+      <div class="btns">
+        <button class="btn rec" id="recBtn">● Εγγραφή</button>
+        <button class="btn" id="playBtn" disabled>▶ Αναπαραγωγή</button>
+        <button class="btn" id="stopBtn" disabled>■ Στοπ</button>
+        <button class="btn" id="loopBtn" aria-pressed="false">↻ Επανάληψη</button>
+        <button class="btn" id="midiBtn" disabled>⬇ MIDI</button>
+        <button class="btn" id="audioBtn" disabled>⬇ Ήχος</button>
+        <button class="btn" id="clearBtn" disabled>Καθαρισμός</button>
+        <button class="btn" id="demoBtn" style="margin-left:auto">♪ Ακρόαση δείγματος</button>
+      </div>
+      <div class="prog"><i id="prog"></i></div>
+      <p class="hint" id="recHint">Πάτησε «Εγγραφή» και παίξε. Η εγγραφή ξεκινά με την πρώτη νότα, και αποθηκεύεται ως αρχείο MIDI (στο τέμπο του μετρονόμου) και ως ήχος.</p>
+    </div>
+
+    <div class="card">
+      <h3>MIDI πληκτρολόγιο</h3>
+      <p class="hint" style="margin-top:0" id="midiHint">Έλεγχος για συσκευή MIDI…</p>
+      <p class="hint">Συνδέεις ένα πραγματικό πληκτρολόγιο με USB και παίζει αμέσως, με ένταση και πεντάλ (Chrome, Edge, Opera).</p>
+    </div>
+
+    <div class="card">
+      <h3>Συντομεύσεις</h3>
+      <ul class="keyhelp">
+        <li><kbd>Z</kbd>–<kbd>M</kbd> και <kbd>Q</kbd>–<kbd>U</kbd>: νότες (οι αριθμοί και τα <kbd>S D G H J</kbd> είναι τα μαύρα)</li>
+        <li><kbd>↑</kbd> <kbd>↓</kbd> οκτάβα · <kbd>←</kbd> <kbd>→</kbd> ημιτόνιο</li>
+        <li><kbd>Space</kbd> πεντάλ · <kbd>Enter</kbd> εγγραφή</li>
+        <li>Με το ποντίκι ή το δάχτυλο: σύρε πάνω στα πλήκτρα για γκλισάντο</li>
+      </ul>
+    </div>
+
+  </section>
+  <p class="foot">Ο ήχος παράγεται ζωντανά στον περιηγητή σου · δεν χρειάζεται σύνδεση</p>
+</div>
+
+<script>
+'use strict';
+/* ════════════════════════════════════════════════════════════
+   Πιάνο ΦΩΝΩΔΙΑ — Web Audio, χωρίς εξωτερικά αρχεία
+   ════════════════════════════════════════════════════════════ */
+const $ = s => document.querySelector(s);
+const clamp = (x,a,b) => Math.min(b, Math.max(a,x));
+const mtof = m => 440*Math.pow(2,(m-69)/12);
+const LOW = 21, HIGH = 108;           // A0 … C8 (88 πλήκτρα)
+const NAMES_A = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+const NAMES_S = ['Ντο','Ντο♯','Ρε','Ρε♯','Μι','Φα','Φα♯','Σολ','Σολ♯','Λα','Λα♯','Σι'];
+const isBlack = n => [1,3,6,8,10].includes(n%12);
+
+/* ───── Ρυθμίσεις (αποθηκεύονται τοπικά) ───── */
+const DEF = {theme:'grand',sound:'piano',vol:.75,rev:.30,tone:.62,touch:.78,oct:3,trans:0,kw:0,names:'sol',ck:true,fall:false,bpm:92,beats:4};
+const S = Object.assign({}, DEF);
+try { Object.assign(S, JSON.parse(localStorage.getItem('phonodia-piano')||'{}')); } catch(e){}
+if (!S.kw) S.kw = innerWidth < 720 ? 38 : 46;
+const save = () => { try { localStorage.setItem('phonodia-piano', JSON.stringify(S)); } catch(e){} };
+
+/* ════════════════ ΗΧΟΣ ════════════════ */
+let ctx=null, voiceBus, toneF, dryG, wetG, convolver, master, comp, recDest, metBus, noiseBuf;
+
+function makeIR(c, sec=3.4){
+  const rate=c.sampleRate, len=Math.floor(rate*sec), pre=Math.floor(rate*.016);
+  const b=c.createBuffer(2,len,rate);
+  for(let ch=0;ch<2;ch++){
+    const d=b.getChannelData(ch); let lp=0;
+    for(let i=pre;i<len;i++){
+      const t=(i-pre)/(len-pre);
+      const env=Math.pow(1-t,2.4)*Math.exp(-t*2.2);
+      const a=.7-.62*Math.sqrt(t);              // πιο σκούρο όσο σβήνει — ζεστή αίθουσα
+      lp+=((Math.random()*2-1)-lp)*a;
+      d[i]=lp*env;
+    }
+    for(let k=0;k<7;k++){                        // πρώιμες ανακλάσεις
+      const at=pre+Math.floor(rate*(.011+k*.0093+Math.random()*.004));
+      d[at]+= (k%2?-1:1)*.6*Math.pow(.78,k);
+    }
+  }
+  return b;
+}
+
+function setupAudio(c){
+  ctx=c;
+  voiceBus=c.createGain();
+  toneF=c.createBiquadFilter(); toneF.type='lowpass'; toneF.Q.value=.4;
+  dryG=c.createGain(); wetG=c.createGain();
+  convolver=c.createConvolver(); convolver.buffer=makeIR(c);
+  master=c.createGain();
+  comp=c.createDynamicsCompressor();
+  comp.threshold.value=-17; comp.knee.value=22; comp.ratio.value=3.2; comp.attack.value=.008; comp.release.value=.3;
+  voiceBus.connect(toneF);
+  toneF.connect(dryG); dryG.connect(master);
+  toneF.connect(convolver); convolver.connect(wetG); wetG.connect(master);
+  const sat=c.createWaveShaper(); const cv=new Float32Array(2048);
+  for(let i=0;i<2048;i++){ const x=i/1023.5-1; cv[i]=Math.tanh(x*1.1)/Math.tanh(1.1); }
+  sat.curve=cv; sat.oversample='2x';            // απαλό όριο: ποτέ σκληρή παραμόρφωση
+  master.connect(comp); comp.connect(sat); sat.connect(c.destination);
+  if(c.createMediaStreamDestination){ recDest=c.createMediaStreamDestination(); sat.connect(recDest); }
+  metBus=c.createGain(); metBus.gain.value=.5; metBus.connect(c.destination);
+  noiseBuf=c.createBuffer(1,c.sampleRate,c.sampleRate);
+  const nd=noiseBuf.getChannelData(0); for(let i=0;i<nd.length;i++) nd[i]=Math.random()*2-1;
+  applyMix(true);
+}
+function initAudio(){
+  if(!ctx){ const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false; setupAudio(new AC({latencyHint:'interactive'})); }
+  if(ctx.state==='suspended') ctx.resume();
+  return true;
+}
+function applyMix(now){
+  if(!ctx) return; const t=ctx.currentTime;
+  const set=(p,v)=> now ? (p.value=v) : p.setTargetAtTime(v,t,.03);
+  set(master.gain, Math.pow(S.vol,1.7)*2.3);
+  set(wetG.gain, S.rev*.95);
+  set(dryG.gain, 1-S.rev*.35);
+  set(toneF.frequency, 900*Math.pow(20,S.tone));
+}
+
+/* ───── Φωνές ───── */
+const voices=[];
+function osc(v,type,freq,cents,t,dest){
+  const o=ctx.createOscillator(); o.type=type; o.frequency.value=freq;
+  if(cents) o.detune.value=cents;
+  o.connect(dest); o.start(t); v.oscs.push(o); return o;
+}
+function lpf(freq,q,dest){ const f=ctx.createBiquadFilter(); f.type='lowpass'; f.frequency.value=clamp(freq,60,18000); f.Q.value=q; f.connect(dest); return f; }
+function gainTo(dest,val=0){ const g=ctx.createGain(); g.gain.value=val; g.connect(dest); return g; }
+function stopAt(v,t){ for(const o of v.oscs){ try{o.stop(t);}catch(e){} } }
+
+/* Πιάνο: προσθετική σύνθεση, ελαφρώς ανάρμοστες αρμονικές, δύο στάδια απόσβεσης, απαλό «σφυράκι» */
+const PIANO_P = {
+  piano:{k0:2.2,k1:7.5,tilt:.84,atk:.0045,hammer:.05,decay:1,level:.125},
+  felt: {k0:1.5,k1:4.2,tilt:.68,atk:.013, hammer:.028,decay:.88,level:.15}
+};
+function buildPiano(v,f,vel,t,P){
+  const lp=lpf(f*(P.k0+vel*P.k1),.3,v.out);
+  const B=.00004*Math.pow(f/261.6,1.8)+.00002;
+  const T1=clamp(11*Math.pow(261.6/f,.55),1.4,17)*P.decay;
+  const amps=[1,.62,.40,.26,.17,.11,.075,.05,.035,.024,.017,.012];
+  const level=P.level*(.2+.8*Math.pow(vel,1.4));
+  let endT=t+.2;
+  for(let n=1;n<=amps.length;n++){
+    const fn=f*n*Math.sqrt(1+B*n*n); if(fn>14000) break;
+    const a=amps[n-1]*Math.pow(P.tilt,n-1)*Math.pow(vel,(n-1)*.4)*level;
+    const tau=(T1/(1+.55*(n-1)))/6.9;
+    const strings = n<=4 ? [[1,.72,1],[1,.42,2.7]] : [[1,1,1]];
+    strings.forEach(([,amp,tm],si)=>{
+      const g=gainTo(lp,0);
+      g.gain.setValueAtTime(0,t);
+      g.gain.linearRampToValueAtTime(a*amp,t+P.atk);
+      g.gain.setTargetAtTime(0,t+P.atk,tau*tm);
+      osc(v,'sine',fn,si? (1.1+n*.25) : 0,t,g);
+      endT=Math.max(endT,t+P.atk+tau*tm*7);
+    });
+  }
+  // απαλό «χτύπημα» του σφυριού
+  const ns=ctx.createBufferSource(); ns.buffer=noiseBuf;
+  const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=clamp(f*3,300,2600); bp.Q.value=.7;
+  const ng=ctx.createGain(); ng.gain.setValueAtTime(P.hammer*vel*level*8,t); ng.gain.setTargetAtTime(0,t,.011);
+  ns.connect(bp); bp.connect(ng); ng.connect(lp); ns.start(t,Math.random()*.5); v.oscs.push(ns);
+  stopAt(v,Math.min(endT,t+20));
+}
+/* Ηλεκτρικό πιάνο: FM με «κουδούνι» που σβήνει γρήγορα */
+function buildEP(v,f,vel,t){
+  const lp=lpf(f*(3+vel*6),.4,v.out);
+  const level=.17*(.25+.75*Math.pow(vel,1.3));
+  const car=ctx.createOscillator(); car.frequency.value=f; v.oscs.push(car); car.start(t);
+  const mod=ctx.createOscillator(); mod.frequency.value=f; v.oscs.push(mod); mod.start(t);
+  const mg=ctx.createGain(); mg.gain.setValueAtTime(f*(.5+1.4*vel),t); mg.gain.setTargetAtTime(f*.12,t,.45);
+  mod.connect(mg); mg.connect(car.frequency);
+  const g1=gainTo(lp,0), g2=gainTo(lp,0);
+  g1.gain.setValueAtTime(0,t); g1.gain.linearRampToValueAtTime(level*.55,t+.003); g1.gain.setTargetAtTime(0,t+.003,.45);
+  g2.gain.setValueAtTime(0,t); g2.gain.linearRampToValueAtTime(level*.5,t+.003);  g2.gain.setTargetAtTime(0,t+.003,2.1);
+  car.connect(g1); car.connect(g2);
+  if(f*14<12000){
+    const tine=ctx.createOscillator(); tine.frequency.value=f*14; v.oscs.push(tine); tine.start(t);
+    const tg=gainTo(lp,0); tg.gain.setValueAtTime(level*.28*vel*vel,t); tg.gain.setTargetAtTime(0,t,.045);
+    tine.connect(tg);
+  }
+  stopAt(v,t+15);
+}
+/* Χορδές/Pad: τρεις πριονωτές, φίλτρο που ανοίγει αργά */
+function buildPad(v,f,vel,t){
+  const lp=lpf(250,.7,v.out);
+  lp.frequency.setValueAtTime(250,t); lp.frequency.setTargetAtTime(Math.min(f*3+650+vel*1400,8500),t,.28);
+  const g=gainTo(lp,0); const lv=.045*(.55+.45*vel);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(lv,t+.38);
+  [-9,0,9].forEach(c=>osc(v,'sawtooth',f,c,t,g));
+  if(f>70){ const sg=gainTo(lp,lv*.9); osc(v,'sine',f/2,0,t,sg); }
+}
+/* Εκκλησιαστικό όργανο: καθαρές αρμονικές, σταθερό */
+function buildOrgan(v,f,vel,t){
+  const lp=lpf(5200,.5,v.out);
+  const g=gainTo(lp,0); const lv=.055*(.6+.4*vel);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(lv,t+.03);
+  [[.5,.45],[1,1],[2,.5],[3,.28],[4,.22],[6,.1]].forEach(([r,a])=>{
+    if(f*r>12000) return;
+    const ga=gainTo(g,a); osc(v,'sine',f*r,0,t,ga);
+  });
+  const g2=gainTo(g,.6); osc(v,'sine',f,4,t,g2);
+}
+/* Κουτί μουσικής: ανάρμοστα μερικά, μια οκτάβα ψηλότερα */
+function buildBell(v,f,vel,t){
+  f*=2;
+  const lp=lpf(9000,.4,v.out);
+  const level=.22*(.3+.7*vel);
+  const k=clamp(Math.pow(523/f,.4),.35,1.4);
+  let end=t;
+  [[1,1,4.5],[2.756,.45,2.4],[5.404,.2,1.2],[8.933,.09,.6]].forEach(([r,a,T])=>{
+    if(f*r>13000) return;
+    const tau=(T*k)/6.9, g=gainTo(lp,0);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(a*level,t+.002); g.gain.setTargetAtTime(0,t+.002,tau);
+    osc(v,'sine',f*r,0,t,g); end=Math.max(end,t+tau*7);
+  });
+  stopAt(v,end);
+}
+/* Synth: δύο πριονωτές + τετράγωνο υπο-όργανο, φίλτρο με περίβλημα */
+function buildSynth(v,f,vel,t){
+  const lp=lpf(f*8,1.1,v.out);
+  const peak=Math.min(f*7+1500+vel*3000,11000), rest=Math.min(f*2.4+500,5000);
+  lp.frequency.setValueAtTime(peak,t); lp.frequency.setTargetAtTime(rest,t,.32);
+  const g=gainTo(lp,0); const lv=.07*(.4+.6*vel);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(lv,t+.012); g.gain.setTargetAtTime(lv*.75,t+.012,.25);
+  osc(v,'sawtooth',f,7,t,g); osc(v,'sawtooth',f,-7,t,g);
+  if(f>60){ const sg=gainTo(lp,lv*.5); osc(v,'square',f/2,0,t,sg); }
+}
+
+const SOUNDS = {
+  piano:{name:'Πιάνο',     hint:'Ζεστό πιάνο συναυλίας: πλούσιες αρμονικές, φυσική απόσβεση και απαλό σφυράκι.',build:(v,f,a,t)=>buildPiano(v,f,a,t,PIANO_P.piano),rel:f=>clamp(.04+.16*Math.pow(261/f,.5),.05,.32)},
+  felt: {name:'Απαλό πιάνο',hint:'Πιάνο με τσόχα: σκοτεινό, κλειστό, σχεδόν ψιθυριστό — για ήρεμη, εσωτερική μουσική.',build:(v,f,a,t)=>buildPiano(v,f,a,t,PIANO_P.felt),rel:f=>clamp(.06+.18*Math.pow(261/f,.5),.07,.36)},
+  ep:   {name:'Ηλεκτρικό πιάνο',hint:'Τύπου Rhodes: στρογγυλός ήχος με ένα μικρό «κουδούνισμα» στην αρχή.',build:buildEP,rel:()=>.13},
+  pad:  {name:'Χορδές',   hint:'Βελούδινο pad που ανοίγει αργά και κρατά όσο κρατάς το πλήκτρο.',build:buildPad,rel:()=>.38},
+  organ:{name:'Εκκλησιαστικό όργανο',hint:'Καθαρές αρμονικές, σαν σωλήνες οργάνου — ταιριάζει σε χορωδιακή μουσική.',build:buildOrgan,rel:()=>.08},
+  bell: {name:'Κουτί μουσικής',hint:'Γυάλινος, κρυστάλλινος ήχος, μια οκτάβα ψηλότερα.',build:buildBell,rel:()=>.4},
+  synth:{name:'Synth',    hint:'Ζεστό αναλογικό synth: δύο πριονωτές, φίλτρο που κλείνει απαλά.',build:buildSynth,rel:()=>.22}
+};
+
+function makeVoice(midi,vel,t){
+  const f=mtof(midi);
+  const out=ctx.createGain();
+  const pan=ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+  if(pan){ pan.pan.value=clamp((midi-60)/48*.45,-.5,.5); out.connect(pan); pan.connect(voiceBus); } else out.connect(voiceBus);
+  const snd=SOUNDS[S.sound];
+  const v={midi,out,pan,oscs:[],relTau:snd.rel(f),released:false,dead:false,t0:t};
+  snd.build(v,f,vel,t);
+  v.oscs[0].onended=()=>{ v.dead=true; try{out.disconnect(); pan&&pan.disconnect();}catch(e){} const i=voices.indexOf(v); if(i>=0) voices.splice(i,1); };
+  voices.push(v);
+  if(voices.length>64){ const old=voices.find(x=>!x.dead); if(old) killVoice(old); }
+  return v;
+}
+function releaseVoice(v){
+  if(!v||v.dead||v.released) return; v.released=true;
+  const now=ctx.currentTime;
+  v.out.gain.setTargetAtTime(0,now,v.relTau);
+  stopAt(v,now+v.relTau*8+.05);
+}
+function killVoice(v){
+  if(v.dead) return; v.released=true; const now=ctx.currentTime;
+  v.out.gain.setTargetAtTime(0,now,.015); stopAt(v,now+.12);
+}
+
+/* ═══════ Κατάσταση νοτών ═══════ */
+const heldBy={}, cur={}, ringing=new Set();
+let pedalLatch=false, pedalSpace=false, pedalOn=false;
+const keyEl={}, ovEl={};
+
+function noteOn(n,vel=.75,src='x'){
+  if(n<LOW||n>HIGH||!initAudio()) return;
+  (heldBy[n]||(heldBy[n]=new Set())).add(src);
+  if(cur[n]) releaseVoice(cur[n]);
+  ringing.delete(n);
+  cur[n]=makeVoice(n,clamp(vel,.05,1),ctx.currentTime+.005);
+  setKey(n,'down',true); setKey(n,'ring',false);
+  if(S.fall) addBar(n);
+  if(src!=='play') recEvent('on',n,vel);
+  updateDisplay();
+}
+function noteOff(n,src='x'){
+  const h=heldBy[n]; if(!h||!h.has(src)) return;
+  h.delete(src);
+  if(h.size) return;
+  setKey(n,'down',false);
+  closeBar(n);
+  if(pedalOn){ ringing.add(n); setKey(n,'ring',true); }
+  else { releaseVoice(cur[n]); delete cur[n]; }
+  if(src!=='play') recEvent('off',n,0);
+  updateDisplay();
+}
+function setPedal(){
+  const want=pedalLatch||pedalSpace;
+  if(want===pedalOn) return;
+  pedalOn=want;
+  $('#pPedal').classList.toggle('on',pedalOn);
+  $('#pedalBtn').setAttribute('aria-pressed',pedalLatch);
+  $('#pedalBtn').classList.toggle('on',pedalLatch);
+  if(!pedalOn){
+    for(const n of ringing){ if(!(heldBy[n]&&heldBy[n].size)){ releaseVoice(cur[n]); delete cur[n]; } setKey(n,'ring',false); }
+    ringing.clear();
+  }
+  recEvent('ped',0,pedalOn?1:0);
+}
+function allOff(){
+  for(const n in heldBy){ heldBy[n].clear(); setKey(+n,'down',false); }
+  for(const n in cur){ releaseVoice(cur[n]); delete cur[n]; }
+  for(const n of ringing) setKey(n,'ring',false);
+  ringing.clear(); closeAllBars(); updateDisplay();
+}
+function setKey(n,cls,on){
+  const e=keyEl[n]; if(e) e.classList.toggle(cls,on);
+  const o=ovEl[n]; if(o&&cls==='down') o.classList.toggle('down',on);
+}
+
+/* ═══════ Εμφάνιση νότας / συγχορδίας ═══════ */
+const CHORDS=[['',[0,4,7],'μείζονα'],['m',[0,3,7],'ελάσσονα'],['dim',[0,3,6],'ελαττωμένη'],['aug',[0,4,8],'αυξημένη'],
+  ['sus2',[0,2,7],'sus2'],['sus4',[0,5,7],'sus4'],['7',[0,4,7,10],'έβδομη'],['maj7',[0,4,7,11],'μεγάλη έβδομη'],
+  ['m7',[0,3,7,10],'ελάσσονα έβδομη'],['m7♭5',[0,3,6,10],'μισο-ελαττωμένη'],['dim7',[0,3,6,9],'ελαττωμένη έβδομη'],
+  ['6',[0,4,7,9],'έκτη'],['m6',[0,3,7,9],'ελάσσονα έκτη']];
+function detectChord(notes){
+  const pcs=[...new Set(notes.map(n=>n%12))]; if(pcs.length<3) return null;
+  const bass=notes[0]%12, order=[bass,...pcs.filter(p=>p!==bass)];
+  for(const root of order){
+    const rel=pcs.map(p=>(p-root+12)%12).sort((a,b)=>a-b).join();
+    for(const [sym,iv,gr] of CHORDS) if(iv.join()===rel){
+      const slash = root!==bass ? '/'+NAMES_A[bass] : '';
+      return {t:NAMES_A[root]+sym+slash, g:NAMES_S[root]+' '+gr};
+    }
+  }
+  return null;
+}
+function nName(n){ return (S.names==='sol'?NAMES_S:NAMES_A)[n%12]+(Math.floor(n/12)-1); }
+function updateDisplay(){
+  const held=Object.keys(heldBy).filter(n=>heldBy[n].size).map(Number).sort((a,b)=>a-b);
+  const ch=$('#chord'), no=$('#notes');
+  if(!held.length) return;
+  no.textContent=held.map(nName).join(' · ');
+  const c=detectChord(held);
+  ch.textContent = c ? c.t : (held.length===1 ? (S.names==='sol'?NAMES_S:NAMES_A)[held[0]%12] : '·');
+  if(c) no.textContent+='   —   '+c.g;
+}
+
+/* ═══════ Πληκτρολόγιο: χάρτης ═══════ */
+const LOWER={KeyZ:0,KeyS:1,KeyX:2,KeyD:3,KeyC:4,KeyV:5,KeyG:6,KeyB:7,KeyH:8,KeyN:9,KeyJ:10,KeyM:11,Comma:12,KeyL:13,Period:14,Semicolon:15,Slash:16};
+const UPPER={KeyQ:12,Digit2:13,KeyW:14,Digit3:15,KeyE:16,KeyR:17,Digit5:18,KeyT:19,Digit6:20,KeyY:21,Digit7:22,KeyU:23,KeyI:24,Digit9:25,KeyO:26,Digit0:27,KeyP:28,BracketLeft:29,Equal:30,BracketRight:31};
+const CODEMAP=Object.assign({},LOWER,UPPER);
+const baseNote=()=>12*(S.oct+1)+S.trans;
+const FALLBACK_CAP=c=>c.replace('Key','').replace('Digit','').replace('Comma',',').replace('Period','.').replace('Semicolon',';').replace('Slash','/').replace('BracketLeft','[').replace('BracketRight',']').replace('Equal','=');
+let layoutMap=null;
+const cap=c=>{ const v=layoutMap&&layoutMap.get(c); return (v?v:FALLBACK_CAP(c)).toUpperCase(); };
+
+/* ═══════ Χτίσιμο πλήκτρων ═══════ */
+const keysEl=$('#keys'), ovEl_=$('#ov'), scroller=$('#scroller');
+const geom={};            // n → {i, black}
+function buildKeys(){
+  let wi=0, html='', ov='';
+  for(let n=LOW;n<=HIGH;n++){
+    const blk=isBlack(n), pc=n%12;
+    const i = blk ? wi-1 : wi;
+    geom[n]={i,blk};
+    html+=`<div class="key ${blk?'black':'white'}" data-n="${n}" style="--i:${i};--h:${pc*30}"><b class="ck"></b><span class="nm"></span></div>`;
+    ov+=`<i class="${blk?'b':'w'}" data-n="${n}" style="--i:${i}"></i>`;
+    if(!blk) wi++;
+  }
+  keysEl.innerHTML=html;
+  ovEl_.innerHTML=ov+'<div class="map" id="map"></div><div class="win" id="win"></div>';
+  keysEl.querySelectorAll('.key').forEach(e=>keyEl[e.dataset.n]=e);
+  ovEl_.querySelectorAll('[data-n]').forEach(e=>ovEl[e.dataset.n]=e);
+}
+function whitePos(n){ const g=geom[n]; return g.blk? g.i+1 : g.i; }   // θέση σε πλάτη λευκών πλήκτρων
+function refreshLabels(){
+  for(let n=LOW;n<=HIGH;n++){
+    const e=keyEl[n], pc=n%12;
+    const nm=e.querySelector('.nm');
+    nm.textContent = (S.names==='none'||isBlack(n)) ? '' : (S.names==='sol'?NAMES_S:NAMES_A)[pc]+(pc===0?(Math.floor(n/12)-1):'');
+    delete e.dataset.ck;
+  }
+  const b=baseNote();
+  for(const code in CODEMAP){
+    const n=b+CODEMAP[code]; const e=keyEl[n]; if(!e) continue;
+    e.dataset.ck=1; e.querySelector('.ck').dataset.t=cap(code);
+  }
+  $('#octV').textContent='C'+S.oct;
+  $('#trV').textContent=(S.trans>0?'+':'')+S.trans;
+  const lo=clamp(b,LOW,HIGH), hi=clamp(b+31,LOW,HIGH);
+  const m=$('#map'); m.style.left=(whitePos(lo)/52*100)+'%'; m.style.width=(Math.max(.5,whitePos(hi)-whitePos(lo))/52*100)+'%';
+}
+
+/* ═══════ Διάταξη / κύλιση ═══════ */
+let FH=170, dpr=1;
+function layout(){
+  document.documentElement.style.setProperty('--kw',S.kw+'px');
+  FH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fh'))||170;
+  dpr=Math.min(devicePixelRatio||1,2);
+  const cv=$('#fall'), w=52*S.kw;
+  cv.width=Math.round(w*dpr); cv.height=Math.round(FH*dpr);
+  syncWin();
+}
+function syncWin(){
+  const w=$('#win'); if(!w) return;
+  const sw=scroller.scrollWidth||1;
+  w.style.left=(scroller.scrollLeft/sw*100)+'%';
+  w.style.width=(Math.min(1,scroller.clientWidth/sw)*100)+'%';
+}
+function scrollToBase(smooth){
+  const b=clamp(baseNote(),LOW,HIGH), x=whitePos(b)*S.kw;
+  scroller.scrollTo({left:Math.max(0,x-scroller.clientWidth*.12),behavior:smooth?'smooth':'auto'});
+}
+scroller.addEventListener('scroll',syncWin,{passive:true});
+(function(){
+  let drag=false;
+  const mv=e=>{ const r=ovEl_.getBoundingClientRect(); const f=clamp((e.clientX-r.left)/r.width,0,1); scroller.scrollLeft=f*scroller.scrollWidth-scroller.clientWidth/2; };
+  ovEl_.addEventListener('pointerdown',e=>{ drag=true; ovEl_.setPointerCapture(e.pointerId); mv(e); });
+  ovEl_.addEventListener('pointermove',e=>{ if(drag) mv(e); });
+  ovEl_.addEventListener('pointerup',()=>drag=false);
+  ovEl_.addEventListener('pointercancel',()=>drag=false);
+})();
+
+/* ═══════ Ποντίκι / αφή ═══════ */
+const ptr=new Map();
+function velFrom(e,k){ const r=k.getBoundingClientRect(); const fy=clamp((e.clientY-r.top)/r.height,0,1); return clamp(S.touch*(.55+.65*fy),.15,1); }
+keysEl.addEventListener('pointerdown',e=>{
+  const k=e.target.closest('.key'); if(!k||(e.pointerType==='mouse'&&e.button!==0)) return;
+  e.preventDefault(); keysEl.setPointerCapture(e.pointerId);
+  const n=+k.dataset.n; ptr.set(e.pointerId,n); noteOn(n,velFrom(e,k),'p'+e.pointerId);
+});
+keysEl.addEventListener('pointermove',e=>{
+  if(!ptr.has(e.pointerId)) return;
+  const el=document.elementFromPoint(e.clientX,e.clientY); const k=el&&el.closest&&el.closest('.key'); if(!k||!keysEl.contains(k)) return;
+  const n=+k.dataset.n, old=ptr.get(e.pointerId);
+  if(n!==old){ noteOff(old,'p'+e.pointerId); ptr.set(e.pointerId,n); noteOn(n,velFrom(e,k),'p'+e.pointerId); }
+});
+const pend=e=>{ const n=ptr.get(e.pointerId); if(n==null) return; ptr.delete(e.pointerId); noteOff(n,'p'+e.pointerId); };
+['pointerup','pointercancel','lostpointercapture'].forEach(t=>keysEl.addEventListener(t,pend));
+keysEl.addEventListener('contextmenu',e=>e.preventDefault());
+
+/* ═══════ Πληκτρολόγιο υπολογιστή ═══════ */
+const down={};
+const isField=t=>t&&(t.tagName==='SELECT'||t.tagName==='TEXTAREA'||(t.tagName==='INPUT'&&t.type!=='range'&&t.type!=='checkbox'));
+addEventListener('keydown',e=>{
+  if(e.ctrlKey||e.metaKey||e.altKey||isField(e.target)) return;
+  if(e.code==='Space'){ e.preventDefault(); if(!e.repeat){ pedalSpace=true; setPedal(); } return; }
+  if(e.code in CODEMAP){
+    e.preventDefault(); if(e.repeat||down[e.code]!=null) return;
+    const n=baseNote()+CODEMAP[e.code]; down[e.code]=n; noteOn(n,S.touch,'k'+e.code); return;
+  }
+  const arrow={ArrowUp:()=>setOct(S.oct+1),ArrowDown:()=>setOct(S.oct-1),ArrowRight:()=>setTrans(S.trans+1),ArrowLeft:()=>setTrans(S.trans-1)}[e.code];
+  if(arrow && e.target.type!=='range'){ e.preventDefault(); arrow(); return; }
+  if(e.code==='Enter' && e.target.tagName!=='BUTTON'){ e.preventDefault(); toggleRec(); }
+});
+addEventListener('keyup',e=>{
+  if(e.code==='Space'){ if(!isField(e.target)){ e.preventDefault(); } pedalSpace=false; setPedal(); return; }
+  if(down[e.code]!=null){ const n=down[e.code]; delete down[e.code]; noteOff(n,'k'+e.code); }
+});
+addEventListener('blur',()=>{ for(const c in down){ noteOff(down[c],'k'+c); delete down[c]; } pedalSpace=false; setPedal(); });
+
+/* ═══════ MIDI είσοδος ═══════ */
+function initMIDI(){
+  const hint=$('#midiHint');
+  if(!navigator.requestMIDIAccess){ hint.textContent='Ο περιηγητής σου δεν υποστηρίζει MIDI (δοκίμασε Chrome ή Edge).'; return; }
+  navigator.requestMIDIAccess().then(acc=>{
+    const upd=()=>{
+      const names=[]; acc.inputs.forEach(i=>{ i.onmidimessage=onMidi; names.push(i.name); });
+      hint.textContent = names.length ? 'Συνδεδεμένο: '+names.join(', ') : 'Δεν βρέθηκε συσκευή MIDI. Σύνδεσε ένα πληκτρολόγιο και θα αναγνωριστεί αμέσως.';
+      $('#pMidi').classList.toggle('on',names.length>0);
+    };
+    acc.onstatechange=upd; upd();
+  }).catch(()=>{ hint.textContent='Η πρόσβαση στο MIDI δεν επιτράπηκε.'; });
+}
+function onMidi(m){
+  const [s,a,b]=m.data, cmd=s&0xF0;
+  if(cmd===0x90&&b>0) noteOn(a,Math.pow(b/127,.8),'midi');
+  else if(cmd===0x80||(cmd===0x90&&b===0)) noteOff(a,'midi');
+  else if(cmd===0xB0&&a===64){ pedalSpace=b>=64; setPedal(); }
+}
+
+/* ═══════ Ροή νοτών (canvas) ═══════ */
+const THEMES={
+  grand:  {name:'Κοντσέρτο',sound:'piano',fall:false,glow:false,color:(n,b)=>b?'rgba(224,180,100,.85)':'rgba(245,205,125,.8)'},
+  synth:  {name:'Synthesizer',sound:'synth',fall:true,glow:true,color:(n,b)=>b?'#ff3fb4':'#3ff0e0'},
+  crystal:{name:'Κρύσταλλο',sound:'bell',fall:true,glow:true,color:n=>`hsl(${(n%12)*30},95%,74%)`}
+};
+const bars=[]; let animating=false;
+const fx=$('#fall').getContext('2d');
+function addBar(n){ bars.push({n,t0:performance.now(),t1:null}); kick(); }
+function closeBar(n){ for(let i=bars.length-1;i>=0;i--) if(bars[i].n===n&&bars[i].t1==null){ bars[i].t1=performance.now(); break; } }
+function closeAllBars(){ const t=performance.now(); bars.forEach(b=>{ if(b.t1==null) b.t1=t; }); }
+function kick(){ if(!animating){ animating=true; requestAnimationFrame(frame); } }
+function frame(){
+  const now=performance.now(), sp=.1, th=THEMES[S.theme];
+  fx.setTransform(dpr,0,0,dpr,0,0); fx.clearRect(0,0,52*S.kw,FH);
+  for(let i=bars.length-1;i>=0;i--){
+    const b=bars[i];
+    const top=FH-(now-b.t0)*sp, bot=b.t1==null?FH:FH-(now-b.t1)*sp;
+    if(bot<-6){ bars.splice(i,1); continue; }
+    const g=geom[b.n], bw=S.kw*.6;
+    const x=g.blk?(g.i+1)*S.kw-bw/2:g.i*S.kw, w=g.blk?bw:S.kw;
+    fx.fillStyle=th.color(b.n,g.blk);
+    if(th.glow){ fx.shadowColor=fx.fillStyle; fx.shadowBlur=14; }
+    fx.globalAlpha=.9;
+    const h=Math.max(4,bot-top), r=Math.min(6,w/3);
+    if(fx.roundRect){ fx.beginPath(); fx.roundRect(x+2,top,w-4,h,r); fx.fill(); } else fx.fillRect(x+2,top,w-4,h);
+  }
+  fx.globalAlpha=1; fx.shadowBlur=0;
+  if(bars.length) requestAnimationFrame(frame); else animating=false;
+}
+
+/* ═══════ Μετρονόμος ═══════ */
+const met={on:false,next:0,beat:0,timer:null};
+function metClick(t,acc){
+  const o=ctx.createOscillator(), g=ctx.createGain(), f=ctx.createBiquadFilter();
+  o.type='triangle'; o.frequency.value=acc?1320:880;
+  f.type='lowpass'; f.frequency.value=3200;
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(acc?.55:.38,t+.002); g.gain.setTargetAtTime(0,t+.002,.018);
+  o.connect(f); f.connect(g); g.connect(metBus); o.start(t); o.stop(t+.25);
+}
+function metTick(){
+  while(met.next<ctx.currentTime+.12){
+    const acc=met.beat%S.beats===0, idx=met.beat%S.beats, at=met.next;
+    metClick(at,acc);
+    setTimeout(()=>flashDot(idx),Math.max(0,(at-ctx.currentTime)*1000));
+    met.next+=60/S.bpm; met.beat++;
+  }
+}
+function flashDot(i){ const d=$('#dots').children; for(const x of d) x.classList.remove('on'); if(d[i]) d[i].classList.add('on'); }
+function metToggle(){
+  if(!met.on){ if(!initAudio()) return; met.on=true; met.beat=0; met.next=ctx.currentTime+.06; met.timer=setInterval(metTick,25); metTick(); }
+  else { met.on=false; clearInterval(met.timer); flashDot(-1); }
+  const b=$('#metBtn'); b.textContent=met.on?'■ Στοπ':'▶ Έναρξη'; b.classList.toggle('on',met.on); b.setAttribute('aria-pressed',met.on);
+}
+function buildDots(){ $('#dots').innerHTML=Array.from({length:S.beats},(_,i)=>`<i class="${i?'':'acc'}"></i>`).join(''); }
+let taps=[];
+function tap(){
+  const t=performance.now(); if(taps.length&&t-taps[taps.length-1]>2000) taps=[];
+  taps.push(t); if(taps.length>5) taps.shift();
+  if(taps.length>=2){ const iv=(taps[taps.length-1]-taps[0])/(taps.length-1); setBpm(Math.round(60000/iv)); }
+}
+function setBpm(v){ S.bpm=clamp(Math.round(v),30,240); $('#bpmV').textContent=S.bpm; const r=$('#bpm'); r.value=S.bpm; paint(r); save(); }
+
+/* ═══════ Ηχογράφηση / αναπαραγωγή / εξαγωγή ═══════ */
+const rec={on:false,armed:false,t0:0,ev:[],data:[],audioBlob:null,audioExt:'webm',mr:null,chunks:[]};
+const play={on:false,t0:0,idx:0,ev:[],timer:null,held:new Set(),loop:false,dur:0};
+function recEvent(k,n,v){
+  if(!rec.on) return;
+  if(rec.armed){ if(k==='ped'&&!v) return; rec.armed=false; rec.t0=performance.now(); startAudioRec(); }
+  rec.ev.push({t:performance.now()-rec.t0,k,n,v});
+}
+function startAudioRec(){
+  rec.chunks=[]; rec.audioBlob=null;
+  if(!recDest||!window.MediaRecorder) return;
+  try{
+    rec.mr=new MediaRecorder(recDest.stream);
+    rec.mr.ondataavailable=e=>{ if(e.data.size) rec.chunks.push(e.data); };
+    rec.mr.onstop=()=>{ const type=rec.mr.mimeType||'audio/webm'; rec.audioBlob=new Blob(rec.chunks,{type}); rec.audioExt=type.includes('mp4')?'m4a':type.includes('ogg')?'ogg':'webm'; refreshRecUI(); };
+    rec.mr.start();
+  }catch(e){ rec.mr=null; }
+}
+function toggleRec(){
+  if(!rec.on){
+    if(!initAudio()) return; stopPlay();
+    rec.on=true; rec.armed=true; rec.ev=[]; rec.data=[]; rec.audioBlob=null;
+    for(const n in heldBy) if(heldBy[n].size) rec.ev.push({t:0,k:'on',n:+n,v:S.touch}); // ήδη πατημένες
+    if(rec.ev.length){ rec.armed=false; rec.t0=performance.now(); startAudioRec(); }
+    $('#recHint').textContent='Περιμένω την πρώτη νότα…';
+  } else {
+    rec.on=false; rec.armed=false;
+    const T=rec.t0?performance.now()-rec.t0:0;
+    const open=new Set(); rec.ev.forEach(e=>{ if(e.k==='on') open.add(e.n); else if(e.k==='off') open.delete(e.n); });
+    open.forEach(n=>rec.ev.push({t:T,k:'off',n,v:0}));
+    rec.data=rec.ev.slice();
+    if(rec.mr&&rec.mr.state==='recording'){ const mr=rec.mr; setTimeout(()=>{ try{mr.stop();}catch(e){} },1400); }
+    $('#recHint').textContent=rec.data.length?`Έτοιμη εγγραφή: ${rec.data.filter(e=>e.k==='on').length} νότες, ${(T/1000).toFixed(1)}″. Μπορείς να την ακούσεις ή να την κατεβάσεις.`:'Δεν καταγράφηκε καμία νότα.';
+  }
+  refreshRecUI();
+}
+function refreshRecUI(){
+  const has=rec.data.length>0;
+  $('#recBtn').classList.toggle('on',rec.on); $('#recBtn').textContent=rec.on?'■ Τέλος εγγραφής':'● Εγγραφή';
+  $('#pRec').classList.toggle('on',rec.on);
+  $('#playBtn').disabled=!has||rec.on; $('#midiBtn').disabled=!has; $('#clearBtn').disabled=!has||rec.on;
+  $('#audioBtn').disabled=!rec.audioBlob; $('#stopBtn').disabled=!play.on;
+  $('#demoBtn').disabled=rec.on;
+}
+function startPlay(events,loop){
+  if(!events.length||!initAudio()) return;
+  stopPlay(); play.on=true; play.ev=events; play.idx=0; play.t0=performance.now()+120; play.loop=loop;
+  play.dur=events[events.length-1].t+400;
+  play.timer=setInterval(playTick,12); refreshRecUI();
+}
+function playTick(){
+  const t=performance.now()-play.t0;
+  while(play.idx<play.ev.length&&play.ev[play.idx].t<=t){
+    const e=play.ev[play.idx++];
+    if(e.k==='on'){ noteOn(e.n,e.v||.7,'play'); play.held.add(e.n); }
+    else if(e.k==='off'){ noteOff(e.n,'play'); play.held.delete(e.n); }
+    else if(e.k==='ped'){ pedalSpace=!!e.v; setPedal(); }
+  }
+  $('#prog').style.width=clamp(t/play.dur*100,0,100)+'%';
+  if(t>play.dur){ if(play.loop&&$('#loopBtn').classList.contains('on')){ const ev=play.ev; stopPlay(true); startPlay(ev,true); } else stopPlay(); }
+}
+function stopPlay(keepUI){
+  clearInterval(play.timer); if(!play.on&&!play.held.size) { $('#prog').style.width='0'; return; }
+  play.on=false; play.held.forEach(n=>noteOff(n,'play')); play.held.clear();
+  pedalSpace=false; setPedal();
+  if(!keepUI) $('#prog').style.width='0';
+  refreshRecUI();
+}
+function download(blob,name){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500); }
+function toMIDI(ev,bpm){
+  const ppq=480, tk=ms=>Math.round(ms/1000*(bpm/60)*ppq), bytes=[];
+  const vlq=n=>{ const o=[n&127]; while(n>>=7) o.unshift((n&127)|128); return o; };
+  const rows=ev.map(e=>({tick:tk(e.t),k:e.k,n:e.n,v:e.v})).sort((a,b)=>a.tick-b.tick||(a.k==='off'?-1:1));
+  const tempo=Math.round(60000000/bpm);
+  bytes.push(0,0xFF,0x51,3,(tempo>>16)&255,(tempo>>8)&255,tempo&255, 0,0xFF,0x58,4,4,2,24,8);
+  let last=0;
+  for(const r of rows){
+    bytes.push(...vlq(r.tick-last)); last=r.tick;
+    if(r.k==='on') bytes.push(0x90,r.n,clamp(Math.round((r.v||.7)*127),1,127));
+    else if(r.k==='off') bytes.push(0x80,r.n,0);
+    else bytes.push(0xB0,64,r.v?127:0);
+  }
+  bytes.push(0,0xFF,0x2F,0);
+  const L=bytes.length;
+  const head=[0x4D,0x54,0x68,0x64,0,0,0,6,0,0,0,1,ppq>>8,ppq&255,0x4D,0x54,0x72,0x6B,(L>>24)&255,(L>>16)&255,(L>>8)&255,L&255];
+  return new Blob([new Uint8Array([...head,...bytes])],{type:'audio/midi'});
+}
+
+/* Δείγμα: Beethoven — Für Elise (ελεύθερο έργο), σε δική μας μικρή απόδοση */
+function demoEvents(){
+  const U=190, R=[[76,0],[75,1],[76,2],[75,3],[76,4],[71,5],[74,6],[72,7],[69,8,3],[60,11],[64,12],[69,13],[71,14,3],[64,17],[68,18],[71,19],[72,20,3],
+    [76,23],[75,24],[76,25],[75,26],[76,27],[71,28],[74,29],[72,30],[69,31,3],[60,34],[64,35],[72,36],[71,37],[69,38,6]];
+  const L=[[45,8],[52,9],[57,10],[40,14],[52,15],[56,16],[45,20],[52,21],[57,22],[45,31],[52,32],[57,33],[45,34,8],[57,34,8],[64,34,8]];
+  const ev=[];
+  R.forEach(([n,u,d=1],i)=>{ const v=.55+.12*Math.sin(i*.9)+(d>1?.06:0); ev.push({t:u*U,k:'on',n,v},{t:(u+d)*U*.96,k:'off',n,v:0}); });
+  L.forEach(([n,u,d=1])=>{ ev.push({t:u*U,k:'on',n,v:.42},{t:(u+d)*U*.97,k:'off',n,v:0}); });
+  ev.push({t:34*U,k:'ped',n:0,v:1},{t:42*U,k:'ped',n:0,v:0});
+  return ev.sort((a,b)=>a.t-b.t);
+}
+
+/* ═══════ Διεπαφή ═══════ */
+function paint(r){ r.style.setProperty('--p',((r.value-r.min)/(r.max-r.min)*100)+'%'); }
+function bindRange(id,get,set,fmt){
+  const r=$('#'+id), o=r.parentElement.querySelector('output');
+  r.value=get(); paint(r); if(o) o.textContent=fmt(get());
+  r.addEventListener('input',()=>{ set(+r.value); paint(r); if(o) o.textContent=fmt(+r.value); applyMix(); save(); });
+}
+function setOct(v){ S.oct=clamp(v,0,6); refreshLabels(); scrollToBase(true); save(); }
+function setTrans(v){ S.trans=clamp(v,-12,12); refreshLabels(); save(); }
+
+function setTheme(t,withSound){
+  S.theme=t; document.body.dataset.theme=t;
+  document.querySelectorAll('#themes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.theme===t));
+  $('#themeName').textContent=THEMES[t].name;
+  document.querySelector('meta[name=theme-color]').content={grand:'#1a120f',synth:'#090b10',crystal:'#140f2b'}[t];
+  if(withSound){ setSound(THEMES[t].sound); S.fall=THEMES[t].fall; $('#fallBox').checked=S.fall; document.body.classList.toggle('nofall',!S.fall); }
+  save();
+}
+function setSound(k){
+  S.sound=k; document.querySelectorAll('#sounds .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+  $('#soundHint').textContent=SOUNDS[k].hint; save();
+}
+function init(){
+  buildKeys(); buildDots();
+  $('#sounds').innerHTML=Object.entries(SOUNDS).map(([k,s])=>`<button class="chip" data-k="${k}">${s.name}</button>`).join('');
+  $('#sounds').addEventListener('click',e=>{ const b=e.target.closest('.chip'); if(!b) return; setSound(b.dataset.k); initAudio(); noteOn(60,.7,'demo'); setTimeout(()=>noteOff(60,'demo'),450); });
+  document.querySelectorAll('#themes button').forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme,true)));
+  setTheme(S.theme,false); setSound(S.sound);
+  document.body.classList.toggle('showck',S.ck); document.body.classList.toggle('nofall',!S.fall);
+  $('#ckBox').checked=S.ck; $('#fallBox').checked=S.fall;
+  $('#ckBox').addEventListener('change',e=>{ S.ck=e.target.checked; document.body.classList.toggle('showck',S.ck); save(); });
+  $('#fallBox').addEventListener('change',e=>{ S.fall=e.target.checked; document.body.classList.toggle('nofall',!S.fall); save(); });
+  document.querySelectorAll('#names .chip').forEach(b=>{ b.setAttribute('aria-pressed',b.dataset.v===S.names); b.addEventListener('click',()=>{ S.names=b.dataset.v; document.querySelectorAll('#names .chip').forEach(x=>x.setAttribute('aria-pressed',x===b)); refreshLabels(); save(); }); });
+  bindRange('vol',()=>Math.round(S.vol*100),v=>S.vol=v/100,v=>v+'%');
+  bindRange('rev',()=>Math.round(S.rev*100),v=>S.rev=v/100,v=>v+'%');
+  bindRange('tone',()=>Math.round(S.tone*100),v=>S.tone=v/100,v=>v+'%');
+  bindRange('touch',()=>Math.round(S.touch*100),v=>S.touch=v/100,v=>v+'%');
+  bindRange('kw',()=>S.kw,v=>{ S.kw=v; layout(); },v=>v+'px');
+  $('#octM').onclick=()=>setOct(S.oct-1); $('#octP').onclick=()=>setOct(S.oct+1);
+  $('#trM').onclick=()=>setTrans(S.trans-1); $('#trP').onclick=()=>setTrans(S.trans+1);
+  $('#pedalBtn').onclick=()=>{ pedalLatch=!pedalLatch; setPedal(); if(!pedalLatch&&!pedalSpace){ /* ήδη ελευθερώθηκε */ } $('#pedalBtn').setAttribute('aria-pressed',pedalLatch); $('#pedalBtn').classList.toggle('on',pedalLatch); };
+  /* μετρονόμος */
+  setBpm(S.bpm); $('#bpm').addEventListener('input',e=>setBpm(+e.target.value));
+  $('#bpmM').onclick=()=>setBpm(S.bpm-1); $('#bpmP').onclick=()=>setBpm(S.bpm+1);
+  $('#metBtn').onclick=metToggle; $('#tapBtn').onclick=tap;
+  document.querySelectorAll('#beats [data-v]').forEach(b=>{ b.setAttribute('aria-pressed',+b.dataset.v===S.beats); b.addEventListener('click',()=>{ S.beats=+b.dataset.v; met.beat=0; buildDots(); document.querySelectorAll('#beats [data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b)); save(); }); });
+  /* ηχογράφηση */
+  $('#recBtn').onclick=toggleRec;
+  $('#playBtn').onclick=()=>startPlay(rec.data,true);
+  $('#stopBtn').onclick=()=>stopPlay();
+  $('#loopBtn').onclick=e=>{ const b=e.currentTarget; b.classList.toggle('on'); b.setAttribute('aria-pressed',b.classList.contains('on')); };
+  $('#midiBtn').onclick=()=>download(toMIDI(rec.data,S.bpm),'phonodia-piano.mid');
+  $('#audioBtn').onclick=()=>rec.audioBlob&&download(rec.audioBlob,'phonodia-piano.'+rec.audioExt);
+  $('#clearBtn').onclick=()=>{ rec.data=[]; rec.ev=[]; rec.audioBlob=null; $('#recHint').textContent='Η εγγραφή καθαρίστηκε.'; refreshRecUI(); };
+  $('#demoBtn').onclick=()=>{ if(play.on){ stopPlay(); return; } startPlay(demoEvents(),false); };
+  refreshRecUI();
+  layout(); refreshLabels(); scrollToBase(false);
+  if(navigator.keyboard&&navigator.keyboard.getLayoutMap) navigator.keyboard.getLayoutMap().then(m=>{ layoutMap=m; refreshLabels(); }).catch(()=>{});
+  initMIDI();
+  addEventListener('resize',()=>{ layout(); });
+  document.addEventListener('visibilitychange',()=>{ if(document.hidden){ allOff(); } });
+}
+init();
+</script>
+</body>
+</html>
