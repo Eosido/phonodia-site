@@ -363,6 +363,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
         <li><kbd>↑</kbd> <kbd>↓</kbd> οκτάβα · <kbd>←</kbd> <kbd>→</kbd> ημιτόνιο</li>
         <li><kbd>Space</kbd> πεντάλ · <kbd>Enter</kbd> εγγραφή</li>
         <li>Με το ποντίκι ή το δάχτυλο: σύρε πάνω στα πλήκτρα για γκλισάντο</li>
+        <li><b>Κράτημα</b>: κάθε κλικ κρατά τη νότα, δεύτερο κλικ την αφήνει — για συγχορδίες με ποντίκι</li>
       </ul>
     </div>
 
@@ -378,6 +379,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
   <span class="sep"></span>
   <button class="btn" id="qPedal" aria-pressed="false">Πεντάλ</button>
   <button class="btn" id="qCk" aria-pressed="true">Γράμματα</button>
+  <button class="btn" id="qSticky" aria-pressed="false" title="Κάθε κλικ κρατά τη νότα· δεύτερο κλικ την αφήνει">Κράτημα</button>
   <button class="btn rec" id="qRec">● Εγγραφή</button>
   <span class="sep"></span>
   <button class="btn" data-card="c-midi">MIDI</button>
@@ -765,9 +767,11 @@ scroller.addEventListener('scroll',syncWin,{passive:true});
 /* ═══════ Ποντίκι / αφή ═══════ */
 const ptr=new Map();
 function velFrom(e,k){ const r=k.getBoundingClientRect(); const fy=clamp((e.clientY-r.top)/r.height,0,1); return clamp(S.touch*(.55+.65*fy),.15,1); }
+let sticky=false;
 keysEl.addEventListener('pointerdown',e=>{
   const k=e.target.closest('.key'); if(!k||(e.pointerType==='mouse'&&e.button!==0)) return;
-  e.preventDefault(); keysEl.setPointerCapture(e.pointerId);
+  e.preventDefault();
+  if(sticky){ const n=+k.dataset.n; if(heldBy[n]&&heldBy[n].has('sticky')) noteOff(n,'sticky'); else noteOn(n,velFrom(e,k),'sticky'); return; } keysEl.setPointerCapture(e.pointerId);
   const n=+k.dataset.n; ptr.set(e.pointerId,n); noteOn(n,velFrom(e,k),'p'+e.pointerId);
 });
 keysEl.addEventListener('pointermove',e=>{
@@ -1033,6 +1037,7 @@ function init(){
   $('#metBtn').onclick=metToggle; $('#tapBtn').onclick=tap;
   document.querySelectorAll('#beats [data-v]').forEach(b=>{ b.setAttribute('aria-pressed',+b.dataset.v===S.beats); b.addEventListener('click',()=>{ S.beats=+b.dataset.v; met.beat=0; buildDots(); document.querySelectorAll('#beats [data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b)); save(); }); });
   /* ηχογράφηση */
+  $('#qSticky').onclick=()=>{ sticky=!sticky; $('#qSticky').classList.toggle('on',sticky); $('#qSticky').setAttribute('aria-pressed',sticky); if(!sticky) for(const n in heldBy) if(heldBy[n].has('sticky')) noteOff(+n,'sticky'); };
   $('#recBtn').onclick=toggleRec; $('#qRec').onclick=toggleRec;
   $('#playBtn').onclick=()=>startPlay(rec.data,true);
   $('#stopBtn').onclick=()=>stopPlay();
