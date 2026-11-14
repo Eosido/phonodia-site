@@ -592,7 +592,7 @@ function makeVoice(midi,vel,t){
   snd.build(v,f,vel,t);
   v.oscs[0].onended=()=>{ v.dead=true; try{out.disconnect(); pan&&pan.disconnect();}catch(e){} const i=voices.indexOf(v); if(i>=0) voices.splice(i,1); };
   voices.push(v);
-  if(voices.length>64){ const old=voices.find(x=>!x.dead); if(old) killVoice(old); }
+  if(voices.length>128){ const old=voices.find(x=>!x.dead); if(old) killVoice(old); }
   return v;
 }
 function releaseVoice(v){
