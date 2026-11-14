@@ -22,7 +22,7 @@
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
-  --kw:44px; --kh:210px; --fh:170px;
+  --kw:44px; --kh:clamp(200px,50vh,520px); --fh:110px;
   --bw:calc(var(--kw)*.6); --bh:calc(var(--kh)*.63); --felt:9px;
   --font:'Alegreya',Georgia,'Times New Roman',serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -46,7 +46,7 @@ body[data-theme=grand]{
   --case:linear-gradient(180deg,#26262b 0%,#101013 28%,#09090b 100%);
   --caseEdge:0 30px 60px -20px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,.18);
   --feltbg:linear-gradient(180deg,#8f1d2b,#5b0f1a);
-  --disp:rgba(0,0,0,.35); --dispInk:#f0cf8a;
+  --disp:rgba(0,0,0,.35); --dispInk:#f0cf8a; --sheet:#2a1d17; --barbg:rgba(20,14,11,.92);
 }
 body[data-theme=synth]{
   --bg:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(63,240,224,.12),transparent 60%),
@@ -59,7 +59,7 @@ body[data-theme=synth]{
   --case:linear-gradient(180deg,#1b2030,#0d1018);
   --caseEdge:0 30px 60px -20px rgba(0,0,0,.9), 0 0 0 1px #2a3248, 0 0 40px -8px rgba(63,240,224,.25);
   --feltbg:linear-gradient(90deg,#3ff0e0,#7a7bff,#ff3fb4);
-  --disp:#070a10; --dispInk:#3ff0e0;
+  --disp:#070a10; --dispInk:#3ff0e0; --sheet:#121620; --barbg:rgba(9,11,16,.92);
   --font:var(--mono);
 }
 body[data-theme=crystal]{
@@ -74,11 +74,11 @@ body[data-theme=crystal]{
   --case:rgba(255,255,255,.07);
   --caseEdge:0 30px 70px -20px rgba(20,8,60,.7), 0 0 0 1px rgba(255,255,255,.28), inset 0 1px 0 rgba(255,255,255,.4);
   --feltbg:linear-gradient(90deg,#ff9ad5,#b89bff,#7fe3ff);
-  --disp:rgba(255,255,255,.1); --dispInk:#fff;
+  --disp:rgba(255,255,255,.1); --dispInk:#fff; --sheet:rgba(40,28,88,.92); --barbg:rgba(24,16,56,.8);
 }
 
 /* ───────── Διάταξη ───────── */
-.app{max-width:1500px;margin:0 auto;padding:14px 14px 60px}
+.app{max-width:1700px;margin:0 auto;padding:10px 14px 90px}
 .top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 2px 14px}
 .top .home{color:var(--soft);text-decoration:none;font-size:.9rem;letter-spacing:.06em}
 .top .home:hover{color:var(--accent2)}
@@ -183,7 +183,17 @@ body[data-theme=synth] .ov .w{background:#c9cfdd}
 .ov .win{position:absolute;top:0;bottom:0;border:2px solid var(--accent);border-radius:6px;background:rgba(255,255,255,.12);z-index:4;pointer-events:none;box-shadow:0 0 0 999px rgba(0,0,0,.28)}
 
 /* ───────── Πίνακας ελέγχου ───────── */
-.panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:18px}
+.panel{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);width:min(580px,calc(100vw - 20px));max-height:58vh;overflow:auto;z-index:20;display:none}
+.panel.open{display:block;animation:rise .18s ease-out}
+@keyframes rise{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+.panel .card{display:none;box-shadow:0 24px 60px -10px rgba(0,0,0,.8);background:var(--sheet);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.panel .card.open{display:block}
+.card .x{position:absolute;right:10px;top:8px;width:34px;height:34px;border-radius:50%;border:1px solid var(--cardline);background:var(--chip);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.card{position:relative}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:var(--barbg);border-top:1px solid var(--cardline);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.bar .btn{padding:9px 15px}
+.bar .sep{width:1px;background:var(--cardline);margin:2px 4px}
+.bar .btn.rec.on{background:#e5484d;color:#fff}
 .card{background:var(--card);border:1px solid var(--cardline);border-radius:16px;padding:14px 16px 16px;box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
 body[data-theme=crystal] .card{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .card h3{margin:0 0 10px;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
@@ -228,7 +238,8 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
 .foot{margin:26px 0 0;text-align:center;color:var(--soft);font-size:.85rem}
 
 @media (max-width:720px){
-  :root{--kh:170px;--fh:120px}
+  :root{--kh:clamp(160px,38vh,300px)}
+  .bar .btn{padding:8px 11px;font-size:.88rem}
   .app{padding:10px 10px 50px}
   .top h1{font-size:1.5rem;flex-basis:100%;order:-1}
   .case{padding:10px 8px}
@@ -272,15 +283,15 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
     <div class="ov" id="ov" title="Σύρε για να μετακινηθείς στο πληκτρολόγιο"></div>
   </main>
 
-  <section class="panel">
+  <section class="panel" id="sheet">
 
-    <div class="card wide">
+    <div class="card" id="c-sound">
       <h3>Ήχος</h3>
       <div class="chips" id="sounds"></div>
       <p class="hint" id="soundHint"></p>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-mix">
       <h3>Μίξη</h3>
       <label class="row"><span>Όγκος</span><input type="range" id="vol" min="0" max="100"><output></output></label>
       <label class="row"><span>Αντήχηση</span><input type="range" id="rev" min="0" max="100"><output></output></label>
@@ -288,7 +299,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
       <label class="row"><span>Ένταση αφής</span><input type="range" id="touch" min="20" max="100"><output></output></label>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-play">
       <h3>Παίξιμο</h3>
       <div class="step"><span>Οκτάβα</span><button class="btn sq" id="octM" aria-label="Οκτάβα κάτω">−</button><b id="octV"></b><button class="btn sq" id="octP" aria-label="Οκτάβα πάνω">+</button></div>
       <div class="step"><span>Μεταφορά</span><button class="btn sq" id="trM" aria-label="Ημιτόνιο κάτω">−</button><b id="trV"></b><button class="btn sq" id="trP" aria-label="Ημιτόνιο πάνω">+</button></div>
@@ -296,7 +307,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
       <label class="row" style="margin-top:12px"><span>Μέγεθος πλήκτρων</span><input type="range" id="kw" min="28" max="76"><output></output></label>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-view">
       <h3>Εμφάνιση</h3>
       <div class="chips" id="names" style="margin-bottom:4px">
         <button class="chip" data-v="none">Χωρίς ονόματα</button>
@@ -307,7 +318,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
       <label class="tog"><input type="checkbox" id="fallBox"> Ροή νοτών (φωτεινές γραμμές)</label>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-met">
       <h3>Μετρονόμος</h3>
       <div class="bpm">
         <button class="btn sq" id="bpmM" aria-label="Πιο αργά">−</button>
@@ -323,7 +334,7 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
       </div>
     </div>
 
-    <div class="card wide">
+    <div class="card" id="c-rec">
       <h3>Ηχογράφηση</h3>
       <div class="btns">
         <button class="btn rec" id="recBtn">● Εγγραφή</button>
@@ -339,13 +350,13 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
       <p class="hint" id="recHint">Πάτησε «Εγγραφή» και παίξε. Η εγγραφή ξεκινά με την πρώτη νότα, και αποθηκεύεται ως αρχείο MIDI (στο τέμπο του μετρονόμου) και ως ήχος.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-midi">
       <h3>MIDI πληκτρολόγιο</h3>
       <p class="hint" style="margin-top:0" id="midiHint">Έλεγχος για συσκευή MIDI…</p>
       <p class="hint">Συνδέεις ένα πραγματικό πληκτρολόγιο με USB και παίζει αμέσως, με ένταση και πεντάλ (Chrome, Edge, Opera).</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="c-help">
       <h3>Συντομεύσεις</h3>
       <ul class="keyhelp">
         <li><kbd>Z</kbd>–<kbd>M</kbd> και <kbd>Q</kbd>–<kbd>U</kbd>: νότες (οι αριθμοί και τα <kbd>S D G H J</kbd> είναι τα μαύρα)</li>
@@ -356,8 +367,22 @@ kbd{font-family:var(--mono);font-size:.8em;padding:1px 6px;border-radius:5px;bor
     </div>
 
   </section>
-  <p class="foot">Ο ήχος παράγεται ζωντανά στον περιηγητή σου · δεν χρειάζεται σύνδεση</p>
 </div>
+<nav class="bar" id="bar" aria-label="Ρυθμίσεις">
+  <button class="btn" data-card="c-sound">♪ Ήχος</button>
+  <button class="btn" data-card="c-mix">Μίξη</button>
+  <button class="btn" data-card="c-play">Οκτάβα</button>
+  <button class="btn" data-card="c-view">Εμφάνιση</button>
+  <button class="btn" data-card="c-met">Μετρονόμος</button>
+  <button class="btn" data-card="c-rec">Ηχογράφηση</button>
+  <span class="sep"></span>
+  <button class="btn" id="qPedal" aria-pressed="false">Πεντάλ</button>
+  <button class="btn" id="qCk" aria-pressed="true">Γράμματα</button>
+  <button class="btn rec" id="qRec">● Εγγραφή</button>
+  <span class="sep"></span>
+  <button class="btn" data-card="c-midi">MIDI</button>
+  <button class="btn" data-card="c-help">?</button>
+</nav>
 
 <script>
 'use strict';
@@ -615,6 +640,7 @@ function setPedal(){
   $('#pPedal').classList.toggle('on',pedalOn);
   $('#pedalBtn').setAttribute('aria-pressed',pedalLatch);
   $('#pedalBtn').classList.toggle('on',pedalLatch);
+  $('#qPedal').classList.toggle('on',pedalOn); $('#qPedal').setAttribute('aria-pressed',pedalOn);
   if(!pedalOn){
     for(const n of ringing){ if(!(heldBy[n]&&heldBy[n].size)){ releaseVoice(cur[n]); delete cur[n]; } setKey(n,'ring',false); }
     ringing.clear();
@@ -710,7 +736,7 @@ function refreshLabels(){
 let FH=170, dpr=1;
 function layout(){
   document.documentElement.style.setProperty('--kw',S.kw+'px');
-  FH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fh'))||170;
+  FH=Math.round(clamp(innerHeight*.13,70,130)); document.documentElement.style.setProperty('--fh',FH+'px');
   dpr=Math.min(devicePixelRatio||1,2);
   const cv=$('#fall'), w=52*S.kw;
   cv.width=Math.round(w*dpr); cv.height=Math.round(FH*dpr);
@@ -896,6 +922,7 @@ function toggleRec(){
 function refreshRecUI(){
   const has=rec.data.length>0;
   $('#recBtn').classList.toggle('on',rec.on); $('#recBtn').textContent=rec.on?'■ Τέλος εγγραφής':'● Εγγραφή';
+  $('#qRec').classList.toggle('on',rec.on); $('#qRec').textContent=rec.on?'■ Τέλος':'● Εγγραφή';
   $('#pRec').classList.toggle('on',rec.on);
   $('#playBtn').disabled=!has||rec.on; $('#midiBtn').disabled=!has; $('#clearBtn').disabled=!has||rec.on;
   $('#audioBtn').disabled=!rec.audioBlob; $('#stopBtn').disabled=!play.on;
@@ -987,7 +1014,8 @@ function init(){
   setTheme(S.theme,false); setSound(S.sound);
   document.body.classList.toggle('showck',S.ck); document.body.classList.toggle('nofall',!S.fall);
   $('#ckBox').checked=S.ck; $('#fallBox').checked=S.fall;
-  $('#ckBox').addEventListener('change',e=>{ S.ck=e.target.checked; document.body.classList.toggle('showck',S.ck); save(); });
+  const setCk=v=>{ S.ck=v; document.body.classList.toggle('showck',v); $('#ckBox').checked=v; $('#qCk').classList.toggle('on',v); $('#qCk').setAttribute('aria-pressed',v); save(); };
+  setCk(S.ck); $('#ckBox').addEventListener('change',e=>setCk(e.target.checked)); $('#qCk').onclick=()=>setCk(!S.ck);
   $('#fallBox').addEventListener('change',e=>{ S.fall=e.target.checked; document.body.classList.toggle('nofall',!S.fall); save(); });
   document.querySelectorAll('#names .chip').forEach(b=>{ b.setAttribute('aria-pressed',b.dataset.v===S.names); b.addEventListener('click',()=>{ S.names=b.dataset.v; document.querySelectorAll('#names .chip').forEach(x=>x.setAttribute('aria-pressed',x===b)); refreshLabels(); save(); }); });
   bindRange('vol',()=>Math.round(S.vol*100),v=>S.vol=v/100,v=>v+'%');
@@ -997,14 +1025,15 @@ function init(){
   bindRange('kw',()=>S.kw,v=>{ S.kw=v; layout(); },v=>v+'px');
   $('#octM').onclick=()=>setOct(S.oct-1); $('#octP').onclick=()=>setOct(S.oct+1);
   $('#trM').onclick=()=>setTrans(S.trans-1); $('#trP').onclick=()=>setTrans(S.trans+1);
-  $('#pedalBtn').onclick=()=>{ pedalLatch=!pedalLatch; setPedal(); if(!pedalLatch&&!pedalSpace){ /* ήδη ελευθερώθηκε */ } $('#pedalBtn').setAttribute('aria-pressed',pedalLatch); $('#pedalBtn').classList.toggle('on',pedalLatch); };
+  const togglePedal=()=>{ pedalLatch=!pedalLatch; setPedal(); $('#pedalBtn').setAttribute('aria-pressed',pedalLatch); $('#pedalBtn').classList.toggle('on',pedalLatch); };
+  $('#pedalBtn').onclick=togglePedal; $('#qPedal').onclick=togglePedal;
   /* μετρονόμος */
   setBpm(S.bpm); $('#bpm').addEventListener('input',e=>setBpm(+e.target.value));
   $('#bpmM').onclick=()=>setBpm(S.bpm-1); $('#bpmP').onclick=()=>setBpm(S.bpm+1);
   $('#metBtn').onclick=metToggle; $('#tapBtn').onclick=tap;
   document.querySelectorAll('#beats [data-v]').forEach(b=>{ b.setAttribute('aria-pressed',+b.dataset.v===S.beats); b.addEventListener('click',()=>{ S.beats=+b.dataset.v; met.beat=0; buildDots(); document.querySelectorAll('#beats [data-v]').forEach(x=>x.setAttribute('aria-pressed',x===b)); save(); }); });
   /* ηχογράφηση */
-  $('#recBtn').onclick=toggleRec;
+  $('#recBtn').onclick=toggleRec; $('#qRec').onclick=toggleRec;
   $('#playBtn').onclick=()=>startPlay(rec.data,true);
   $('#stopBtn').onclick=()=>stopPlay();
   $('#loopBtn').onclick=e=>{ const b=e.currentTarget; b.classList.toggle('on'); b.setAttribute('aria-pressed',b.classList.contains('on')); };
@@ -1013,6 +1042,18 @@ function init(){
   $('#clearBtn').onclick=()=>{ rec.data=[]; rec.ev=[]; rec.audioBlob=null; $('#recHint').textContent='Η εγγραφή καθαρίστηκε.'; refreshRecUI(); };
   $('#demoBtn').onclick=()=>{ if(play.on){ stopPlay(); return; } startPlay(demoEvents(),false); };
   refreshRecUI();
+  /* ρυθμίσεις: ανοίγουν μόνο όταν τις ζητήσεις */
+  const sheet=$('#sheet');
+  document.querySelectorAll('.card').forEach(c=>{ const x=document.createElement('button'); x.className='x'; x.textContent='×'; x.setAttribute('aria-label','Κλείσιμο'); x.onclick=()=>openCard(null); c.appendChild(x); });
+  function openCard(id){
+    const cur=sheet.querySelector('.card.open'); const same=cur&&cur.id===id;
+    sheet.querySelectorAll('.card').forEach(c=>c.classList.toggle('open',!same&&c.id===id));
+    sheet.classList.toggle('open',!!id&&!same);
+    document.querySelectorAll('#bar [data-card]').forEach(b=>b.classList.toggle('on',!same&&b.dataset.card===id));
+  }
+  document.querySelectorAll('#bar [data-card]').forEach(b=>b.addEventListener('click',()=>openCard(b.dataset.card)));
+  addEventListener('keydown',e=>{ if(e.code==='Escape') openCard(null); });
+  addEventListener('pointerdown',()=>window.focus());
   layout(); refreshLabels(); scrollToBase(false);
   if(navigator.keyboard&&navigator.keyboard.getLayoutMap) navigator.keyboard.getLayoutMap().then(m=>{ layoutMap=m; refreshLabels(); }).catch(()=>{});
   initMIDI();
