@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="only light">
+<meta name="darkreader-lock">
+<title>Η πρώτη μου παρτιτούρα · Οδηγός ασκήσεων</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:only light;
+  --paper:#fdf8f1; --card:#fffdf9; --ink:#2e2747; --soft:#5d5476;
+  --accent:#c2410c; --accent-d:#9a3412; --berry:#9d3c72; --rose:#f6e3e6; --peach:#fbe9d9; --line:#efdcc8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.6 "Alegreya",Georgia,serif;-webkit-font-smoothing:antialiased}
+.rainbow{height:110px;background:url(ouranio_toxo.jpg) center/cover;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.hero{max-width:1000px;margin:-40px auto 0;padding:0 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center}
+.hero .kicker{font:500 15px/1.3 "Alegreya Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--berry);margin:0 0 10px}
+.hero h1{font-weight:700;font-size:clamp(38px,6vw,60px);line-height:1.05;margin:0 0 8px;color:var(--ink)}
+.hero .sub{font-style:italic;font-size:24px;color:var(--accent);margin:0 0 22px}
+.hero .by{font:400 16px/1.5 "Alegreya Sans",sans-serif;color:var(--soft);margin:0}
+.hero .by b{display:block;font:500 19px/1.4 "Alegreya",serif;color:var(--ink)}
+.hero img{width:100%;-webkit-mask-image:radial-gradient(ellipse at center,#000 45%,transparent 72%);mask-image:radial-gradient(ellipse at center,#000 45%,transparent 72%)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.how{background:linear-gradient(135deg,var(--peach),var(--rose));border-radius:22px;padding:26px 30px;margin:26px 0 10px}
+.how h2{font-size:26px;margin:0 0 10px;color:var(--ink)}
+.how ol{margin:0;padding-left:24px}
+.how li{margin:4px 0}
+.how p.pdf a{color:var(--accent-d);font:500 16px/1.4 "Alegreya Sans",sans-serif}
+.how p{margin:12px 0 0;font-size:17px;color:var(--soft)}
+nav.toc{position:sticky;top:0;z-index:10;background:rgba(253,248,241,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:24px -20px 0;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;text-decoration:none;color:var(--ink);font:500 15px/1 "Alegreya Sans",sans-serif;padding:9px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);white-space:nowrap}
+nav.toc a span{color:var(--accent);margin-right:6px;font-weight:700}
+nav.toc a:hover{border-color:var(--accent)}
+.sec{padding:34px 0 10px}
+.sec h2{font-size:32px;line-height:1.2;margin:0 0 10px;display:flex;align-items:center;gap:14px}
+.sec h2 span{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:700 22px/1 "Alegreya Sans",sans-serif}
+.intro{max-width:760px}
+.intro p{margin:0 0 12px}
+.cards{display:grid;gap:18px;margin-top:18px}
+.cards.pairs{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px 16px;box-shadow:0 2px 0 rgba(194,65,12,.04),0 8px 24px -14px rgba(157,60,114,.25)}
+.card header{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px}
+.card h3{font-size:21px;line-height:1.35;margin:2px 0 0;font-weight:500}
+.card h3.q{font-size:19px}
+.num{flex:none;min-width:32px;height:32px;border-radius:10px;background:var(--rose);color:var(--berry);display:grid;place-items:center;font:700 16px/1 "Alegreya Sans",sans-serif;padding:0 6px}
+.num.w{background:var(--peach);color:var(--accent)}
+.score{overflow-x:auto;padding:6px 0}
+.score img.mus{display:block;max-width:100%;height:auto}
+.lab{margin:0 0 0 44px;font-style:italic;color:var(--berry);font-size:16px}
+.score img.ks{width:150px}
+.quiz details .btns{margin-top:10px}
+details p .score{display:block;margin-top:10px;background:var(--card);border-radius:10px;padding:6px}
+.hint{font-style:italic;color:var(--soft);margin:2px 0 6px;font-size:17px}
+.seq{display:inline-block;margin-top:6px;font-weight:500;letter-spacing:.02em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+button.play{appearance:none;border:2px solid var(--accent);background:transparent;color:var(--accent-d);font:500 17px/1 "Alegreya Sans",sans-serif;padding:12px 18px 12px 14px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:48px;transition:background .15s,color .15s,transform .1s}
+button.play.main{background:var(--accent);color:#fff}
+button.play:hover{transform:translateY(-1px)}
+button.play i{width:0;height:0;border-left:12px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent}
+button.play.on i{width:12px;height:12px;border:0;background:currentColor;border-radius:2px}
+button.play.on{animation:pulse 1.6s ease-in-out infinite}
+button.play.err{border-color:var(--berry);color:var(--berry);background:transparent}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(194,65,12,.35)}50%{box-shadow:0 0 0 8px rgba(194,65,12,0)}}
+details{margin-top:8px}
+details summary{cursor:pointer;color:var(--berry);font:500 17px/1.2 "Alegreya Sans",sans-serif;list-style:none;display:inline-flex;align-items:center;gap:8px;padding:10px 0;min-height:44px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s}
+details[open] summary::before{transform:rotate(45deg)}
+details p{margin:2px 0 4px;padding:12px 16px;background:var(--rose);border-radius:12px;font-weight:500}
+.listen .btns{flex-direction:column;align-items:flex-start}
+.listen details{margin-top:0}
+footer{margin:50px 0 0;padding:26px 20px 40px;text-align:center;font:400 15px/1.6 "Alegreya Sans",sans-serif;color:var(--soft);border-top:1px solid var(--line)}
+@media (max-width:600px){.score picture img.mus{width:100% !important}}
+@media (max-width:720px){
+  body{font-size:18px}
+  .rainbow{height:80px}
+  .hero{grid-template-columns:1fr;margin-top:-20px}
+  .hero img{max-width:340px;margin:0 auto;display:block;order:-1}
+  .how{padding:20px}
+  .card{padding:16px}
+  .sec h2{font-size:26px}
+  .sec h2 span{width:40px;height:40px;font-size:19px}
+}
+.print-only{display:none}
+.card h3 small{color:var(--berry);font-size:16px}
+@media print{
+  @page{size:A4;margin:14mm 14mm 16mm}
+  body{font-size:15px;background:#fff}
+  nav.toc,.btns,.rainbow,details,.cards.pairs:has(.listen){display:none !important}
+  .print-only{display:block}
+  .noprint{display:none}
+  .hero{margin-top:0}.hero img{max-width:230px}
+  .card{break-inside:avoid;box-shadow:none;padding:10px 14px}
+  .cards{gap:10px}
+  .sec{padding:18px 0 4px}
+  .sec h2{break-after:avoid}
+  .lyseis{break-before:page}
+  .lyseis h3{font-size:18px;margin:14px 0 4px;color:var(--accent)}
+  .lyseis p{margin:2px 0;font-size:14px}
+  .lyseis .score img{max-width:60%}
+}
+</style>
+</head>
+<body>
+<div class="rainbow" aria-hidden="true"></div>
+<header class="hero">
+  <div>
+    <p class="kicker">Μαθήματα μουσικής ανάγνωσης · Μέρος Α΄</p>
+    <h1>Η πρώτη μου παρτιτούρα</h1>
+    <p class="sub">Οδηγός ασκήσεων με ήχο</p>
+    <p class="by"><b>Ιωάννης Ιδομενέως</b>Διευθυντής Χορωδιών · Λυρικός Τραγουδιστής · Καθηγητής Φωνητικής Τέχνης</p>
+  </div>
+  <img src="lofos.jpg" alt="">
+</header>
+<main class="wrap">
+  <section class="how">
+    <h2>Πώς μελετάμε</h2>
+    <ol>
+      <li>Δείτε πρώτα την ενότητα στο βίντεο, και μετά ελάτε στις ασκήσεις της.</li>
+      <li>Στις ασκήσεις ρυθμού χτυπήστε σιγανά τον παλμό στο γόνατο και πείτε τον ρυθμό με «τα». Μετά πατήστε «Ακούστε τον ρυθμό» και ελέγξτε. Πριν από τον ρυθμό ακούγονται τέσσερα ξύλινα κλικ, σαν μετρονόμος, που δίνουν τον παλμό.</li>
+      <li>Στις ασκήσεις τραγουδιού πείτε πρώτα τα ονόματα των νοτών. Μετά πείτε τα στον ρυθμό τους, όλα στο ίδιο ύψος. Στο τέλος προσθέστε τη μελωδία.</li>
+      <li>Πριν τραγουδήσετε, πατήστε «Ακούστε την πρώτη νότα» και τραγουδήστε τη.</li>
+      <li>Πατήστε «Ακούστε την άσκηση» και ελέγξτε αν τραγουδήσατε σωστά. Αν κάτι δεν βγήκε, ξανατραγουδήστε το και ακούστε το ξανά.</li>
+    </ol>
+    <p class="noprint pdf"><a href="Odigos_askiseon_Meros_A_ektyposi.pdf" download>Ο οδηγός για εκτύπωση (PDF, χωρίς ήχο)</a></p>
+    <p>Όταν μια άσκηση είναι ψηλή για τη φωνή σας, τραγουδήστε τη μια οκτάβα χαμηλότερα. Στις γραπτές ασκήσεις γράψτε πρώτα την απάντησή σας σε ένα χαρτί, και μετά πατήστε «Δείτε τη λύση».</p>
+  </section>
+  <nav class="toc" aria-label="Ενότητες"><a href="#pentagrammo"><span>1</span>Το πεντάγραμμο και οι νότες</a><a href="#vima"><span>2</span>Βήμα και άλμα</a><a href="#diarkeia"><span>3</span>Ο ήχος και η διάρκειά του</a><a href="#metro"><span>4</span>Το μέτρο</a><a href="#rythmos"><span>5</span>Ο ρυθμός</a><a href="#tragoudame"><span>6</span>Τραγουδάμε</a><a href="#syzeuxi"><span>7</span>Η σύζευξη και η στιγμή διαρκείας</a><a href="#ischyra"><span>8</span>Ισχυρά και ασθενή μέρη του μέτρου</a></nav>
+<section class="sec" id="pentagrammo">
+  <h2><span>1</span>Το πεντάγραμμο και οι νότες</h2>
+  <div class="intro"><p>Οι νότες γράφονται στις πέντε γραμμές του <b>πενταγράμμου</b> και στα τέσσερα <b>διαστήματα</b> ανάμεσά τους. Τις γραμμές και τα διαστήματα τα μετράμε από κάτω προς τα πάνω. Όσο πιο ψηλά βρίσκεται το φθογγόσημο, τόσο υψηλότερο είναι το τονικό του ύψος.</p><p>Το <b>κλειδί του Σολ</b> ορίζει ότι η νότα στη 2η γραμμή είναι το σολ. Έτσι παίρνουν την ονομασία τους και όλες οι υπόλοιπες νότες.</p></div>
+  <div class="cards"><article class="card sing" id="pentagrammo_01">
+  <header><span class="num">1</span><h3>Οι νότες στις γραμμές</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/pentagrammo_01_m.svg"><img class="mus" src="svg/pentagrammo_01.svg" style="width:660px" alt=""></picture></div><p class="hint">Πείτε το όνομα κάθε νότας μαζί με το πιάνο.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_e4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/pentagrammo_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="pentagrammo_02">
+  <header><span class="num">2</span><h3>Οι νότες στα διαστήματα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/pentagrammo_02_m.svg"><img class="mus" src="svg/pentagrammo_02.svg" style="width:539px" alt=""></picture></div><p class="hint">Πείτε το όνομα κάθε νότας μαζί με το πιάνο.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_f4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/pentagrammo_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="pentagrammo_03">
+  <header><span class="num">3</span><h3>Κάτω από το πεντάγραμμο</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/pentagrammo_03_m.svg"><img class="mus" src="svg/pentagrammo_03.svg" style="width:660px" alt=""></picture></div><p class="hint">Το ντο γράφεται σε μια μικρή δική του γραμμή, τη βοηθητική γραμμή. Το ρε γράφεται ακριβώς κάτω από την 1η γραμμή.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/pentagrammo_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="pentagrammo_04">
+  <header><span class="num w">✎ 1</span><h3 class="q">Γράψτε το όνομα κάθε νότας.</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/pentagrammo_04_m.svg"><img class="mus" src="svg/pentagrammo_04.svg" style="width:860px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>μι · σολ · φα · λα · ντο · ρε · σι · μι</p></details>
+</article><article class="card write" id="pentagrammo_05">
+  <header><span class="num w">✎ 2</span><h3 class="q">Γράψτε το όνομα κάθε νότας.</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/pentagrammo_05_m.svg"><img class="mus" src="svg/pentagrammo_05.svg" style="width:860px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>ρε · φα · ντο · λα · σολ · μι · σι · ρε</p></details>
+</article><article class="card write" id="pentagrammo_06">
+  <header><span class="num w">✎ 3</span><h3 class="q">Ποιες νότες γράφονται στις γραμμές και ποιες στα διαστήματα;<br><span class="seq">μι · φα · σολ · λα · σι · ντο · ρε</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Στις γραμμές: μι, σολ, σι, ρε. Στα διαστήματα: φα, λα, ντο.</p></details>
+</article><article class="card write" id="pentagrammo_07">
+  <header><span class="num w">✎ 4</span><h3 class="q">Γράψτε στο πεντάγραμμο τις νότες: σολ, μι, ντο, ρε, φα, λα.</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Συγκρίνετε με το πεντάγραμμο:<span class="score"><img class="mus" src="svg/pentagrammo_07_lysi.svg" style="width:779px" alt=""></span></p></details>
+</article></div>
+</section>
+<section class="sec" id="vima">
+  <h2><span>2</span>Βήμα και άλμα</h2>
+  <div class="intro"><p>Όταν η μία νότα είναι σε γραμμή και η επόμενη στο αμέσως διπλανό διάστημα, ή το αντίστροφο, πηγαίνουμε από τη μία στην άλλη με <b>βήμα</b>. Όταν προσπερνάμε μία ή περισσότερες νότες, κάνουμε <b>άλμα</b>.</p><p>Οι ασκήσεις αυτής της ενότητας έχουν μόνο μισά και ολόκληρα. Κάθε μισό το κρατάμε δύο χρόνους και κάθε ολόκληρο τέσσερις.</p></div>
+  <div class="cards"><article class="card sing" id="vima_01">
+  <header><span class="num">4</span><h3>Βήματα: ντο, ρε, μι</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_01_m.svg"><img class="mus" src="svg/vima_01.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vima_02">
+  <header><span class="num">5</span><h3>Βήματα ως το σολ και πίσω</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_02_m.svg"><img class="mus" src="svg/vima_02.svg" style="width:798px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vima_03">
+  <header><span class="num">6</span><h3>Βήματα που αλλάζουν κατεύθυνση</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_03_m.svg"><img class="mus" src="svg/vima_03.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_e4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vima_04">
+  <header><span class="num">7</span><h3>Μικρά άλματα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_04_m.svg"><img class="mus" src="svg/vima_04.svg" style="width:860px" alt=""></picture></div><p class="hint">Ντο–μι, ρε–φα, μι–σολ: προσπερνάμε μία νότα.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vima_05">
+  <header><span class="num">8</span><h3>Το άλμα ντο–σολ</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_05_m.svg"><img class="mus" src="svg/vima_05.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vima_06">
+  <header><span class="num">9</span><h3>Βήματα και άλματα μαζί</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_06_m.svg"><img class="mus" src="svg/vima_06.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/vima_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="vima_07">
+  <header><span class="num w">✎ 5</span><h3 class="q">Βήμα ή άλμα; Ο αριθμός κάτω από τη νότα δείχνει την αρχή κάθε ζευγαριού.</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/vima_07_m.svg"><img class="mus" src="svg/vima_07.svg" style="width:860px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>1 βήμα · 2 άλμα · 3 βήμα · 4 άλμα · 5 βήμα · 6 άλμα</p></details>
+</article><article class="card write" id="vima_08">
+  <header><span class="num w">✎ 6</span><h3 class="q">Ξεκινήστε από το ρε και ανεβείτε με βήματα ως το λα. Ποιες νότες περάσατε;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>ρε · μι · φα · σολ · λα<span class="score"><img class="mus" src="svg/vima_08_lysi.svg" style="width:489px" alt=""></span></p></details>
+</article></div>
+</section>
+<section class="sec" id="diarkeia">
+  <h2><span>3</span>Ο ήχος και η διάρκειά του</h2>
+  <div class="intro"><p>Η μουσική κινείται με σταθερούς παλμούς. Κάθε παλμός λέγεται <b>χρόνος</b>. Το <b>τέταρτο</b> διαρκεί έναν χρόνο, το <b>μισό</b> δύο και το <b>ολόκληρο</b> τέσσερις. Δύο <b>όγδοα</b> διαρκούν όσο ένα τέταρτο. Κάθε <b>παύση</b> έχει τη διάρκεια του φθογγοσήμου που της αντιστοιχεί.</p><p>Σε κάθε νότα λέμε «τα» και το κρατάμε όσο διαρκεί η νότα. Στις παύσεις σωπαίνουμε. Εδώ οι ασκήσεις γράφονται χωρίς διαστολές, γιατί τις διαστολές τις βλέπουμε στην επόμενη ενότητα.</p></div>
+  <div class="cards"><article class="card sing rhythm" id="diarkeia_01">
+  <header><span class="num">10</span><h3>Τέταρτα και μισά</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_01_m.svg"><img class="mus" src="svg/diarkeia_01.svg" style="width:653px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_01.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="diarkeia_02">
+  <header><span class="num">11</span><h3>Με ολόκληρα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_02_m.svg"><img class="mus" src="svg/diarkeia_02.svg" style="width:796px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_02.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="diarkeia_03">
+  <header><span class="num">12</span><h3>Με παύση τετάρτου</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_03_m.svg"><img class="mus" src="svg/diarkeia_03.svg" style="width:722px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_03.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="diarkeia_04">
+  <header><span class="num">13</span><h3>Με παύση μισού</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_04_m.svg"><img class="mus" src="svg/diarkeia_04.svg" style="width:630px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_04.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="diarkeia_05">
+  <header><span class="num">14</span><h3>Με παύση ολοκλήρου</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_05_m.svg"><img class="mus" src="svg/diarkeia_05.svg" style="width:619px" alt=""></picture></div><p class="hint">Στην παύση ολοκλήρου μετράμε σιωπηλά τέσσερις χρόνους.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_05.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="diarkeia_06">
+  <header><span class="num">15</span><h3>Με όγδοα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_06_m.svg"><img class="mus" src="svg/diarkeia_06.svg" style="width:761px" alt=""></picture></div><p class="hint">Δύο όγδοα μαζί χωρούν σε έναν χρόνο: «τα-τα».</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/diarkeia_06.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card write" id="diarkeia_07">
+  <header><span class="num w">✎ 7</span><h3 class="q">Πόσους χρόνους διαρκεί κάθε φθογγόσημο;</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/diarkeia_07_m.svg"><img class="mus" src="svg/diarkeia_07.svg" style="width:362px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>τέταρτο 1 · μισό 2 · ολόκληρο 4 · όγδοο ½</p></details>
+</article><article class="card write" id="diarkeia_08">
+  <header><span class="num w">✎ 8</span><h3 class="q">Ποια παύση έχει την ίδια διάρκεια με το τέταρτο, με το μισό και με το ολόκληρο;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Το τέταρτο με την παύση τετάρτου, το μισό με την παύση μισού και το ολόκληρο με την παύση ολοκλήρου.</p></details>
+</article><article class="card write" id="diarkeia_09">
+  <header><span class="num w">✎ 9</span><h3 class="q">Πόσους χρόνους διαρκεί όλη αυτή η σειρά;</h3></header><div class="score"><img class="mus" src="svg/diarkeia_09.svg" style="width:358px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>2 + 1 + 1 + 4 = 8 χρόνοι</p></details>
+</article></div>
+</section>
+<section class="sec" id="metro">
+  <h2><span>4</span>Το μέτρο</h2>
+  <div class="intro"><p>Παλιότερα η μουσική γραφόταν χωρίς διαστολές. Σήμερα η μουσική χωρίζεται σε <b>μέτρα</b>. Τα μέτρα τα χωρίζουν οι κάθετες γραμμές, οι <b>διαστολές</b>. Στο τέλος υπάρχει η διπλή, τελική διαστολή.</p><p>Το κλάσμα στην αρχή δείχνει πόσους χρόνους έχει κάθε μέτρο. Ο πάνω αριθμός λέει πόσοι είναι οι χρόνοι και ο κάτω τι αξία έχει ο καθένας: το 4 σημαίνει τέταρτο. Στα 2/4, 3/4 και 4/4 ο χρόνος είναι ένα τέταρτο. Τα 4/4 γράφονται και με το σύμβολο <b>C</b>.</p></div>
+  <div class="cards"><article class="card sing rhythm" id="metro_01">
+  <header><span class="num">16</span><h3>Στα 4/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_01_m.svg"><img class="mus" src="svg/metro_01.svg" style="width:737px" alt=""></picture></div><p class="hint">Μετράτε μέσα σας 1, 2, 3, 4 σε κάθε μέτρο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/metro_01.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="metro_02">
+  <header><span class="num">17</span><h3>Στα 3/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_02_m.svg"><img class="mus" src="svg/metro_02.svg" style="width:578px" alt=""></picture></div><p class="hint">Το μισό με την τελεία διαρκεί τρεις χρόνους και γεμίζει όλο το μέτρο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/metro_02.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="metro_03">
+  <header><span class="num">18</span><h3>Στα 2/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_03_m.svg"><img class="mus" src="svg/metro_03.svg" style="width:453px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/metro_03.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="metro_04">
+  <header><span class="num">19</span><h3>Στα 4/4 με παύσεις</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_04_m.svg"><img class="mus" src="svg/metro_04.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/metro_04.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="metro_05">
+  <header><span class="num">20</span><h3>Στα 3/4 με παύσεις</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_05_m.svg"><img class="mus" src="svg/metro_05.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/metro_05.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card write" id="metro_06">
+  <header><span class="num w">✎ 10</span><h3 class="q">Πόσους χρόνους έχει κάθε μέτρο; Ποιο κλάσμα ταιριάζει;</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_06_m.svg"><img class="mus" src="svg/metro_06.svg" style="width:611px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>3 χρόνοι σε κάθε μέτρο: 3/4</p></details>
+</article><article class="card write" id="metro_07">
+  <header><span class="num w">✎ 11</span><h3 class="q">Βάλτε τις διαστολές που λείπουν.</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_07_m.svg"><img class="mus" src="svg/metro_07.svg" style="width:839px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Συγκρίνετε με τις διαστολές παρακάτω:<span class="score"><img class="mus" src="svg/metro_07_lysi.svg" style="width:854px" alt=""></span></p></details>
+</article><article class="card write" id="metro_08">
+  <header><span class="num w">✎ 12</span><h3 class="q">Βάλτε τις διαστολές που λείπουν.</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_08_m.svg"><img class="mus" src="svg/metro_08.svg" style="width:860px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Συγκρίνετε με τις διαστολές παρακάτω:<span class="score"><img class="mus" src="svg/metro_08_lysi.svg" style="width:860px" alt=""></span></p></details>
+</article><article class="card write" id="metro_09">
+  <header><span class="num w">✎ 13</span><h3 class="q">Σε ποια μέτρα λείπουν χρόνοι; Πόσοι λείπουν;</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/metro_09_m.svg"><img class="mus" src="svg/metro_09.svg" style="width:859px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Λείπουν χρόνοι στα μέτρα 2 (δύο χρόνοι), 3 (ένας), 5 (δύο), 6 (ένας) και 8 (δύο). Μπορείτε να τα συμπληρώσετε με όποιες νότες ή παύσεις θέλετε, αρκεί να γεμίζουν τους χρόνους που λείπουν.</p></details>
+</article><article class="card write" id="metro_10">
+  <header><span class="num w">✎ 14</span><h3 class="q">Τι σημαίνει το σύμβολο C στην αρχή ενός τραγουδιού;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Σημαίνει 4/4: τέσσερις χρόνοι σε κάθε μέτρο, με χρόνο το τέταρτο.</p></details>
+</article></div>
+</section>
+<section class="sec" id="rythmos">
+  <h2><span>5</span>Ο ρυθμός</h2>
+  <div class="intro"><p>Ο ρυθμός είναι οι διάρκειες των νοτών και των παύσεων πάνω στον σταθερό παλμό. Δύο όγδοα μοιράζουν έναν χρόνο στα δύο: «τα-τα». Τέσσερα δέκατα έκτα τον μοιράζουν στα τέσσερα: «τα-τα-τα-τα».</p><p>Ξεκινήστε αργά και κρατήστε τον παλμό σταθερό. Η ταχύτητα έρχεται μόνη της.</p></div>
+  <div class="cards"><article class="card sing rhythm" id="rythmos_01">
+  <header><span class="num">21</span><h3>Όγδοα και τέταρτα</h3></header>
+  <div class="score"><img class="mus" src="svg/rythmos_01.svg" style="width:500px" alt=""></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_01.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_02">
+  <header><span class="num">22</span><h3>Όγδοα σε διάφορες θέσεις</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/rythmos_02_m.svg"><img class="mus" src="svg/rythmos_02.svg" style="width:823px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_02.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_03">
+  <header><span class="num">23</span><h3>Με παύση ογδόου</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/rythmos_03_m.svg"><img class="mus" src="svg/rythmos_03.svg" style="width:823px" alt=""></picture></div><p class="hint">Στην παύση ογδόου σωπαίνουμε για μισό χρόνο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_03.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_04">
+  <header><span class="num">24</span><h3>Όγδοα στα 3/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/rythmos_04_m.svg"><img class="mus" src="svg/rythmos_04.svg" style="width:662px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_04.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_05">
+  <header><span class="num">25</span><h3>Όγδοα στα 2/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/rythmos_05_m.svg"><img class="mus" src="svg/rythmos_05.svg" style="width:523px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_05.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_06">
+  <header><span class="num">26</span><h3>Δέκατα έκτα</h3></header>
+  <div class="score"><img class="mus" src="svg/rythmos_06.svg" style="width:526px" alt=""></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_06.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="rythmos_07">
+  <header><span class="num">27</span><h3>Δέκατα έκτα και όγδοα μαζί</h3></header>
+  <div class="score"><img class="mus" src="svg/rythmos_07.svg" style="width:539px" alt=""></div><p class="hint">Ένα όγδοο και δύο δέκατα έκτα γεμίζουν πάλι έναν χρόνο: «τα-α τα-τα» ή «τα-τα τα-α».</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/rythmos_07.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card write" id="rythmos_08">
+  <header><span class="num w">✎ 15</span><h3 class="q">Πόσα όγδοα χωρούν σε ένα τέταρτο; Πόσα δέκατα έκτα;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Δύο όγδοα και τέσσερα δέκατα έκτα.</p></details>
+</article><article class="card write" id="rythmos_09">
+  <header><span class="num w">✎ 16</span><h3 class="q">Πόσους χρόνους έχει αυτό το μέτρο;</h3></header><div class="score"><img class="mus" src="svg/rythmos_09.svg" style="width:264px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>½ + ½ + 1 + 2 = 4 χρόνοι</p></details>
+</article></div>
+</section>
+<section class="sec" id="tragoudame">
+  <h2><span>6</span>Τραγουδάμε</h2>
+  <div class="intro"><p>Κάθε άσκηση τη μαθαίνουμε σε τρία στάδια: πρώτα λέμε τα ονόματα των νοτών, μετά τα λέμε στον ρυθμό τους σε ένα ύψος, και στο τέλος τραγουδάμε τη μελωδία.</p></div>
+  <div class="cards"><article class="card sing" id="tragoudame_01">
+  <header><span class="num">28</span><h3>Ντο, ρε, μι</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_01_m.svg"><img class="mus" src="svg/tragoudame_01.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_02">
+  <header><span class="num">29</span><h3>Ανεβαίνουμε ως το σολ και κατεβαίνουμε</h3></header>
+  <div class="score"><img class="mus" src="svg/tragoudame_02.svg" style="width:653px" alt=""></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_03">
+  <header><span class="num">30</span><h3>Πρώτα μικρά άλματα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_03_m.svg"><img class="mus" src="svg/tragoudame_03.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_04">
+  <header><span class="num">31</span><h3>Τα άλματα ντο–μι–σολ</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_04_m.svg"><img class="mus" src="svg/tragoudame_04.svg" style="width:648px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_05">
+  <header><span class="num">32</span><h3>Βήματα, άλματα και παύσεις</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_05_m.svg"><img class="mus" src="svg/tragoudame_05.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_06">
+  <header><span class="num">33</span><h3>Μικρή μελωδία</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_06_m.svg"><img class="mus" src="svg/tragoudame_06.svg" style="width:751px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_07">
+  <header><span class="num">34</span><h3>Με όγδοα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_07_m.svg"><img class="mus" src="svg/tragoudame_07.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_07.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudame_08">
+  <header><span class="num">35</span><h3>Από το σολ ως το ψηλό ρε</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudame_08_m.svg"><img class="mus" src="svg/tragoudame_08.svg" style="width:859px" alt=""></picture></div><p class="hint">Εδώ προστίθενται το λα, το σι, το ψηλό ντο και το ψηλό ρε.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/tragoudame_08.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article></div>
+</section>
+<section class="sec" id="syzeuxi">
+  <h2><span>7</span>Η σύζευξη και η στιγμή διαρκείας</h2>
+  <div class="intro"><p>Η <b>σύζευξη</b> είναι ένα τόξο που ενώνει δύο ίδιες νότες: τραγουδάμε μία νότα με τη διάρκεια και των δύο.</p><p>Η <b>στιγμή διαρκείας</b> είναι μια τελεία δίπλα στο φθογγόσημο: του προσθέτει τη μισή του διάρκεια. Το μισό με τελεία διαρκεί τρεις χρόνους και το τέταρτο με τελεία ενάμιση.</p></div>
+  <div class="cards"><article class="card sing rhythm" id="syzeuxi_01">
+  <header><span class="num">36</span><h3>Με σύζευξη και μισό με τελεία</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/syzeuxi_01_m.svg"><img class="mus" src="svg/syzeuxi_01.svg" style="width:688px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/syzeuxi_01.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="syzeuxi_02">
+  <header><span class="num">37</span><h3>Η σύζευξη και η στιγμή κάνουν το ίδιο</h3></header>
+  <div class="score"><img class="mus" src="svg/syzeuxi_02.svg" style="width:428px" alt=""></div><p class="hint">Στο πρώτο μέτρο η σύζευξη κάνει ό,τι κάνει η στιγμή διαρκείας στο δεύτερο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/syzeuxi_02.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="syzeuxi_03">
+  <header><span class="num">38</span><h3>Τέταρτο με τελεία και όγδοο</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/syzeuxi_03_m.svg"><img class="mus" src="svg/syzeuxi_03.svg" style="width:749px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play main" data-src="audio/syzeuxi_03.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="syzeuxi_04">
+  <header><span class="num">39</span><h3>Όγδοο με τελεία και δέκατο έκτο</h3></header>
+  <div class="score"><img class="mus" src="svg/syzeuxi_04.svg" style="width:492px" alt=""></div><p class="hint">Το όγδοο με τελεία μαζί με ένα δέκατο έκτο γεμίζουν έναν χρόνο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/syzeuxi_04.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing" id="syzeuxi_05">
+  <header><span class="num">40</span><h3>Με στιγμή διαρκείας και σύζευξη</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/syzeuxi_05_m.svg"><img class="mus" src="svg/syzeuxi_05.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/syzeuxi_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="syzeuxi_06">
+  <header><span class="num w">✎ 17</span><h3 class="q">Πόσους χρόνους διαρκεί το μισό με τελεία; Το τέταρτο με τελεία;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Το μισό με τελεία 3 χρόνους. Το τέταρτο με τελεία 1½ χρόνο.</p></details>
+</article><article class="card write" id="syzeuxi_07">
+  <header><span class="num w">✎ 18</span><h3 class="q">Πόσους χρόνους κρατάμε την τελευταία νότα;</h3></header><div class="score"><img class="mus" src="svg/syzeuxi_07.svg" style="width:372px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>2 + 4 = 6 χρόνοι</p></details>
+</article></div>
+</section>
+<section class="sec" id="ischyra">
+  <h2><span>8</span>Ισχυρά και ασθενή μέρη του μέτρου</h2>
+  <div class="intro"><p>Ο 1ος χρόνος κάθε μέτρου είναι <b>ισχυρός</b>: έχει περισσότερο βάρος. Οι άλλοι είναι <b>ασθενείς</b>. Στα 4/4 ο 3ος χρόνος είναι <b>ημιισχυρός</b>: έχει λιγότερο βάρος από τον 1ο και περισσότερο από τον 2ο και τον 4ο. Στα 3/4 έχουμε δύο ασθενείς χρόνους, τον 2ο και τον 3ο.</p><p>Σε ένα τραγούδι με στίχους τονίζουμε ακολουθώντας την προσωδία της γλώσσας, δηλαδή τον φυσικό τονισμό των λέξεων, ακόμη κι όταν το τραγούδι έχει διαστολές. Ένα παράδειγμα είναι το «Χάρτινο το φεγγαράκι» του Μάνου Χατζιδάκι.</p><p>Οι <b>δυναμικοί χρωματισμοί</b> δείχνουν πόσο δυνατά ηχεί μια φράση: <b><i>p</i></b> σιγά, <b><i>f</i></b> δυνατά, <i>crescendo</i> σταδιακά δυναμώνει, <i>decrescendo</i> σταδιακά ησυχάζει.</p></div>
+  <div class="cards"><article class="card sing rhythm" id="ischyra_01">
+  <header><span class="num">41</span><h3>Στα 2/4: ισχυρός, ασθενής</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_01_m.svg"><img class="mus" src="svg/ischyra_01.svg" style="width:453px" alt=""></picture></div><p class="hint">Τονίστε λίγο τον 1ο χρόνο. Στο 3ο μέτρο, από τα δύο όγδοα ισχυρό είναι μόνο το πρώτο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/ischyra_01.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="ischyra_02">
+  <header><span class="num">42</span><h3>Στα 3/4: ισχυρός, ασθενής, ασθενής</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_02_m.svg"><img class="mus" src="svg/ischyra_02.svg" style="width:578px" alt=""></picture></div><p class="hint">Τονίστε λίγο τον 1ο χρόνο κάθε μέτρου.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/ischyra_02.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing rhythm" id="ischyra_03">
+  <header><span class="num">43</span><h3>Στα 4/4: ισχυρός, ασθενής, ημιισχυρός, ασθενής</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_03_m.svg"><img class="mus" src="svg/ischyra_03.svg" style="width:737px" alt=""></picture></div><p class="hint">Τονίστε τον 1ο χρόνο και λιγότερο τον 3ο.</p>
+  <div class="btns">
+    <button class="play main" data-src="audio/ischyra_03.mp3"><i></i>Ακούστε τον ρυθμό</button>
+  </div>
+</article><article class="card sing" id="ischyra_04">
+  <header><span class="num">44</span><h3>Στα 3/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_04_m.svg"><img class="mus" src="svg/ischyra_04.svg" style="width:859px" alt=""></picture></div><p class="hint">Τραγουδήστε την πρώτη φορά σιγά (<b><i>p</i></b>) και τη δεύτερη δυνατά (<b><i>f</i></b>).</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/ischyra_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="ischyra_05">
+  <header><span class="num">45</span><h3>Στα 2/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_05_m.svg"><img class="mus" src="svg/ischyra_05.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/ischyra_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="ischyra_06">
+  <header><span class="num">46</span><h3>«Μια πόλη μαγική»</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/ischyra_06_m.svg"><img class="mus" src="svg/ischyra_06.svg" style="width:860px" alt=""></picture></div><p class="hint">Το σύμβολο C στην αρχή σημαίνει 4/4.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c5.mp3"><i></i>Ακούστε την πρώτη νότα</button>
+    <button class="play main" data-src="audio/ischyra_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="ischyra_07">
+  <header><span class="num w">✎ 19</span><h3 class="q">Ποιος χρόνος είναι ισχυρός στα 2/4, στα 3/4 και στα 4/4;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Σε όλα ο 1ος χρόνος. Στα 4/4 ο 3ος είναι ημιισχυρός.</p></details>
+</article><article class="card write" id="ischyra_08">
+  <header><span class="num w">✎ 20</span><h3 class="q">Τι σημαίνουν τα <b><i>p</i></b>, <b><i>f</i></b>, <i>crescendo</i> και <i>decrescendo</i>;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p><b><i>p</i></b> σιγά · <b><i>f</i></b> δυνατά · <i>crescendo</i> σταδιακά δυναμώνει · <i>decrescendo</i> σταδιακά ησυχάζει</p></details>
+</article></div>
+</section>
+<section class="sec print-only lyseis"><h2>Λύσεις</h2><h3>1. Το πεντάγραμμο και οι νότες</h3><p><b>✎ 1</b> μι · σολ · φα · λα · ντο · ρε · σι · μι</p><p><b>✎ 2</b> ρε · φα · ντο · λα · σολ · μι · σι · ρε</p><p><b>✎ 3</b> Στις γραμμές: μι, σολ, σι, ρε. Στα διαστήματα: φα, λα, ντο.</p><p><b>✎ 4</b> Συγκρίνετε με το πεντάγραμμο:<span class="score"><img class="mus" src="svg/pentagrammo_07_lysi.svg" style="width:779px" alt=""></span></p><h3>2. Βήμα και άλμα</h3><p><b>✎ 5</b> 1 βήμα · 2 άλμα · 3 βήμα · 4 άλμα · 5 βήμα · 6 άλμα</p><p><b>✎ 6</b> ρε · μι · φα · σολ · λα<span class="score"><img class="mus" src="svg/vima_08_lysi.svg" style="width:489px" alt=""></span></p><h3>3. Ο ήχος και η διάρκειά του</h3><p><b>✎ 7</b> τέταρτο 1 · μισό 2 · ολόκληρο 4 · όγδοο ½</p><p><b>✎ 8</b> Το τέταρτο με την παύση τετάρτου, το μισό με την παύση μισού και το ολόκληρο με την παύση ολοκλήρου.</p><p><b>✎ 9</b> 2 + 1 + 1 + 4 = 8 χρόνοι</p><h3>4. Το μέτρο</h3><p><b>✎ 10</b> 3 χρόνοι σε κάθε μέτρο: 3/4</p><p><b>✎ 11</b> Συγκρίνετε με τις διαστολές παρακάτω:<span class="score"><img class="mus" src="svg/metro_07_lysi.svg" style="width:854px" alt=""></span></p><p><b>✎ 12</b> Συγκρίνετε με τις διαστολές παρακάτω:<span class="score"><img class="mus" src="svg/metro_08_lysi.svg" style="width:860px" alt=""></span></p><p><b>✎ 13</b> Λείπουν χρόνοι στα μέτρα 2 (δύο χρόνοι), 3 (ένας), 5 (δύο), 6 (ένας) και 8 (δύο). Μπορείτε να τα συμπληρώσετε με όποιες νότες ή παύσεις θέλετε, αρκεί να γεμίζουν τους χρόνους που λείπουν.</p><p><b>✎ 14</b> Σημαίνει 4/4: τέσσερις χρόνοι σε κάθε μέτρο, με χρόνο το τέταρτο.</p><h3>5. Ο ρυθμός</h3><p><b>✎ 15</b> Δύο όγδοα και τέσσερα δέκατα έκτα.</p><p><b>✎ 16</b> ½ + ½ + 1 + 2 = 4 χρόνοι</p><h3>7. Η σύζευξη και η στιγμή διαρκείας</h3><p><b>✎ 17</b> Το μισό με τελεία 3 χρόνους. Το τέταρτο με τελεία 1½ χρόνο.</p><p><b>✎ 18</b> 2 + 4 = 6 χρόνοι</p><h3>8. Ισχυρά και ασθενή μέρη του μέτρου</h3><p><b>✎ 19</b> Σε όλα ο 1ος χρόνος. Στα 4/4 ο 3ος είναι ημιισχυρός.</p><p><b>✎ 20</b> <b><i>p</i></b> σιγά · <b><i>f</i></b> δυνατά · <i>crescendo</i> σταδιακά δυναμώνει · <i>decrescendo</i> σταδιακά ησυχάζει</p></section>
+</main>
+<footer>Μαθήματα μουσικής ανάγνωσης · Μέρος Α΄ · Η πρώτη μου παρτιτούρα<br>Ιωάννης Ιδομενέως</footer>
+<script>
+(function(){
+  var player = new Audio(), cur = null;
+  player.preload = 'none';
+  function reset(){ if(cur){ cur.classList.remove('on'); cur = null; } }
+  player.addEventListener('ended', reset);
+  player.addEventListener('error', function(){ if(cur){ cur.classList.add('err'); cur.classList.remove('on'); cur = null; } });
+  document.querySelectorAll('button.play').forEach(function(b){
+    b.addEventListener('click', function(){
+      if(cur === b){ player.pause(); player.currentTime = 0; reset(); return; }
+      player.pause(); reset();
+      b.classList.remove('err');
+      player.src = b.dataset.src; player.currentTime = 0;
+      cur = b; b.classList.add('on');
+      var p = player.play();
+      if(p && p.catch){ p.catch(function(){ if(cur === b){ b.classList.add('err'); reset(); } }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
