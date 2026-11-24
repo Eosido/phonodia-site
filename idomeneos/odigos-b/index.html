@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Το τονικό σύστημα · Οδηγός ασκήσεων</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fdf8f1; --card:#fffdf9; --ink:#2e2747; --soft:#5d5476;
+  --accent:#c2410c; --accent-d:#9a3412; --berry:#9d3c72; --rose:#f6e3e6; --peach:#fbe9d9; --line:#efdcc8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 19px/1.6 "Alegreya",Georgia,serif;-webkit-font-smoothing:antialiased}
+.rainbow{height:110px;background:url(ouranio_toxo.jpg) center/cover;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.hero{max-width:1000px;margin:-40px auto 0;padding:0 20px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center}
+.hero .kicker{font:500 15px/1.3 "Alegreya Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--berry);margin:0 0 10px}
+.hero h1{font-weight:700;font-size:clamp(38px,6vw,60px);line-height:1.05;margin:0 0 8px;color:var(--ink)}
+.hero .sub{font-style:italic;font-size:24px;color:var(--accent);margin:0 0 22px}
+.hero .by{font:400 16px/1.5 "Alegreya Sans",sans-serif;color:var(--soft);margin:0}
+.hero .by b{display:block;font:500 19px/1.4 "Alegreya",serif;color:var(--ink)}
+.hero img{width:100%;-webkit-mask-image:radial-gradient(ellipse at center,#000 45%,transparent 72%);mask-image:radial-gradient(ellipse at center,#000 45%,transparent 72%)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.how{background:linear-gradient(135deg,var(--peach),var(--rose));border-radius:22px;padding:26px 30px;margin:26px 0 10px}
+.how h2{font-size:26px;margin:0 0 10px;color:var(--ink)}
+.how ol{margin:0;padding-left:24px}
+.how li{margin:4px 0}
+.how p.pdf a{color:var(--accent-d);font:500 16px/1.4 "Alegreya Sans",sans-serif}
+.how p{margin:12px 0 0;font-size:17px;color:var(--soft)}
+nav.toc{position:sticky;top:0;z-index:10;background:rgba(253,248,241,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:24px -20px 0;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav.toc::-webkit-scrollbar{display:none}
+nav.toc a{flex:none;text-decoration:none;color:var(--ink);font:500 15px/1 "Alegreya Sans",sans-serif;padding:9px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);white-space:nowrap}
+nav.toc a span{color:var(--accent);margin-right:6px;font-weight:700}
+nav.toc a:hover{border-color:var(--accent)}
+.sec{padding:34px 0 10px}
+.sec h2{font-size:32px;line-height:1.2;margin:0 0 10px;display:flex;align-items:center;gap:14px}
+.sec h2 span{flex:none;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:700 22px/1 "Alegreya Sans",sans-serif}
+.intro{max-width:760px}
+.intro p{margin:0 0 12px}
+.cards{display:grid;gap:18px;margin-top:18px}
+.cards.pairs{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px 16px;box-shadow:0 2px 0 rgba(194,65,12,.04),0 8px 24px -14px rgba(157,60,114,.25)}
+.card header{display:flex;align-items:flex-start;gap:12px;margin-bottom:6px}
+.card h3{font-size:21px;line-height:1.35;margin:2px 0 0;font-weight:500}
+.card h3.q{font-size:19px}
+.num{flex:none;min-width:32px;height:32px;border-radius:10px;background:var(--rose);color:var(--berry);display:grid;place-items:center;font:700 16px/1 "Alegreya Sans",sans-serif;padding:0 6px}
+.num.w{background:var(--peach);color:var(--accent)}
+.score{overflow-x:auto;padding:6px 0}
+.score img.mus{display:block;max-width:100%;height:auto}
+.lab{margin:0 0 0 44px;font-style:italic;color:var(--berry);font-size:16px}
+.score img.ks{width:150px}
+.quiz details .btns{margin-top:10px}
+details p .score{display:block;margin-top:10px;background:var(--card);border-radius:10px;padding:6px}
+.hint{font-style:italic;color:var(--soft);margin:2px 0 6px;font-size:17px}
+.seq{display:inline-block;margin-top:6px;font-weight:500;letter-spacing:.02em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+button.play{appearance:none;border:2px solid var(--accent);background:transparent;color:var(--accent-d);font:500 17px/1 "Alegreya Sans",sans-serif;padding:12px 18px 12px 14px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:48px;transition:background .15s,color .15s,transform .1s}
+button.play.main{background:var(--accent);color:#fff}
+button.play:hover{transform:translateY(-1px)}
+button.play i{width:0;height:0;border-left:12px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent}
+button.play.on i{width:12px;height:12px;border:0;background:currentColor;border-radius:2px}
+button.play.on{animation:pulse 1.6s ease-in-out infinite}
+button.play.err{border-color:var(--berry);color:var(--berry);background:transparent}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(194,65,12,.35)}50%{box-shadow:0 0 0 8px rgba(194,65,12,0)}}
+details{margin-top:8px}
+details summary{cursor:pointer;color:var(--berry);font:500 17px/1.2 "Alegreya Sans",sans-serif;list-style:none;display:inline-flex;align-items:center;gap:8px;padding:10px 0;min-height:44px}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s}
+details[open] summary::before{transform:rotate(45deg)}
+details p{margin:2px 0 4px;padding:12px 16px;background:var(--rose);border-radius:12px;font-weight:500}
+.listen .btns{flex-direction:column;align-items:flex-start}
+.listen details{margin-top:0}
+footer{margin:50px 0 0;padding:26px 20px 40px;text-align:center;font:400 15px/1.6 "Alegreya Sans",sans-serif;color:var(--soft);border-top:1px solid var(--line)}
+@media (max-width:600px){.score picture img.mus{width:100% !important}}
+@media (max-width:720px){
+  body{font-size:18px}
+  .rainbow{height:80px}
+  .hero{grid-template-columns:1fr;margin-top:-20px}
+  .hero img{max-width:340px;margin:0 auto;display:block;order:-1}
+  .how{padding:20px}
+  .card{padding:16px}
+  .sec h2{font-size:26px}
+  .sec h2 span{width:40px;height:40px;font-size:19px}
+}
+.print-only{display:none}
+.card h3 small{color:var(--berry);font-size:16px}
+@media print{
+  @page{size:A4;margin:14mm 14mm 16mm}
+  body{font-size:15px;background:#fff}
+  nav.toc,.btns,.rainbow,details,.cards.pairs:has(.listen){display:none !important}
+  .print-only{display:block}
+  .noprint{display:none}
+  .hero{margin-top:0}.hero img{max-width:230px}
+  .card{break-inside:avoid;box-shadow:none;padding:10px 14px}
+  .cards{gap:10px}
+  .sec{padding:18px 0 4px}
+  .sec h2{break-after:avoid}
+  .lyseis{break-before:page}
+  .lyseis h3{font-size:18px;margin:14px 0 4px;color:var(--accent)}
+  .lyseis p{margin:2px 0;font-size:14px}
+  .lyseis .score img{max-width:60%}
+}
+</style>
+</head>
+<body>
+<div class="rainbow" aria-hidden="true"></div>
+<header class="hero">
+  <div>
+    <p class="kicker">Μαθήματα μουσικής ανάγνωσης · Μέρος Β΄</p>
+    <h1>Το τονικό σύστημα</h1>
+    <p class="sub">Οδηγός ασκήσεων με ήχο</p>
+    <p class="by"><b>Ιωάννης Ιδομενέως</b>Διευθυντής Χορωδιών · Λυρικός Τραγουδιστής · Καθηγητής Φωνητικής Τέχνης</p>
+  </div>
+  <img src="lofos.jpg" alt="">
+</header>
+<main class="wrap">
+  <section class="how">
+    <h2>Πώς μελετάμε</h2>
+    <ol>
+      <li>Δείτε πρώτα την ενότητα στο βίντεο, και μετά ελάτε στις ασκήσεις της.</li>
+      <li>Δείτε σε ποια κλίμακα είναι η άσκηση.</li>
+      <li>Πατήστε «Ακούστε το 1» και τραγουδήστε το.</li>
+      <li>Τραγουδήστε τις πέντε πρώτες νότες της κλίμακας και βρείτε από ποια βαθμίδα ξεκινά η μελωδία.</li>
+      <li>Πείτε ρυθμικά τα ονόματα των νοτών και μετά τραγουδήστε τα.</li>
+      <li>Πατήστε «Ακούστε την άσκηση» και ελέγξτε αν τραγουδήσατε σωστά. Αν κάτι δεν βγήκε, ξανατραγουδήστε το και ακούστε το ξανά.</li>
+    </ol>
+    <p class="noprint pdf"><a href="Odigos_askiseon_Meros_B_ektyposi.pdf" download>Ο οδηγός για εκτύπωση (PDF, χωρίς ήχο)</a></p>
+    <p>Όταν μια άσκηση είναι ψηλή για τη φωνή σας, τραγουδήστε τη μια οκτάβα χαμηλότερα. Στις γραπτές ασκήσεις γράψτε πρώτα την απάντησή σας σε ένα χαρτί, και μετά πατήστε «Δείτε τη λύση».</p>
+  </section>
+  <nav class="toc" aria-label="Ενότητες"><a href="#tonos"><span>1</span>Τόνος και ημιτόνιο</a><a href="#vathmides"><span>2</span>Η κλίμακα και οι βαθμίδες</a><a href="#alloioseis"><span>3</span>Τα σημεία αλλοίωσης</a><a href="#meizona"><span>4</span>Η μείζονα κλίμακα και ο προσαγωγέας</a><a href="#oplismos"><span>5</span>Ο οπλισμός</a><a href="#tyxaia"><span>6</span>Τα τυχαία σημεία αλλοίωσης</a><a href="#elassona"><span>7</span>Η ελάσσονα κλίμακα και η σχετική</a><a href="#morfes"><span>8</span>Οι τρεις μορφές της ελάσσονας</a><a href="#meizona-elassona"><span>9</span>Μείζονα ή ελάσσονα;</a><a href="#exi-ogdoa"><span>10</span>Τα 6/8</a><a href="#levare"><span>11</span>Το levare, το μέτρο και ο τονισμός της λέξης</a><a href="#tragoudia"><span>12</span>Τραγούδια που ξέρετε</a></nav>
+<section class="sec" id="tonos">
+  <h2><span>1</span>Τόνος και ημιτόνιο</h2>
+  <div class="intro"><p>Η μικρότερη απόσταση ανάμεσα σε δύο νότες είναι το <b>ημιτόνιο</b>. Δύο ημιτόνια κάνουν έναν <b>τόνο</b>. Ανάμεσα στις λευκές νότες του πιάνου, ημιτόνιο υπάρχει μόνο στο μι–φα και στο σι–ντο.</p><p class="noprint">Ακούστε κάθε ζευγάρι νοτών με τα μάτια κλειστά. Το ημιτόνιο ακούγεται σαν οι δύο νότες να ακουμπούν η μία στην άλλη. Ο τόνος αφήνει ανάμεσά τους λίγο περισσότερο χώρο.</p></div>
+  <div class="cards pairs"><article class="card listen" id="tonos_01">
+  <header><h3>Ζευγάρι 1</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_01.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Ημιτόνιο (μι–φα)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_02">
+  <header><h3>Ζευγάρι 2</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_02.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Τόνος (ντο–ρε)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_03">
+  <header><h3>Ζευγάρι 3</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_03.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Τόνος (σολ–λα)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_04">
+  <header><h3>Ζευγάρι 4</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_04.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Ημιτόνιο (σι–ντο)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_05">
+  <header><h3>Ζευγάρι 5</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_05.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Τόνος (φα–σολ)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_06">
+  <header><h3>Ζευγάρι 6</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_06.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Τόνος (ρε–ντο, προς τα κάτω)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_07">
+  <header><h3>Ζευγάρι 7</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_07.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Ημιτόνιο (ντο–σι, προς τα κάτω)</p></details>
+  </div>
+</article><article class="card listen" id="tonos_08">
+  <header><h3>Ζευγάρι 8</h3></header>
+  <div class="btns">
+    <button class="play main" data-src="audio/tonos_08.mp3"><i></i>Ακούστε</button>
+    <details><summary>Δείτε τη λύση</summary><p>Τόνος (λα–σολ, προς τα κάτω)</p></details>
+  </div>
+</article></div><div class="cards"><article class="card write" id="tonos_09">
+  <header><span class="num w">✎ 1</span><h3 class="q">Γράψτε Τ για τον τόνο και Η για το ημιτόνιο ανάμεσα στις νότες:<br><span class="seq">ντο ··· ρε ··· μι ··· φα ··· σολ ··· λα ··· σι ··· ντο</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Τ · Τ · Η · Τ · Τ · Τ · Η</p></details>
+</article><article class="card write" id="tonos_10">
+  <header><span class="num w">✎ 2</span><h3 class="q">Τόνος ή ημιτόνιο;<br><span class="seq">μι–φα · ρε–μι · σι–ντο · λα–σι · φα–σολ · σολ–λα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Η · Τ · Η · Τ · Τ · Τ</p></details>
+</article></div>
+</section>
+<section class="sec" id="vathmides">
+  <h2><span>2</span>Η κλίμακα και οι βαθμίδες</h2>
+  <div class="intro"><p>Κάθε θέση της κλίμακας έχει έναν αριθμό, τη <b>βαθμίδα</b>. Η πρώτη νότα είναι το 1. Τα ονόματα των νοτών μένουν πάντα ίδια, και η βαθμίδα αλλάζει ανάλογα με το πού είναι το 1.</p><p>Όλες οι ασκήσεις αυτής της ενότητας είναι στη ντο μείζονα: το ντο είναι το 1. Κάτω από τις νότες γράφεται η βαθμίδα τους. Στις πρώτες ασκήσεις τη γράφουμε σε όλες τις νότες, και μετά μόνο στην πρώτη.</p></div>
+  <div class="cards"><article class="card sing" id="vathmides_01">
+  <header><span class="num">1</span><h3>Βήματα από το 1 ως το 5</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_01_m.svg"><img class="mus" src="svg/vathmides_01.svg" style="width:797px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_02">
+  <header><span class="num">2</span><h3>Από το 5 ως το 8, και πίσω στο 1</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_02_m.svg"><img class="mus" src="svg/vathmides_02.svg" style="width:797px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_03">
+  <header><span class="num">3</span><h3>Ολόκληρη η κλίμακα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_03_m.svg"><img class="mus" src="svg/vathmides_03.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_04">
+  <header><span class="num">4</span><h3>Τα άλματα 1–3–5</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_04_m.svg"><img class="mus" src="svg/vathmides_04.svg" style="width:854px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_05">
+  <header><span class="num">5</span><h3>Το 1, το 3, το 5 και το 8</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_05_m.svg"><img class="mus" src="svg/vathmides_05.svg" style="width:774px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_06">
+  <header><span class="num">6</span><h3>Το 7 κάτω από το 1</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_06_m.svg"><img class="mus" src="svg/vathmides_06.svg" style="width:859px" alt=""></picture></div><p class="hint">Το σι κάτω από το ντο είναι το 7. Ακούγεται σαν να θέλει να ανέβει στο 1.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_07">
+  <header><span class="num">7</span><h3>Με όγδοα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_07_m.svg"><img class="mus" src="svg/vathmides_07.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_07.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_08">
+  <header><span class="num">8</span><h3>Στα 3/4</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_08_m.svg"><img class="mus" src="svg/vathmides_08.svg" style="width:637px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_08.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="vathmides_09">
+  <header><span class="num">9</span><h3>Πρόκληση: άλματα σε όλη την κλίμακα</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_09_m.svg"><img class="mus" src="svg/vathmides_09.svg" style="width:797px" alt=""></picture></div><p class="hint">Αν ένα άλμα δεν βγαίνει, τραγουδήστε σιγά τις νότες ανάμεσα, και μετά ξαναδοκιμάστε το άλμα.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/vathmides_09.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="vathmides_10">
+  <header><span class="num w">✎ 3</span><h3 class="q">Γράψτε τη βαθμίδα κάτω από κάθε νότα (ντο μείζονα).</h3></header><div class="score"><picture><source media="(max-width:600px)" srcset="svg/vathmides_10_m.svg"><img class="mus" src="svg/vathmides_10.svg" style="width:691px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>3 · 5 · 8 (ή 1) · 2 · 6 · 4 · 7 · 1</p></details>
+</article><article class="card write" id="vathmides_11">
+  <header><span class="num w">✎ 4</span><h3 class="q">Στη ντο μείζονα, ποια βαθμίδα είναι κάθε νότα;<br><span class="seq">ρε · λα · φα · σι · σολ · μι</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>2 · 6 · 4 · 7 · 5 · 3</p></details>
+</article></div>
+</section>
+<section class="sec" id="alloioseis">
+  <h2><span>3</span>Τα σημεία αλλοίωσης</h2>
+  <div class="intro"><p>Η <b>δίεση</b> (♯) ανεβάζει τη νότα κατά ένα ημιτόνιο. Η <b>ύφεση</b> (♭) την κατεβάζει κατά ένα ημιτόνιο. Η <b>αναίρεση</b> (♮) ακυρώνει τη δίεση ή την ύφεση, και η νότα γίνεται ξανά φυσική.</p><p>Ένα σημείο αλλοίωσης ισχύει για τις ίδιες νότες που ακολουθούν μέσα στο ίδιο μέτρο. Με τη διαστολή σταματά να ισχύει.</p></div>
+  <div class="cards"><article class="card write" id="alloioseis_01">
+  <header><span class="num w">✎ 5</span><h3 class="q">Πώς λέγεται κάθε νότα;</h3></header><div class="score"><img class="mus" src="svg/alloioseis_01.svg" style="width:568px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>φα δίεση · σι ύφεση · ντο δίεση · μι ύφεση · σολ δίεση · λα ύφεση</p></details>
+</article><article class="card write" id="alloioseis_02">
+  <header><span class="num w">✎ 6</span><h3 class="q">Ποια νότα είναι ένα ημιτόνιο πάνω από:<br><span class="seq">μι · σι · φα · ντο · λα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>φα · ντο · φα δίεση · ντο δίεση · λα δίεση (ή σι ύφεση)</p></details>
+</article><article class="card write" id="alloioseis_03">
+  <header><span class="num w">✎ 7</span><h3 class="q">Ποια νότα είναι ένα ημιτόνιο κάτω από:<br><span class="seq">φα · ντο · σι · μι · σολ</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>μι · σι · σι ύφεση · μι ύφεση · σολ ύφεση (ή φα δίεση)</p></details>
+</article><article class="card write" id="alloioseis_04">
+  <header><span class="num w">✎ 8</span><h3 class="q">Ποια είναι η τρίτη νότα του μέτρου;</h3></header><div class="score"><img class="mus" src="svg/alloioseis_04.svg" style="width:281px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Φα δίεση. Η δίεση της πρώτης νότας ισχύει ως το τέλος του μέτρου.</p></details>
+</article><article class="card write" id="alloioseis_05">
+  <header><span class="num w">✎ 9</span><h3 class="q">Και εδώ, ποια είναι η τρίτη νότα;</h3></header><div class="score"><img class="mus" src="svg/alloioseis_05.svg" style="width:281px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Φα, φυσικό. Η αναίρεση ακυρώνει τη δίεση.</p></details>
+</article></div>
+</section>
+<section class="sec" id="meizona">
+  <h2><span>4</span>Η μείζονα κλίμακα και ο προσαγωγέας</h2>
+  <div class="intro"><p>Η μείζονα κλίμακα έχει τη σειρά: <b>τόνος, τόνος, ημιτόνιο, τόνος, τόνος, τόνος, ημιτόνιο</b>. Τα ημιτόνια είναι στο 3–4 και στο 7–8. Την ίδια σειρά μπορούμε να την ξεκινήσουμε από οποιαδήποτε νότα, με τις διέσεις ή τις υφέσεις που χρειάζονται.</p><p>Το 7 λέγεται <b>προσαγωγέας</b>. Απέχει ένα ημιτόνιο από το 8 και μας οδηγεί στο 1.</p><p>Εδώ τραγουδάμε στη σολ μείζονα (με φα δίεση), στη φα μείζονα (με σι ύφεση) και στη ρε μείζονα (με φα δίεση και ντο δίεση).</p></div>
+  <div class="cards"><article class="card sing" id="meizona_01">
+  <header><span class="num">10</span><h3>Σολ μείζονα: βήματα</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_01_m.svg"><img class="mus" src="svg/meizona_01.svg" style="width:815px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_02">
+  <header><span class="num">11</span><h3>Σολ μείζονα: ο προσαγωγέας</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_02_m.svg"><img class="mus" src="svg/meizona_02.svg" style="width:815px" alt=""></picture></div><p class="hint">Το φα δίεση (7) ακουμπά στο σολ (8). Ακούστε πώς σας οδηγεί εκεί.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_03">
+  <header><span class="num">12</span><h3>Σολ μείζονα: με όγδοα</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_03_m.svg"><img class="mus" src="svg/meizona_03.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_04">
+  <header><span class="num">13</span><h3>Σολ μείζονα: στα 3/4, από το 5</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_04_m.svg"><img class="mus" src="svg/meizona_04.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_05">
+  <header><span class="num">14</span><h3>Φα μείζονα: βήματα</h3></header><p class="lab">φα μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_05_m.svg"><img class="mus" src="svg/meizona_05.svg" style="width:792px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_f4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_06">
+  <header><span class="num">15</span><h3>Φα μείζονα: ο προσαγωγέας</h3></header><p class="lab">φα μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_06_m.svg"><img class="mus" src="svg/meizona_06.svg" style="width:815px" alt=""></picture></div><p class="hint">Στη φα μείζονα ο προσαγωγέας είναι το μι.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_f4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_07">
+  <header><span class="num">16</span><h3>Ρε μείζονα: βήματα</h3></header><p class="lab">ρε μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_07_m.svg"><img class="mus" src="svg/meizona_07.svg" style="width:825px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_07.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="meizona_08">
+  <header><span class="num">17</span><h3>Ρε μείζονα: από το 5 στο 8</h3></header><p class="lab">ρε μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona_08_m.svg"><img class="mus" src="svg/meizona_08.svg" style="width:825px" alt=""></picture></div><p class="hint">Ο προσαγωγέας εδώ είναι το ντο δίεση.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/meizona_08.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="meizona_09">
+  <header><span class="num w">✎ 10</span><h3 class="q">Γράψτε τις νότες της σολ μείζονας, από το σολ ως το σολ.</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>σολ · λα · σι · ντο · ρε · μι · φα♯ · σολ</p></details>
+</article><article class="card write" id="meizona_10">
+  <header><span class="num w">✎ 11</span><h3 class="q">Γράψτε τις νότες της φα μείζονας, από το φα ως το φα.</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>φα · σολ · λα · σι♭ · ντο · ρε · μι · φα</p></details>
+</article><article class="card write" id="meizona_11">
+  <header><span class="num w">✎ 12</span><h3 class="q">Γράψτε τις νότες της ρε μείζονας, από το ρε ως το ρε.</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>ρε · μι · φα♯ · σολ · λα · σι · ντο♯ · ρε</p></details>
+</article><article class="card write" id="meizona_12">
+  <header><span class="num w">✎ 13</span><h3 class="q">Ποιος είναι ο προσαγωγέας στη σολ, στη φα και στη ρε μείζονα;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>φα♯ · μι · ντο♯</p></details>
+</article></div>
+</section>
+<section class="sec" id="oplismos">
+  <h2><span>5</span>Ο οπλισμός</h2>
+  <div class="intro"><p>Οι διέσεις και οι υφέσεις μιας κλίμακας γράφονται μία φορά, στην αρχή του πενταγράμμου, και ισχύουν σε όλο το τραγούδι.</p><p>Οι διέσεις μπαίνουν πάντα με τη σειρά <b>φα, ντο, σολ, ρε, λα, μι, σι</b>. Οι υφέσεις με την ίδια σειρά ανάποδα: <b>σι, μι, λα, ρε, σολ, ντο, φα</b>.</p><p>Με διέσεις: η τελευταία δίεση είναι το 7, και ένα ημιτόνιο πιο πάνω βρίσκεται το 1. Με υφέσεις: η προτελευταία ύφεση είναι το 1. Με μία ύφεση είμαστε στη φα μείζονα. Χωρίς οπλισμό είμαστε στη ντο μείζονα.</p></div>
+  <div class="cards pairs"><article class="card key" id="oplismos_01">
+  <header><h3>Ποια μείζονα; <small>1</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_01.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Σολ μείζονα. Η δίεση είναι φα♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το σολ.</p></details>
+</article><article class="card key" id="oplismos_02">
+  <header><h3>Ποια μείζονα; <small>2</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_02.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Ρε μείζονα. Η τελευταία δίεση είναι ντο♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το ρε.</p></details>
+</article><article class="card key" id="oplismos_03">
+  <header><h3>Ποια μείζονα; <small>3</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_03.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Λα μείζονα. Η τελευταία δίεση είναι σολ♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το λα.</p></details>
+</article><article class="card key" id="oplismos_04">
+  <header><h3>Ποια μείζονα; <small>4</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_04.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Μι μείζονα. Η τελευταία δίεση είναι ρε♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το μι.</p></details>
+</article><article class="card key" id="oplismos_05">
+  <header><h3>Ποια μείζονα; <small>5</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_05.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Φα μείζονα. Με μία ύφεση είμαστε πάντα στη φα μείζονα.</p></details>
+</article><article class="card key" id="oplismos_06">
+  <header><h3>Ποια μείζονα; <small>6</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_06.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Σι♭ μείζονα. Η προτελευταία ύφεση είναι το σι♭.</p></details>
+</article><article class="card key" id="oplismos_07">
+  <header><h3>Ποια μείζονα; <small>7</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_07.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Μι♭ μείζονα. Η προτελευταία ύφεση είναι το μι♭.</p></details>
+</article><article class="card key" id="oplismos_08">
+  <header><h3>Ποια μείζονα; <small>8</small></h3></header>
+  <div class="score"><img class="mus ks" src="svg/oplismos_08.svg" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Λα♭ μείζονα. Η προτελευταία ύφεση είναι το λα♭.</p></details>
+</article></div><div class="cards"><article class="card write" id="oplismos_09">
+  <header><span class="num w">✎ 14</span><h3 class="q">Πόσες διέσεις ή υφέσεις έχει κάθε κλίμακα;<br><span class="seq">ρε μείζονα · φα μείζονα · λα μείζονα · σι♭ μείζονα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>δύο διέσεις (φα♯, ντο♯) · μία ύφεση (σι♭) · τρεις διέσεις (φα♯, ντο♯, σολ♯) · δύο υφέσεις (σι♭, μι♭)</p></details>
+</article></div>
+</section>
+<section class="sec" id="tyxaia">
+  <h2><span>6</span>Τα τυχαία σημεία αλλοίωσης</h2>
+  <div class="intro"><p>Μέσα σε μια μελωδία μπορεί να εμφανιστεί μια δίεση, μια ύφεση ή μια αναίρεση που δεν υπάρχει στον οπλισμό. Είναι ένα <b>τυχαίο σημείο αλλοίωσης</b>, και ισχύει ως το τέλος του μέτρου.</p><p>Πριν τραγουδήσετε, βρείτε τη νότα με το τυχαίο σημείο και τραγουδήστε τη χωριστά, με τις νότες γύρω της.</p></div>
+  <div class="cards"><article class="card sing" id="tyxaia_01">
+  <header><span class="num">18</span><h3>Το σι φυσικό στη φα μείζονα</h3></header><p class="lab">φα μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tyxaia_01_m.svg"><img class="mus" src="svg/tyxaia_01.svg" style="width:859px" alt=""></picture></div><p class="hint">Στο δεύτερο μέτρο το σι είναι φυσικό. Στο τέταρτο μέτρο ισχύει ξανά ο οπλισμός: σι ύφεση.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_f4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tyxaia_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tyxaia_02">
+  <header><span class="num">19</span><h3>Το φα δίεση στη ντο μείζονα</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tyxaia_02_m.svg"><img class="mus" src="svg/tyxaia_02.svg" style="width:774px" alt=""></picture></div><p class="hint">Το φα δίεση ακουμπά στο σολ, όπως ο προσαγωγέας στο 1. Στο τρίτο μέτρο το φα είναι ξανά φυσικό.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tyxaia_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tyxaia_03">
+  <header><span class="num">20</span><h3>Το σολ δίεση στη ντο μείζονα</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tyxaia_03_m.svg"><img class="mus" src="svg/tyxaia_03.svg" style="width:854px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tyxaia_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tyxaia_04">
+  <header><span class="num">21</span><h3>Το ντο δίεση στη σολ μείζονα</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tyxaia_04_m.svg"><img class="mus" src="svg/tyxaia_04.svg" style="width:792px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tyxaia_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tyxaia_05">
+  <header><span class="num">22</span><h3>Το σι ύφεση στη ντο μείζονα</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tyxaia_05_m.svg"><img class="mus" src="svg/tyxaia_05.svg" style="width:797px" alt=""></picture></div><p class="hint">Το σι ύφεση κατεβαίνει απαλά προς το λα.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tyxaia_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="tyxaia_06">
+  <header><span class="num w">✎ 15</span><h3 class="q">Ποια νότα έχει τυχαίο σημείο αλλοίωσης; (σολ μείζονα)</h3></header><div class="score"><img class="mus" src="svg/tyxaia_06.svg" style="width:444px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Η τέταρτη νότα: ντο δίεση.</p></details>
+</article><article class="card write" id="tyxaia_07">
+  <header><span class="num w">✎ 16</span><h3 class="q">Ποια νότα έχει τυχαίο σημείο αλλοίωσης; (φα μείζονα)</h3></header><div class="score"><img class="mus" src="svg/tyxaia_07.svg" style="width:444px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Η τέταρτη νότα: σι φυσικό.</p></details>
+</article><article class="card write" id="tyxaia_08">
+  <header><span class="num w">✎ 17</span><h3 class="q">Ποιες νότες είναι φα δίεση;</h3></header><div class="score"><img class="mus" src="svg/tyxaia_08.svg" style="width:449px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Η δεύτερη και η τέταρτη νότα του πρώτου μέτρου. Στο δεύτερο μέτρο το φα είναι φυσικό, γιατί η διαστολή ακυρώνει τη δίεση.</p></details>
+</article></div>
+</section>
+<section class="sec" id="elassona">
+  <h2><span>7</span>Η ελάσσονα κλίμακα και η σχετική</h2>
+  <div class="intro"><p>Η ελάσσονα κλίμακα έχει τη σειρά: <b>τόνος, ημιτόνιο, τόνος, τόνος, ημιτόνιο, τόνος, τόνος</b>. Τα ημιτόνια είναι στο 2–3 και στο 5–6.</p><p>Η <b>σχετική</b> ελάσσονα έχει τον ίδιο οπλισμό με μια μείζονα και ξεκινά ένα τριημιτόνιο (τρία ημιτόνια) κάτω από το 1 της. Η σχετική της ντο μείζονας είναι η λα ελάσσονα, της σολ μείζονας η μι ελάσσονα, της φα μείζονας η ρε ελάσσονα.</p></div>
+  <div class="cards"><article class="card sing" id="elassona_01">
+  <header><span class="num">23</span><h3>Ίδιες νότες, άλλο 1: ντο μείζονα</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><img class="mus" src="svg/elassona_01.svg" style="width:476px" alt=""></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_02">
+  <header><span class="num">24</span><h3>Ίδιες νότες, άλλο 1: λα ελάσσονα</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><img class="mus" src="svg/elassona_02.svg" style="width:476px" alt=""></div><p class="hint">Ο ίδιος οπλισμός, και το 1 είναι τώρα το λα. Ακούστε πώς αλλάζει το χρώμα.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_03">
+  <header><span class="num">25</span><h3>Λα ελάσσονα: βήματα</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_03_m.svg"><img class="mus" src="svg/elassona_03.svg" style="width:797px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_04">
+  <header><span class="num">26</span><h3>Λα ελάσσονα: τα άλματα 1–3–5</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_04_m.svg"><img class="mus" src="svg/elassona_04.svg" style="width:797px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_05">
+  <header><span class="num">27</span><h3>Λα ελάσσονα: στα 3/4, από το 5</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_05_m.svg"><img class="mus" src="svg/elassona_05.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_06">
+  <header><span class="num">28</span><h3>Μι ελάσσονα: βήματα</h3></header><p class="lab">μι ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_06_m.svg"><img class="mus" src="svg/elassona_06.svg" style="width:815px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_e4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_06.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_07">
+  <header><span class="num">29</span><h3>Μι ελάσσονα: από το 5</h3></header><p class="lab">μι ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_07_m.svg"><img class="mus" src="svg/elassona_07.svg" style="width:815px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_e4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_07.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_08">
+  <header><span class="num">30</span><h3>Ρε ελάσσονα: βήματα</h3></header><p class="lab">ρε ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_08_m.svg"><img class="mus" src="svg/elassona_08.svg" style="width:815px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_08.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="elassona_09">
+  <header><span class="num">31</span><h3>Ρε ελάσσονα: με όγδοα</h3></header><p class="lab">ρε ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/elassona_09_m.svg"><img class="mus" src="svg/elassona_09.svg" style="width:860px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/elassona_09.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="elassona_10">
+  <header><span class="num w">✎ 18</span><h3 class="q">Ποια είναι η σχετική ελάσσονα;<br><span class="seq">ντο μείζονα · σολ μείζονα · φα μείζονα · ρε μείζονα · σι♭ μείζονα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>λα ελάσσονα · μι ελάσσονα · ρε ελάσσονα · σι ελάσσονα · σολ ελάσσονα</p></details>
+</article><article class="card write" id="elassona_11">
+  <header><span class="num w">✎ 19</span><h3 class="q">Ποια είναι η σχετική μείζονα;<br><span class="seq">λα ελάσσονα · μι ελάσσονα · ρε ελάσσονα · σι ελάσσονα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>ντο μείζονα · σολ μείζονα · φα μείζονα · ρε μείζονα</p></details>
+</article><article class="card write" id="elassona_12">
+  <header><span class="num w">✎ 20</span><h3 class="q">Γράψτε τις νότες της μι ελάσσονας, από το μι ως το μι.</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>μι · φα♯ · σολ · λα · σι · ντο · ρε · μι</p></details>
+</article><article class="card write" id="elassona_13">
+  <header><span class="num w">✎ 21</span><h3 class="q">Η <b>ομώνυμη</b> ελάσσονα έχει το ίδιο 1 με τη μείζονα. Στις πέντε πρώτες νότες, ποια νότα αλλάζει από τη ντο μείζονα στη ντο ελάσσονα;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Το μι γίνεται μι♭. Αλλάζει μόνο το 3.</p></details>
+</article></div>
+</section>
+<section class="sec" id="morfes">
+  <h2><span>8</span>Οι τρεις μορφές της ελάσσονας</h2>
+  <div class="intro"><p>Ο οπλισμός μένει ο ίδιος. Αλλάζουν μόνο το 6 και το 7, όταν ανεβαίνουν κατά ένα ημιτόνιο με δίεση ή αναίρεση μπροστά στη νότα.</p><p><b>Φυσική:</b> όπως λέει ο οπλισμός. <b>Αρμονική:</b> ανεβαίνει το 7, και γίνεται προσαγωγέας. <b>Μελωδική:</b> όταν η μελωδία ανεβαίνει προς το 8, ανεβαίνουν το 6 και το 7. Όταν κατεβαίνει, μένουν όπως λέει ο οπλισμός.</p><p>Στην ανάγνωση κοιτάμε αν υπάρχει δίεση ή αναίρεση μπροστά στο 6 ή στο 7. Αν δεν υπάρχει, τραγουδάμε ό,τι λέει ο οπλισμός.</p></div>
+  <div class="cards"><article class="card sing" id="morfes_01">
+  <header><span class="num">32</span><h3>Αρμονική λα ελάσσονα: το σολ δίεση</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/morfes_01_m.svg"><img class="mus" src="svg/morfes_01.svg" style="width:774px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/morfes_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="morfes_02">
+  <header><span class="num">33</span><h3>Αρμονική λα ελάσσονα: το τριημιτόνιο φα–σολ δίεση</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/morfes_02_m.svg"><img class="mus" src="svg/morfes_02.svg" style="width:797px" alt=""></picture></div><p class="hint">Από το φα στο σολ δίεση η απόσταση είναι τρία ημιτόνια. Τραγουδήστε το αργά.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/morfes_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="morfes_03">
+  <header><span class="num">34</span><h3>Μελωδική λα ελάσσονα: ανεβαίνουμε και κατεβαίνουμε</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/morfes_03_m.svg"><img class="mus" src="svg/morfes_03.svg" style="width:797px" alt=""></picture></div><p class="hint">Στο πρώτο μέτρο ανεβαίνουμε με φα δίεση και σολ δίεση. Στο τρίτο μέτρο κατεβαίνουμε με σολ και φα φυσικά.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/morfes_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="morfes_04">
+  <header><span class="num">35</span><h3>Αρμονική μι ελάσσονα: το ρε δίεση</h3></header><p class="lab">μι ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/morfes_04_m.svg"><img class="mus" src="svg/morfes_04.svg" style="width:792px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_e4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/morfes_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="morfes_05">
+  <header><span class="num w">✎ 22</span><h3 class="q">Ποια μορφή της λα ελάσσονας είναι κάθε σειρά;<br><span class="seq">α) λα σι ντο ρε μι φα σολ λα</span><br><span class="seq">β) λα σι ντο ρε μι φα σολ♯ λα</span><br><span class="seq">γ) λα σι ντο ρε μι φα♯ σολ♯ λα</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>α) φυσική · β) αρμονική · γ) μελωδική (ανεβαίνοντας)</p></details>
+</article><article class="card write" id="morfes_06">
+  <header><span class="num w">✎ 23</span><h3 class="q">Στην αρμονική μι ελάσσονα, ποια νότα παίρνει δίεση μπροστά της;</h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>Το ρε γίνεται ρε♯. Είναι το 7, ο προσαγωγέας.</p></details>
+</article></div>
+</section>
+<section class="sec" id="meizona-elassona">
+  <h2><span>9</span>Μείζονα ή ελάσσονα;</h2>
+  <div class="intro"><p>Ο ίδιος οπλισμός ταιριάζει σε μια μείζονα και στη σχετική της ελάσσονα. Για να βρούμε ποια από τις δύο είναι:</p><ol><li>Κοιτάμε την τελευταία νότα. Συνήθως αυτή είναι το 1.</li><li>Στην ελάσσονα εμφανίζεται συχνά ο προσαγωγέας ως τυχαίο σημείο αλλοίωσης.</li><li>Αν σε μείζονα οπλισμό η μελωδία ξεκινά από το 6, το τραγούδι είναι σε ελάσσονα.</li></ol><p>Βρείτε την κλίμακα κάθε μελωδίας. Μετά ανοίξτε τη λύση και ακούστε τη μελωδία.</p></div>
+  <div class="cards"><article class="card quiz" id="meizona-elassona_01">
+  <header><span class="num w">α</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_01_m.svg"><img class="mus" src="svg/meizona-elassona_01.svg" style="width:797px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Λα ελάσσονα: τελειώνει στο λα, και το σολ♯ είναι ο προσαγωγέας.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_01.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_02">
+  <header><span class="num w">β</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_02_m.svg"><img class="mus" src="svg/meizona-elassona_02.svg" style="width:797px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Ντο μείζονα: τελειώνει στο ντο.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_02.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_03">
+  <header><span class="num w">γ</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_03_m.svg"><img class="mus" src="svg/meizona-elassona_03.svg" style="width:815px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Σολ μείζονα: τελειώνει στο σολ.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_03.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_04">
+  <header><span class="num w">δ</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_04_m.svg"><img class="mus" src="svg/meizona-elassona_04.svg" style="width:838px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Μι ελάσσονα: τελειώνει στο μι, και το ρε♯ είναι ο προσαγωγέας.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_04.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_05">
+  <header><span class="num w">ε</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_05_m.svg"><img class="mus" src="svg/meizona-elassona_05.svg" style="width:815px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Φα μείζονα: τελειώνει στο φα.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_05.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_06">
+  <header><span class="num w">ζ</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_06_m.svg"><img class="mus" src="svg/meizona-elassona_06.svg" style="width:815px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Ρε ελάσσονα: τελειώνει στο ρε, και το ντο♯ είναι ο προσαγωγέας.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_06.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_07">
+  <header><span class="num w">η</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_07_m.svg"><img class="mus" src="svg/meizona-elassona_07.svg" style="width:825px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Ρε μείζονα: τελειώνει στο ρε.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_07.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article><article class="card quiz" id="meizona-elassona_08">
+  <header><span class="num w">θ</span><h3>Σε ποια κλίμακα είναι;</h3></header>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/meizona-elassona_08_m.svg"><img class="mus" src="svg/meizona-elassona_08.svg" style="width:825px" alt=""></picture></div>
+  <details><summary>Δείτε τη λύση</summary><p>Σι ελάσσονα: τελειώνει στο σι, και το λα♯ είναι ο προσαγωγέας.</p>
+    <div class="btns"><button class="play main" data-src="audio/meizona-elassona_08.mp3"><i></i>Ακούστε τη μελωδία</button></div></details>
+</article></div>
+</section>
+<section class="sec" id="exi-ogdoa">
+  <h2><span>10</span>Τα 6/8</h2>
+  <div class="intro"><p>Στα 6/8 κάθε μέτρο έχει έξι όγδοα, που μετριούνται στα δύο: δύο ομάδες των τριών. Ο πρώτος χρόνος είναι ισχυρός και ο τέταρτος ημιισχυρός.</p><p>Μετράμε: <b>ΕΝΑ</b>, δύο, τρία, <b>τέσσερα</b>, πέντε, έξι. Πείτε πρώτα τον ρυθμό, και μετά τραγουδήστε.</p></div>
+  <div class="cards"><article class="card sing" id="exi-ogdoa_01">
+  <header><span class="num">36</span><h3>Όγδοα στα 6/8</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/exi-ogdoa_01_m.svg"><img class="mus" src="svg/exi-ogdoa_01.svg" style="width:750px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/exi-ogdoa_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="exi-ogdoa_02">
+  <header><span class="num">37</span><h3>Τέταρτο και όγδοο</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/exi-ogdoa_02_m.svg"><img class="mus" src="svg/exi-ogdoa_02.svg" style="width:688px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/exi-ogdoa_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="exi-ogdoa_03">
+  <header><span class="num">38</span><h3>Σολ μείζονα στα 6/8</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/exi-ogdoa_03_m.svg"><img class="mus" src="svg/exi-ogdoa_03.svg" style="width:767px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/exi-ogdoa_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="exi-ogdoa_04">
+  <header><span class="num">39</span><h3>Λα ελάσσονα στα 6/8</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/exi-ogdoa_04_m.svg"><img class="mus" src="svg/exi-ogdoa_04.svg" style="width:759px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/exi-ogdoa_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card write" id="exi-ogdoa_05">
+  <header><span class="num w">✎ 24</span><h3 class="q">Βάλτε τις διαστολές που λείπουν.</h3></header><div class="score"><img class="mus" src="svg/exi-ogdoa_05.svg" style="width:541px" alt=""></div>
+  <details><summary>Δείτε τη λύση</summary><p>Οι διαστολές μπαίνουν μετά το φα, και μετά το μι με τη στιγμή.<span class="score"><img class="mus" src="svg/exi-ogdoa_05_lysi.svg" style="width:564px" alt=""></span></p></details>
+</article><article class="card write" id="exi-ogdoa_06">
+  <header><span class="num w">✎ 25</span><h3 class="q">Πόσα όγδοα αξίζει κάθε αξία στα 6/8;<br><span class="seq">τέταρτο · τέταρτο με στιγμή · μισό με στιγμή</span></h3></header>
+  <details><summary>Δείτε τη λύση</summary><p>δύο · τρία · έξι</p></details>
+</article></div>
+</section>
+<section class="sec" id="levare">
+  <h2><span>11</span>Το levare, το μέτρο και ο τονισμός της λέξης</h2>
+  <div class="intro"><p>Πολλά τραγούδια ξεκινούν με μία έως τρεις νότες πριν από το πρώτο μέτρο. Αυτές είναι το <b>levare</b>, και το μέτρο του έχει λιγότερους χρόνους από τα υπόλοιπα. Συχνά το τελευταίο μέτρο έχει τους χρόνους που λείπουν.</p><p>Στα τραγούδια με στίχους το μέτρο ακολουθεί τον τονισμό των λέξεων: η τονισμένη συλλαβή πέφτει στον πρώτο χρόνο. Όταν χρειάζεται, το μέτρο αλλάζει. Αν ακολουθήσουμε τον ρυθμό ενός σταθερού μέτρου, οι λέξεις τονίζονται λάθος.</p></div>
+  <div class="cards"><article class="card sing" id="levare_01">
+  <header><span class="num">40</span><h3>Levare με μία νότα</h3></header><p class="lab">ντο μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/levare_01_m.svg"><img class="mus" src="svg/levare_01.svg" style="width:637px" alt=""></picture></div><p class="hint">Το levare είναι το 5. Μας οδηγεί στο 8, στον ισχυρό χρόνο του πρώτου μέτρου.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_c4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/levare_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="levare_02">
+  <header><span class="num">41</span><h3>Levare με δύο όγδοα</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/levare_02_m.svg"><img class="mus" src="svg/levare_02.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/levare_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="levare_03">
+  <header><span class="num">42</span><h3>Levare στα 3/4</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/levare_03_m.svg"><img class="mus" src="svg/levare_03.svg" style="width:859px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/levare_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="levare_04">
+  <header><span class="num">43</span><h3>Ακόμα κι αν φύγεις</h3></header><p class="lab">λα μείζονα</p>
+  <div class="score"><img class="mus" src="svg/levare_04.svg" style="width:539px" alt=""></div><p class="hint">Το levare είναι μία νότα: το μι, η πέμπτη βαθμίδα.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/levare_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="levare_05">
+  <header><span class="num">44</span><h3>Χάρτινο το φεγγαράκι</h3></header><p class="lab">λα ελάσσονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/levare_05_m.svg"><img class="mus" src="svg/levare_05.svg" style="width:859px" alt=""></picture></div><p class="hint">Οι διακεκομμένες διαστολές μπαίνουν πριν από κάθε τονισμένη συλλαβή. Τα μέτρα αλλάζουν: 3/4, 4/4, 2/4.</p>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_a4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/levare_05.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article></div>
+</section>
+<section class="sec" id="tragoudia">
+  <h2><span>12</span>Τραγούδια που ξέρετε</h2>
+  <div class="intro"><p>Κάτω από κάθε νότα γράφεται η βαθμίδα της. Βρείτε από ποια βαθμίδα ξεκινά κάθε τραγούδι, τραγουδήστε το με τα ονόματα των νοτών, και μετά με τα λόγια που ξέρετε.</p></div>
+  <div class="cards"><article class="card sing" id="tragoudia_01">
+  <header><span class="num">45</span><h3>Κεμάλ</h3></header><p class="lab">ρε ελάσσονα</p>
+  <div class="score"><img class="mus" src="svg/tragoudia_01.svg" style="width:665px" alt=""></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tragoudia_01.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudia_02">
+  <header><span class="num">46</span><h3>Το ακορντεόν</h3></header><p class="lab">σολ μείζονα</p>
+  <div class="score"><img class="mus" src="svg/tragoudia_02.svg" style="width:602px" alt=""></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_g4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tragoudia_02.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudia_03">
+  <header><span class="num">47</span><h3>Frère Jacques</h3></header><p class="lab">ρε μείζονα</p>
+  <div class="score"><img class="mus" src="svg/tragoudia_03.svg" style="width:521px" alt=""></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_d4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tragoudia_03.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article><article class="card sing" id="tragoudia_04">
+  <header><span class="num">48</span><h3>Jingle Bells</h3></header><p class="lab">φα μείζονα</p>
+  <div class="score"><picture><source media="(max-width:600px)" srcset="svg/tragoudia_04_m.svg"><img class="mus" src="svg/tragoudia_04.svg" style="width:789px" alt=""></picture></div>
+  <div class="btns">
+    <button class="play tonic" data-src="audio/to1_f4.mp3"><i></i>Ακούστε το 1</button>
+    <button class="play main" data-src="audio/tragoudia_04.mp3"><i></i>Ακούστε την άσκηση</button>
+  </div>
+</article></div>
+</section>
+<section class="sec print-only lyseis"><h2>Λύσεις</h2><h3>1. Τόνος και ημιτόνιο</h3><p><b>✎ 1</b> Τ · Τ · Η · Τ · Τ · Τ · Η</p><p><b>✎ 2</b> Η · Τ · Η · Τ · Τ · Τ</p><h3>2. Η κλίμακα και οι βαθμίδες</h3><p><b>✎ 3</b> 3 · 5 · 8 (ή 1) · 2 · 6 · 4 · 7 · 1</p><p><b>✎ 4</b> 2 · 6 · 4 · 7 · 5 · 3</p><h3>3. Τα σημεία αλλοίωσης</h3><p><b>✎ 5</b> φα δίεση · σι ύφεση · ντο δίεση · μι ύφεση · σολ δίεση · λα ύφεση</p><p><b>✎ 6</b> φα · ντο · φα δίεση · ντο δίεση · λα δίεση (ή σι ύφεση)</p><p><b>✎ 7</b> μι · σι · σι ύφεση · μι ύφεση · σολ ύφεση (ή φα δίεση)</p><p><b>✎ 8</b> Φα δίεση. Η δίεση της πρώτης νότας ισχύει ως το τέλος του μέτρου.</p><p><b>✎ 9</b> Φα, φυσικό. Η αναίρεση ακυρώνει τη δίεση.</p><h3>4. Η μείζονα κλίμακα και ο προσαγωγέας</h3><p><b>✎ 10</b> σολ · λα · σι · ντο · ρε · μι · φα♯ · σολ</p><p><b>✎ 11</b> φα · σολ · λα · σι♭ · ντο · ρε · μι · φα</p><p><b>✎ 12</b> ρε · μι · φα♯ · σολ · λα · σι · ντο♯ · ρε</p><p><b>✎ 13</b> φα♯ · μι · ντο♯</p><h3>5. Ο οπλισμός</h3><p><b>Ποια μείζονα; 1</b> Σολ μείζονα. Η δίεση είναι φα♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το σολ.</p><p><b>Ποια μείζονα; 2</b> Ρε μείζονα. Η τελευταία δίεση είναι ντο♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το ρε.</p><p><b>Ποια μείζονα; 3</b> Λα μείζονα. Η τελευταία δίεση είναι σολ♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το λα.</p><p><b>Ποια μείζονα; 4</b> Μι μείζονα. Η τελευταία δίεση είναι ρε♯ (7), και ένα ημιτόνιο πάνω βρίσκεται το μι.</p><p><b>Ποια μείζονα; 5</b> Φα μείζονα. Με μία ύφεση είμαστε πάντα στη φα μείζονα.</p><p><b>Ποια μείζονα; 6</b> Σι♭ μείζονα. Η προτελευταία ύφεση είναι το σι♭.</p><p><b>Ποια μείζονα; 7</b> Μι♭ μείζονα. Η προτελευταία ύφεση είναι το μι♭.</p><p><b>Ποια μείζονα; 8</b> Λα♭ μείζονα. Η προτελευταία ύφεση είναι το λα♭.</p><p><b>✎ 14</b> δύο διέσεις (φα♯, ντο♯) · μία ύφεση (σι♭) · τρεις διέσεις (φα♯, ντο♯, σολ♯) · δύο υφέσεις (σι♭, μι♭)</p><h3>6. Τα τυχαία σημεία αλλοίωσης</h3><p><b>✎ 15</b> Η τέταρτη νότα: ντο δίεση.</p><p><b>✎ 16</b> Η τέταρτη νότα: σι φυσικό.</p><p><b>✎ 17</b> Η δεύτερη και η τέταρτη νότα του πρώτου μέτρου. Στο δεύτερο μέτρο το φα είναι φυσικό, γιατί η διαστολή ακυρώνει τη δίεση.</p><h3>7. Η ελάσσονα κλίμακα και η σχετική</h3><p><b>✎ 18</b> λα ελάσσονα · μι ελάσσονα · ρε ελάσσονα · σι ελάσσονα · σολ ελάσσονα</p><p><b>✎ 19</b> ντο μείζονα · σολ μείζονα · φα μείζονα · ρε μείζονα</p><p><b>✎ 20</b> μι · φα♯ · σολ · λα · σι · ντο · ρε · μι</p><p><b>✎ 21</b> Το μι γίνεται μι♭. Αλλάζει μόνο το 3.</p><h3>8. Οι τρεις μορφές της ελάσσονας</h3><p><b>✎ 22</b> α) φυσική · β) αρμονική · γ) μελωδική (ανεβαίνοντας)</p><p><b>✎ 23</b> Το ρε γίνεται ρε♯. Είναι το 7, ο προσαγωγέας.</p><h3>9. Μείζονα ή ελάσσονα;</h3><p><b>α)</b> Λα ελάσσονα: τελειώνει στο λα, και το σολ♯ είναι ο προσαγωγέας.</p><p><b>β)</b> Ντο μείζονα: τελειώνει στο ντο.</p><p><b>γ)</b> Σολ μείζονα: τελειώνει στο σολ.</p><p><b>δ)</b> Μι ελάσσονα: τελειώνει στο μι, και το ρε♯ είναι ο προσαγωγέας.</p><p><b>ε)</b> Φα μείζονα: τελειώνει στο φα.</p><p><b>ζ)</b> Ρε ελάσσονα: τελειώνει στο ρε, και το ντο♯ είναι ο προσαγωγέας.</p><p><b>η)</b> Ρε μείζονα: τελειώνει στο ρε.</p><p><b>θ)</b> Σι ελάσσονα: τελειώνει στο σι, και το λα♯ είναι ο προσαγωγέας.</p><h3>10. Τα 6/8</h3><p><b>✎ 24</b> Οι διαστολές μπαίνουν μετά το φα, και μετά το μι με τη στιγμή.<span class="score"><img class="mus" src="svg/exi-ogdoa_05_lysi.svg" style="width:564px" alt=""></span></p><p><b>✎ 25</b> δύο · τρία · έξι</p></section>
+</main>
+<footer>Μαθήματα μουσικής ανάγνωσης · Μέρος Β΄ · Το τονικό σύστημα<br>Ιωάννης Ιδομενέως</footer>
+<script>
+(function(){
+  var player = new Audio(), cur = null;
+  player.preload = 'none';
+  function reset(){ if(cur){ cur.classList.remove('on'); cur = null; } }
+  player.addEventListener('ended', reset);
+  player.addEventListener('error', function(){ if(cur){ cur.classList.add('err'); cur.classList.remove('on'); cur = null; } });
+  document.querySelectorAll('button.play').forEach(function(b){
+    b.addEventListener('click', function(){
+      if(cur === b){ player.pause(); player.currentTime = 0; reset(); return; }
+      player.pause(); reset();
+      b.classList.remove('err');
+      player.src = b.dataset.src; player.currentTime = 0;
+      cur = b; b.classList.add('on');
+      var p = player.play();
+      if(p && p.catch){ p.catch(function(){ if(cur === b){ b.classList.add('err'); reset(); } }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
